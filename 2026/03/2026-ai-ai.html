@@ -1,32 +1,6 @@
 <!DOCTYPE html>
-<html lang='ko' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html lang='ko'>
 <head>
-<link href='https://www.blogger.com/static/v1/widgets/4165133002-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
-<!-- ?m=1 리디렉트 파라미터 제거 (Googlebot 색인 오류 방지) -->
-<script>/*<![CDATA[*/
-(function(){
-  var u=window.location.href;
-  if(/[?&]m=[01]/.test(u)){
-    var c=u.replace(/[?&]m=[01]/g,'').replace(/\?$/,'');
-    window.history.replaceState({},document.title,c);
-  }
-})();
-/*]]>*/</script>
-<!-- 검색 설명 폴백: 포스트별 검색 설명 미입력 시 본문 숨김 div(data-desc)에서 meta description 생성 -->
-<script>/*<![CDATA[*/
-document.addEventListener('DOMContentLoaded',function(){
-  if(document.querySelector('meta[name="description"]'))return;
-  var d=document.querySelector('.seo-description');
-  if(!d||!d.getAttribute('data-desc'))return;
-  var t=d.getAttribute('data-desc');
-  var m=document.createElement('meta');m.name='description';m.content=t;
-  document.head.appendChild(m);
-  if(!document.querySelector('meta[name="twitter:description"]')){
-    var w=document.createElement('meta');w.name='twitter:description';w.content=t;
-    document.head.appendChild(w);
-  }
-});
-/*]]>*/</script>
 <!-- Google Analytics 4 -->
 <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-YVS035JLZD'></script>
 <script>/*<![CDATA[*/
@@ -41,22 +15,13 @@ gtag('config', 'G-YVS035JLZD');
 <meta content='f957b9803abc2dfff9b288ce8ebae99d5e881db6' name='naver-site-verification'/>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 <!-- Chrome, Firefox OS and Opera -->
-<meta content='' name='theme-color'/>
 <!-- Windows Phone -->
-<meta content='' name='msapplication-navbutton-color'/>
-<meta content='blogger' name='generator'/>
 <link href='https://www.lawnomics.com/favicon.ico' rel='icon' type='image/x-icon'/>
 <link href='https://www.lawnomics.com/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'/>
 <link href='https://www.lawnomics.com/icon-192.png' rel='icon' type='image/png' sizes='192x192'/>
 <link href='https://www.lawnomics.com/2026/03/2026-ai-ai.html' rel='canonical'/>
-<link rel="alternate" type="application/atom+xml" title="로노믹스 &#8212; 법과 숫자로 지키는 내 돈 - Atom" href="https://www.lawnomics.com/feeds/posts/default" />
-<link rel="alternate" type="application/rss+xml" title="로노믹스 &#8212; 법과 숫자로 지키는 내 돈 - RSS" href="https://www.lawnomics.com/feeds/posts/default?alt=rss" />
-<link rel="service.post" type="application/atom+xml" title="로노믹스 &#8212; 법과 숫자로 지키는 내 돈 - Atom" href="https://www.blogger.com/feeds/3721767979618659512/posts/default" />
+<link rel="alternate" type="application/atom+xml" title="로노믹스 &#8212; 법과 숫자로 지키는 내 돈 - Atom" href="https://www.lawnomics.com/feed.xml" />
 
-<link rel="alternate" type="application/atom+xml" title="로노믹스 &#8212; 법과 숫자로 지키는 내 돈 - Atom" href="https://www.lawnomics.com/feeds/524416962530809020/comments/default" />
-<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
-<link href='https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/family-loan-46-percent-origin/card_46_delegation_chain.png' rel='image_src'/>
-<meta content='/* 경제법률 인사이트 - 포스트 인라인 스타일 */ @import url(&#x27;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subs' name='description'/>
 <meta content='https://www.lawnomics.com/2026/03/2026-ai-ai.html' property='og:url'/>
 <meta content='2026년 AI 기본법 시행, 고영향 AI 규제 대응 전략' property='og:title'/>
 <meta content='/* 경제법률 인사이트 - 포스트 인라인 스타일 */ @import url(&#x27;https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subs' property='og:description'/>
@@ -89,7 +54,7 @@ gtag('config', 'G-YVS035JLZD');
   "name": "Lawnomics",
   "alternateName": "로노믹스",
   "url": "https://www.lawnomics.com",
-  "description": "경제&#183;금융, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.",
+  "description": "경제·금융, 부동산·임대차, 세금·재테크, 경제·정책을 깊이 있게 분석합니다.",
   "inLanguage": "ko-KR",
   "sameAs": ["https://en.lawnomics.com"]
 }
@@ -1386,7 +1351,7 @@ font-size: 12pt;
   "name": "로리움 컨설팅 (Lawrium Consulting)",
   "url": "https://www.lawnomics.com/",
   "email": "lawriumconsulting@gmail.com",
-  "description": "경제&#183;법률 분석 블로그 로노믹스 운영사. 모든 법령 인용을 국가법령정보센터 원문과 대조해 발행합니다.",
+  "description": "경제·법률 분석 블로그 로노믹스 운영사. 모든 법령 인용을 국가법령정보센터 원문과 대조해 발행합니다.",
   "sameAs": [
     "https://www.threads.com/@lawnomics_kr",
     "https://www.instagram.com/lawnomics_kr/",
@@ -1413,11 +1378,9 @@ font-size: 12pt;
   }
 }
 </script>
-<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3721767979618659512&amp;zx=0866db37-f0e6-4fd7-bbc7-083990731bd0' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=3721767979618659512&amp;zx=0866db37-f0e6-4fd7-bbc7-083990731bd0' rel='stylesheet'/></noscript>
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<noscript></noscript>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3770863964557178&host=ca-host-pub-1556223355139109" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3770863964557178" crossorigin="anonymous"></script>
 
 <!-- data-ad-client=ca-pub-3770863964557178 -->
 
@@ -1439,10 +1402,10 @@ font-size: 12pt;
 </div>
 <button class='mobile-menu-btn' onclick='document.querySelector(".nav-categories").classList.toggle("open")'>&#9776;</button>
 <ul class='nav-categories'>
-<li><a href='https://www.lawnomics.com/search/label/가족·상속'>가족&#183;상속</a></li>
-<li><a href='https://www.lawnomics.com/search/label/부동산·임대차'>부동산&#183;임대차</a></li>
-<li><a href='https://www.lawnomics.com/search/label/세금·재테크'>세금&#183;재테크</a></li>
-<li><a href='https://www.lawnomics.com/search/label/경제·정책'>경제&#183;정책</a></li>
+<li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
+<li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
+<li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
+<li><a href='https://www.lawnomics.com/search/label/경제·정책/'>경제&#183;정책</a></li>
 </ul>
 </div>
 </div>
@@ -1457,7 +1420,7 @@ font-size: 12pt;
 <div class='article-meta-bar'>
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'></rect><line x1='16' x2='16' y1='2' y2='6'></line><line x1='8' x2='8' y1='2' y2='6'></line><line x1='3' x2='21' y1='10' y2='10'></line></svg>
-<time>3월 6, 2026</time>
+<time datetime='2026-03-06'>3월 6, 2026</time>
 </span>
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>
@@ -1808,24 +1771,24 @@ font-size: 12pt;
   "description": "2026년 AI 기본법 시행, 고영향 AI 규제가 바꿀 산업 지형과 기업 대응 전략",
   "author": {
     "@type": "Organization",
-    "name": "이코노로",
-    "url": "https://econlaw-lab.blogspot.com"
+    "name": "로노믹스",
+    "url": "https://www.lawnomics.com"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "이코노로: 법과 숫자, 그 사이 이야기",
+    "name": "로노믹스: 법과 숫자, 그 사이 이야기",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://cdn.pixabay.com/photo/2023/07/02/06/08/gavel-8101388_1280.jpg",
-      "width": 1024,
-      "height": 576
+      "url": "https://www.lawnomics.com/icon-512.png",
+      "width": 512,
+      "height": 512
     }
   },
   "datePublished": "2026-03-04T01:30:53+09:00",
   "dateModified": "2026-03-04T01:30:53+09:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://econlaw-lab.blogspot.com"
+    "@id": "https://www.lawnomics.com/2026/03/2026-ai-ai.html"
   },
   "keywords": "법·규제 동향",
   "inLanguage": "ko-KR",
@@ -1842,20 +1805,20 @@ font-size: 12pt;
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "이코노로",
-      "item": "https://econlaw-lab.blogspot.com"
+      "name": "로노믹스",
+      "item": "https://www.lawnomics.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "법·규제 동향",
-      "item": "https://econlaw-lab.blogspot.com/search/label/법·규제 동향"
+      "item": "https://www.lawnomics.com/search/label/경제·정책/"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "2026년 AI 기본법 시행, 고영향 AI 규제가 바꿀 산업 지형과 기업 대응 전략",
-      "item": "https://econlaw-lab.blogspot.com"
+      "item": "https://www.lawnomics.com/2026/03/2026-ai-ai.html"
     }
   ]
 }
@@ -1938,8 +1901,8 @@ font-size: 12pt;
   <li><span class="ref-dot">·</span><a href="https://artificialintelligenceact.eu/implementation-timeline/">EU AI Act Implementation Timeline - EU Artificial Intelligence Act</a></li>
 </ul></div>
 <div class="disclaimer"><span class="disclaimer-icon">ⓘ</span>본 글은 정보 제공 목적으로 작성되었으며, 법률 자문이나 투자 권유가 아닙니다. 구체적인 법률·세무 문제는 전문가와 상담하시기 바랍니다.</div>
-<div class="related-posts"><h4>관련 글</h4><ul><li><a href="http://econlaw-lab.blogspot.com/2026/02/2026_73.html">2026년 하도급법, 기술유용 금지청구권으로 내 기술 지킬 수 있을까?</a></li><li><a href="http://econlaw-lab.blogspot.com/2026/02/2026_13.html">2026년 사법부 양형 기준, '솜방망이 처벌' 논란 어떻게 바뀌나?</a></li><li><a href="http://econlaw-lab.blogspot.com/2026/02/blog-post_60.html">롯데렌탈 인수 불허, 공정위 기업결합 심사 왜 강해졌나?</a></li></ul></div>
-<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">EconLaw-Lab 구독하기</div><div class="sub-desc">매일 새로운 경제·법률 분석을 받아보세요.</div></div><a href="https://www.blogger.com/follow.g?blogID=3721767979618659512" class="sub-btn" target="_blank">구독하기</a></div>
+<div class="related-posts"><h4>관련 글</h4><ul><li><a href="https://www.lawnomics.com/2026/02/2026_73.html">2026년 하도급법, 기술유용 금지청구권으로 내 기술 지킬 수 있을까?</a></li><li><a href="https://www.lawnomics.com/2026/02/2026_13.html">2026년 사법부 양형 기준, '솜방망이 처벌' 논란 어떻게 바뀌나?</a></li><li><a href="https://www.lawnomics.com/2026/02/blog-post_60.html">롯데렌탈 인수 불허, 공정위 기업결합 심사 왜 강해졌나?</a></li></ul></div>
+<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">EconLaw-Lab 구독하기</div><div class="sub-desc">매일 새로운 경제·법률 분석을 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">구독하기</a></div>
 </div>
 </div>
 </article>
@@ -1957,7 +1920,7 @@ font-size: 12pt;
 <h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
 <p class='about-tagline-kr'>법과 숫자, 그 사이 이야기</p>
 <p>경제&#183;금융, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
-<a class='subscribe-btn' href='https://www.blogger.com/follow.g?blogID=3721767979618659512' target='_blank'>+ 구독하기</a>
+<a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>+ 구독하기</a>
 </div>
 <!-- Search Widget -->
 <div class='sidebar-widget search-widget'>
@@ -1971,22 +1934,22 @@ font-size: 12pt;
 <h3>카테고리</h3>
 <ul class='category-list'>
 <li>
-<a href='https://www.lawnomics.com/search/label/가족·상속'>
+<a href='https://www.lawnomics.com/search/label/가족·상속/'>
 <span><span class='cat-dot cat-dot-economy'></span>가족&#183;상속</span>
 </a>
 </li>
 <li>
-<a href='https://www.lawnomics.com/search/label/부동산·임대차'>
+<a href='https://www.lawnomics.com/search/label/부동산·임대차/'>
 <span><span class='cat-dot cat-dot-realestate'></span>부동산&#183;임대차</span>
 </a>
 </li>
 <li>
-<a href='https://www.lawnomics.com/search/label/세금·재테크'>
+<a href='https://www.lawnomics.com/search/label/세금·재테크/'>
 <span><span class='cat-dot cat-dot-investment'></span>세금&#183;재테크</span>
 </a>
 </li>
 <li>
-<a href='https://www.lawnomics.com/search/label/경제·정책'>
+<a href='https://www.lawnomics.com/search/label/경제·정책/'>
 <span><span class='cat-dot cat-dot-law'></span>경제&#183;정책</span>
 </a>
 </li>
@@ -2166,36 +2129,6 @@ window.addEventListener('scroll', function() {
   });
 })();
 
-// --- Recent Posts Widget ---
-(function() {
-  var list = document.getElementById('recent-posts-list');
-  if (!list) return;
-
-  var feedUrl = '/feeds/posts/default?alt=json&max-results=10';
-  var script = document.createElement('script');
-  script.src = feedUrl + '&callback=__loadRecentPosts';
-
-  window.__loadRecentPosts = function(data) {
-    var entries = data.feed.entry || [];
-    entries.forEach(function(entry) {
-      var title = entry.title.$t;
-      var url = '';
-      entry.link.forEach(function(link) {
-        if (link.rel === 'alternate') url = link.href;
-      });
-      var date = new Date(entry.published.$t);
-      var dateStr = date.getFullYear() + '-' +
-        String(date.getMonth() + 1).padStart(2, '0') + '-' +
-        String(date.getDate()).padStart(2, '0');
-
-      var li = document.createElement('li');
-      li.innerHTML = '<a href="' + url + '">' + title + '</a>' +
-        '<div class="recent-date">' + dateStr + '</div>';
-      list.appendChild(li);
-    });
-  };
-  document.body.appendChild(script);
-})();
 
 // --- Extract post thumbnails and preview text from hidden body ---
 (function() {
