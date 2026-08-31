@@ -4,7 +4,15 @@
 <link href="https://www.lawnomics.com/"/>
 <link rel="self" href="https://www.lawnomics.com/feed.xml"/>
 <id>https://www.lawnomics.com/</id>
-<updated>2026-08-30T11:11:43.669463+09:00</updated>
+<updated>2026-08-31T12:00:04.990527+09:00</updated>
+<entry>
+<title>전세 월세 전환율 계산법, 갱신 때 거절할 수 있을까</title>
+<link href="https://www.lawnomics.com/2026/08/jeonse-to-wolse-conversion-rate.html"/>
+<id>https://www.lawnomics.com/2026/08/jeonse-to-wolse-conversion-rate.html</id>
+<published>2026-08-31T12:00:04.990527+09:00</published>
+<updated>2026-08-31T12:00:04.990527+09:00</updated>
+<summary>갱신요구권으로 연장하는 계약이면 집주인이 전세를 월세로 일방적으로 바꿀 수 없습니다. 동의해서 바꿔도 월세는 전환 보증금의 연 5%(기준금리 3.00%+2%)가 상한입니다. 계산법과 5% 인상 상한, 초과분 반환까지 조문으로 정리했습니다.</summary>
+</entry>
 <entry>
 <title>전월세 갱신 거절과 5% 인상, 법이 정한 경계선</title>
 <link href="https://www.lawnomics.com/2026/08/housing-lease-renewal-dispute.html"/>
@@ -76,13 +84,5 @@
 <published>2026-07-29T15:24:00+09:00</published>
 <updated>2026-08-09T03:52:10+09:00</updated>
 <summary>물적분할 자회사 상장에 주주 동의가 의무화될 예정입니다. 최대주주 측 의결권은 3%로 제한되고 참석 과반·전체 4분의 1 동의가 기준. 소액주주의 전자투표 행사법과 주식매수청구권 절차까지 정리했습니다.</summary>
-</entry>
-<entry>
-<title>2026 급락장 손절매 세금, 손익통산으로 줄이는 법</title>
-<link href="https://www.lawnomics.com/2026/07/stock-loss-tax-offset-guide.html"/>
-<id>https://www.lawnomics.com/2026/07/stock-loss-tax-offset-guide.html</id>
-<published>2026-07-29T00:40:12+09:00</published>
-<updated>2026-08-09T03:52:15+09:00</updated>
-<summary>코스피가 하루 10.84% 떨어진 날의 손절매, 국내주식 손실은 세금 공제가 안 되고 해외주식 손실은 절세 카드가 됩니다. 손익통산 규칙, 250만 원 공제, 이월 불가 원칙과 연말까지의 실행 순서, 신고 일정을 정리했습니다.</summary>
 </entry>
 </feed>
