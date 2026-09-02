@@ -4,7 +4,15 @@
 <link href="https://www.lawnomics.com/"/>
 <link rel="self" href="https://www.lawnomics.com/feed.xml"/>
 <id>https://www.lawnomics.com/</id>
-<updated>2026-08-31T12:00:04.990527+09:00</updated>
+<updated>2026-09-02T12:00:00.177978+09:00</updated>
+<entry>
+<title>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</title>
+<link href="https://www.lawnomics.com/2026/09/overseas-student-support-gift-tax.html"/>
+<id>https://www.lawnomics.com/2026/09/overseas-student-support-gift-tax.html</id>
+<published>2026-09-02T12:00:00.177978+09:00</published>
+<updated>2026-09-02T12:00:00.177978+09:00</updated>
+<summary>유학 자녀에게 보내는 생활비와 학비는 그 용도에 직접 쓰인 범위에서 증여세가 붙지 않습니다. 남긴 돈과 목돈은 다릅니다. 한국 비과세 경계, 자녀가 비거주자일 때 부모에게 오는 세금, 미국 Form 3520 신고, 영국 상속세 범위, 송금 절차를 조문으로 정리했습니다.</summary>
+</entry>
 <entry>
 <title>전세 월세 전환율 계산법, 갱신 때 거절할 수 있을까</title>
 <link href="https://www.lawnomics.com/2026/08/jeonse-to-wolse-conversion-rate.html"/>
@@ -76,13 +84,5 @@
 <published>2026-08-06T17:41:05+09:00</published>
 <updated>2026-08-09T03:52:05+09:00</updated>
 <summary>8월 3일 발표된 세법개정안이 1주택 장기보유특별공제를 거주 기준으로 바꿉니다. 보유 12년·거주 2년이면 세 부담이 8,135만 원에서 1억 4,777만 원으로. 연도별 개편 구조와 매도 타이밍 시뮬레이션을 정리했습니다.</summary>
-</entry>
-<entry>
-<title>2026 쪼개기 상장 제동, 물적분할 3%룰 총정리</title>
-<link href="https://www.lawnomics.com/2026/07/split-off-listing-3-percent-rule.html"/>
-<id>https://www.lawnomics.com/2026/07/split-off-listing-3-percent-rule.html</id>
-<published>2026-07-29T15:24:00+09:00</published>
-<updated>2026-08-09T03:52:10+09:00</updated>
-<summary>물적분할 자회사 상장에 주주 동의가 의무화될 예정입니다. 최대주주 측 의결권은 3%로 제한되고 참석 과반·전체 4분의 1 동의가 기준. 소액주주의 전자투표 행사법과 주식매수청구권 절차까지 정리했습니다.</summary>
 </entry>
 </feed>
