@@ -1380,7 +1380,14 @@ font-size: 12pt;
 <style>
 .article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210;font-size:17.5px;line-height:1.85}
 .article-body strong.num{color:#D35400;font-weight:700}
-@media (max-width:640px){.article-body p.lead-answer{padding:14px 16px;font-size:16px}}
+.article-body h2,.article-body h3{text-wrap:balance}
+.article-body .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:640px){
+.article-body p.lead-answer{padding:14px 16px;font-size:16px}
+.article-body .table-scroll table{min-width:0;font-size:13px;width:100%}
+.article-body .table-scroll td,.article-body .table-scroll th,.article-body .table-scroll thead{min-width:0;padding:8px 6px;font-size:13px}
+.article-body .table-scroll{margin:20px 0}
+}
 </style>
 <meta name='robots' content='noindex,follow'/>
 </head>
@@ -1838,7 +1845,7 @@ font-size: 12pt;
 <p>대략적인 연간 이자 증가액은 공식 하나로 나옵니다.</p>
 <p><strong>연간 이자 증가액 ≈ 대출 잔액 × 금리 인상폭</strong></p>
 <p>잔액 4억 원에 0.25%포인트가 오르면 연 100만 원, 월 8만 원대의 이자가 추가되는 셈입니다. 원리금균등상환(원금과 이자를 합쳐 매달 같은 금액을 갚는 방식)이라면 월 상환액 기준으로 좀 더 정확히 볼 수 있습니다. 4억 원·30년 만기 기준입니다.</p>
-<table><thead><tr><th>적용금리</th><th>월 상환액</th><th>지금보다</th></tr></thead><tbody><tr><td>4.28% (현재 변동 평균)</td><td>197만 5,000원</td><td>—</td></tr><tr><td>4.53% (+0.25%p)</td><td>203만 4,000원</td><td>월 +5만 9,000원</td></tr><tr><td>4.78% (+0.50%p, 연말 3.00% 도달 시)</td><td>209만 4,000원</td><td>월 +11만 9,000원</td></tr></tbody></table>
+<div class="table-scroll"><table><thead><tr><th>적용금리</th><th>월 상환액</th><th>지금보다</th></tr></thead><tbody><tr><td>4.28% (현재 변동 평균)</td><td>197만 5,000원</td><td>—</td></tr><tr><td>4.53% (+0.25%p)</td><td>203만 4,000원</td><td>월 +5만 9,000원</td></tr><tr><td>4.78% (+0.50%p, 연말 3.00% 도달 시)</td><td>209만 4,000원</td><td>월 +11만 9,000원</td></tr></tbody></table></div>
 <p>한국은행 추산으로 대출금리가 0.25%포인트 오르면 가계 전체 이자 부담은 연 3조 2,000억 원, 차주 1인당 평균 16만 3,000원 늘어납니다. 평균만 보면 커피 몇 잔 값이지만, 평균에는 대출이 없는 사람도 소액 신용대출만 있는 사람도 섞여 있습니다. 잔액이 큰 주담대 차주의 체감은 위 표가 현실입니다. 0.50%포인트면 연 143만 원 — 한 달 치 상환액의 3분의 2를 넘는 돈이 사라집니다.</p>
 <a name="선택지-①-같은-은행에서-고정금리로-전환"></a>
 <h2 id="선택지-①-같은-은행에서-고정금리로-전환">선택지 ① 같은 은행에서 고정금리로 전환</h2>

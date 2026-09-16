@@ -1380,7 +1380,14 @@ font-size: 12pt;
 <style>
 .article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210;font-size:17.5px;line-height:1.85}
 .article-body strong.num{color:#D35400;font-weight:700}
-@media (max-width:640px){.article-body p.lead-answer{padding:14px 16px;font-size:16px}}
+.article-body h2,.article-body h3{text-wrap:balance}
+.article-body .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:640px){
+.article-body p.lead-answer{padding:14px 16px;font-size:16px}
+.article-body .table-scroll table{min-width:0;font-size:13px;width:100%}
+.article-body .table-scroll td,.article-body .table-scroll th,.article-body .table-scroll thead{min-width:0;padding:8px 6px;font-size:13px}
+.article-body .table-scroll{margin:20px 0}
+}
 </style>
 <meta name='robots' content='noindex,follow'/>
 </head>
@@ -1840,7 +1847,7 @@ font-size: 12pt;
 <a name="증권사마다-다르게-판다---처분-방식-비교"></a>
 <h2 id="증권사마다-다르게-판다---처분-방식-비교">증권사마다 다르게 판다 — 처분 방식 비교</h2>
 <p>반대매매의 큰 틀은 같지만 실행 방식은 증권사마다 다릅니다. 각사 신용거래 설명서에 명시된 내용만 추리면 이렇습니다.</p>
-<table><thead><tr><th>증권사</th><th>반대매매 실행</th><th>수량 산정 기준가</th></tr></thead><tbody><tr><td>신한투자증권</td><td>부족 발생 2영업일 후 장 개시 동시호가</td><td>전일 종가 −15%(A·B·C등급) 또는 −20%(D·E·Z등급)</td></tr><tr><td>미래에셋증권</td><td>추가담보 미납 익영업일 임의처분</td><td>종목 등급별 전일 종가 −15~20%</td></tr><tr><td>유진투자증권</td><td>익일 오전 동시호가</td><td>반대매매일 하한가 기준(수수료 반영 역산)</td></tr></tbody></table>
+<div class="table-scroll"><table><thead><tr><th>증권사</th><th>반대매매 실행</th><th>수량 산정 기준가</th></tr></thead><tbody><tr><td>신한투자증권</td><td>부족 발생 2영업일 후 장 개시 동시호가</td><td>전일 종가 −15%(A·B·C등급) 또는 −20%(D·E·Z등급)</td></tr><tr><td>미래에셋증권</td><td>추가담보 미납 익영업일 임의처분</td><td>종목 등급별 전일 종가 −15~20%</td></tr><tr><td>유진투자증권</td><td>익일 오전 동시호가</td><td>반대매매일 하한가 기준(수수료 반영 역산)</td></tr></tbody></table></div>
 <p>표의 장 개시 동시호가는 장이 열리기 전 주문을 모아 하나의 가격으로 일괄 체결하는 방식을 말합니다. 통지 방법도 약관에 정해져 있습니다. 한국투자증권 설명서 기준으로 사전에 합의한 문자·이메일, 내용증명우편, 통화 녹취 등 "요구사실이 입증될 수 있는 방법"이어야 하며, 금융투자업규정 제4-25조 제7항도 같은 취지로 정하고 있습니다. 위 표는 각사 설명서 기준이며 계좌 유형과 종목에 따라 다를 수 있으므로, 정확한 조건은 본인 계좌의 약관과 증권사 앱에서 확인하는 것이 안전합니다.</p>
 <a name="반대매매--왜-부족액보다-훨씬-많이-팔리는가"></a>
 <h2 id="반대매매--왜-부족액보다-훨씬-많이-팔리는가">반대매매, 왜 부족액보다 훨씬 많이 팔리는가</h2>
