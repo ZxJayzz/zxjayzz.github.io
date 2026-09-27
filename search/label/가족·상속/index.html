@@ -30,10 +30,6 @@ gtag('config', 'G-YVS035JLZD');
 <meta content='#1C1210' name='theme-color'/>
 <!-- SEO: Sitemap (canonical, feed는 all-head-content가 처리) -->
 <link href='https://www.lawnomics.com/sitemap.xml' rel='sitemap' type='application/xml'/>
-<!-- SEO: hreflang &#8212; 홈페이지에서만 적용 (개별 포스트에 적용하면 색인 오류 발생) -->
-<link href='https://www.lawnomics.com/' hreflang='ko' rel='alternate'/>
-<link href='https://en.lawnomics.com/' hreflang='en' rel='alternate'/>
-<link href='https://www.lawnomics.com/' hreflang='x-default' rel='alternate'/>
 <!-- Performance: Preconnect -->
 <link href='https://fonts.googleapis.com' rel='preconnect'/>
 <link crossorigin='crossorigin' href='https://fonts.gstatic.com' rel='preconnect'/>
@@ -62,11 +58,9 @@ gtag('config', 'G-YVS035JLZD');
   "publishingPrinciples": "https://www.lawnomics.com/p/editorial-policy.html",
   "correctionsPolicy": "https://www.lawnomics.com/p/editorial-policy.html",
   "sameAs": [
-    "https://en.lawnomics.com",
     "https://blog.naver.com/lcbridz",
     "https://www.threads.com/@lawnomics_kr",
     "https://www.instagram.com/lawnomics_kr/",
-    "https://x.com/lawnomics_kr",
     "https://www.facebook.com/1311438692043961"
   ]
 }
@@ -1366,8 +1360,7 @@ font-size: 12pt;
   "description": "경제·법률 분석 블로그 로노믹스 운영사. 모든 법령 인용을 국가법령정보센터 원문과 대조해 발행합니다.",
   "sameAs": [
     "https://www.threads.com/@lawnomics_kr",
-    "https://www.instagram.com/lawnomics_kr/",
-    "https://x.com/lawnomics_kr"
+    "https://www.instagram.com/lawnomics_kr/"
   ]
 }
 </script>
@@ -1516,7 +1509,7 @@ font-size: 12pt;
 <div class='sidebar-widget about-widget'>
 <h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
 <p class='about-tagline-kr'>법과 숫자, 그 사이 이야기</p>
-<p>경제&#183;금융, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
+<p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
 <a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>+ 구독하기</a>
 </div>
 <!-- Search Widget -->
@@ -1783,26 +1776,6 @@ window.addEventListener('scroll', function() {
   });
 })();
 
-//]]>
-</script>
-<!-- SEO: hreflang JS 백업 &#8212; 홈페이지에서만 실행 -->
-<script>
-//<![CDATA[
-(function(){
-  if (window.location.pathname !== '/') return;
-  var langs = [
-    {hreflang:'ko', href:'https://www.lawnomics.com/'},
-    {hreflang:'en', href:'https://en.lawnomics.com/'},
-    {hreflang:'x-default', href:'https://www.lawnomics.com/'}
-  ];
-  langs.forEach(function(l){
-    var link = document.createElement('link');
-    link.rel = 'alternate';
-    link.hreflang = l.hreflang;
-    link.href = l.href;
-    document.head.appendChild(link);
-  });
-})();
 //]]>
 </script>
 <!-- lawnomics-footer -->
