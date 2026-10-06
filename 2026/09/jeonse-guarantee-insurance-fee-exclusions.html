@@ -1374,15 +1374,56 @@ font-size: 12pt;
 <!-- data-ad-client=ca-pub-3770863964557178 -->
 
 <style>
-.article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210;font-size:17.5px;line-height:1.85}
-.article-body strong.num{color:#D35400;font-weight:700}
+.article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210}
+.article-body strong.num{color:#B94700;font-weight:700}
 .article-body h2,.article-body h3{text-wrap:balance}
 .article-body .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* 2026-10-06 디자인 1차 — output/analysis/2026-10-06_design_review.md (작은 글자·버튼은 AA 대비용 #B94700/#6B5D4F, 띠·막대는 #D35400 유지) */
+.article-body a{color:#B94700}
+.article-body details.toc{padding:14px 18px}
+.article-body details.toc summary{cursor:pointer;font-weight:700;font-size:15px;color:#1C1210;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.article-body details.toc summary::-webkit-details-marker{display:none}
+.article-body details.toc summary::after{content:'펼치기';font-weight:400;font-size:13px;color:#6B5D4F}
+.article-body details.toc[open] summary::after{content:'접기'}
+.article-body details.toc ol{margin:12px 0 2px 18px;padding:0}
+.article-body details.toc li{font-size:14px;line-height:1.75}
+.article-meta-bar{color:#6B5D4F;flex-wrap:wrap}
+.article-meta-bar time,.article-meta-bar .meta-item{white-space:nowrap}
+.article-meta-bar .meta-policy{color:#6B5D4F;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.post-date,.recent-date,.about-widget p,.footer-tagline,.footer-copyright{color:#6B5D4F}
+.footer-tagline,.footer-copyright{color:#B9A89A}
+.article-body p[style*="#8B7D6B"]{color:#6B5D4F!important}
+.subscribe-cta .sub-btn,.subscribe-btn,.search-btn,.back-to-top{background:#B94700!important}
+.subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B94700;outline-offset:2px}
+.post-card-thumb{height:auto!important;aspect-ratio:2.5/1}
+.pontis-strip{max-width:1080px;margin:14px auto 0;padding:0 16px}
+.pontis-strip a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;padding:10px 16px;border:1px solid #E5D9CC;border-radius:8px;background:#FAF6F1;font-size:13px;line-height:1.5;color:#6B5D4F;text-decoration:none}
+.pontis-strip a b{color:#1C1210;font-weight:700;margin-right:6px}
+.pontis-strip a .go{color:#B94700;font-weight:700;white-space:nowrap}
+.site-intro{max-width:1080px;margin:12px auto 0;padding:0 16px}
+.site-intro .box{background:#FFF;border:1px solid #E5D9CC;border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.site-intro strong{font-size:17px;color:#1C1210}
+.site-intro .desc{font-size:14px;color:#6B5D4F}
+.site-intro .chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.site-intro .chips a{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid #E5D9CC;color:#3A3330;text-decoration:none;background:#FAF6F1;white-space:nowrap;flex-shrink:0}
+@media (max-width:768px){
+#toc-container{display:none}
+.about-widget .subscribe-btn{display:none}
+.article-body,.article-body .econlaw-post{font-size:16px;line-height:1.8}
+.site-intro .chips{margin-left:0;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px;scrollbar-width:none}
+.site-intro .box{padding:14px 16px}
+.pontis-strip a .text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
 @media (max-width:640px){
 .article-body p.lead-answer{padding:14px 16px;font-size:16px}
-.article-body .table-scroll table{min-width:0;font-size:13px;width:100%}
-.article-body .table-scroll td,.article-body .table-scroll th,.article-body .table-scroll thead{min-width:0;padding:8px 6px;font-size:13px}
 .article-body .table-scroll{margin:20px 0}
+.article-body .table-scroll:not(.wide) table{min-width:0;width:100%;font-size:14px}
+.article-body .table-scroll:not(.wide) td,.article-body .table-scroll:not(.wide) th,.article-body .table-scroll:not(.wide) thead{min-width:0;padding:10px 8px;font-size:14px}
+.article-body .table-scroll.wide table{min-width:520px;font-size:13px}
+.article-body .table-scroll.wide td,.article-body .table-scroll.wide th{min-width:0;padding:8px 6px;font-size:13px}
+.article-body .table-scroll.wide{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)),linear-gradient(90deg,rgba(255,255,255,0),#fff 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.14),rgba(0,0,0,0)),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.14),rgba(0,0,0,0)) 100% 0;background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+.article-body .table-scroll.wide::after{content:'좌우로 밀어 비교';display:block;position:sticky;left:0;width:100%;font-size:12px;color:#6B5D4F;text-align:right;padding:4px 2px 0}
 }
 </style>
 </head>
@@ -1397,7 +1438,7 @@ font-size: 12pt;
 <span class='brand-bar'></span>
 <span class='brand-logo'>
 <span class='brand-name'>Law<span class='accent'>nomics</span></span>
-<span class='brand-tagline'>법과 숫자, 그 사이 이야기</span>
+<span class='brand-tagline'>법과 숫자로 지키는 내 돈</span>
 </span>
 </a>
 </div>
@@ -1422,12 +1463,14 @@ font-size: 12pt;
 <div class='article-meta-bar'>
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'></rect><line x1='16' x2='16' y1='2' y2='6'></line><line x1='8' x2='8' y1='2' y2='6'></line><line x1='3' x2='21' y1='10' y2='10'></line></svg>
-<time datetime='2026-09-15'>9월 15, 2026</time>
+<time datetime='2026-09-15'>발행 2026. 9. 15.</time>
 </span>
+
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>
 <span>Lawnomics</span>
 </span>
+<span class='meta-item'><a class='meta-policy' href='https://www.lawnomics.com/p/editorial-policy.html'>편집 원칙</a></span>
 </div>
 </div>
 <div class='article-body'>
@@ -1869,12 +1912,11 @@ font-size: 12pt;
 </script>
 <div class="econlaw-post">
 <div class="seo-description" data-desc="전세보증보험 보증료는 HUG 기준 연 0.1% 안팎이고 할인·세액공제·지원금으로 더 줄어듭니다. 문제는 약관 면책입니다. 임차권등기 전 전출, 묵시적 갱신, 1개월 통지 의무, 2개월 청구 기한과 HUG의 1개월 지급 기한을 조문과 2026년 대법원 판결로 정리했습니다" style="display:none"></div>
-<div class="post-header-image"><img src="https://images.unsplash.com/photo-1724768065321-25be07d6405d?w=1080&q=80&fm=jpg" alt="전세보증보험, 보증료 계산부터 못 받는 경우까지" width="1024" height="576" loading="lazy" /></div>
+<div class="post-header-image"><img src="https://images.unsplash.com/photo-1724768065321-25be07d6405d?w=1080&q=80&fm=jpg" alt="전세보증보험, 보증료 계산부터 못 받는 경우까지" width="1024" height="576" loading="eager" fetchpriority="high" decoding="async" /></div>
 <p class="lead-answer">전세보증보험의 보증료는 주택도시보증공사 기준으로 연 0.1% 안팎이고, 소득이나 가구 조건에 따라 절반 넘게 깎이며 세액공제와 정부 지원금까지 받으면 실제 부담은 몇만 원 단위로 내려갑니다. 그래서 이 보험의 관건은 보증료가 아니라 약관입니다. 임차권등기를 마치기 전에 이사하거나 만기 전 통지를 빠뜨려 묵시적 갱신이 되면 보증금은 나오지 않고, 사고를 한 달 안에 알리지 않으면 그 사이 늘어난 몫은 공사가 책임지지 않습니다.</p>
 <!--more-->
 <p>가입 요건과 이행청구 절차 전반은 <a href="https://www.lawnomics.com/2026/09/jeonse-deposit-recovery-guide.html">전세보증금 회수 가이드</a>에 정리돼 있습니다. 보증료 요율과 면책 조항, 지급 기한은 2026년 9월 15일 기준 공사 약관과 관련 조문, 올해 5월 대법원 판결로 확인했습니다.</p>
-<nav class="toc">
-<h4>목차</h4>
+<details class="toc"><summary>목차</summary>
 <ol>
   <li><a href="#보증료는-얼마인가--요율표와-할인">보증료는 얼마인가, 요율표와 할인</a></li>
   <li><a href="#언제까지--어떤-집이-되나">언제까지, 어떤 집이 되나</a></li>
@@ -1882,17 +1924,17 @@ font-size: 12pt;
   <li><a href="#보험이-있어도-못-받는-여섯-가지">보험이 있어도 못 받는 여섯 가지</a></li>
   <li><a href="#공사는-언제-주나--1개월과-연-6">공사는 언제 주나, 1개월과 연 6%</a></li>
 </ol>
-</nav>
+</details>
 <a name="보증료는-얼마인가--요율표와-할인"></a>
 <h2 id="보증료는-얼마인가--요율표와-할인">보증료는 얼마인가, 요율표와 할인</h2>
 <p>주택도시보증공사의 보증료는 보증금액에 보증료율을 곱하고 계약기간을 365일로 나눠 계산합니다. 요율은 보증금 구간, 주택 유형, 부채비율(선순위채권과 전세보증금의 합을 주택가액으로 나눈 값)로 갈리고, 전체 요율표는 1억 이하 아파트의 연 0.097%에서 5억 초과 기타 주택의 0.211% 사이에 있습니다. 보증금 2억 초과 5억 이하 구간은 아래와 같습니다.</p>
-<div class="table-scroll"><table><thead><tr><th>부채비율</th><th>아파트</th><th>연립·다세대 등 기타 주택</th></tr></thead><tbody><tr><td>70% 이하</td><td>연 0.107%</td><td>연 0.124%</td></tr><tr><td>80% 이하</td><td>연 0.131%</td><td>연 0.161%</td></tr><tr><td>80% 초과</td><td>연 0.154%</td><td>연 0.197%</td></tr></tbody></table>
-<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/jeonse-guarantee-insurance-fee-exclusions/hug-guarantee-fee-rate-table-screen.png" alt="주택도시보증공사 전세보증금반환보증 상품안내의 보증료율표 화면. 보증금 구간, 주택 유형, 부채비율에 따라 연 0.097%에서 0.211%까지 정해진다" width="1282" height="766" loading="lazy" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /><p style="margin:8px 0 0; font-size:13px; color:#8B7D6B;">HUG 전세보증금반환보증 상품안내 보증료율표 (2026년 9월 16일 캡처). 표의 수치는 본문 요율표와 같다.</p></div>
+<div class="table-scroll"><div class="table-scroll"><table><thead><tr><th>부채비율</th><th>아파트</th><th>연립·다세대 등 기타 주택</th></tr></thead><tbody><tr><td>70% 이하</td><td>연 0.107%</td><td>연 0.124%</td></tr><tr><td>80% 이하</td><td>연 0.131%</td><td>연 0.161%</td></tr><tr><td>80% 초과</td><td>연 0.154%</td><td>연 0.197%</td></tr></tbody></table></div>
+<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/jeonse-guarantee-insurance-fee-exclusions/hug-guarantee-fee-rate-table-screen.png" alt="주택도시보증공사 전세보증금반환보증 상품안내의 보증료율표 화면. 보증금 구간, 주택 유형, 부채비율에 따라 연 0.097%에서 0.211%까지 정해진다" width="1282" height="766" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /><p style="margin:8px 0 0; font-size:13px; color:#8B7D6B;">HUG 전세보증금반환보증 상품안내 보증료율표 (2026년 9월 16일 캡처). 표의 수치는 본문 요율표와 같다.</p></div>
 </div>
 <p>보증금 3억원 아파트, 부채비율 70% 이하, 계약기간 2년이면 3억원에 0.107%를 곱한 32만 1,000원이 1년치, 2년이면 64만 2,000원. 여기에 할인이 붙습니다. 보증신청인과 배우자의 연소득이 5천만원 이하면 60%, 신혼부부와 다자녀, 만 65세 이상 고령자 가구는 40%가 깎이고, 이런 사회배려계층 할인끼리는 중복되지 않습니다. 선순위채권이 주택가액의 50%를 넘으면 반대로 10%가 붙습니다.</p>
 <p>돌려받는 길도 둘. 보증대상 임차보증금이 3억원 이하면 보증료는 연말정산 보험료 세액공제 대상입니다. 소득세법 시행령 제118조의4 제2항 제6호에 따라 보장성보험료에 들어가며, 공제율 12%, 한도는 다른 보장성보험과 합쳐 연 100만원입니다. 또 국토교통부 보증료 지원사업은 전세보증금 3억원 이하, 연소득이 청년 5천만원, 신혼부부 7,500만원, 그 외 6천만원 이하인 무주택 임차인에게 이미 낸 보증료를 최대 40만원까지 돌려줍니다. 시·군·구청이나 정부24로 신청합니다. 위 3억원 예시의 청년이라면 60% 할인 뒤 25만 6,800원을 내고 그 전액을 지원받는 셈입니다.</p>
 <p>한국주택금융공사의 전세지킴보증은 요율 구조가 다릅니다. 2025년 3월 1일 신규 신청분부터 담보인정비율(선순위채권과 보증금의 합이 주택가격에서 차지하는 비율) 70% 이하 연 0.04%, 80% 이하 0.11%, 90% 이하 0.18%이고, 주택금융공사의 전세자금보증을 쓰는 은행에서만 신청할 수 있습니다.</p>
-<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/jeonse-guarantee-insurance-fee-exclusions/card_guarantee_fee.png" alt="전세보증보험 보증료의 실제 부담 정리: 보증금 3억원 아파트 연 0.107%로 2년 64만 2,000원, 연소득 5천만원 이하 60% 할인, 보증료 세액공제 12%(소득세법 시행령 제118조의4), 정부 지원 최대 40만원, 등록임대주택은 집주인 의무 가입에 수수료 임대인 75 대 임차인 25(민간임대주택법 시행령 제40조)" width="600" height="889" loading="lazy" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
+<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/jeonse-guarantee-insurance-fee-exclusions/card_guarantee_fee.png" alt="전세보증보험 보증료의 실제 부담 정리: 보증금 3억원 아파트 연 0.107%로 2년 64만 2,000원, 연소득 5천만원 이하 60% 할인, 보증료 세액공제 12%(소득세법 시행령 제118조의4), 정부 지원 최대 40만원, 등록임대주택은 집주인 의무 가입에 수수료 임대인 75 대 임차인 25(민간임대주택법 시행령 제40조)" width="600" height="889" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
 <a name="언제까지--어떤-집이-되나"></a>
 <h2 id="언제까지--어떤-집이-되나">언제까지, 어떤 집이 되나</h2>
 <p>신청 기한은 새 계약이면 잔금일과 전입신고일 중 늦은 날부터 계약기간의 절반이 지나기 전, 갱신 계약이면 갱신 계약기간의 절반이 지나기 전입니다. 보증금은 수도권 7억원, 그 외 5억원 이하여야 하고 보증부 월세는 전월세전환율 6.5%로 환산합니다.</p>
@@ -1943,7 +1985,7 @@ font-size: 12pt;
 </ul></div>
 <div class="disclaimer"><span class="disclaimer-icon">ⓘ</span>본 글은 정보 제공 목적으로 작성되었으며, 법률 자문이나 투자 권유가 아닙니다. 구체적인 법률·세무 문제는 전문가와 상담하시기 바랍니다.</div>
 <div class="related-posts"><h4>관련 글</h4><ul><li><a href="https://www.lawnomics.com/2026/09/jeonse-deposit-recovery-guide.html">전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a></li><li><a href="https://www.lawnomics.com/2026/09/jongbuse-reform-2027-joint-ownership.html">종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a></li><li><a href="https://www.lawnomics.com/2026/08/jeonse-to-wolse-conversion-rate.html">전세 월세 전환율 계산법, 갱신 때 거절할 수 있을까</a></li></ul></div>
-<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">로노믹스 구독하기</div><div class="sub-desc">새 글 소식과 법·돈 이야기를 Threads에서 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">구독하기</a></div>
+<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">로노믹스 구독하기</div><div class="sub-desc">새 글 소식과 법·돈 이야기를 Threads에서 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">Threads에서 새 글 보기</a></div>
 </div>
 </div>
 </article>
@@ -1958,7 +2000,7 @@ font-size: 12pt;
 <!-- About Widget -->
 <div class='sidebar-widget about-widget'>
 <h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
-<p class='about-tagline-kr'>법과 숫자, 그 사이 이야기</p>
+<p class='about-tagline-kr'>법과 숫자로 지키는 내 돈</p>
 <p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
 <a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>+ 구독하기</a>
 </div>
@@ -1999,7 +2041,7 @@ font-size: 12pt;
 <!-- Recent Posts -->
 <div class='sidebar-widget' id='recent-posts-widget'>
 <h3>최근 글</h3>
-<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/09/jeonse-guarantee-insurance-fee-exclusions.html'>전세보증보험, 보증료 계산부터 못 받는 경우까지</a><div class='recent-date'>9월 15, 2026</div></li><li><a href='/2026/09/business-succession-or-sale.html'>가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a><div class='recent-date'>9월 8, 2026</div></li><li><a href='/2026/09/jeonse-deposit-recovery-guide.html'>전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a><div class='recent-date'>9월 7, 2026</div></li><li><a href='/2026/09/jongbuse-reform-2027-joint-ownership.html'>종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a><div class='recent-date'>9월 5, 2026</div></li><li><a href='/2026/09/overseas-student-support-gift-tax.html'>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a><div class='recent-date'>9월 2, 2026</div></li></ul>
+<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/09/jeonse-guarantee-insurance-fee-exclusions.html'>전세보증보험, 보증료 계산부터 못 받는 경우까지</a><div class='recent-date'>2026. 9. 15.</div></li><li><a href='/2026/09/business-succession-or-sale.html'>가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a><div class='recent-date'>2026. 9. 8.</div></li><li><a href='/2026/09/jeonse-deposit-recovery-guide.html'>전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a><div class='recent-date'>2026. 9. 7.</div></li><li><a href='/2026/09/jongbuse-reform-2027-joint-ownership.html'>종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a><div class='recent-date'>2026. 9. 5.</div></li><li><a href='/2026/09/overseas-student-support-gift-tax.html'>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a><div class='recent-date'>2026. 9. 2.</div></li></ul>
 </div>
 <!-- Table of Contents (shown on article pages via JS, sticky on scroll) -->
 <div class='sidebar-widget toc-widget' id='toc-container'>
@@ -2015,7 +2057,7 @@ font-size: 12pt;
 <div class='footer-inner'>
 <div class='footer-content'>
 <h3 class='footer-brand'>Law<span class='accent'>nomics</span></h3>
-<p class='footer-tagline'>법과 숫자, 그 사이 이야기</p>
+<p class='footer-tagline'>법과 숫자로 지키는 내 돈</p>
 <p class='footer-disclaimer'>본 블로그의 콘텐츠는 정보 제공 목적이며, 특정 투자를 권유하거나 법률 자문을 제공하지 않습니다. 투자 및 법률 관련 결정은 반드시 전문가와 상담하시기 바랍니다.</p>
 <div class='footer-links'>
 <a href='https://www.lawnomics.com/p/blog-page_545.html'>소개</a>
@@ -2029,6 +2071,10 @@ font-size: 12pt;
 <a href='https://www.lawnomics.com/p/blog-page_04.html'>개인정보처리방침</a>
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/p/blog-page.html'>문의</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/pontis/'>기업분석 리포트</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/feed.xml'>RSS</a>
 </div>
 </div>
 </div>
@@ -2228,9 +2274,8 @@ window.addEventListener('scroll', function() {
 
 //]]>
 </script>
-<!-- lawnomics-footer -->
-<div style='border-top:1px solid #e5d9cc; margin-top:40px; padding:18px 16px 14px;'><div style='display:flex; flex-wrap:wrap; gap:6px 18px; justify-content:center; font-size:13px;'><a href='https://www.lawnomics.com/p/blog-page_545.html' style='color:#8b7d6b; text-decoration:none;'>소개</a><a href='https://www.lawnomics.com/p/blog-page_04.html' style='color:#8b7d6b; text-decoration:none;'>개인정보처리방침</a><a href='https://www.lawnomics.com/p/blog-page_09.html' style='color:#8b7d6b; text-decoration:none;'>면책조항</a><a href='https://www.lawnomics.com/p/blog-page.html' style='color:#8b7d6b; text-decoration:none;'>문의</a><a href='https://www.lawnomics.com/pontis/' style='color:#8b7d6b; text-decoration:none;'>기업분석 리포트</a><a href='https://www.lawnomics.com/feeds/posts/default' style='color:#8b7d6b; text-decoration:none;'>RSS 구독</a></div><div style='text-align:center; font-size:12px; color:#8b7d6b; padding-top:6px;'>&#169; 로리움 컨설팅 (Lawrium Consulting)</div></div>
 
 
+<script>if(window.innerWidth>768){document.querySelectorAll('details.toc').forEach(function(d){d.open=true})}</script>
 </body>
 </html>

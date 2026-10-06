@@ -1374,15 +1374,56 @@ font-size: 12pt;
 <!-- data-ad-client=ca-pub-3770863964557178 -->
 
 <style>
-.article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210;font-size:17.5px;line-height:1.85}
-.article-body strong.num{color:#D35400;font-weight:700}
+.article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210}
+.article-body strong.num{color:#B94700;font-weight:700}
 .article-body h2,.article-body h3{text-wrap:balance}
 .article-body .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* 2026-10-06 디자인 1차 — output/analysis/2026-10-06_design_review.md (작은 글자·버튼은 AA 대비용 #B94700/#6B5D4F, 띠·막대는 #D35400 유지) */
+.article-body a{color:#B94700}
+.article-body details.toc{padding:14px 18px}
+.article-body details.toc summary{cursor:pointer;font-weight:700;font-size:15px;color:#1C1210;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.article-body details.toc summary::-webkit-details-marker{display:none}
+.article-body details.toc summary::after{content:'펼치기';font-weight:400;font-size:13px;color:#6B5D4F}
+.article-body details.toc[open] summary::after{content:'접기'}
+.article-body details.toc ol{margin:12px 0 2px 18px;padding:0}
+.article-body details.toc li{font-size:14px;line-height:1.75}
+.article-meta-bar{color:#6B5D4F;flex-wrap:wrap}
+.article-meta-bar time,.article-meta-bar .meta-item{white-space:nowrap}
+.article-meta-bar .meta-policy{color:#6B5D4F;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.post-date,.recent-date,.about-widget p,.footer-tagline,.footer-copyright{color:#6B5D4F}
+.footer-tagline,.footer-copyright{color:#B9A89A}
+.article-body p[style*="#8B7D6B"]{color:#6B5D4F!important}
+.subscribe-cta .sub-btn,.subscribe-btn,.search-btn,.back-to-top{background:#B94700!important}
+.subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B94700;outline-offset:2px}
+.post-card-thumb{height:auto!important;aspect-ratio:2.5/1}
+.pontis-strip{max-width:1080px;margin:14px auto 0;padding:0 16px}
+.pontis-strip a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;padding:10px 16px;border:1px solid #E5D9CC;border-radius:8px;background:#FAF6F1;font-size:13px;line-height:1.5;color:#6B5D4F;text-decoration:none}
+.pontis-strip a b{color:#1C1210;font-weight:700;margin-right:6px}
+.pontis-strip a .go{color:#B94700;font-weight:700;white-space:nowrap}
+.site-intro{max-width:1080px;margin:12px auto 0;padding:0 16px}
+.site-intro .box{background:#FFF;border:1px solid #E5D9CC;border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.site-intro strong{font-size:17px;color:#1C1210}
+.site-intro .desc{font-size:14px;color:#6B5D4F}
+.site-intro .chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.site-intro .chips a{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid #E5D9CC;color:#3A3330;text-decoration:none;background:#FAF6F1;white-space:nowrap;flex-shrink:0}
+@media (max-width:768px){
+#toc-container{display:none}
+.about-widget .subscribe-btn{display:none}
+.article-body,.article-body .econlaw-post{font-size:16px;line-height:1.8}
+.site-intro .chips{margin-left:0;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px;scrollbar-width:none}
+.site-intro .box{padding:14px 16px}
+.pontis-strip a .text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
 @media (max-width:640px){
 .article-body p.lead-answer{padding:14px 16px;font-size:16px}
-.article-body .table-scroll table{min-width:0;font-size:13px;width:100%}
-.article-body .table-scroll td,.article-body .table-scroll th,.article-body .table-scroll thead{min-width:0;padding:8px 6px;font-size:13px}
 .article-body .table-scroll{margin:20px 0}
+.article-body .table-scroll:not(.wide) table{min-width:0;width:100%;font-size:14px}
+.article-body .table-scroll:not(.wide) td,.article-body .table-scroll:not(.wide) th,.article-body .table-scroll:not(.wide) thead{min-width:0;padding:10px 8px;font-size:14px}
+.article-body .table-scroll.wide table{min-width:520px;font-size:13px}
+.article-body .table-scroll.wide td,.article-body .table-scroll.wide th{min-width:0;padding:8px 6px;font-size:13px}
+.article-body .table-scroll.wide{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)),linear-gradient(90deg,rgba(255,255,255,0),#fff 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.14),rgba(0,0,0,0)),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.14),rgba(0,0,0,0)) 100% 0;background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+.article-body .table-scroll.wide::after{content:'좌우로 밀어 비교';display:block;position:sticky;left:0;width:100%;font-size:12px;color:#6B5D4F;text-align:right;padding:4px 2px 0}
 }
 </style>
 </head>
@@ -1397,7 +1438,7 @@ font-size: 12pt;
 <span class='brand-bar'></span>
 <span class='brand-logo'>
 <span class='brand-name'>Law<span class='accent'>nomics</span></span>
-<span class='brand-tagline'>법과 숫자, 그 사이 이야기</span>
+<span class='brand-tagline'>법과 숫자로 지키는 내 돈</span>
 </span>
 </a>
 </div>
@@ -1422,12 +1463,14 @@ font-size: 12pt;
 <div class='article-meta-bar'>
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'></rect><line x1='16' x2='16' y1='2' y2='6'></line><line x1='8' x2='8' y1='2' y2='6'></line><line x1='3' x2='21' y1='10' y2='10'></line></svg>
-<time datetime='2026-09-02'>9월 2, 2026</time>
+<time datetime='2026-09-02'>발행 2026. 9. 2.</time>
 </span>
+
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>
 <span>Lawnomics</span>
 </span>
+<span class='meta-item'><a class='meta-policy' href='https://www.lawnomics.com/p/editorial-policy.html'>편집 원칙</a></span>
 </div>
 </div>
 <div class='article-body'>
@@ -1837,12 +1880,11 @@ font-size: 12pt;
 </script>
 <div class="econlaw-post">
 <div class="seo-description" data-desc="유학 자녀에게 보내는 생활비와 학비는 그 용도에 직접 쓰인 범위에서 증여세가 붙지 않습니다. 남긴 돈과 목돈은 다릅니다. 한국 비과세 경계, 자녀가 비거주자일 때 부모에게 오는 세금, 미국 Form 3520 신고, 영국 상속세 범위, 송금 절차를 조문으로 정리했습니다." style="display:none"></div>
-<div class="post-header-image"><img src="https://images.unsplash.com/photo-1625640776489-4186592c6f00?w=1080&q=80&fm=jpg" alt="해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지" width="1024" height="576" loading="lazy" /></div>
+<div class="post-header-image"><img src="https://images.unsplash.com/photo-1625640776489-4186592c6f00?w=1080&q=80&fm=jpg" alt="해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지" width="1024" height="576" loading="eager" fetchpriority="high" decoding="async" /></div>
 <p>부모가 유학 간 자녀에게 보내는 생활비와 학비는, 부양의무가 있는 사람이 사회통념에 맞는 범위에서 보내고 자녀가 그 용도에 직접 쓴 이상 증여세가 붙지 않습니다. 상속세 및 증여세법에는 숫자로 그은 선이 없습니다. 제46조 제5호가 "사회통념상 인정되는 피부양자의 생활비, 교육비"를 비과세로 두고, 시행령이 학자금 같은 목록에 "해당 용도에 직접 지출한 것"이라는 조건을 붙여 놓았습니다. 그래서 같은 송금이라도 학비로 나간 돈과 자녀 계좌에 남아 예금이 된 돈은 세법상 운명이 갈립니다.</p>
 <!--more-->
 <p>문제는 이 돈이 국경을 넘는다는 점입니다. 자녀가 있는 나라의 세법이 따로 있고, 자녀가 한국 세법상 거주자인지 비거주자인지에 따라 한국 안에서도 납세의무자가 바뀝니다. 미국은 받는 쪽에 신고 의무를 두고, 영국은 주는 쪽의 상속세 체계 안에서 봅니다. 여기에 은행 창구의 외국환거래규정이 하나 더 겹칩니다. 2026년 8월 말 기준 현행 조문으로, 이 네 겹을 순서대로 짚습니다.</p>
-<nav class="toc">
-<h4>목차</h4>
+<details class="toc"><summary>목차</summary>
 <ol>
   <li><a href="#생활비와-교육비에-증여세가-붙지-않는-이유">생활비와 교육비에 증여세가 붙지 않는 이유</a></li>
   <li><a href="#남긴-돈과-목돈--비과세의-경계">남긴 돈과 목돈, 비과세의 경계</a></li>
@@ -1854,7 +1896,7 @@ font-size: 12pt;
   <li><a href="#세-나라를-한-번에-보는-사례">세 나라를 한 번에 보는 사례</a></li>
   <li><a href="#송금-전에-남겨야-할-기록과-순서">송금 전에 남겨야 할 기록과 순서</a></li>
 </ol>
-</nav>
+</details>
 <a name="생활비와-교육비에-증여세가-붙지-않는-이유"></a>
 <h2 id="생활비와-교육비에-증여세가-붙지-않는-이유">생활비와 교육비에 증여세가 붙지 않는 이유</h2>
 <p>상속세 및 증여세법 제2조 제6호는 증여를 넓게 정의합니다. 명칭이나 형식과 관계없이 타인에게 무상으로 재산이나 이익을 옮기면 증여입니다. 이 정의만 보면 부모가 자녀 계좌로 보내는 돈은 전부 증여에 해당합니다. 그런데 제46조가 그중 몇 가지를 비과세로 빼 두었고, 제5호가 "사회통념상 인정되는 이재구호금품, 치료비, 피부양자의 생활비, 교육비, 그 밖에 이와 유사한 것으로서 대통령령으로 정하는 것"입니다.</p>
@@ -1891,7 +1933,7 @@ font-size: 12pt;
 <p>한국에 사는 부모에게는 이 7년 규칙보다 앞선 질문이 있습니다. 그 재산이 영국 상속세의 사정거리 안에 있는가입니다. Inheritance Tax Act 1984 제6조 제1항은 "영국 밖에 있는 재산은 그 재산에 대해 수익적 권리를 가진 개인이 long-term UK resident가 아니면 excluded property"라고 정합니다. long-term UK resident는 아래에서 영국 장기 거주자로 옮겨 쓰고, excluded property는 영국 상속세 과세 대상에서 제외되는 재산입니다. 이 문구는 Finance Act 2025 제44조로 2025년 4월 6일 들어왔고, domicile(영국법상 본거지 개념) 대신 거주 기간을 기준으로 삼는 쪽으로 바뀐 것입니다. 제3조 제2항은 excluded property가 재산에서 빠져나가는 처분은 이전가액 계산에서 고려하지 않는다고 정합니다.</p>
 <p>한국에 살고 영국 장기 거주자가 아닌 부모가 한국 계좌에서 영국의 자녀에게 보내는 돈은 이 조문에 따라 excluded property입니다. 7년 규칙이 작동할 재산 자체가 영국 상속세 밖에 있습니다. 그림이 바뀌는 것은 부모 쪽입니다. 부모가 영국으로 이주해 장기 거주자가 되면 그때부터는 국외 재산도 사정거리에 들어오고 7년 규칙이 의미를 갖습니다. 유학 보낸 자녀를 따라 부모까지 이주하는 가족이라면 순서를 거꾸로 생각해야 합니다. 증여를 먼저, 이주를 나중에.</p>
 <p>영국 쪽에서 실제로 부딪히는 것은 세금보다 은행입니다. 자녀 계좌로 큰돈이 들어오면 은행이 자금 출처를 묻습니다. 세금 문제와 무관한 자금세탁 방지 절차이고, 송금인과 관계, 송금 사유를 보여 주는 서류가 있으면 지연 없이 지나갑니다. 한국에서 학비 계좌와 생활비 계좌를 나누어 둔 기록이 여기서도 쓰입니다.</p>
-<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/overseas-student-support-gift-tax/card_three_countries_v2.png" alt="유학 자녀에게 보내는 돈을 한국·미국·영국이 각각 어떻게 보는지 비교한 카드: 한국은 사회통념상 생활비·교육비 비과세(상증세법 제46조)와 자녀가 비거주자일 때 부모 납세(국조법 제35조), 미국은 받는 쪽의 Form 3520 신고(26 U.S.C. §6039F, 연 10만 달러 초과)와 학교 직접 납부 학비 제외(§2503(e)), 영국은 상속세 체계와 excluded property(IHTA 1984 s.6)" width="1080" height="1600" loading="lazy" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
+<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/overseas-student-support-gift-tax/card_three_countries_v2.png" alt="유학 자녀에게 보내는 돈을 한국·미국·영국이 각각 어떻게 보는지 비교한 카드: 한국은 사회통념상 생활비·교육비 비과세(상증세법 제46조)와 자녀가 비거주자일 때 부모 납세(국조법 제35조), 미국은 받는 쪽의 Form 3520 신고(26 U.S.C. §6039F, 연 10만 달러 초과)와 학교 직접 납부 학비 제외(§2503(e)), 영국은 상속세 체계와 excluded property(IHTA 1984 s.6)" width="1080" height="1600" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
 <a name="은행-창구에서-걸리는-것--외국환거래규정"></a>
 <h2 id="은행-창구에서-걸리는-것--외국환거래규정">은행 창구에서 걸리는 것: 외국환거래규정</h2>
 <p>세법과 별개로 송금 자체를 규율하는 것이 재정경제부 고시인 외국환거래규정입니다. 제1-2조 제40호 나목은 외국의 교육기관에서 6개월 이상 수학할 목적으로 외국에 체재하는 국민을 해외유학생으로 정의하고, 유학 경비를 지급하는 부 또는 모가 국민인 거주자인 경우도 포함합니다. 제4-5조 제2항은 해외유학생이 경비를 지급하려면 거래외국환은행을 지정하고 해외유학을 입증하는 서류를 내야 하며, 그 뒤에도 매년 외국 교육기관의 장이 발급한 재학증명서 등으로 재학 사실을 입증하도록 정합니다. 학비를 학교로 직접 보내는 것도 이 절차 안에서 이루어집니다.</p>
@@ -1910,7 +1952,7 @@ font-size: 12pt;
 <p>첫째, 계좌를 나눕니다. 학비는 가능하면 학교로 직접, 생활비는 매달 자녀의 생활비 계좌로, 목돈은 따로 보냅니다. 직접 지출 요건을 증명하는 가장 쉬운 방법이 계좌 분리입니다. 둘째, 목돈은 증여로 다룹니다. 증여받은 달의 말일부터 3개월 안에 신고하고, 10년 합산 공제 5천만원을 어느 시점에 쓸지 가족 단위로 정합니다. 셋째, 자녀의 거주자 지위를 해마다 한 번 점검합니다. 영주권, 현지 취업, 배우자와의 정착 같은 변화가 있으면 그 이후 송금은 국제조세조정에 관한 법률 제35조의 문제가 되고 납세의무자가 부모로 바뀝니다. 넷째, 자녀 쪽 신고 달력을 만듭니다. 미국이라면 10만 달러 기준과 4월 15일, 영국이라면 은행의 자금 출처 서류입니다.</p>
 <p>부모가 자녀를 따라 이주할 계획이라면 순서를 한 번 더 봅니다. 자녀가 먼저 비거주자가 되고 부모가 뒤따르는 동안 보내는 돈은 국제조세조정에 관한 법률 제35조의 영역이고, 영국이라면 부모가 장기 거주자가 되는 시점부터 국외 재산이 상속세 사정거리에 들어옵니다. 큰 증여를 한다면 두 지위가 바뀌기 전에 하는 편이 조문상 단순합니다. 지위가 바뀐 뒤의 송금은 앞서 본 대로 제35조 아래에서 생활비와 교육비를 어떻게 볼지 문언만으로 단정하기 어려우므로, 그 시점의 송금은 전문가와 먼저 설계합니다.</p>
 <p>이 네 가지는 판단 기준과 절차의 안내이고, 개별 가정의 금액과 사정에 따라 결론은 달라집니다. 특히 자녀가 비거주자로 바뀌는 국면의 송금과 미국 세법상 지위 판정은 조문 해석이 갈리는 지점이 있으므로 실행 전에 국제조세를 다루는 세무 전문가와 확인하시기 바랍니다. 세금은 보내는 금액이 아니라 보내는 방식이 정합니다.</p>
-<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/overseas-student-support-gift-tax/card_checklist_v4.png" alt="유학 자녀 송금 전 확인할 다섯 가지 카드: 학비·생활비·목돈 계좌 분리, 목돈은 3개월 안에 증여 신고(상증세법 제68조, 10년 합산 공제 5천만원), 자녀 거주자 판정 매년 점검(국조법 제35조), 유학생 경비는 지정 은행과 재학증명(외국환거래규정 제4-5조), 미국 Form 3520과 영국 은행 자금 출처 서류" width="1080" height="1450" loading="lazy" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
+<div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/posts/overseas-student-support-gift-tax/card_checklist_v4.png" alt="유학 자녀 송금 전 확인할 다섯 가지 카드: 학비·생활비·목돈 계좌 분리, 목돈은 3개월 안에 증여 신고(상증세법 제68조, 10년 합산 공제 5천만원), 자녀 거주자 판정 매년 점검(국조법 제35조), 유학생 경비는 지정 은행과 재학증명(외국환거래규정 제4-5조), 미국 Form 3520과 영국 은행 자금 출처 서류" width="1080" height="1450" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
 <div class="references">
 <h4>참고자료</h4>
 <ul>
@@ -1929,7 +1971,7 @@ font-size: 12pt;
 </ul></div>
 <div class="disclaimer"><span class="disclaimer-icon">ⓘ</span>본 글은 정보 제공 목적으로 작성되었으며, 법률 자문이나 투자 권유가 아닙니다. 구체적인 법률·세무 문제는 전문가와 상담하시기 바랍니다.</div>
 <div class="related-posts"><h4>관련 글</h4><ul><li><a href="https://www.lawnomics.com/2026/09/business-succession-or-sale.html">가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a></li><li><a href="https://www.lawnomics.com/2026/08/gift-tax-no-filing-penalty.html">증여세 신고 안 하면 생기는 일, 가산세와 제척기간</a></li><li><a href="https://www.lawnomics.com/2026/08/family-loan-46-percent-origin.html">차용증 이자 4.6%는 어디서 나온 숫자인가</a></li></ul></div>
-<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">로노믹스 구독하기</div><div class="sub-desc">새 글 소식과 법·돈 이야기를 Threads에서 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">구독하기</a></div>
+<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">로노믹스 구독하기</div><div class="sub-desc">새 글 소식과 법·돈 이야기를 Threads에서 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">Threads에서 새 글 보기</a></div>
 </div>
 </div>
 </article>
@@ -1945,7 +1987,7 @@ font-size: 12pt;
 <!-- About Widget -->
 <div class='sidebar-widget about-widget'>
 <h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
-<p class='about-tagline-kr'>법과 숫자, 그 사이 이야기</p>
+<p class='about-tagline-kr'>법과 숫자로 지키는 내 돈</p>
 <p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
 <a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>+ 구독하기</a>
 </div>
@@ -1986,7 +2028,7 @@ font-size: 12pt;
 <!-- Recent Posts -->
 <div class='sidebar-widget' id='recent-posts-widget'>
 <h3>최근 글</h3>
-<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/09/jeonse-guarantee-insurance-fee-exclusions.html'>전세보증보험, 보증료 계산부터 못 받는 경우까지</a><div class='recent-date'>9월 15, 2026</div></li><li><a href='/2026/09/business-succession-or-sale.html'>가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a><div class='recent-date'>9월 8, 2026</div></li><li><a href='/2026/09/jeonse-deposit-recovery-guide.html'>전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a><div class='recent-date'>9월 7, 2026</div></li><li><a href='/2026/09/jongbuse-reform-2027-joint-ownership.html'>종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a><div class='recent-date'>9월 5, 2026</div></li><li><a href='/2026/09/overseas-student-support-gift-tax.html'>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a><div class='recent-date'>9월 2, 2026</div></li></ul>
+<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/09/jeonse-guarantee-insurance-fee-exclusions.html'>전세보증보험, 보증료 계산부터 못 받는 경우까지</a><div class='recent-date'>2026. 9. 15.</div></li><li><a href='/2026/09/business-succession-or-sale.html'>가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a><div class='recent-date'>2026. 9. 8.</div></li><li><a href='/2026/09/jeonse-deposit-recovery-guide.html'>전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a><div class='recent-date'>2026. 9. 7.</div></li><li><a href='/2026/09/jongbuse-reform-2027-joint-ownership.html'>종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a><div class='recent-date'>2026. 9. 5.</div></li><li><a href='/2026/09/overseas-student-support-gift-tax.html'>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a><div class='recent-date'>2026. 9. 2.</div></li></ul>
 </div>
 <!-- Table of Contents (shown on article pages via JS, sticky on scroll) -->
 <div class='sidebar-widget toc-widget' id='toc-container'>
@@ -2002,7 +2044,7 @@ font-size: 12pt;
 <div class='footer-inner'>
 <div class='footer-content'>
 <h3 class='footer-brand'>Law<span class='accent'>nomics</span></h3>
-<p class='footer-tagline'>법과 숫자, 그 사이 이야기</p>
+<p class='footer-tagline'>법과 숫자로 지키는 내 돈</p>
 <p class='footer-disclaimer'>본 블로그의 콘텐츠는 정보 제공 목적이며, 특정 투자를 권유하거나 법률 자문을 제공하지 않습니다. 투자 및 법률 관련 결정은 반드시 전문가와 상담하시기 바랍니다.</p>
 <div class='footer-links'>
 <a href='https://www.lawnomics.com/p/blog-page_545.html'>소개</a>
@@ -2016,6 +2058,10 @@ font-size: 12pt;
 <a href='https://www.lawnomics.com/p/blog-page_04.html'>개인정보처리방침</a>
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/p/blog-page.html'>문의</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/pontis/'>기업분석 리포트</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/feed.xml'>RSS</a>
 </div>
 </div>
 </div>
@@ -2215,9 +2261,8 @@ window.addEventListener('scroll', function() {
 
 //]]>
 </script>
-<!-- lawnomics-footer -->
-<div style='border-top:1px solid #e5d9cc; margin-top:40px; padding:18px 16px 14px;'><div style='display:flex; flex-wrap:wrap; gap:6px 18px; justify-content:center; font-size:13px;'><a href='https://www.lawnomics.com/p/blog-page_545.html' style='color:#8b7d6b; text-decoration:none;'>소개</a><a href='https://www.lawnomics.com/p/blog-page_04.html' style='color:#8b7d6b; text-decoration:none;'>개인정보처리방침</a><a href='https://www.lawnomics.com/p/blog-page_09.html' style='color:#8b7d6b; text-decoration:none;'>면책조항</a><a href='https://www.lawnomics.com/p/blog-page.html' style='color:#8b7d6b; text-decoration:none;'>문의</a><a href='https://www.lawnomics.com/pontis/' style='color:#8b7d6b; text-decoration:none;'>기업분석 리포트</a><a href='https://www.lawnomics.com/feeds/posts/default' style='color:#8b7d6b; text-decoration:none;'>RSS 구독</a></div><div style='text-align:center; font-size:12px; color:#8b7d6b; padding-top:6px;'>&#169; 로리움 컨설팅 (Lawrium Consulting)</div></div>
 
 
+<script>if(window.innerWidth>768){document.querySelectorAll('details.toc').forEach(function(d){d.open=true})}</script>
 </body>
 </html>

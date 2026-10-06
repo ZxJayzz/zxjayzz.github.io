@@ -1374,15 +1374,56 @@ font-size: 12pt;
 <!-- data-ad-client=ca-pub-3770863964557178 -->
 
 <style>
-.article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210;font-size:17.5px;line-height:1.85}
-.article-body strong.num{color:#D35400;font-weight:700}
+.article-body p.lead-answer{background:#FAF6F1;border-left:4px solid #D35400;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:#1C1210}
+.article-body strong.num{color:#B94700;font-weight:700}
 .article-body h2,.article-body h3{text-wrap:balance}
 .article-body .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* 2026-10-06 디자인 1차 — output/analysis/2026-10-06_design_review.md (작은 글자·버튼은 AA 대비용 #B94700/#6B5D4F, 띠·막대는 #D35400 유지) */
+.article-body a{color:#B94700}
+.article-body details.toc{padding:14px 18px}
+.article-body details.toc summary{cursor:pointer;font-weight:700;font-size:15px;color:#1C1210;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.article-body details.toc summary::-webkit-details-marker{display:none}
+.article-body details.toc summary::after{content:'펼치기';font-weight:400;font-size:13px;color:#6B5D4F}
+.article-body details.toc[open] summary::after{content:'접기'}
+.article-body details.toc ol{margin:12px 0 2px 18px;padding:0}
+.article-body details.toc li{font-size:14px;line-height:1.75}
+.article-meta-bar{color:#6B5D4F;flex-wrap:wrap}
+.article-meta-bar time,.article-meta-bar .meta-item{white-space:nowrap}
+.article-meta-bar .meta-policy{color:#6B5D4F;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.post-date,.recent-date,.about-widget p,.footer-tagline,.footer-copyright{color:#6B5D4F}
+.footer-tagline,.footer-copyright{color:#B9A89A}
+.article-body p[style*="#8B7D6B"]{color:#6B5D4F!important}
+.subscribe-cta .sub-btn,.subscribe-btn,.search-btn,.back-to-top{background:#B94700!important}
+.subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B94700;outline-offset:2px}
+.post-card-thumb{height:auto!important;aspect-ratio:2.5/1}
+.pontis-strip{max-width:1080px;margin:14px auto 0;padding:0 16px}
+.pontis-strip a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;padding:10px 16px;border:1px solid #E5D9CC;border-radius:8px;background:#FAF6F1;font-size:13px;line-height:1.5;color:#6B5D4F;text-decoration:none}
+.pontis-strip a b{color:#1C1210;font-weight:700;margin-right:6px}
+.pontis-strip a .go{color:#B94700;font-weight:700;white-space:nowrap}
+.site-intro{max-width:1080px;margin:12px auto 0;padding:0 16px}
+.site-intro .box{background:#FFF;border:1px solid #E5D9CC;border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.site-intro strong{font-size:17px;color:#1C1210}
+.site-intro .desc{font-size:14px;color:#6B5D4F}
+.site-intro .chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.site-intro .chips a{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid #E5D9CC;color:#3A3330;text-decoration:none;background:#FAF6F1;white-space:nowrap;flex-shrink:0}
+@media (max-width:768px){
+#toc-container{display:none}
+.about-widget .subscribe-btn{display:none}
+.article-body,.article-body .econlaw-post{font-size:16px;line-height:1.8}
+.site-intro .chips{margin-left:0;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px;scrollbar-width:none}
+.site-intro .box{padding:14px 16px}
+.pontis-strip a .text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
 @media (max-width:640px){
 .article-body p.lead-answer{padding:14px 16px;font-size:16px}
-.article-body .table-scroll table{min-width:0;font-size:13px;width:100%}
-.article-body .table-scroll td,.article-body .table-scroll th,.article-body .table-scroll thead{min-width:0;padding:8px 6px;font-size:13px}
 .article-body .table-scroll{margin:20px 0}
+.article-body .table-scroll:not(.wide) table{min-width:0;width:100%;font-size:14px}
+.article-body .table-scroll:not(.wide) td,.article-body .table-scroll:not(.wide) th,.article-body .table-scroll:not(.wide) thead{min-width:0;padding:10px 8px;font-size:14px}
+.article-body .table-scroll.wide table{min-width:520px;font-size:13px}
+.article-body .table-scroll.wide td,.article-body .table-scroll.wide th{min-width:0;padding:8px 6px;font-size:13px}
+.article-body .table-scroll.wide{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)),linear-gradient(90deg,rgba(255,255,255,0),#fff 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.14),rgba(0,0,0,0)),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.14),rgba(0,0,0,0)) 100% 0;background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+.article-body .table-scroll.wide::after{content:'좌우로 밀어 비교';display:block;position:sticky;left:0;width:100%;font-size:12px;color:#6B5D4F;text-align:right;padding:4px 2px 0}
 }
 </style>
 </head>
@@ -1397,7 +1438,7 @@ font-size: 12pt;
 <span class='brand-bar'></span>
 <span class='brand-logo'>
 <span class='brand-name'>Law<span class='accent'>nomics</span></span>
-<span class='brand-tagline'>법과 숫자, 그 사이 이야기</span>
+<span class='brand-tagline'>법과 숫자로 지키는 내 돈</span>
 </span>
 </a>
 </div>
@@ -1422,12 +1463,14 @@ font-size: 12pt;
 <div class='article-meta-bar'>
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'></rect><line x1='16' x2='16' y1='2' y2='6'></line><line x1='8' x2='8' y1='2' y2='6'></line><line x1='3' x2='21' y1='10' y2='10'></line></svg>
-<time datetime='2026-08-06'>8월 6, 2026</time>
+<time datetime='2026-08-06'>발행 2026. 8. 6.</time>
 </span>
+
 <span class='meta-item'>
 <svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>
 <span>Lawnomics</span>
 </span>
+<span class='meta-item'><a class='meta-policy' href='https://www.lawnomics.com/p/editorial-policy.html'>편집 원칙</a></span>
 </div>
 </div>
 <div class='article-body'>
@@ -1834,12 +1877,11 @@ font-size: 12pt;
 </script>
 <div class="econlaw-post">
 <div class="seo-description" data-desc="8월 3일 발표된 세법개정안이 1주택 장기보유특별공제를 거주 기준으로 바꿉니다. 보유 12년·거주 2년이면 세 부담이 8,135만 원에서 1억 4,777만 원으로. 연도별 개편 구조와 매도 타이밍 시뮬레이션을 정리했습니다." style="display:none"></div>
-<div class="post-header-image"><img src="https://images.unsplash.com/photo-1651103719789-4c505190a1b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE5MDI5fDB8MXxzZWFyY2h8M3x8c2VvdWwlMjBhcGFydG1lbnQlMjBjb21wbGV4JTIwYWVyaWFsfGVufDB8MHx8fDE3ODYwMDEwNDl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="2026 장특공제 개편, 1주택 양도세 얼마나 오르나" width="1024" height="576" loading="lazy" /></div>
+<div class="post-header-image"><img src="https://images.unsplash.com/photo-1651103719789-4c505190a1b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE5MDI5fDB8MXxzZWFyY2h8M3x8c2VvdWwlMjBhcGFydG1lbnQlMjBjb21wbGV4JTIwYWVyaWFsfGVufDB8MHx8fDE3ODYwMDEwNDl8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="2026 장특공제 개편, 1주택 양도세 얼마나 오르나" width="1024" height="576" loading="eager" fetchpriority="high" decoding="async" /></div>
 <p class="lead-answer">같은 아파트를 12년 보유하고 판다고 할 때, 그 집에 2년을 살았던 사람이 낼 세금(지방소득세 포함)은 지금 팔면 약 8,135만 원이지만 2029년에 팔면 약 1억 4,777만 원이 됩니다. 집도, 보유 기간도, 양도차익도 똑같은데 세금이 6,600만 원 넘게 벌어집니다. 8월 3일 정부가 발표한 2026년 세제개편안이 1세대 1주택 장기보유특별공제의 축을 '보유'에서 '거주'로 통째로 옮기기 때문입니다.</p>
 <!--more-->
 <p>개편안이 바꾸는 것은 공제 구조만이 아닙니다. 세금이 얼마나, 언제부터 달라지는지가 매도 타이밍 판단 자체를 바꿔놓습니다. 다만 이것은 아직 정부 개정안입니다. 입법예고(8월 20일까지)와 국회 심의를 거쳐야 하므로 내용이 바뀔 수 있다는 전제 위에서 읽어주시기 바랍니다.</p>
-<nav class="toc">
-<h4>목차</h4>
+<details class="toc"><summary>목차</summary>
 <ol>
   <li><a href="#보유-4----거주-4-가-거주-8-로---개편안-해부">보유 4% + 거주 4%가 거주 8%로 — 개편안 해부</a></li>
   <li><a href="#이-개편은-갑자기-나온-것이-아니다---장특공제-축소의-연혁">이 개편은 갑자기 나온 것이 아니다 — 장특공제 축소의 연혁</a></li>
@@ -1849,7 +1891,7 @@ font-size: 12pt;
   <li><a href="#시장의-첫-반응---매물은-잠기고--불똥은-세입자에게">시장의 첫 반응 — 매물은 잠기고, 불똥은 세입자에게</a></li>
   <li><a href="#세법개정안의-남은-절차---확정이-아니라는-사실이-전략의-일부다">세법개정안의 남은 절차 — 확정이 아니라는 사실이 전략의 일부다</a></li>
 </ol>
-</nav>
+</details>
 <a name="보유-4----거주-4-가-거주-8-로---개편안-해부"></a>
 <h2 id="보유-4----거주-4-가-거주-8-로---개편안-해부">보유 4% + 거주 4%가 거주 8%로 — 개편안 해부</h2>
 <p>현행 제도부터 정확히 놓고 시작하겠습니다. 1세대 1주택자가 양도가액 12억 원을 넘는 고가주택을 팔면, 12억 초과분에 해당하는 양도차익에 세금이 붙습니다. 이때 장기보유특별공제가 과세 대상 차익을 깎아주는데, 1주택자는 특례가 적용되어 보유기간에 연 4%(10년, 최대 40%), 거주기간에 연 4%(10년, 최대 40%)씩, 합쳐서 최대 80%까지 공제받습니다. 보유기간 중 거주가 2년 이상이어야 이 특례를 쓸 수 있고, 거주 없이 보유만 했다면 일반 공제율(연 2%, 최대 30%)로 떨어집니다.</p>
@@ -1876,7 +1918,7 @@ font-size: 12pt;
 <p><strong>사례 B — 보유 12년, 거주 10년 (계속 살아온 실거주자).</strong> 같은 금액 조건이라면 현행에서도 80%, 2029년에도 거주 10년 × 8% = 80%로 공제율이 같습니다. 공제액 3억 8,400만 원은 한도 10억 원에 한참 못 미치므로 한도의 영향도 없습니다. 세금은 양쪽 모두 약 1,901만 원. <strong>이 가격대에서는 오래 산 사람의 세금이 한 푼도 오르지 않습니다.</strong></p>
 <p><strong>사례 C — 초고가 주택, 보유·거주 10년 이상.</strong> 20억 원에 취득해 60억 원에 파는 경우입니다. 과세 대상 차익은 40억 × (60억 − 12억) ÷ 60억 = 32억 원. 공제율은 양쪽 다 80%지만, 공제액 25억 6,000만 원이 2029년 한도 10억 원에 걸립니다. 현행 세금 약 2억 5,500만 원이 2029년 기준 약 10억 1,500만 원으로, <strong class="num">4배가 됩니다.</strong></p>
 <p>10년을 실제로 살았어도 이렇습니다. 한도 신설은 거주 여부와 무관하게 초고가 주택의 양도차익 자체를 정조준하는 장치입니다.</p>
-<div class="table-scroll"><table><thead><tr><th>사례</th><th>조건</th><th>현행 세금</th><th>2029년 기준 (개정안)</th><th>차이</th></tr></thead><tbody><tr><td>A</td><td>취득 8억→양도 20억, 보유 12년·거주 2년</td><td>약 8,135만 원</td><td>약 1억 4,777만 원</td><td>+6,642만 원 (1.8배)</td></tr><tr><td>B</td><td>취득 8억→양도 20억, 보유 12년·거주 10년</td><td>약 1,901만 원</td><td>약 1,901만 원</td><td>변화 없음</td></tr><tr><td>C</td><td>취득 20억→양도 60억, 보유·거주 10년</td><td>약 2억 5,500만 원</td><td>약 10억 1,500만 원</td><td>+7.6억 원 (4.0배)</td></tr></tbody></table></div>
+<div class="table-scroll wide"><table><thead><tr><th>사례</th><th>조건</th><th>현행 세금</th><th>2029년 기준 (개정안)</th><th>차이</th></tr></thead><tbody><tr><td>A</td><td>취득 8억→양도 20억, 보유 12년·거주 2년</td><td>약 8,135만 원</td><td>약 1억 4,777만 원</td><td>+6,642만 원 (1.8배)</td></tr><tr><td>B</td><td>취득 8억→양도 20억, 보유 12년·거주 10년</td><td>약 1,901만 원</td><td>약 1,901만 원</td><td>변화 없음</td></tr><tr><td>C</td><td>취득 20억→양도 60억, 보유·거주 10년</td><td>약 2억 5,500만 원</td><td>약 10억 1,500만 원</td><td>+7.6억 원 (4.0배)</td></tr></tbody></table></div>
 <p>※ 2029년 수치는 2026년 8월 3일 정부 세제개편안 기준이며, 국회 심의 과정에서 달라질 수 있습니다. 표의 세금은 기본공제 250만 원 기준으로, 개편안의 기본공제 확대(10년 거주·30억 원 이하, 아래 섹션 참조)를 반영하면 사례 B의 세금은 이보다 줄어듭니다.</p>
 <p>극단값 사이의 중간 지대도 확인해 보겠습니다. 사례 A와 같은 금액 조건에서 거주가 5년이라면, 현행 공제율은 보유 40% + 거주 20% = 60%로 세금 약 5,728만 원, 2029년 기준으로는 거주 40%만 남아 약 9,741만 원이 됩니다. 4,000만 원 넘게 오르는 셈입니다. 거주 연수가 어중간한 구간일수록 개편 전후의 격차가 수천만 원 단위로 벌어진다는 뜻이고, 현실의 매도 사례는 이 중간 구간에 적지 않게 몰려 있을 것으로 보입니다.</p>
 <p>자기 숫자로 계산해보는 절차는 네 단계입니다. 먼저 전체 양도차익에 (양도가액 − 12억) ÷ 양도가액을 곱해 과세 대상 차익을 구하고, 거기에 자신의 공제율을 곱해 공제액을 뺍니다. 남은 금액에서 기본공제 250만 원을 빼면 과세표준이 나오고, 여기에 6~45% 누진세율을 적용한 뒤 10%를 지방소득세로 더하면 끝입니다. 현행 공제율과 2029년 공제율(거주 연수 × 8%)로 각각 한 번씩 계산해보면 자신의 '개편 노출도'가 바로 나옵니다.</p>
@@ -1888,7 +1930,7 @@ font-size: 12pt;
 <p>둘째, <strong>거주로 인정해주는 예외가 신설된다는 점</strong>입니다. 개편안은 취학·전근·질병·해외체류·부모 봉양 같은 불가피한 사유로 다른 지역에 산 기간을 최대 3년까지 거주기간으로 인정하고, 재개발·재건축 사업기간의 절반도 인정하는 보완 장치를 함께 담았습니다. 사례 A 유형이라도 전근 발령 서류 같은 증빙이 있으면 실제 공제율은 계산보다 높아질 수 있습니다. 어떤 사유가 어디까지 인정될지는 시행령에서 정해질 것이므로, 해당된다면 증빙을 지금부터 모아둘 필요가 있습니다.</p>
 <p>개편안은 거주요건을 우회하던 통로들도 함께 좁힙니다. 임대료를 5% 이내로 올린 집주인에게 거주요건을 면제해주던 상생임대주택 특례는 적용기한이 끝난 뒤 계약 종료 후 1년 이내 양도분으로 한정되고, 임대의무기간이 끝나 자동 등록말소된 조정대상지역 매입임대(임대사업자가 기존 주택을 사들여 등록한 임대주택) 아파트에 남아 있던 양도세 중과 배제와 장특공제 우대도 단계적으로 폐지됩니다. 거주 없이 거주자 대접을 받을 수 있던 예외들이 하나씩 닫히는 것입니다.</p>
 <p>셋째, <strong>매도 연도에 따라 세금이 계단식으로 오른다는 점</strong>입니다. 사례 A의 조건으로 매도 시점만 바꿔 계산하면 이렇게 됩니다.</p>
-<div class="table-scroll"><table><thead><tr><th>매도 시점</th><th>적용 공제 구조</th><th>공제율</th><th>세금 (지방소득세 포함)</th></tr></thead><tbody><tr><td>2027년까지</td><td>현행 (보유 4% + 거주 4%)</td><td>48%</td><td>약 8,135만 원</td></tr><tr><td>2028년 (개정안 경과)</td><td>거주 6% + 보유 2%</td><td>32%</td><td>약 1억 1,398만 원</td></tr><tr><td>2029년 이후 (개정안)</td><td>거주 8% 단일</td><td>16%</td><td>약 1억 4,777만 원</td></tr></tbody></table></div>
+<div class="table-scroll wide"><table><thead><tr><th>매도 시점</th><th>적용 공제 구조</th><th>공제율</th><th>세금 (지방소득세 포함)</th></tr></thead><tbody><tr><td>2027년까지</td><td>현행 (보유 4% + 거주 4%)</td><td>48%</td><td>약 8,135만 원</td></tr><tr><td>2028년 (개정안 경과)</td><td>거주 6% + 보유 2%</td><td>32%</td><td>약 1억 1,398만 원</td></tr><tr><td>2029년 이후 (개정안)</td><td>거주 8% 단일</td><td>16%</td><td>약 1억 4,777만 원</td></tr></tbody></table></div>
 <p>한 해 넘길 때마다 3,300만 원 안팎씩 세금이 오르는 계단입니다. 거주가 짧은 상태에서 어차피 몇 년 안에 팔 계획이었다면, 이 계단표가 매도 시점 판단의 출발점이 됩니다.</p>
 <p>반대로 지금부터 실거주를 시작해 거주 연수를 쌓는 선택지도 있습니다. 2029년 기준으로 거주 1년은 공제율 8%p — 사례 A의 조건이라면 공제액이 약 3,840만 원 늘어 세금이 약 1,700만 원 줄어듭니다. "지금 파느냐"와 "들어가 사느냐" 사이의 손익을 자기 숫자로 계산해보는 것이 이 개편에 대한 가장 실질적인 대응입니다.</p>
 <a name="함께-바뀌는-양도세-종부세-조항들---당근도-있다"></a>
@@ -1933,7 +1975,7 @@ font-size: 12pt;
 </ul></div>
 <div class="disclaimer"><span class="disclaimer-icon">ⓘ</span>본 글은 정보 제공 목적으로 작성되었으며, 법률 자문이나 투자 권유가 아닙니다. 구체적인 법률·세무 문제는 전문가와 상담하시기 바랍니다.</div>
 <div class="related-posts"><h4>관련 글</h4><ul><li><a href="https://www.lawnomics.com/2026/09/jeonse-guarantee-insurance-fee-exclusions.html">전세보증보험, 보증료 계산부터 못 받는 경우까지</a></li><li><a href="https://www.lawnomics.com/2026/09/jeonse-deposit-recovery-guide.html">전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a></li><li><a href="https://www.lawnomics.com/2026/09/jongbuse-reform-2027-joint-ownership.html">종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a></li></ul></div>
-<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">로노믹스 구독하기</div><div class="sub-desc">새 글 소식과 법·돈 이야기를 Threads에서 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">구독하기</a></div>
+<div class="subscribe-cta"><div class="sub-text"><div class="sub-title">로노믹스 구독하기</div><div class="sub-desc">새 글 소식과 법·돈 이야기를 Threads에서 받아보세요.</div></div><a href="https://www.threads.com/@lawnomics_kr" class="sub-btn" target="_blank">Threads에서 새 글 보기</a></div>
 </div>
 </div>
 </article>
@@ -1949,7 +1991,7 @@ font-size: 12pt;
 <!-- About Widget -->
 <div class='sidebar-widget about-widget'>
 <h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
-<p class='about-tagline-kr'>법과 숫자, 그 사이 이야기</p>
+<p class='about-tagline-kr'>법과 숫자로 지키는 내 돈</p>
 <p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
 <a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>+ 구독하기</a>
 </div>
@@ -1990,7 +2032,7 @@ font-size: 12pt;
 <!-- Recent Posts -->
 <div class='sidebar-widget' id='recent-posts-widget'>
 <h3>최근 글</h3>
-<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/09/jeonse-guarantee-insurance-fee-exclusions.html'>전세보증보험, 보증료 계산부터 못 받는 경우까지</a><div class='recent-date'>9월 15, 2026</div></li><li><a href='/2026/09/business-succession-or-sale.html'>가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a><div class='recent-date'>9월 8, 2026</div></li><li><a href='/2026/09/jeonse-deposit-recovery-guide.html'>전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a><div class='recent-date'>9월 7, 2026</div></li><li><a href='/2026/09/jongbuse-reform-2027-joint-ownership.html'>종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a><div class='recent-date'>9월 5, 2026</div></li><li><a href='/2026/09/overseas-student-support-gift-tax.html'>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a><div class='recent-date'>9월 2, 2026</div></li></ul>
+<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/09/jeonse-guarantee-insurance-fee-exclusions.html'>전세보증보험, 보증료 계산부터 못 받는 경우까지</a><div class='recent-date'>2026. 9. 15.</div></li><li><a href='/2026/09/business-succession-or-sale.html'>가업승계와 회사 매각, 상속세 관점에서 갈림길에 선 오너에게</a><div class='recent-date'>2026. 9. 8.</div></li><li><a href='/2026/09/jeonse-deposit-recovery-guide.html'>전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a><div class='recent-date'>2026. 9. 7.</div></li><li><a href='/2026/09/jongbuse-reform-2027-joint-ownership.html'>종부세 개편안, 비거주 1주택·공동명의 얼마 오르나</a><div class='recent-date'>2026. 9. 5.</div></li><li><a href='/2026/09/overseas-student-support-gift-tax.html'>해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a><div class='recent-date'>2026. 9. 2.</div></li></ul>
 </div>
 <!-- Table of Contents (shown on article pages via JS, sticky on scroll) -->
 <div class='sidebar-widget toc-widget' id='toc-container'>
@@ -2006,7 +2048,7 @@ font-size: 12pt;
 <div class='footer-inner'>
 <div class='footer-content'>
 <h3 class='footer-brand'>Law<span class='accent'>nomics</span></h3>
-<p class='footer-tagline'>법과 숫자, 그 사이 이야기</p>
+<p class='footer-tagline'>법과 숫자로 지키는 내 돈</p>
 <p class='footer-disclaimer'>본 블로그의 콘텐츠는 정보 제공 목적이며, 특정 투자를 권유하거나 법률 자문을 제공하지 않습니다. 투자 및 법률 관련 결정은 반드시 전문가와 상담하시기 바랍니다.</p>
 <div class='footer-links'>
 <a href='https://www.lawnomics.com/p/blog-page_545.html'>소개</a>
@@ -2020,6 +2062,10 @@ font-size: 12pt;
 <a href='https://www.lawnomics.com/p/blog-page_04.html'>개인정보처리방침</a>
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/p/blog-page.html'>문의</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/pontis/'>기업분석 리포트</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/feed.xml'>RSS</a>
 </div>
 </div>
 </div>
@@ -2219,9 +2265,8 @@ window.addEventListener('scroll', function() {
 
 //]]>
 </script>
-<!-- lawnomics-footer -->
-<div style='border-top:1px solid #e5d9cc; margin-top:40px; padding:18px 16px 14px;'><div style='display:flex; flex-wrap:wrap; gap:6px 18px; justify-content:center; font-size:13px;'><a href='https://www.lawnomics.com/p/blog-page_545.html' style='color:#8b7d6b; text-decoration:none;'>소개</a><a href='https://www.lawnomics.com/p/blog-page_04.html' style='color:#8b7d6b; text-decoration:none;'>개인정보처리방침</a><a href='https://www.lawnomics.com/p/blog-page_09.html' style='color:#8b7d6b; text-decoration:none;'>면책조항</a><a href='https://www.lawnomics.com/p/blog-page.html' style='color:#8b7d6b; text-decoration:none;'>문의</a><a href='https://www.lawnomics.com/pontis/' style='color:#8b7d6b; text-decoration:none;'>기업분석 리포트</a><a href='https://www.lawnomics.com/feeds/posts/default' style='color:#8b7d6b; text-decoration:none;'>RSS 구독</a></div><div style='text-align:center; font-size:12px; color:#8b7d6b; padding-top:6px;'>&#169; 로리움 컨설팅 (Lawrium Consulting)</div></div>
 
 
+<script>if(window.innerWidth>768){document.querySelectorAll('details.toc').forEach(function(d){d.open=true})}</script>
 </body>
 </html>
