@@ -35,8 +35,6 @@ gtag('config', 'G-YVS035JLZD');
 <!-- SEO: Sitemap (canonical, feed는 all-head-content가 처리) -->
 <link href='https://www.lawnomics.com/sitemap.xml' rel='sitemap' type='application/xml'/>
 <!-- Performance: Preconnect -->
-<link href='https://fonts.googleapis.com' rel='preconnect'/>
-<link crossorigin='crossorigin' href='https://fonts.gstatic.com' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <!-- SEO: Open Graph (og:title, og:description, og:url, og:image는 all-head-content가 자동 생성) -->
 <meta content='article' property='og:type'/>
@@ -78,12 +76,7 @@ gtag('config', 'G-YVS035JLZD');
   "name": "로노믹스",
   "alternateName": "Lawnomics",
   "url": "https://www.lawnomics.com/",
-  "inLanguage": "ko-KR",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.lawnomics.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  "inLanguage": "ko-KR"
 }
 </script>
 <style id='page-skin-1' type='text/css'><!--
@@ -105,7 +98,7 @@ padding: 0;
 box-sizing: border-box;
 }
 body {
-font-family: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 color: #3A3330;
 background-color: #FAF6F1;
 line-height: 1.8;
@@ -168,7 +161,7 @@ line-height: 1.15;
 font-size: 24px;
 font-weight: 900;
 letter-spacing: -0.5px;
-font-family: 'Inter', 'Pretendard', -apple-system, sans-serif;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
 }
 .blog-title .brand-name .accent {
 color: #D35400;
@@ -618,7 +611,7 @@ padding: 18px;
 .about-brand {
 font-size: 17px;
 font-weight: 900;
-font-family: 'Inter', 'Pretendard', -apple-system, sans-serif;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
 letter-spacing: -0.5px;
 margin-bottom: 2px;
 }
@@ -861,7 +854,7 @@ text-align: center;
 color: #FFFFFF;
 font-size: 22px;
 font-weight: 900;
-font-family: 'Inter', 'Pretendard', -apple-system, sans-serif;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
 letter-spacing: -0.5px;
 margin-bottom: 4px;
 }
@@ -1347,11 +1340,10 @@ font-size: 12pt;
 
 --></style>
 <!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap' rel='stylesheet'/>
 <!-- Additional inline styles for elements outside b:skin -->
 <style type='text/css'>
   /* Pretendard CDN fallback */
-  @import url('//cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+  
 
 </style>
 <!-- lawnomics-jsonld -->
@@ -1427,7 +1419,49 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .article-body .table-scroll.wide{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)),linear-gradient(90deg,rgba(255,255,255,0),#fff 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.14),rgba(0,0,0,0)),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.14),rgba(0,0,0,0)) 100% 0;background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
 .article-body .table-scroll.wide::after{content:'좌우로 밀어 비교';display:block;position:sticky;left:0;width:100%;font-size:12px;color:#6B5D4F;text-align:right;padding:4px 2px 0}
 }
+/* 2026-10-18 목록 화면(A안): 맨 위 도구 안내 띠와 소개 상자의 폭을 머리글·본문과 맞추고, 소개 상자는 제목·소개·주제 칩 세 줄 */
+.site-intro{max-width:1200px;padding:0 24px}
+.site-intro .box{display:block;padding:24px 28px}
+.site-intro strong{display:block;font-size:26px;line-height:1.4;margin:0 0 6px}
+.site-intro .desc{display:block;font-size:16px;line-height:1.65;color:#6B5D4F}
+.site-intro .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;width:auto;overflow:visible}
+.page-list .content-wrap{padding-top:28px}
+.home-section-title{font-size:16px;font-weight:800;color:#1C1210;margin:0 0 14px;padding-bottom:9px;position:relative;border-bottom:1px solid #E5D9CC}
+.home-section-title::after{content:'';position:absolute;left:0;bottom:-1px;width:40px;height:2px;background:#D35400}
+.page-list .about-widget,.page-list #recent-posts-widget{display:none}
+.sub-widget .sub-btn{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:8px;background:#B94700;color:#FFFFFF;font-weight:700;font-size:14px;text-decoration:none}
+@media (min-width:769px){.page-list .main-content .post-card:first-of-type .post-card-thumb{aspect-ratio:3.5/1!important}}
+/* 2026-10-21 디자인 공개 묶음: 대비 미달 다섯 곳(WCAG 2.2 작은 글자 4.5 대 1), 초점선은 사이트 주황 하나로, 홈 대표 제목(H1) */
+.disclaimer,.post-disclaimer{color:#6B5D4F}
+.post-summary{color:#6B5D4F}
+.read-more{color:#B94700}
+.back-to-top{color:#FFFFFF!important}
+.badge-realestate{color:#1D7F46}
+:focus-visible{outline:2px solid #B94700;outline-offset:2px}
+.site-intro h1.site-h1{display:block;margin:0 0 6px;font-size:26px;line-height:1.4;font-weight:800;color:#1C1210}
+@media (max-width:768px){.site-intro h1.site-h1{font-size:22px}}
+.pontis-strip{max-width:1200px;padding:0 24px}   /* 2026-10-21 도구 공개 전까지: 옛 Pontis 띠를 A안 소개 상자 폭에 맞춘다(공개 때 지움) */
+@media (max-width:768px){
+.site-intro{padding:0 12px}
+.site-intro .box{padding:18px 16px}
+.site-intro strong{font-size:22px}
+.site-intro .desc{font-size:15px}
+.page-list .content-wrap{padding-top:20px}
+.pontis-strip{padding:0 12px}
+}
+/* 2026-10-21 서가(카테고리) 머리. 홈 소개 상자 대신 서가 이름·설명·이 분야 도구 */
+.cat-head{max-width:1200px;margin:24px auto 0;padding:0 24px}
+.cat-head h1.cat-h1{margin:0 0 6px;font-size:26px;line-height:1.35;font-weight:700;color:#1C1210}
+.cat-head .cat-desc{margin:0;max-width:720px;font-size:16px;line-height:1.7;color:#6B5D4F}
+.cat-head .cat-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 0}
+.cat-head .cat-tools span{margin-right:2px;font-size:14px;font-weight:700;color:#3A3330}
+.cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
+.cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
+@media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
 </style>
+<link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
+<link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
+<link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css' rel='stylesheet'/>
 </head>
 <body>
 <!-- Reading Progress Bar -->
@@ -1480,7 +1514,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
 .econlaw-post {
-  font-family: 'Pretendard Variable', 'Noto Sans KR', -apple-system, sans-serif;
+  font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
   color: #3A3330;
   line-height: 1.8;
   font-size: 17px;
@@ -1994,15 +2028,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <div class='sidebar-widget about-widget'>
 <h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
 <p class='about-tagline-kr'>법과 숫자로 지키는 내 돈</p>
-<p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크, 경제&#183;정책을 깊이 있게 분석합니다.</p>
+<p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크를 깊이 있게 분석합니다.</p>
 <a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>+ 구독하기</a>
-</div>
-<!-- Search Widget -->
-<div class='sidebar-widget search-widget'>
-<form action='https://www.lawnomics.com/search' class='search-form' method='get'>
-<input class='search-input' name='q' placeholder='글 검색...' type='text'/>
-<button class='search-btn' type='submit'>검색</button>
-</form>
 </div>
 <!-- Categories -->
 <div class='sidebar-widget category-widget'>
@@ -2069,7 +2096,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 </div>
 <!-- Back to Top Button -->
-<button class='back-to-top' id='backToTop' onclick='window.scrollTo({top:0,behavior:"smooth"})'>&#8593;</button>
+<button aria-label='맨 위로' class='back-to-top' id='backToTop' onclick='window.scrollTo({top:0,behavior:"smooth"})'>&#8593;</button>
 <!-- ==================== JAVASCRIPT ==================== -->
 <script type='text/javascript'>
 //<![CDATA[
