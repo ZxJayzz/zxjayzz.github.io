@@ -1514,20 +1514,20 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 
 <style>
 .lx-calc{background:#FAF6F1;border:1px solid #E5D9CC;border-radius:10px;padding:28px 28px 24px;margin:24px 0 32px;font-size:16px}
-.lx-calc h3{margin:0 0 6px;font-size:18px;color:#1C1210}
-.lx-calc .lx-sub{margin:0 0 20px;color:#8B7D6B;font-size:14px}
+.lx-calc h2,.lx-calc h3{margin:0 0 6px;font-size:18px;color:#1C1210}
+.lx-calc .lx-sub{margin:0 0 20px;color:#6B5D4F;font-size:14px}
 .lx-calc .lx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 18px}
 .lx-calc label{display:block;font-size:13px;font-weight:700;color:#4A3F38;margin-bottom:6px;letter-spacing:.2px}
 .lx-calc input,.lx-calc select{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #D9CDBF;border-radius:6px;background:#fff;color:#1C1210;font-variant-numeric:tabular-nums}
 .lx-calc input:focus,.lx-calc select:focus{outline:2px solid #D35400;outline-offset:1px;border-color:#D35400}
-.lx-calc .lx-hint{font-size:12px;color:#8B7D6B;margin-top:4px}
+.lx-calc .lx-hint{font-size:12px;color:#6B5D4F;margin-top:4px}
 .lx-calc input.lx-bad{border-color:#B94700;background:#FFF6F0}
 .lx-calc .lx-lab{display:block;font-size:13px;font-weight:700;color:#4A3F38;margin-bottom:6px;letter-spacing:.2px}
 .lx-calc .lx-chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:#1C1210;letter-spacing:0;margin:0;min-height:44px;line-height:1.5}
 .lx-calc .lx-chk input{width:20px;height:20px;min-height:0;margin:2px 0 0;padding:0;flex:0 0 auto;accent-color:#D35400}
 .lx-calc .lx-result{margin-top:22px;background:#fff;border:1px solid #E5D9CC;border-left:4px solid #D35400;border-radius:8px;padding:18px 20px}
 .lx-calc .lx-total{font-size:30px;font-weight:800;color:#1C1210;letter-spacing:-.5px;font-variant-numeric:tabular-nums;margin:2px 0 6px}
-.lx-calc .lx-total small{font-size:14px;font-weight:600;color:#8B7D6B;margin-left:6px}
+.lx-calc .lx-total small{font-size:14px;font-weight:600;color:#6B5D4F;margin-left:6px}
 .lx-calc .lx-warn{color:#B94700;font-weight:700;font-size:14px;margin:6px 0 0}
 .lx-calc table.lx-break{width:100%;border-collapse:collapse;margin:12px 0 0;font-size:14.5px}
 .lx-calc table.lx-break th,.lx-calc table.lx-break td{padding:8px 6px;border-bottom:1px solid #F0E8DE;text-align:left;vertical-align:top}
@@ -1536,6 +1536,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .lx-calc .lx-src{font-size:13px;color:#6B5E52;margin:14px 0 0;line-height:1.7}
 .lx-calc .lx-src li{margin:2px 0}
 .lx-note{font-size:14px;color:#6B5E52;border-top:1px solid #E5D9CC;padding-top:14px;margin-top:8px;line-height:1.7}
+.lx-note a,.lx-calc .lx-src a,.article-body p a{text-decoration:underline;text-underline-offset:2px}
+@media print{.lx-break tr{break-inside:avoid}}
 @media (max-width:640px){.lx-calc{padding:18px 16px 16px}.lx-calc .lx-total{font-size:26px}.lx-calc .lx-total small{display:block;margin:4px 0 0}}
 </style>
 
