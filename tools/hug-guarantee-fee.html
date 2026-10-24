@@ -1522,6 +1522,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .lx-calc input,.lx-calc select{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #D9CDBF;border-radius:6px;background:#fff;color:#1C1210;font-variant-numeric:tabular-nums}
 .lx-calc input:focus,.lx-calc select:focus{outline:2px solid #D35400;outline-offset:1px;border-color:#D35400}
 .lx-calc .lx-hint{font-size:12px;color:#8B7D6B;margin-top:4px}
+.lx-calc input.lx-bad{border-color:#B94700;background:#FFF6F0}
+.lx-calc .lx-lab{display:block;font-size:13px;font-weight:700;color:#4A3F38;margin-bottom:6px;letter-spacing:.2px}
+.lx-calc .lx-chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:#1C1210;letter-spacing:0;margin:0;min-height:44px;line-height:1.5}
+.lx-calc .lx-chk input{width:20px;height:20px;min-height:0;margin:2px 0 0;padding:0;flex:0 0 auto;accent-color:#D35400}
 .lx-calc .lx-result{margin-top:22px;background:#fff;border:1px solid #E5D9CC;border-left:4px solid #D35400;border-radius:8px;padding:18px 20px}
 .lx-calc .lx-total{font-size:30px;font-weight:800;color:#1C1210;letter-spacing:-.5px;font-variant-numeric:tabular-nums;margin:2px 0 6px}
 .lx-calc .lx-total small{font-size:14px;font-weight:600;color:#8B7D6B;margin-left:6px}
@@ -1533,7 +1537,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .lx-calc .lx-src{font-size:13px;color:#6B5E52;margin:14px 0 0;line-height:1.7}
 .lx-calc .lx-src li{margin:2px 0}
 .lx-note{font-size:14px;color:#6B5E52;border-top:1px solid #E5D9CC;padding-top:14px;margin-top:8px;line-height:1.7}
-@media (max-width:640px){.lx-calc{padding:18px 16px 16px}.lx-calc .lx-total{font-size:26px}}
+@media (max-width:640px){.lx-calc{padding:18px 16px 16px}.lx-calc .lx-total{font-size:26px}.lx-calc .lx-total small{display:block;margin:4px 0 0}}
 </style>
 
 <p>주택도시보증공사(HUG) 전세보증금반환보증의 보증료를 공사 요율표 그대로 계산합니다. 보증금 구간, 주택 유형, 부채비율로 요율을 찾고, 계약기간 일수로 환산한 뒤 할인과 할증을 적용합니다. 요율표와 할인 항목은 2026년 9월 15일 HUG 상품안내 기준입니다.</p>
@@ -1545,8 +1549,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <div><label for="h_type">주택 유형</label><select id="h_type"><option value="apt">아파트</option><option value="etc">연립·다세대·오피스텔 등 기타</option></select></div>
 <div><label for="h_deposit">전세보증금 (원)</label><input id="h_deposit" inputmode="numeric" value="300,000,000"><div class="lx-hint">보증받을 금액. 예: 300,000,000</div></div>
 <div><label for="h_price">주택가격 (원)</label><input id="h_price" inputmode="numeric" value="500,000,000"><div class="lx-hint">KB·부동산원 시세 등 HUG 산정 기준 가격. 주택가액은 이 값의 90%</div></div>
-<div><label for="h_senior">선순위 채권 (원)</label><input id="h_senior" inputmode="numeric" value="0"><div class="lx-hint">근저당 채권최고액 등. 없으면 0</div></div>
-<div><label for="h_disc">보증료 할인</label><select id="h_disc"><option value="0">할인 없음</option><option value="60">연소득 5천만원 이하 가구 (배우자 합산) 60%</option><option value="40">신혼부부 (합산 연소득 6천만원 이하·혼인 7년 이내) 40%</option><option value="40">다자녀 가구 (미성년 자녀 3인 이상) 40%</option><option value="40">장애인 가구 40%</option><option value="40">고령자 가구 (신청인 만 65세 이상) 40%</option><option value="60">1인 고령가구 (단독 세대주 만 65세 이상) 60%</option><option value="40">노인부양 가구 40%</option><option value="60">한부모 가구 60%</option><option value="40">다문화 가구 40%</option><option value="40">국가유공자·의사상자 가구 40%</option></select></div>
+<div><label for="h_senior">선순위 채권 (원)</label><input id="h_senior" inputmode="numeric" value="0"><div class="lx-hint">근저당 채권최고액 등 보증금보다 앞서는 담보채권. 단독·다중·다가구는 나보다 앞선 다른 세입자들의 보증금 합계도 더합니다. 없거나 비워 두면 0원</div></div>
+<div><label for="h_disc">보증료 할인</label><select id="h_disc"><option value="0">할인 없음</option><option value="60">연소득 5천만원 이하 가구 (배우자 합산) 60%</option><option value="40">신혼부부 (합산 연소득 6천만원 이하·혼인 7년 이내) 40%</option><option value="40">다자녀 가구 (미성년 자녀 3인 이상) 40%</option><option value="40">장애인 가구 40%</option><option value="40">고령자 가구 (신청인 만 65세 이상) 40%</option><option value="60">1인 고령가구 (단독 세대주 만 65세 이상) 60%</option><option value="40">노인부양 가구 40%</option><option value="60">한부모 가구 60%</option><option value="40">다문화 가구 40%</option><option value="40">국가유공자·의사상자 가구 40%</option><option value="40">배당이의 소송 당사자 (신청인·배우자가 당사자, 우선변제 대상 임차인, 연소득 4천만원·배우자 합산 6천만원 이하) 40%</option></select></div>
+<div><span class="lx-lab">전자계약 할인 3%</span><label class="lx-chk" for="h_econ"><input type="checkbox" id="h_econ">국토교통부 부동산거래 전자계약시스템으로 계약했습니다</label></div>
+<div><span class="lx-lab">타전세계약 확인서</span><label class="lx-chk" for="h_nocert"><input type="checkbox" id="h_nocert">주택 유형이 기타(단독·다중·다가구)인데 타전세계약 체결내역 확인서를 내지 않습니다 (보증금 구간의 최고 요율. 아파트에는 해당 없음)</label></div>
 <div><label for="h_start">계약 시작일</label><input id="h_start" type="date"></div>
 <div><label for="h_end">계약 종료일</label><input id="h_end" type="date"></div>
 </div>
@@ -1557,53 +1563,68 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <ul class="lx-src">
 <li>요율표: 보증금 1억 이하 / 1억 초과 2억 이하 / 2억 초과 5억 이하 / 5억 초과 × 아파트·기타 × 부채비율 70% 이하·80% 이하·80% 초과 (연 0.097%~0.211%)</li>
-<li>부채비율 = (선순위 채권 + 전세보증금) ÷ 주택가액, 주택가액 = 주택가격 × 90%. 선순위 채권이 주택가액의 50%를 넘으면 산출 보증료의 10% 할증</li>
-<li>가입 조건: 보증금 + 선순위 채권이 주택가액 이내, 선순위 채권이 주택가액의 60% 이내 (HUG 상품안내). 이 계산기는 조건에 걸리면 경고만 표시합니다</li>
+<li>부채비율 = (선순위 채권 + 전세보증금) ÷ 주택가액, 주택가액 = 주택가격 × 90%. 선순위 채권이 주택가액의 50%를 넘으면 산출 보증료의 10% 할증. 단독·다중·다가구주택이 타전세계약 체결내역 확인서를 내지 않으면 보증금 구간의 최고 요율을 적용</li>
+<li>할인: 사회배려계층 할인은 하나만 고를 수 있습니다 (HUG 상품안내 '중복적용불가'). 전자계약 할인 3%는 따로 표시합니다. 두 할인을 함께 받을 수 있는지는 HUG 안내에 명시돼 있지 않아, 둘 다 고르면 위 금액에는 사회배려계층 할인까지만 넣고 전자계약 할인까지 함께 적용될 때의 금액은 표의 참고 행으로만 보여 줍니다 (병용 가능 여부는 이 계산기가 확인한 범위 밖입니다)</li>
+<li>가입 조건: 보증금 + 선순위 채권이 주택가액 이내, 선순위 채권이 주택가액의 60% 이내 (HUG 상품안내). 이 계산기는 조건에 걸리면 경고와 함께 결과를 '참고 계산'으로 표시합니다. 월세가 있는 계약은 HUG가 전월세전환율로 환산한 보증금으로 한도를 보는데, 이 계산기는 현금 보증금만 비교합니다</li>
+<li>보증금 전액을 보증받는 경우 기준입니다. 일부 금액만 가입하면 보증금액이 달라집니다</li>
 <li>원 단위 반올림은 공사 산정과 다를 수 있습니다. 실제 보증료는 HUG 인터넷보증·지사 심사에서 확정됩니다</li>
 </ul>
 </div>
 <script>
 
 function lxWon(n){return Math.round(n).toLocaleString('ko-KR')+'원'}
-function lxNum(el){var v=String(el.value||'').replace(/[^0-9.]/g,'');return v?Number(v):0}
-function lxFmtInput(el){el.addEventListener('blur',function(){var v=lxNum(el);if(v)el.value=Math.round(v).toLocaleString('ko-KR')});}
+/* 입력 검사(2026-10-24 검수): 숫자와 쉼표·공백만 받는다. 비었으면 null, 그 밖의 글자(음수 기호·소수점·e 표기 등)가 섞이면 NaN을 돌려주고 칸을 붉게 표시한다.
+   전에는 숫자 아닌 글자를 지워 버려 '-1000'이 1,000으로, '1e6'이 16으로 계산됐다. 자릿수 상한은 금액 12자리(9,999억원)·사람과 부동산 수 4자리(d=4):
+   그보다 크면 자바스크립트 정수 정밀도(2^53)를 넘어 곱셈이 틀릴 수 있다(Codex 2차 지적, 당사자 수 15자리에서 송달료가 3,024원 적게 나옴). */
+function lxNum(el,d){var s=String(el.value||'').replace(/[, ]/g,'');if(!s){el.classList.remove('lx-bad');return null}if(!new RegExp('^[0-9]{1,'+(d||12)+'}$').test(s)){el.classList.add('lx-bad');return NaN}el.classList.remove('lx-bad');return Number(s)}
+function lxBad(vals){return vals.some(function(v){return typeof v==='number'&&isNaN(v)})}
+function lxFmtInput(el){el.addEventListener('blur',function(){var v=lxNum(el);if(v)el.value=v.toLocaleString('ko-KR')});}
 
 (function(){
-var R={"a": {"apt": [0.097, 0.117, 0.137], "etc": [0.111, 0.142, 0.172]}, "b": {"apt": [0.102, 0.124, 0.146], "etc": [0.117, 0.151, 0.184]}, "c": {"apt": [0.107, 0.131, 0.154], "etc": [0.124, 0.161, 0.197]}, "d": {"apt": [0.113, 0.138, 0.164], "etc": [0.132, 0.172, 0.211]}};var D=[0, 60, 40, 40, 40, 40, 60, 40, 60, 40, 40];
+var R={"a": {"apt": [0.097, 0.117, 0.137], "etc": [0.111, 0.142, 0.172]}, "b": {"apt": [0.102, 0.124, 0.146], "etc": [0.117, 0.151, 0.184]}, "c": {"apt": [0.107, 0.131, 0.154], "etc": [0.124, 0.161, 0.197]}, "d": {"apt": [0.113, 0.138, 0.164], "etc": [0.132, 0.172, 0.211]}};var D=[0, 60, 40, 40, 40, 40, 60, 40, 60, 40, 40, 40];
 var $=function(id){return document.getElementById(id)};
 ['h_deposit','h_price','h_senior'].forEach(function(id){lxFmtInput($(id))});
 var t=new Date();var s=$('h_start'),e=$('h_end');
-s.value=t.toISOString().slice(0,10);var t2=new Date(t);t2.setFullYear(t2.getFullYear()+2);e.value=t2.toISOString().slice(0,10);
+function ymd(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)} /* 기기 시간대 기준. 전에는 UTC라 한국 오전 9시 전에는 전날이 들어갔다 */
+s.value=ymd(t);var t2=new Date(t);t2.setFullYear(t2.getFullYear()+2);e.value=ymd(t2);
+function fail(msg){$('h_total').textContent='—';$('h_warn').textContent=msg||'';$('h_table').innerHTML=''}
 function calc(){
  var dep=lxNum($('h_deposit')),price=lxNum($('h_price')),sen=lxNum($('h_senior'));
- var type=$('h_type').value,region=$('h_region').value,disc=D[$('h_disc').selectedIndex]||0;
+ var type=$('h_type').value,region=$('h_region').value,disc=D[$('h_disc').selectedIndex]||0,econ=$('h_econ').checked,nocert=$('h_nocert').checked;
+ if(type==='apt'){$('h_nocert').checked=false;$('h_nocert').disabled=true;nocert=false}else{$('h_nocert').disabled=false} /* 확인서 미제출 최고요율은 단독·다중·다가구(기타 유형)에만 */
  var days=Math.round((new Date(e.value)-new Date(s.value))/86400000);
+ if(lxBad([dep,price,sen])){fail('금액은 숫자만, 원 단위 정수로 12자리(9,999억원)까지 적어 주세요 (쉼표는 괜찮습니다).');return}
+ sen=sen||0;
+ if(!dep||!price){fail('전세보증금과 주택가격을 적어 주세요.');return}
+ if(!isFinite(days)||days<=0){fail(s.value&&e.value?'계약 종료일이 시작일보다 뒤여야 합니다.':'계약 시작일과 종료일을 모두 골라 주세요.');return}
  var warn=[];var value=price*0.9;
- if(!dep||!price||days<=0){$('h_total').textContent='—';$('h_warn').textContent='';$('h_table').innerHTML='';return}
  var cap=region==='capital'?700000000:500000000;
  if(dep>cap)warn.push('보증금이 한도('+lxWon(cap)+')를 넘어 가입 대상이 아닙니다.');
  if(dep+sen>value)warn.push('보증금과 선순위 채권의 합('+lxWon(dep+sen)+')이 주택가액('+lxWon(value)+')을 넘습니다.');
  if(sen>value*0.6)warn.push('선순위 채권이 주택가액의 60%를 넘습니다.');
  var ratio=(dep+sen)/value;var band=ratio<=0.7?0:(ratio<=0.8?1:2);
  var key=dep<=100000000?'a':(dep<=200000000?'b':(dep<=500000000?'c':'d'));
- var rate=R[key][type][band];
+ var rate=nocert?R[key]['etc'][2]:R[key][type][band]; /* 단독·다중·다가구가 타전세계약확인서를 안 내면 그 보증금 구간의 최고 요율(HUG 상품안내) */
  var base=dep*rate/100*days/365;var surcharge=sen>value*0.5?base*0.1:0;var afterSur=base+surcharge;
- var discount=afterSur*disc/100;var total=afterSur-discount;
- $('h_total').innerHTML=lxWon(total)+'<small>'+days+'일 · 연 '+rate+'%</small>';
+ var discount=afterSur*disc/100;var afterDisc=afterSur-discount;var econDisc=econ?afterDisc*0.03:0;var both=econ&&disc>0;var total=both?afterDisc:afterDisc-econDisc;
+ /* 사회배려 할인과 전자계약 할인을 함께 받을 수 있는지는 HUG 안내에 없다(2026-10-24 Codex 2차). 둘 다 고르면 위 금액은 사회배려 할인까지만 넣고, 병용 가정액은 참고 행으로만 보여 준다 */
+ $('h_total').innerHTML=lxWon(total)+'<small>'+days+'일 · 연 '+rate+'%'+(warn.length?' · 가입 대상 아님, 참고 계산':'')+'</small>';
  $('h_warn').textContent=warn.join(' ');
- var rows=[['부채비율',(ratio*100).toFixed(1)+'%'],['적용 요율','연 '+rate+'%'],['산출 보증료 (보증금 × 요율 × '+days+'/365)',lxWon(base)]];
+ var rows=[['부채비율',(ratio*100).toFixed(1)+'%'],['적용 요율'+(nocert?' (타전세계약확인서 미제출: 구간 최고 요율)':''),'연 '+rate+'%'],['산출 보증료 (보증금 × 요율 × '+days+'/365)',lxWon(base)]];
  if(surcharge)rows.push(['부채비율 할증 10% (선순위 채권 > 주택가액 50%)','+'+lxWon(surcharge)]);
- if(discount)rows.push(['할인 '+disc+'%','−'+lxWon(discount)]);
+ if(discount)rows.push(['사회배려계층 할인 '+disc+'%','−'+lxWon(discount)]);
+ if(econDisc&&!both)rows.push(['전자계약 할인 3%','−'+lxWon(econDisc)]);
+ if(both)rows.push(['참고: 전자계약 할인 3%까지 함께 적용된다고 가정하면 (남은 금액의 3% 차감, 병용 가능 여부는 HUG 확인 필요)',lxWon(afterDisc-econDisc)]);
  rows.push(['1년 환산',lxWon(total*365/days)]);
  $('h_table').innerHTML=rows.map(function(r,i){return '<tr'+(i===rows.length-1?' class="sum"':'')+'><td>'+r[0]+'</td><td class="n">'+r[1]+'</td></tr>'}).join('');
 }
-['h_deposit','h_price','h_senior','h_type','h_region','h_disc','h_start','h_end'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+['h_deposit','h_price','h_senior','h_type','h_region','h_disc','h_econ','h_nocert','h_start','h_end'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
 calc();
 })();
 </script>
 <h2>보증료 뒤에 볼 것</h2>
 <p>보증료는 3억원 아파트, 부채비율 70% 이하, 2년 계약이면 64만원 안팎이고 할인을 받으면 몇만 원대로 내려옵니다. 정작 살펴야 할 것은 가입 기한과 약관의 면책 조항입니다. 임차권등기 전에 전출하면 보증 전부가 면책되고, 만기 2개월 전 통지를 놓쳐 묵시적 갱신이 되면 그 뒤의 미반환은 보증사고가 아닙니다. 요율표의 출처와 면책 여섯 가지, 공사의 1개월 지급기한은 <a href="/2026/09/jeonse-guarantee-insurance-fee-exclusions.html">전세보증보험, 보증료 계산부터 못 받는 경우까지</a>에 조문과 약관으로 정리해 두었습니다.</p>
-<p class="lx-note">이 계산기는 정보 제공 목적이며 HUG의 심사 결과나 개별 사안의 법률 자문을 대신하지 않습니다. 요율·할인 기준: 주택도시보증공사 전세보증금반환보증 상품안내(2026년 9월 15일 확인). 마지막 갱신 2026년 9월 16일.</p>
+<p class="lx-note">이 계산기는 정보 제공 목적이며 HUG의 심사 결과나 개별 사안의 법률 자문을 대신하지 않습니다. 요율·할인 기준: 주택도시보증공사 전세보증금반환보증 상품안내(2026년 9월 15일 확인). 마지막 갱신 2026년 10월 24일.</p>
 
 </div>
 </article>

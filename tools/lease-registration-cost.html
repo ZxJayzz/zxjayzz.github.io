@@ -1522,6 +1522,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .lx-calc input,.lx-calc select{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #D9CDBF;border-radius:6px;background:#fff;color:#1C1210;font-variant-numeric:tabular-nums}
 .lx-calc input:focus,.lx-calc select:focus{outline:2px solid #D35400;outline-offset:1px;border-color:#D35400}
 .lx-calc .lx-hint{font-size:12px;color:#8B7D6B;margin-top:4px}
+.lx-calc input.lx-bad{border-color:#B94700;background:#FFF6F0}
+.lx-calc .lx-lab{display:block;font-size:13px;font-weight:700;color:#4A3F38;margin-bottom:6px;letter-spacing:.2px}
+.lx-calc .lx-chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:#1C1210;letter-spacing:0;margin:0;min-height:44px;line-height:1.5}
+.lx-calc .lx-chk input{width:20px;height:20px;min-height:0;margin:2px 0 0;padding:0;flex:0 0 auto;accent-color:#D35400}
 .lx-calc .lx-result{margin-top:22px;background:#fff;border:1px solid #E5D9CC;border-left:4px solid #D35400;border-radius:8px;padding:18px 20px}
 .lx-calc .lx-total{font-size:30px;font-weight:800;color:#1C1210;letter-spacing:-.5px;font-variant-numeric:tabular-nums;margin:2px 0 6px}
 .lx-calc .lx-total small{font-size:14px;font-weight:600;color:#8B7D6B;margin-left:6px}
@@ -1533,18 +1537,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .lx-calc .lx-src{font-size:13px;color:#6B5E52;margin:14px 0 0;line-height:1.7}
 .lx-calc .lx-src li{margin:2px 0}
 .lx-note{font-size:14px;color:#6B5E52;border-top:1px solid #E5D9CC;padding-top:14px;margin-top:8px;line-height:1.7}
-@media (max-width:640px){.lx-calc{padding:18px 16px 16px}.lx-calc .lx-total{font-size:26px}}
+@media (max-width:640px){.lx-calc{padding:18px 16px 16px}.lx-calc .lx-total{font-size:26px}.lx-calc .lx-total small{display:block;margin:4px 0 0}}
 </style>
 
-<p>임차권등기명령을 신청할 때 드는 법정 비용 네 가지, 인지·등기신청수수료·송달료·등록면허세(지방교육세 포함)를 당사자 수와 부동산 수, 월세 유무에 맞춰 계산합니다. 임대인 1명, 임차인 1명, 주택 1채의 전세라면 47,040원입니다.</p>
+<p>임차권등기명령을 신청할 때 드는 법정 비용 네 가지, 인지·등기신청수수료·송달료·등록면허세(지방교육세 포함)를 당사자 수와 부동산 수, 월세 유무에 맞춰 계산합니다. 임차인이 여럿이어도 한 건의 신청으로 등기하는 경우(공동임차인) 기준이고, 임대차가 따로따로면 신청마다 계산합니다. 임대인 1명, 임차인 1명, 주택 1채의 전세라면 47,040원입니다.</p>
 <div class="lx-calc" id="lrcalc">
 <h3>임차권등기명령 신청 비용</h3>
 <p class="lx-sub">절차 규칙 제2조 제3항 / 수수료규칙 제5조의2 제4항 / 업무처리요령 별표 1 / 지방세법 제28조·제151조</p>
 <div class="lx-grid">
 <div><label for="l_lessor">임대인 수</label><input id="l_lessor" inputmode="numeric" value="1"></div>
 <div><label for="l_lessee">임차인 수</label><input id="l_lessee" inputmode="numeric" value="1"></div>
-<div><label for="l_prop">부동산 수</label><input id="l_prop" inputmode="numeric" value="1"><div class="lx-hint">아파트·다세대는 보통 1. 토지·건물이 따로 등기된 단독주택은 2</div></div>
-<div><label for="l_rent">월세 (원)</label><input id="l_rent" inputmode="numeric" value="0"><div class="lx-hint">전세면 0. 월세가 있으면 등록면허세를 월세 × 0.2%와 비교합니다</div></div>
+<div><label for="l_prop">부동산 수</label><input id="l_prop" inputmode="numeric" value="1"><div class="lx-hint">법원이 임차권등기를 촉탁할 부동산(등기기록)의 수. 아파트·다세대·오피스텔 한 채를 빌렸으면 1</div></div>
+<div><label for="l_rent">월세 (원, 부동산 1개당)</label><input id="l_rent" inputmode="numeric" value="0"><div class="lx-hint">전세면 0 (비워 두면 0원). 월세가 있으면 부동산마다 등록면허세를 월세 × 0.2%와 6,000원 중 큰 값으로 계산합니다</div></div>
 </div>
 <div class="lx-result">
 <div class="lx-total" id="l_total">—</div>
@@ -1552,25 +1556,39 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <ul class="lx-src">
 <li>수입인지 2,000원: 임차권등기명령신청서에 붙이는 인지 (임차권등기명령 절차에 관한 규칙 제2조 제3항)</li>
-<li>등기신청수수료 부동산 1개당 4,000원: 법원 촉탁등기는 '그 밖의 등기' 수수료 (등기사항증명서 등 수수료규칙 제5조의2 제4항, 등기예규 제1856호, 2025년 8월 1일부터 3,000원에서 인상)</li>
+<li>등기신청수수료 부동산 1개당 4,000원: 임차권등기명령에 따른 법원 촉탁등기 기준 (대법원 전자민원센터 '임차권등기명령절차 준비물' 안내, 2026년 10월 24일 확인. 등기사항증명서 등 수수료규칙 제5조의2 제4항의 금액으로 2025년 8월 1일부터 3,000원에서 인상). 전세사기피해자로 결정된 임차인이 신청한 임차권등기명령의 등기는 이 수수료를 받지 않으므로(같은 규칙 제7조의3 제4호) 합계에서 4,000원 × 부동산 수를 뺍니다</li>
 <li>송달료 1회 5,640원 × 당사자 수 × 3회분 (송달료규칙의 시행에 따른 업무처리요령 별표 1, 생활법령정보 안내)</li>
-<li>등록면허세: 임차권은 월 임대차금액의 1천분의 2이되 그 밖의 등기 세율 건당 6,000원보다 적으면 6,000원 (지방세법 제28조 제1항 제1호 다목·마목, 같은 항 단서). 여기에 지방교육세 20% (제151조 제1항 제2호)</li>
+<li>등록면허세: 임차권은 월 임대차금액의 1천분의 2이되 그 밖의 등기 세율 건당 6,000원보다 적으면 6,000원 (지방세법 제28조 제1항 제1호 다목·마목, 같은 항 단서). 여기에 지방교육세 20% (제151조 제1항 제2호). 두 세금 모두 10원 미만 끝수는 버립니다 (지방세기본법 제59조, 국고금 관리법 제47조 제1항)</li>
+<li>부동산이 여럿이면 각 부동산에 같은 월세가 적용되는 경우만 계산합니다. 월세가 부동산마다 다르거나 계약서에 전체 월세만 정해져 있으면 그대로 곱하지 말고 따로 확인하세요. 여러 부동산의 결과는 같은 조건의 개별 계산을 더한 값입니다</li>
+<li>등기사항증명서·주민등록 서류 발급비 같은 준비 비용과 변호사·법무사 보수는 들어 있지 않습니다. 송달료는 예납금이라 송달 횟수에 따라 추가 납부나 환급이 있습니다 (송달료규칙 제6조·제9조). 1회 송달료 5640원은 법원 e-Post 송달 적용 사건 기준(2026년 7월 1일부터, 대전고등법원 2026년 9월 28일 공지)입니다</li>
 <li>법제처 생활법령정보 백문백답(2026년 8월 15일 기준)의 43,400원은 인상 전 수수료 3,000원과 송달료 5,200원 기준입니다</li>
 </ul>
 </div>
 <script>
 
 function lxWon(n){return Math.round(n).toLocaleString('ko-KR')+'원'}
-function lxNum(el){var v=String(el.value||'').replace(/[^0-9.]/g,'');return v?Number(v):0}
-function lxFmtInput(el){el.addEventListener('blur',function(){var v=lxNum(el);if(v)el.value=Math.round(v).toLocaleString('ko-KR')});}
+/* 입력 검사(2026-10-24 검수): 숫자와 쉼표·공백만 받는다. 비었으면 null, 그 밖의 글자(음수 기호·소수점·e 표기 등)가 섞이면 NaN을 돌려주고 칸을 붉게 표시한다.
+   전에는 숫자 아닌 글자를 지워 버려 '-1000'이 1,000으로, '1e6'이 16으로 계산됐다. 자릿수 상한은 금액 12자리(9,999억원)·사람과 부동산 수 4자리(d=4):
+   그보다 크면 자바스크립트 정수 정밀도(2^53)를 넘어 곱셈이 틀릴 수 있다(Codex 2차 지적, 당사자 수 15자리에서 송달료가 3,024원 적게 나옴). */
+function lxNum(el,d){var s=String(el.value||'').replace(/[, ]/g,'');if(!s){el.classList.remove('lx-bad');return null}if(!new RegExp('^[0-9]{1,'+(d||12)+'}$').test(s)){el.classList.add('lx-bad');return NaN}el.classList.remove('lx-bad');return Number(s)}
+function lxBad(vals){return vals.some(function(v){return typeof v==='number'&&isNaN(v)})}
+function lxFmtInput(el){el.addEventListener('blur',function(){var v=lxNum(el);if(v)el.value=v.toLocaleString('ko-KR')});}
 
 (function(){
 var INJI=2000,REG=4000,S=5640,TAXMIN=6000,EDU=0.2;var $=function(id){return document.getElementById(id)};
 lxFmtInput($('l_rent'));
-function calc(){var a=Math.max(1,Math.floor(lxNum($('l_lessor'))||0)),b=Math.max(1,Math.floor(lxNum($('l_lessee'))||0)),p=Math.max(1,Math.floor(lxNum($('l_prop'))||0)),rent=lxNum($('l_rent'));
- var reg=REG*p,song=S*(a+b)*3,taxBase=Math.max(TAXMIN,Math.floor(rent*0.002))*p,edu=Math.round(taxBase*EDU),total=INJI+reg+song+taxBase+edu;
+function fail(msg){$('l_total').textContent='—';$('l_table').innerHTML=msg?'<tr><td>'+msg+'</td></tr>':''}
+function calc(){var a=lxNum($('l_lessor'),4),b=lxNum($('l_lessee'),4),p=lxNum($('l_prop'),4),rent=lxNum($('l_rent'));
+ if(lxBad([a,b,p,rent])){fail('숫자만 적어 주세요 (쉼표는 괜찮습니다). 사람 수와 부동산 수는 1 이상 4자리까지, 월세는 원 단위 정수로 12자리까지 받습니다.');return}
+ if(!a||!b||!p){fail('임대인 수, 임차인 수, 부동산 수를 1 이상으로 적어 주세요. 전세라서 월세가 없으면 월세는 0입니다.');return}
+ rent=rent||0;
+ /* 등록면허세는 부동산(등기기록)마다 월세의 1천분의 2, 6,000원에 못 미치면 6,000원(지방세법 제28조 제1항 제1호 다목 5)·마목, 같은 항 단서).
+    세액의 10원 미만 끝수는 버린다(지방세기본법 제59조가 준용하는 국고금 관리법 제47조 제1항). 지방교육세는 그 세액의 20%(제151조 제1항 제2호)를 같은 방법으로 끝수 처리.
+    2026-10-24 검수 전에는 1원 단위로 버리고 교육세는 반올림해, 월세 3,004,500원이면 6,009원·1,202원이 나왔다(법정 6,000원·1,200원). */
+ var tax1=Math.max(TAXMIN,Math.floor(rent*2/10000)*10),edu1=Math.floor(tax1/50)*10;
+ var reg=REG*p,song=S*(a+b)*3,taxBase=tax1*p,edu=edu1*p,total=INJI+reg+song+taxBase+edu;
  $('l_total').innerHTML=lxWon(total)+'<small>임대인 '+a+'·임차인 '+b+'·부동산 '+p+'</small>';
- var rows=[['수입인지',lxWon(INJI)],['등기신청수수료 ('+lxWon(REG)+' × '+p+')',lxWon(reg)],['송달료 ('+lxWon(S)+' × '+(a+b)+'명 × 3회)',lxWon(song)],['등록면허세'+(rent?' (월세 × 0.2%와 6,000원 중 큰 값)':' (그 밖의 등기 6,000원)')+(p>1?' × '+p:''),lxWon(taxBase)],['지방교육세 (등록면허세의 20%)',lxWon(edu)],['합계',lxWon(total)]];
+ var rows=[['수입인지',lxWon(INJI)],['등기신청수수료 ('+lxWon(REG)+' × '+p+')',lxWon(reg)],['송달료 ('+lxWon(S)+' × '+(a+b)+'명 × 3회)',lxWon(song)],['등록면허세'+(rent?' (부동산마다 월세 × 0.2%와 6,000원 중 큰 값, 10원 미만 버림)':' (부동산마다 6,000원)')+(p>1?' × '+p:''),lxWon(taxBase)],['지방교육세 (등록면허세의 20%)',lxWon(edu)],['합계',lxWon(total)]];
  $('l_table').innerHTML=rows.map(function(r,i){return '<tr'+(i===rows.length-1?' class="sum"':'')+'><td>'+r[0]+'</td><td class="n">'+r[1]+'</td></tr>'}).join('');
 }
 ['l_lessor','l_lessee','l_prop','l_rent'].forEach(function(id){$(id).addEventListener('input',calc)});calc();
@@ -1578,7 +1596,7 @@ function calc(){var a=Math.max(1,Math.floor(lxNum($('l_lessor'))||0)),b=Math.max
 </script>
 <h2>비용 뒤에 볼 것</h2>
 <p>이 비용은 임대인에게 청구할 수 있습니다(주택임대차보호법 제3조의3 제8항). 신청서에 무엇을 쓰고 어떤 서류를 붙이는지, 결정이 언제 효력이 생기고 언제 이사해도 되는지는 <a href="/2026/09/jeonse-deposit-recovery-guide.html">전세보증금 못 받을 때, 임차권등기명령부터 지급명령까지</a>의 임차권등기명령 절에 조문으로 정리해 두었습니다.</p>
-<p class="lx-note">이 계산기는 정보 제공 목적이며 법원의 실제 납부 안내나 개별 사안의 법률 자문을 대신하지 않습니다. 접수 시점의 규칙·예규와 법원 안내로 최종 확인하세요. 마지막 갱신 2026년 9월 16일.</p>
+<p class="lx-note">이 계산기는 정보 제공 목적이며 법원의 실제 납부 안내나 개별 사안의 법률 자문을 대신하지 않습니다. 접수 시점의 규칙·예규와 법원 안내로 최종 확인하세요. 근거 조문은 2026년 10월 24일 국가법령정보센터에서 다시 확인했습니다. 마지막 갱신 2026년 10월 24일.</p>
 
 </div>
 </article>
