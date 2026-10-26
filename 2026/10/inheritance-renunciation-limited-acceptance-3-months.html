@@ -1460,6 +1460,155 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid #E5D9CC!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:#1C1210!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:#1C1210!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:#D35400}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:#1C1210!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:#1C1210!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:#F3EDE6!important;color:#1C1210!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid #3A3330!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid #E5D9CC!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid #3A3330!important;border-radius:0!important;color:#3A3330!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:#1C1210!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;border-bottom:1px solid #E5D9CC!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:#1C1210!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:#3A3330!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:#1C1210!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:#1C1210!important;color:#FFFFFF!important}
+.article-body a{color:#1C1210!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:#B94700!important;text-decoration-color:#B94700!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:#1C1210!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:#6B5D4F!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:#1C1210!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:#1C1210!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:#6B5D4F!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid #E5D9CC!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:#6B5D4F!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:#FAF6F1!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
@@ -1942,13 +2091,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>이 차이는 뒤늦게 상속인이 되는 사람에게 중요합니다. 같은 판결은 피상속인(재산을 남기고 사망한 사람)의 처와 자녀가 상속을 포기한 경우 손자녀가 그로써 자신들이 상속인이 되었다는 사실까지 아는 것은 "오히려 이례에 속한다"고 보았습니다. 자기 차례가 왔다는 사실을 실제로 안 날부터 3개월이 흐릅니다. 서울고등법원도 법률의 부지 같은 특별한 사정으로 상속인이 된 사실을 몰랐는지는 여러 정황을 종합해 판단한다고 했습니다. 상속인의 학력과 경력, 선순위 상속인의 포기 여부, 법적 분쟁의 존재 등입니다(서울고등법원 2005. 7. 15. 선고 2005나7971 판결).</p>
 <p>기한을 늘릴 길도 있습니다. 같은 조항 단서에 따라 이해관계인이나 검사가 청구하면 가정법원이 기간을 연장할 수 있습니다. 재산 조회 결과가 늦어지거나 채무 규모가 불분명하면 기한이 끝나기 전에 연장을 청구해 두는 편이 안전합니다. 다만 기간은 가정법원이 연장 결정을 해야 늘어납니다.</p>
 <p>상속인이 미성년자나 피성년후견인 같은 제한능력자라면 기간은 그 친권자나 후견인이 상속이 개시된 것을 안 날부터 셉니다(민법 제1020조).</p>
-<p><p class="lead-answer">기산일은 사망과 "내가 상속인이 됐다"는 사실을 함께 안 날이고, 부족하면 끝나기 전에 가정법원에 연장을 청구할 수 있습니다.</p></p>
+<p class="lead-answer">기산일은 사망과 "내가 상속인이 됐다"는 사실을 함께 안 날이고, 부족하면 끝나기 전에 가정법원에 연장을 청구할 수 있습니다.</p>
 <a name="기한을-넘기거나-재산을-처분하면-단순승인이-된다"></a>
 <h2 id="기한을-넘기거나-재산을-처분하면-단순승인이-된다">기한을 넘기거나 재산을 처분하면 단순승인이 된다</h2>
 <p>3개월이 그냥 지나가면 어떻게 될까요. 민법 제1026조는 세 가지 경우에 상속인이 단순승인을 한 것으로 봅니다. 기간 안에 한정승인이나 포기를 하지 않은 때, 상속재산을 처분한 때, 그리고 한정승인이나 포기를 한 뒤에 재산을 은닉하거나 부정소비하거나 고의로 재산목록에 적지 않은 때입니다. 단순승인은 고인의 권리와 의무를 제한 없이 이어받는 것이라, 빚이 재산보다 많으면 상속인 자신의 재산으로 갚아야 합니다.</p>
 <p>특히 주의할 사유는 두 번째입니다. 기한 안에 포기 신고를 하더라도 그 전에 고인의 예금을 인출해 썼거나 차를 팔았다면 "처분행위"에 해당할 수 있습니다. 어떤 행위가 처분에 해당하는지는 사안마다 따로 판단되므로, 신고 전까지 고인의 재산을 쓰거나 명의를 옮기지 않는 편이 안전합니다. 결정 전 재산 조사는 법이 명시적으로 허용합니다(민법 제1019조 제2항).</p>
 <p>세 번째 사유는 신고 뒤에도 의무가 이어진다는 뜻입니다. 한정승인을 받아 두고 재산을 숨기거나 목록에서 고의로 빠뜨리면, 그 순간 단순승인으로 돌아갑니다.</p>
-<p><p class="lead-answer">기한을 넘기거나 고인의 재산을 처분하면 법은 단순승인으로 봅니다. 신고 전까지는 조사만 하고, 쓰거나 팔거나 옮기지 않는 것이 안전합니다.</p></p>
+<p class="lead-answer">기한을 넘기거나 고인의 재산을 처분하면 법은 단순승인으로 봅니다. 신고 전까지는 조사만 하고, 쓰거나 팔거나 옮기지 않는 것이 안전합니다.</p>
 <a name="상속재산과-빚은-안심상속-원스톱으로-조회한다"></a>
 <h2 id="상속재산과-빚은-안심상속-원스톱으로-조회한다">상속재산과 빚은 안심상속 원스톱으로 조회한다</h2>
 <p>결정의 전제는 숫자입니다. 고인의 예금과 대출, 부동산, 세금 체납을 한 곳에서 조회하는 제도가 안심상속 원스톱 서비스입니다. 정부24에 따르면 사망일이 속한 달의 말일부터 1년 이내에 신청할 수 있고, 시·구청과 읍·면·동 주민센터를 방문하거나 정부24에서 온라인으로 신청합니다.</p>
@@ -1963,7 +2112,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>표의 마지막 줄이 선택의 핵심입니다. 상속포기는 내 몫이 사라지는 것이지 빚이 사라지는 것은 아닙니다. 민법 제1043조에 따라 포기한 사람의 상속분은 다른 상속인에게 그 상속분 비율로 귀속되고, 같은 순위가 모두 포기하면 다음 순위로 넘어갑니다.</p>
 <p>한정승인은 상속인 지위를 유지하면서 책임을 물려받은 재산 한도로 제한합니다. 한 사람이라도 한정승인을 하면 빚이 다른 가족에게 넘어가는 것을 멈출 수 있습니다. 서울가정법원 안내도 실무에서 상속인 중 한 명이 한정승인을 하고 나머지가 포기하는 경우가 많다고 적고 있습니다.</p>
 <p>그렇다면 왜 전부 한정승인을 하지 않을까요. 한정승인은 신고 뒤에 공고와 청산이 따르기 때문입니다. 이 때문에 이런 조합이 흔합니다. 재산이 빚보다 많다는 확신이 있으면 둘 다 필요 없습니다. 재산이 빚보다 분명히 많은 경우의 세금 문제는 <a href="https://www.lawnomics.com/2026/09/business-succession-or-sale.html">가업승계와 회사 매각, 상속세 관점에서</a>에서 다룬 적이 있습니다.</p>
-<p><p class="lead-answer">포기는 내 몫을 없애고 빚을 다음 사람에게 넘기며, 한정승인은 빚을 받은 재산 안에서 끊습니다. 가족 중 한 명이 한정승인, 나머지가 포기하는 조합이 실무에서 흔한 이유입니다.</p></p>
+<p class="lead-answer">포기는 내 몫을 없애고 빚을 다음 사람에게 넘기며, 한정승인은 빚을 받은 재산 안에서 끊습니다. 가족 중 한 명이 한정승인, 나머지가 포기하는 조합이 실무에서 흔한 이유입니다.</p>
 <a name="자녀가-전부-포기하면-손자녀에게-간다"></a>
 <h2 id="자녀가-전부-포기하면-손자녀에게-간다">자녀가 전부 포기하면 손자녀에게 간다?</h2>
 <p>오래 통용되던 설명이 하나 바뀌었습니다. 배우자와 자녀가 공동상속인인데 자녀 전부가 상속을 포기하면 누가 상속인이 되는가. 예전 판례는 배우자와 손자녀(또는 고인의 부모)가 공동상속인이 된다고 보았습니다.</p>
@@ -1971,7 +2120,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>전에는 자녀들이 포기하면 손자녀까지 줄줄이 포기 신고를 해야 빚이 멈췄습니다. 지금은 배우자가 살아 있고 자녀 전부가 포기했다면 배우자 단독상속으로 정리되므로, 배우자가 한정승인을 하는 것으로 가족 전체의 문제를 끝낼 수 있습니다. 반대로 배우자도 포기하거나 배우자가 없는 경우에는 민법 제1000조의 순위대로 직계비속 중 다음 촌수, 직계존속, 형제자매, 4촌 이내 방계혈족 순으로 내려갑니다.</p>
 <p>대습상속과도 구별해야 합니다. 민법 제1001조의 대습상속은 상속인이 될 직계비속이나 형제자매가 상속개시 전에 사망하거나 결격(제1004조, 상속인 자격을 잃는 사유)이나 상속권 상실 선고(제1004조의2)로 상속인이 되지 못한 때 그 직계비속이 대신 상속인이 되는 제도입니다. 상속포기는 여기에 들어 있지 않습니다. 자녀가 포기했다고 그 자녀의 자녀가 대습상속을 하지는 않고, 순위의 원칙에 따라 다음 차례가 정해질 뿐입니다.</p>
 <p>문제는 이렇게 넘어간 빚을 다음 순위 사람이 모른다는 점입니다. 서울신문 보도에 따르면 상속포기 신청 때 후순위 상속인의 인적사항은 제출되지 않아 법원이 후순위 상속인을 특정할 방법이 없습니다. 그래서 뒤늦게 채권자의 통지를 받고서야 자기 차례가 온 것을 아는 일이 생깁니다. 앞서 본 대로 이런 사람의 3개월은 그 사실을 안 날부터 시작하지만, 그 전에 가족 안에서 미리 알려 두는 것이 분쟁을 줄입니다.</p>
-<p><p class="lead-answer">2023년 전원합의체 이후 자녀 전부가 포기하면 배우자가 단독상속인이 됩니다. 포기는 대습상속 사유가 아니며, 다음 순위는 민법 제1000조 순서대로 확인합니다.</p></p>
+<p class="lead-answer">2023년 전원합의체 이후 자녀 전부가 포기하면 배우자가 단독상속인이 됩니다. 포기는 대습상속 사유가 아니며, 다음 순위는 민법 제1000조 순서대로 확인합니다.</p>
 <a name="상속포기-한정승인-신고-법원과-서류--비용"></a>
 <h2 id="상속포기-한정승인-신고-법원과-서류--비용">상속포기·한정승인 신고 법원과 서류, 비용</h2>
 <p>신고처는 상속 개시지의 가정법원입니다. 가사소송법 제44조 제1항 제6호는 상속 사건의 관할을 상속 개시지로 정합니다. 서울가정법원 안내는 이를 피상속인의 마지막 주소지(사망 당시 주민등록지)를 관할하는 가정법원, 지방법원 또는 지원이라고 풀이합니다. 상속포기와 한정승인은 가사비송 라류 사건(다툴 상대방 없이 법원의 심판을 구하는 가사 사건)으로, 소송 대신 심판청구로 진행합니다. 신고서에는 피상속인의 성명과 최후주소, 피상속인과의 관계, 상속개시 있음을 안 날, 포기 또는 한정승인을 하는 뜻을 적습니다(가사소송규칙 제75조 제1항). 신고서에는 신고인의 인감증명서를 첨부해야 합니다(같은 조 제2항).</p>
@@ -1989,7 +2138,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>비용은 크지 않습니다. 가사소송수수료규칙 제3조 제1항에 따른 라류 가사비송 심판청구 수수료는 1건당 <strong class="num">5,000원</strong>입니다. 서울가정법원 안내는 이를 청구인 수만큼 곱해 인지를 붙이라고 합니다. 송달료는 같은 안내 기준으로 청구인 1인당 6회분. 법제처 생활법령정보에 따르면 2026년 9월 15일 기준 1회 송달료가 5,640원이므로 1인당 <strong class="num">33,840원</strong>입니다. 인지를 더하면 청구인 1인당 38,840원입니다.</p>
 <p>가상의 사례로 자녀 셋이 함께 한정승인을 청구한다면 인지 15,000원에 송달료 101,520원을 더해 법원에 내는 돈은 116,520원입니다. 한정승인은 여기에 신문공고 비용이 따로 들고, 법무사나 변호사에게 맡기면 그 보수가 추가됩니다.</p>
 <p>신고서의 기재에 잘못이 없으면 가정법원이 신고를 수리하고 심판서를 작성합니다(가사소송규칙 제75조 제3항). 심판서를 받으면 포기는 그것으로 절차가 끝나지만, 포기한 사람도 그로 인해 상속인이 된 사람이 재산을 관리할 수 있을 때까지는 재산 관리를 계속해야 합니다(민법 제1044조). 그리고 포기든 한정승인이든 한번 수리되면 3개월 안이라도 마음대로 거둘 수 없습니다. 민법 제1024조는 착오·사기·강박 같은 사유가 있을 때만 취소를 허용하고, 그 취소권도 추인(취소할 수 있는 행위를 그대로 인정하는 것)할 수 있는 날부터 3개월, 승인 또는 포기한 날부터 1년이 지나면 사라집니다.</p>
-<p><p class="lead-answer">고인의 마지막 주소지 가정법원에 심판청구서와 인감증명서, 가족관계 서류를 내고, 인지 5,000원과 송달료 33,840원을 청구인 수만큼 냅니다.</p></p>
+<p class="lead-answer">고인의 마지막 주소지 가정법원에 심판청구서와 인감증명서, 가족관계 서류를 내고, 인지 5,000원과 송달료 33,840원을 청구인 수만큼 냅니다.</p>
 <a name="한정승인은-신고가-끝이-아니다"></a>
 <h2 id="한정승인은-신고가-끝이-아니다">한정승인은 신고가 끝이 아니다</h2>
 <p>한정승인 심판을 받은 뒤가 오히려 본론입니다. 민법 제1032조 제1항은 한정승인자가 한정승인을 한 날부터 <strong class="num">5일 안에</strong> 일반 상속채권자와 유증받은 사람(유언으로 재산을 받기로 한 사람)에게 한정승인 사실과 일정 기간 안에 채권을 신고하라는 공고를 하도록 하고, 그 기간은 2개월 이상이어야 한다고 정합니다. 같은 조 제2항이 준용하는 제88조 제2항과 제3항, 제89조에 따라 공고에는 기간 안에 신고하지 않으면 청산에서 제외된다는 뜻을 적어야 하고, 공고는 법원의 등기사항 공고와 같은 방법으로 하며, 이미 알고 있는 채권자에게는 따로 신고하라고 최고(개별 통지로 요구하는 것)해야 합니다. 알고 있는 채권자는 공고만으로 제외할 수 없습니다.</p>

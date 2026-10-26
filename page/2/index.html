@@ -1456,6 +1456,155 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid #E5D9CC!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:#1C1210!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:#1C1210!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:#D35400}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:#1C1210!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:#1C1210!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:#F3EDE6!important;color:#1C1210!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid #3A3330!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid #E5D9CC!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid #3A3330!important;border-radius:0!important;color:#3A3330!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:#1C1210!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;border-bottom:1px solid #E5D9CC!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:#1C1210!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:#3A3330!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:#1C1210!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:#1C1210!important;color:#FFFFFF!important}
+.article-body a{color:#1C1210!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:#B94700!important;text-decoration-color:#B94700!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:#1C1210!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:#6B5D4F!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:#1C1210!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:#1C1210!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:#6B5D4F!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid #E5D9CC!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:#6B5D4F!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:#FAF6F1!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
@@ -1492,9 +1641,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
-<div class='post-card'>
+<div class='post-card is-lead'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1742736137211-eaffbf2eac36?w=1080&q=80&fm=jpg' alt=''><p>2026 세제개편안 정부안대로면 2027년분부터 1주택 종부세 기본공제 기준이 실거주 14억, 비거주 12억으로 갈리고 부부 공동명의(특례 미신청)는 거주 각 9억, 비거주 각 6억이 됩니다. 16억·20억 사례 계산과 9월 16~30일 신고·신청까지 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/09/jongbuse-reform-2027-joint-ownership.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='종부세 개편안, 비거주 1주택·공동명의 얼마 오르나' href='/2026/09/jongbuse-reform-2027-joint-ownership.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-realestate'>부동산·임대차</span>
@@ -1507,7 +1656,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <div class='post-card'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1625640776489-4186592c6f00?w=1080&q=80&fm=jpg' alt=''><p>유학 자녀에게 보내는 생활비와 학비는 그 용도에 직접 쓰인 범위에서 증여세가 붙지 않습니다. 남긴 돈과 목돈은 다릅니다. 한국 비과세 경계, 자녀가 비거주자일 때 부모에게 오는 세금, 미국 Form 3520 신고, 영국 상속세 범위, 송금 절차를 조문으로 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/09/overseas-student-support-gift-tax.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지' href='/2026/09/overseas-student-support-gift-tax.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-economy'>가족·상속</span>
@@ -1520,7 +1669,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <div class='post-card'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1630829421842-fc4f5a296e49?w=1080&q=80&fm=jpg' alt=''><p>갱신요구권으로 연장하는 계약이면 집주인이 전세를 월세로 일방적으로 바꿀 수 없습니다. 동의해서 바꿔도 월세는 전환 보증금의 연 5%(기준금리 3.00%+2%)가 상한입니다. 계산법과 5% 인상 상한, 초과분 반환까지 조문으로 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/08/jeonse-to-wolse-conversion-rate.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='전세 월세 전환율 계산법, 갱신 때 거절할 수 있을까' href='/2026/08/jeonse-to-wolse-conversion-rate.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-realestate'>부동산·임대차</span>
@@ -1533,7 +1682,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <div class='post-card'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1620607864557-30343023b77e?w=1200&q=80&fm=jpg' alt=''><p>갱신 거절의 증명책임은 세입자가 아니라 집주인에게 있습니다. 대법원이 세운 실거주 판단 기준부터 5% 상한 계산, 묵시적 갱신의 해지권, 분쟁조정위 신청 절차까지 조문 근거로 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/08/housing-lease-renewal-dispute.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='전월세 갱신 거절과 5% 인상, 법이 정한 경계선' href='/2026/08/housing-lease-renewal-dispute.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-realestate'>부동산·임대차</span>
@@ -1546,7 +1695,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <div class='post-card'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1435527173128-983b87201f4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE5MDI5fDB8MXxzZWFyY2h8MXx8Y2FsZW5kYXIlMjBkZWFkbGluZSUyMGRlc2slMjBwYXBlcnxlbnwwfDB8fHwxNzg3MzM5NjAzfDA&ixlib=rb-4.1.0&q=80&w=1080' alt=''><p>증여세를 신고하지 않으면 무신고 가산세 20%에 납부지연 가산세가 하루 단위로 쌓이고, 부과 가능 기간은 무신고 시 15년까지 늘어납니다. 1억원 증여를 3년 무신고로 두면 얼마가 되는지, 기한을 넘겼을 때 줄이는 방법까지 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/08/gift-tax-no-filing-penalty.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='증여세 신고 안 하면 생기는 일, 가산세와 제척기간' href='/2026/08/gift-tax-no-filing-penalty.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-economy'>가족·상속</span>
@@ -1559,7 +1708,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <div class='post-card'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1648712898089-4435bc87b587?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE5MDI5fDB8MXxzZWFyY2h8Mnx8bG9hbiUyMGFncmVlbWVudCUyMHNpZ25pbmclMjBwZW58ZW58MHwwfHx8MTc4NzMwMzcwMnww&ixlib=rb-4.1.0&q=80&w=1080' alt=''><p>차용증에 쓰는 이자 4.6%는 상속세법에는 없고 법인세법 시행규칙 제43조에 있는 당좌대출이자율입니다. 네 단계 위임 사슬, 연 1,000만원 기준의 계산법, 이자를 실제로 주고받을 때 생기는 원천징수 27.5%까지 조문 근거로 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/08/family-loan-46-percent-origin.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='차용증 이자 4.6%는 어디서 나온 숫자인가' href='/2026/08/family-loan-46-percent-origin.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-economy'>가족·상속</span>
@@ -1572,7 +1721,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 </div>
 <div class='post-card'>
 <div class='post-body-hidden' style='display:none'><img src='https://images.unsplash.com/photo-1709880945165-d2208c6ad2ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE5MDI5fDB8MXxzZWFyY2h8Mnx8cmVjZWlwdHMlMjBjYWxjdWxhdG9yJTIwYWNjb3VudGluZyUyMGF1ZGl0fGVufDB8MHx8fDE3ODY4NzYwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080' alt=''><p>가족 간 계좌이체는 그 자체로 세무조사를 부르지 않습니다. 조사가 열리는 계기, 국세청이 계좌에서 찾는 것, 부부와 부모 자녀 간 입증책임이 다른 이유(대법원 판례), 소명 요구를 받았을 때 대응까지 정리했습니다.</p></div>
-<a class='post-card-thumb' href='/2026/08/family-transfer-tax-audit.html' style='display:none'></a>
+<a class='post-card-thumb' aria-label='가족 간 계좌이체 세무조사, 국세청은 뭘 볼까' href='/2026/08/family-transfer-tax-audit.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
 <span class='category-badge badge-economy'>가족·상속</span>

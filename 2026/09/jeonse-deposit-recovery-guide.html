@@ -1460,6 +1460,155 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid #E5D9CC!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:#1C1210!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:#1C1210!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:#D35400}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:#1C1210!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:#1C1210!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:#F3EDE6!important;color:#1C1210!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid #3A3330!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid #E5D9CC!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid #3A3330!important;border-radius:0!important;color:#3A3330!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:#1C1210!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;border-bottom:1px solid #E5D9CC!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:#1C1210!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:#3A3330!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:#1C1210!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:#1C1210!important;color:#FFFFFF!important}
+.article-body a{color:#1C1210!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:#B94700!important;text-decoration-color:#B94700!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:#1C1210!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:#6B5D4F!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:#1C1210!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:#1C1210!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:#6B5D4F!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid #E5D9CC!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:#6B5D4F!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:#FAF6F1!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
@@ -1954,7 +2103,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>요건은 두 가지입니다. 임대차가 끝났을 것, 보증금이 반환되지 않았을 것. 이 둘이 갖춰지면 임차인은 집 소재지를 관할하는 지방법원, 지방법원 지원, 시·군 법원에 임차권등기명령을 신청합니다(제3조의3 제1항). 신청서에는 임대차 목적 주택, 등기 원인이 된 사실, 대항력이나 우선변제권을 갖췄다면 그 사실을 적고 소명합니다(제2항). 첨부서류는 등기사항증명서, 임대차계약서, 점유와 주민등록을 소명할 서류, 확정일자를 받은 계약서입니다(법제처 생활법령정보). 법원은 임대인을 불러 변론을 열지 않고도 결정할 수 있습니다(제3조의3 제3항이 준용하는 민사집행법 제280조 제1항).</p>
 <p>2023년 4월 개정으로 절차가 한 단계 빨라졌습니다. 개정법은 가압류 집행에 관한 민사집행법 제292조 제3항을 임차권등기에 준용해, 결정이 임대인에게 송달되기 전에도 등기를 집행할 수 있게 했습니다(제3조의3 제3항).</p>
 <p>임대인 1명, 임차인 1명, 주택 1채의 전세 기준으로 각 항목의 근거 규정에 따라 계산한 금액입니다.</p>
-<div class="table-scroll"><table><thead><tr><th>항목</th><th>금액</th></tr></thead><tbody><tr><td>수입인지</td><td>2,000원</td></tr><tr><td>등기신청수수료(촉탁등기, 부동산 1개당 · 2025년 8월 1일 인상)</td><td>4,000원</td></tr><tr><td>송달료(1회 5,640원 × 6회, 당사자 1명당 3회)</td><td>33,840원</td></tr><tr><td>등록면허세 6,000원 + 지방교육세 20%</td><td>7,200원</td></tr><tr><td>합계</td><td>47,040원</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>항목</th><th class="num">금액</th></tr></thead><tbody><tr><td>수입인지</td><td class="num">2,000원</td></tr><tr><td>등기신청수수료(촉탁등기, 부동산 1개당 · 2025년 8월 1일 인상)</td><td class="num">4,000원</td></tr><tr><td>송달료(1회 5,640원 × 6회, 당사자 1명당 3회)</td><td class="num">33,840원</td></tr><tr><td>등록면허세 6,000원 + 지방교육세 20%</td><td class="num">7,200원</td></tr><tr><td>합계</td><td class="num">47,040원</td></tr></tbody></table></div>
 <p>이 비용은 임대인에게 청구할 수 있습니다(제3조의3 제8항). 등기신청수수료는 등기사항증명서 등 수수료규칙 제5조의2 제4항과 등기예규 제1856호(2025년 8월 1일 시행)의 그 밖의 등기·촉탁등기 4,000원, 송달료는 송달료규칙의 시행에 따른 업무처리요령 별표 1의 1회 5,640원, 등록면허세는 지방세법 제28조 제1항 제1호 마목 6,000원에 제151조의 지방교육세 20%를 더한 금액입니다. 법제처 생활법령정보 백문백답(2026년 8월 15일 기준)의 43,400원은 인상 전 수수료 3,000원과 송달료 5,200원 기준이라 이 글은 2026년 9월 16일에 정정했습니다. 당사자 수와 부동산 수를 바꿔 계산하려면 <a href='/tools/lease-registration-cost.html'>임차권등기명령 비용 계산기</a>를 쓰면 됩니다. 등기가 마쳐지면 임차인은 대항력과 우선변제권을 취득하고, 이미 갖고 있던 사람은 그대로 유지하며, 등기 이후에는 이사를 가서 대항요건을 잃어도 권리가 남습니다(제5항). 임차권등기가 된 집에 새로 들어오는 세입자는 소액임차인 최우선변제(보증금 중 일정액을 선순위 근저당보다 먼저 받는 권리)를 받지 못하므로(제6항), 그 집은 다음 세입자를 구하기 어려워집니다.</p>
 <p>등기 말소는 보증금을 받은 뒤의 일입니다. 대법원은 임대인의 보증금 반환의무가 임차인의 임차권등기 말소의무보다 먼저 이행되어야 할 의무라고 판단했습니다(2005. 6. 9. 선고 2005다4529). "말소해 주면 돈을 주겠다"는 요구에 응할 이유가 없다는 뜻입니다.</p>
 <a name="내용증명과-분쟁조정--소송-전에-거치는-두-단계"></a>
@@ -1980,7 +2129,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>집행권원이 생기면 임대인의 재산에 강제집행을 합니다. 가장 확실한 대상은 살던 집 자체입니다. 주택임대차보호법 제3조의2 제1항은 임차인이 확정판결이나 이에 준하는 집행권원으로 임차주택 경매를 신청할 때, 집을 먼저 비워주는 반대의무의 이행을 집행 개시 요건으로 삼지 않는다고 정합니다. 집에 살면서 경매를 신청할 수 있다는 뜻입니다.</p>
 <p>배당 단계에서 우선변제권이 힘을 씁니다. 대항요건과 확정일자를 갖춘 임차인은 경매 대금에서 후순위 권리자보다 먼저 보증금을 받습니다(제3조의2 제2항). 단, 배당을 받으려면 집을 매수인에게 인도해야 합니다(제3항). 대법원은 주택임대차보호법상 보증금 반환채권이 배당요구가 필요한 채권이라고 보아, 배당요구를 하지 않은 임차인은 우선변제권이 있어도 배당에서 제외되고 후순위 채권자에게 부당이득 반환도 청구할 수 없다고 판단했습니다(1998. 10. 13. 선고 98다12379). 소액임차인의 최우선변제금도 같습니다(2002. 1. 22. 선고 2001다70702). 배당요구 종기는 법원이 첫 매각기일 이전으로 정해 공고합니다(민사집행법 제84조, 제88조, 제148조). 확정일자를 받아 둔 사실보다 그 종기 안에 배당요구서를 낸 사실이 돈을 결정합니다.</p>
 <p>제8조의 최우선변제는 보증금 중 일정액을 선순위 근저당보다 먼저 받는 제도이고, 요건은 경매신청 등기 전에 대항요건을 갖추는 것입니다. 금액은 시행령 제10조와 제11조가 지역별로 정합니다(2023년 2월 21일 개정 기준).</p>
-<div class="table-scroll"><table><thead><tr><th>지역</th><th>소액임차인 보증금 상한</th><th>최우선변제 금액</th></tr></thead><tbody><tr><td>서울</td><td>1억6,500만원 이하</td><td>5,500만원까지</td></tr><tr><td>과밀억제권역(서울 제외), 세종, 용인, 화성, 김포</td><td>1억4,500만원 이하</td><td>4,800만원까지</td></tr><tr><td>광역시(과밀억제권역·군 지역 제외), 안산, 광주, 파주, 이천, 평택</td><td>8,500만원 이하</td><td>2,800만원까지</td></tr><tr><td>그 밖의 지역</td><td>7,500만원 이하</td><td>2,500만원까지</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>지역</th><th class="num">소액임차인 보증금 상한</th><th class="num">최우선변제 금액</th></tr></thead><tbody><tr><td>서울</td><td class="num">1억6,500만원 이하</td><td class="num">5,500만원까지</td></tr><tr><td>과밀억제권역(서울 제외), 세종, 용인, 화성, 김포</td><td class="num">1억4,500만원 이하</td><td class="num">4,800만원까지</td></tr><tr><td>광역시(과밀억제권역·군 지역 제외), 안산, 광주, 파주, 이천, 평택</td><td class="num">8,500만원 이하</td><td class="num">2,800만원까지</td></tr><tr><td>그 밖의 지역</td><td class="num">7,500만원 이하</td><td class="num">2,500만원까지</td></tr></tbody></table></div>
 <p>주택가액의 2분의 1이 한도이고(시행령 제10조 제2항), 어느 표를 적용할지는 선순위 담보물권이 설정된 시점의 시행령으로 정합니다. 시행령 부칙이 개정 전에 담보물권을 취득한 자에게는 종전 규정을 적용한다고 정해 왔기 때문입니다(법제처 생활법령정보). 2019년에 근저당이 잡힌 서울 빌라라면 그 당시의 표가 적용됩니다. 낙찰 뒤에도 보증금을 다 받지 못한 대항력 있는 임차인의 임차권은 소멸하지 않고 매수인에게 넘어갑니다(제3조의5). 한편 전세권을 등기한 임차인은 민법 제318조에 따라 소송 없이 곧바로 경매를 청구할 수 있어 절차가 한 단계 짧습니다. 배당요구 종기와 순위 계산은 사건마다 달라지므로, 경매가 개시되면 법률구조 창구나 변호사의 확인을 받는 편이 안전합니다.</p>
 <a name="전세보증보험에-들었으면-바로-받을-수-있을까"></a>
 <h2 id="전세보증보험에-들었으면-바로-받을-수-있을까">전세보증보험에 들었으면 바로 받을 수 있을까</h2>

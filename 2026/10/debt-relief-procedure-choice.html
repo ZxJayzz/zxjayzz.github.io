@@ -1460,6 +1460,155 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid #E5D9CC!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:#1C1210!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:#1C1210!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:#D35400}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:#1C1210!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:#1C1210!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:#F3EDE6!important;color:#1C1210!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid #3A3330!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid #E5D9CC!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid #3A3330!important;border-radius:0!important;color:#3A3330!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:#1C1210!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;border-bottom:1px solid #E5D9CC!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:#1C1210!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:#3A3330!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:#1C1210!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:#1C1210!important;color:#FFFFFF!important}
+.article-body a{color:#1C1210!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:#B94700!important;text-decoration-color:#B94700!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:#1C1210!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:#6B5D4F!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:#1C1210!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:#1C1210!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:#6B5D4F!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid #E5D9CC!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:#6B5D4F!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:#FAF6F1!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
@@ -1942,7 +2091,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>셋째 축은 재산입니다. 개인파산은 재산을 환가(돈으로 바꾸는 것)해 나누고 남은 빚을 면책받는 절차라, 집이나 차처럼 지키고 싶은 재산이 있으면 고르기 어렵습니다. 개인회생은 인가가 나면 재산이 채무자에게 돌아오고(제615조 제2항), 신용회복위원회 절차는 재산을 처분하지 않습니다. 다만 개인회생에서도 재산은 변수입니다. 변제기간 동안 갚는 총액이 파산했을 때 채권자들이 받을 돈보다 적으면 채권자가 동의하지 않는 한 인가를 받지 못하기 때문입니다(제614조 제1항 제4호).</p>
 <div class="table-scroll wide"><table><thead><tr><th>절차</th><th>들어가는 문</th><th>핵심 효과</th><th>근거</th></tr></thead><tbody><tr><td>신속채무조정</td><td>연체 30일 이하, 총채무 15억 원 이하</td><td>연체이자 감면, 이자율 30~50% 인하, 상환유예</td><td>협약 제4조 제2항</td></tr><tr><td>사전채무조정</td><td>연체 31~89일, 총채무 15억 원 이하</td><td>연체이자 감면, 이자율 30~70% 인하</td><td>협약 제4조 제3항</td></tr><tr><td>개인워크아웃</td><td>연체 3개월 이상, 총채무 15억 원 이하</td><td>이자 전액 감면, 원금 최대 70% 감면</td><td>협약 제4조 제4항</td></tr><tr><td>새출발기금</td><td>2020년 4월~2025년 6월 사업한 소상공인</td><td>원금 0~80% 감면, 상환 최대 20년</td><td>협약 제7장, 캠코 운영</td></tr><tr><td>개인회생</td><td>급여·영업소득자, 담보 15억·무담보 10억 원 이하</td><td>가용소득으로 3년 변제 후 면책</td><td>채무자회생법 제579조 이하</td></tr><tr><td>개인파산·면책</td><td>지급불능, 채무 한도 없음</td><td>재산 환가 후 잔여 채무 면책</td><td>채무자회생법 제305조·제556조 이하</td></tr></tbody></table></div>
 <div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-26_debt-relief/card_four_paths.png" alt="빚 정리 네 갈래의 들어가는 문: 신속채무조정 연체 30일 이하, 사전채무조정 31~89일, 개인워크아웃 3개월 이상(신용회복지원협약 제4조), 새출발기금 소상공인, 개인회생 담보 15억·무담보 10억 원 이하(채무자회생법 제579조), 개인파산 지급불능(제305조)" width="600" height="889" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
-<p><p class="lead-answer">연체 90일 전이면 신속·사전채무조정, 90일부터는 개인워크아웃, 금융권 조정으로 어렵고 소득이 있으면 개인회생, 소득도 재산도 없으면 개인파산이 출발점이고, 소상공인은 새출발기금을 먼저 봅니다.</p></p>
+<p class="lead-answer">연체 90일 전이면 신속·사전채무조정, 90일부터는 개인워크아웃, 금융권 조정으로 어렵고 소득이 있으면 개인회생, 소득도 재산도 없으면 개인파산이 출발점이고, 소상공인은 새출발기금을 먼저 봅니다.</p>
 <a name="연체-90일-전이라면-신용회복위원회의-두-절차부터"></a>
 <h2 id="연체-90일-전이라면-신용회복위원회의-두-절차부터">연체 90일 전이라면 신용회복위원회의 두 절차부터</h2>
 <p>신용회복위원회는 서민금융법 제56조에 따라 세워진 법인이고, 채무조정의 기준과 절차는 같은 법 제75조에 따른 신용회복지원협약이 정합니다. 협약 제4조 제1항은 신청 대상을 총채무액 15억 원 이하이면서 담보채무 10억 원 이하, 무담보채무 5억 원 이하인 채무자로 정합니다. 신청 전 6개월 안에 생긴 채무의 원금이 원금 총액의 30% 이상이면 대상에서 빠집니다(제4조 제5항 제6호). 급하게 빌려 급하게 조정받는 일을 막는 장치입니다.</p>
@@ -1966,7 +2115,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>인가의 문턱은 제614조에 있습니다. 채권자나 회생위원(법원이 선임해 절차를 돕는 사람)의 이의가 없으면 변제계획이 법률에 맞고 공정하며 수행 가능하고, 총변제액이 파산했을 때 배당받을 총액보다 적지 않으면 법원은 인가해야 합니다(제1항). 이의가 있으면 요건이 더 붙습니다. 변제기간 동안 받을 가용소득 전부를 변제에 쓰고, 총변제액이 일정 금액 이상이어야 합니다(제2항). 그 하한은 채권 총액이 5천만 원 미만이면 총액의 5%, 5천만 원 이상이면 총액의 3%에 100만 원을 더한 금액이며, 3천만 원을 넘지 않는 범위에서 적용됩니다. 채권 총액이 8천만 원이라면 240만 원에 100만 원을 더한 340만 원이 이의가 있을 때의 최소변제액입니다.</p>
 <p>면책은 변제를 완료했을 때 법원이 결정합니다(제624조 제1항). 완료하지 못했더라도 책임질 수 없는 사유로 못 냈고, 채권자가 받은 돈이 파산 배당액보다 적지 않으며, 변제계획 변경이 불가능하면 법원이 이해관계인의 의견을 듣고 면책할 수 있습니다(제2항). 면책을 받아도 남는 빚이 있습니다. 채권자목록에 적지 않은 채권, 벌금·과태료, 고의의 불법행위 손해배상, 중대한 과실로 생명이나 신체를 침해한 손해배상, 근로자의 임금·퇴직금, 양육비와 부양료 같은 여덟 가지입니다(제625조 제2항). 보증인의 책임도 그대로입니다(제3항).</p>
 <p>한 가지 문턱이 더 있습니다. 신청일 전 5년 안에 파산이든 개인회생이든 면책을 받은 사실이 있으면 법원은 개시신청을 기각할 수 있습니다(제595조 제5호). 반대로 신청 전 약 1년 동안 생긴 대출이 전체 채무의 약 80%였더라도 그 상당 부분을 기존 빚을 갚는 데 썼다면, 그 비중만으로 기각 사유라고 단정할 수 없다는 것이 대법원의 판단입니다(대법원 2013. 3. 15.자 2013마101 결정).</p>
-<p><p class="lead-answer">개인회생은 정기 소득이 있고 담보 15억 원·무담보 10억 원 안인 사람이 가용소득으로 3년을 갚고 나머지를 면책받는 절차입니다.</p></p>
+<p class="lead-answer">개인회생은 정기 소득이 있고 담보 15억 원·무담보 10억 원 안인 사람이 가용소득으로 3년을 갚고 나머지를 면책받는 절차입니다.</p>
 <a name="압류가-멈추는-시점은-절차마다-다르다"></a>
 <h2 id="압류가-멈추는-시점은-절차마다-다르다">압류가 멈추는 시점은 절차마다 다르다</h2>
 <p>빚 정리 절차를 고를 때 가장 많이 오해하는 대목이 "신청하면 압류가 풀린다"입니다. 멈추는 시점과 범위를 정한 조문은 절차마다 다릅니다. 신용회복위원회 절차는 신청 다음 날부터 협약 가입 금융회사의 추심이 중단됩니다. 개인회생은 세 단계로 나뉩니다.</p>
@@ -1979,7 +2128,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>개인파산에서는 면책신청이 있는 상태에서 파산폐지결정이 확정되거나 파산종결결정이 나면, 면책 재판이 확정될 때까지 파산채권에 기한 강제집행을 할 수 없고 진행 중이던 집행도 중지됩니다. 면책결정이 확정되면 중지된 집행은 효력을 잃습니다(제557조). 면제재산(파산해도 남겨 두도록 법원에 신청하는 재산)으로 신청한 임차보증금과 생계비 재산에 대해서는 파산선고 전이라도 법원이 강제집행의 중지·금지를 명할 수 있습니다(제383조 제8항).</p>
 <p>압류가 이미 들어온 상태라면 지금 어느 단계의 효과를 받을 수 있는지 신용회복위원회(1375)나 대한법률구조공단(132) 같은 공적 창구, 또는 변호사와 먼저 확인하는 것이 안전합니다.</p>
 <div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-26_debt-relief/card_stay_points.png" alt="압류가 멈추는 시점 다섯 곳: 신용회복위원회 신청 다음 날 추심 중단, 개인회생 신청 뒤 중지명령은 재량(제593조), 개시결정으로 강제집행 중지(제600조), 인가결정으로 압류 효력 소멸(제615조 제3항), 파산 폐지·종결 결정 뒤 면책신청이 있으면 강제집행 금지·중지(제557조)" width="600" height="806" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
-<p><p class="lead-answer">압류는 신청만으로 풀리지 않고, 개인회생에서는 개시결정으로 멈춘 뒤 인가로 효력을 잃으며, 그 사이 묶인 급여는 인가 뒤에 돌아옵니다.</p></p>
+<p class="lead-answer">압류는 신청만으로 풀리지 않고, 개인회생에서는 개시결정으로 멈춘 뒤 인가로 효력을 잃으며, 그 사이 묶인 급여는 인가 뒤에 돌아옵니다.</p>
 <a name="갚을-소득이-없다면-개인파산과-면책"></a>
 <h2 id="갚을-소득이-없다면-개인파산과-면책">갚을 소득이 없다면 개인파산과 면책</h2>
 <p>갚을 소득이 없거나 생계비를 빼면 변제 재원이 남지 않는 사람에게는 개인파산이 남습니다. 채무자가 지급을 할 수 없는 때 법원은 신청에 따라 파산을 선고하고, 지급을 정지한 때에는 지급을 할 수 없는 것으로 추정합니다(제305조). 신청은 채무자뿐 아니라 채권자도 할 수 있고(제294조), 채무자가 스스로 파산을 신청하면 반대 의사를 밝히지 않는 한 면책신청도 함께 한 것으로 봅니다(제556조 제3항).</p>
@@ -1996,7 +2145,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <div class="table-scroll"><table><thead><tr><th>창구</th><th>대상</th><th>지원 내용</th></tr></thead><tbody><tr><td>서울회생법원 소송구조</td><td>국민기초생활보장법 수급자, 가구별 기준 중위소득 75% 이하 소득자, 한부모가족 지원대상자, 장애인</td><td>변호사 비용과 송달료(인지는 본인 부담), 파산관재인(법원이 선임해 파산재단을 관리·환가하고 배당하는 사람) 선임비용은 30만 원 상한으로 직권 지원</td></tr><tr><td>대한법률구조공단</td><td>기준 중위소득 125% 이하가 법률구조의 소득 요건, 개인회생·파산·면책 신청도 같은 기준</td><td>비용을 전부 지원받는지 일부를 내는지는 대상자 유형에 따라 다르니 공단(132)에서 확인</td></tr><tr><td>신용회복위원회 신청지원</td><td>자체 채무조정으로는 상환이 어렵고, 가구 소득이 기준 중위소득 125% 이하이며, 최근 6개월 신규 채무가 30% 이하</td><td>개인회생·파산 신청서 무료 작성, 수급자·장애인·한부모가족에게 송달료와 인지대, 파산관재인 비용 지원</td></tr></tbody></table></div>
 <p>2026년 기준 125%는 1인 가구 3,205,298원, 4인 가구 8,118,423원입니다.</p>
 <div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-26_debt-relief/capture_slb_legal_aid.png" alt="서울회생법원 소송구조 안내 화면: 기준 중위소득 75% 이하 등 대상자, 변호사 비용과 송달료 지원, 파산관재인 선임비용 30만 원 상한 (2026년 10월 24일 캡처)" width="600" height="368" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
-<p><p class="lead-answer">개인회생 인지는 3만 원이고 송달료는 채권자 수에 따라 늘며, 중위소득 75% 이하는 법원 소송구조, 125% 이하는 법률구조공단과 신용회복위원회 신청지원을 볼 수 있습니다.</p></p>
+<p class="lead-answer">개인회생 인지는 3만 원이고 송달료는 채권자 수에 따라 늘며, 중위소득 75% 이하는 법원 소송구조, 125% 이하는 법률구조공단과 신용회복위원회 신청지원을 볼 수 있습니다.</p>
 <a name="잉글랜드-웨일스는-채무-규모와-가처분소득으로-가른다"></a>
 <h2 id="잉글랜드-웨일스는-채무-규모와-가처분소득으로-가른다">잉글랜드·웨일스는 채무 규모와 가처분소득으로 가른다</h2>
 <p>같은 문제를 다른 나라는 어떻게 가르는지 보면 한국 제도의 모양이 더 또렷해집니다. 영국 정부 안내 페이지인 GOV.UK의 "Options for dealing with your debts"는 선택지가 "가진 돈과 자산의 규모"에 달렸다고 적습니다.</p>
@@ -2010,7 +2159,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>신용정보 기록은 절차마다 코드가 다릅니다. 신속채무조정과 사전채무조정은 공공정보가 등록되지 않습니다. 개인워크아웃은 신용회복지원정보(1101)가, 새출발기금 부실차주 채무조정은 채무조정 공공정보가 등록되고, 둘 다 1년 성실 상환으로 풀립니다.</p>
 <p>개인회생은 변제계획 인가결정이 한국신용정보원에 전송되면 공공정보(1301)로 등록되면서 기존 연체정보가 일괄 해제됩니다. 금융위원회는 2025년 7월 자료에서 이 공공정보가 5년간 등록되고 변제를 완료하면 그 전이라도 삭제된다고 설명하면서, 1년 이상 성실 변제 시 조기 삭제하는 근거를 마련하겠다고 밝혔습니다. 조기 삭제가 시행됐는지는 신용정보원 규약으로 확인해야 합니다. 개인파산은 면책 뒤에도 공공정보가 등록되며 해제 시점은 신용정보원의 일반신용정보관리규약에 따릅니다.</p>
 <p>어느 절차가 유리한지는 채무의 종류와 채권자의 구성, 소득과 재산의 세부 사항에 따라 달라집니다. 압류가 이미 들어왔거나 채권자가 소송을 시작한 상태라면 신용회복위원회(1375), 서울회생법원 종합민원실, 대한법률구조공단(132) 같은 공적 창구에서 자기 사정에 맞는 절차를 확인하고, 필요하면 변호사의 도움을 받는 것이 안전합니다.</p>
-<p><p class="lead-answer">면책 뒤 5년에서 7년 안의 재신청은 기각되거나 면책이 거부될 수 있고, 개인회생 기록은 변제 완료로 지워지므로 끝까지 갈 수 있는 절차를 고르는 것이 먼저입니다.</p></p>
+<p class="lead-answer">면책 뒤 5년에서 7년 안의 재신청은 기각되거나 면책이 거부될 수 있고, 개인회생 기록은 변제 완료로 지워지므로 끝까지 갈 수 있는 절차를 고르는 것이 먼저입니다.</p>
 <div class="references">
 <h4>참고자료</h4>
 <ul>

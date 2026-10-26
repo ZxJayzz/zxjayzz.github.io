@@ -1460,6 +1460,155 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid #E5D9CC!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:#1C1210!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:#1C1210!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:#D35400}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:#1C1210!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:#1C1210!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:#F3EDE6!important;color:#1C1210!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid #3A3330!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid #E5D9CC!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid #3A3330!important;border-radius:0!important;color:#3A3330!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:#1C1210!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;border-bottom:1px solid #E5D9CC!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:#1C1210!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:#3A3330!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:#1C1210!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:#1C1210!important;color:#FFFFFF!important}
+.article-body a{color:#1C1210!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:#B94700!important;text-decoration-color:#B94700!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:#1C1210!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:#6B5D4F!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:#1C1210!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:#1C1210!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:#6B5D4F!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid #E5D9CC!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:#6B5D4F!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:#FAF6F1!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
@@ -1953,7 +2102,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>사례로 보면 이렇습니다. 계산을 단순하게 하려고 수수료는 0원으로 두었습니다. 한 해 이익이 200만 원이면 세금은 없습니다. 500만 원이면 250만 원에 22%를 곱한 55만 원, 1,000만 원이면 165만 원, 3,000만 원이면 605만 원, 1억 원이면 2,145만 원입니다.</p>
 <p>분리과세의 특징은 두 가지입니다. 연봉이 1억 원이든 3억 원이든 코인 세율은 22%로 같습니다. 대신 코인에서 2,000만 원을 잃었다고 근로소득세가 줄어들지도 않습니다. 코인 손익은 다른 소득과 합산하지 않고 코인 손익끼리만 계산합니다.</p>
 <div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-19_crypto-tax-2027-guide/card_crypto_tax_cases.png" alt="2027년 가상자산소득 세금 계산 케이스 표. 공식은 판 코인의 양도가액에서 그 코인의 취득가액과 수수료를 뺀 뒤 250만 원을 공제하고 22%를 곱하며, 250만 원 이하면 세금이 없다. 연 이익 200만 원은 세금 0원, 500만 원은 55만 원, 1,000만 원은 165만 원, 3,000만 원은 605만 원, 1억 원은 2,145만 원이고, A 코인 +800만 원과 B 코인 −500만 원을 같은 해에 통산하면 11만 원이다. 근거는 소득세법 제64조의3 제2항과 제84조 제3호, 지방세법 제93조." width="2160" height="3200" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
-<p><p class="lead-answer">세금 = (한 해에 판 코인의 양도가액 − 그 코인의 취득가액 − 수수료 + 대여 대가 − 250만 원) × 22%. 이익이 250만 원 이하면 0원입니다. 한 해 안에서는 코인끼리 손익을 합치고, 다음 해로 손실을 넘기지는 못합니다.</p></p>
+<p class="lead-answer">세금 = (한 해에 판 코인의 양도가액 − 그 코인의 취득가액 − 수수료 + 대여 대가 − 250만 원) × 22%. 이익이 250만 원 이하면 0원입니다. 한 해 안에서는 코인끼리 손익을 합치고, 다음 해로 손실을 넘기지는 못합니다.</p>
 <a name="2026년-12월-31일-시가--지금-가진-코인은-이렇게-계산한다"></a>
 <h2 id="2026년-12월-31일-시가--지금-가진-코인은-이렇게-계산한다">2026년 12월 31일 시가, 지금 가진 코인은 이렇게 계산한다</h2>
 <p>이미 보유한 코인에 가장 중요한 조문은 소득세법 제37조 제5항입니다. 2027년 1월 1일 전에 이미 보유하고 있던 가상자산의 취득가액은 "2026년 12월 31일 당시의 시가와 그 가상자산의 취득가액 중에서 큰 금액"으로 합니다. 시행령 제88조 제2항은 이 시가를 국세청장이 고시하는 사업자, 조문 용어로 시가고시가상자산사업자의 사업장에서 2027년 1월 1일 0시 현재 코인별로 공시한 가격의 평균으로 정합니다. 어느 거래소가 고시 대상인지는 국세청장이 정하고, 고시 사업자가 취급하지 않는 코인은 그 밖의 사업자(이에 준하는 사업자 포함) 사업장에서 같은 시각에 공시한 가격을 씁니다(같은 항 제2호).</p>
@@ -1962,7 +2111,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>따라서 세금 규정만 보면 12월 31일 전에 매도를 서두를 이유는 없습니다. 거래소에서 가격이 공시되는 코인이라면 가격이 오른 코인은 연말 시가를 취득가액으로 인정받고, 가격이 내린 코인은 실제 매수가를 인정받습니다. 매도 여부는 투자 판단의 문제입니다. 다만 두 번째 사례처럼 실제 취득가가 시가보다 높은 사람은 그 매수가를 증명할 거래 기록이 있어야 실제 취득가를 적용할 수 있습니다.</p>
 <p>취득가액은 거주자별로 총평균법으로 계산합니다(시행령 제88조 제1항). 같은 코인을 여러 번, 여러 가격에 샀다면 매수 금액 합계를 수량으로 나눈 평균 단가가 취득가액이 됩니다. 거래소 두 곳에 같은 코인을 나눠 두었더라도 조문은 사람 기준으로 평균을 내도록 정하고 있습니다.</p>
 <p>2027년 1월 1일 이후에 산 코인은 다릅니다. 가상자산사업자를 거치지 않고 취득했는데 장부나 증빙으로 실제 취득가액을 확인할 수 없으면(시행령 제88조 제4항), 그 종류 코인 전체의 필요경비(소득에서 빼 주는 비용)를 판 돈(양도가액)의 50%로 보는 방식을 쓸 수 있고, 이때 수수료는 따로 빼지 않습니다(소득세법 제37조 제6항, 시행령 제88조 제5항). 개인 간 거래처럼 거래소를 거치지 않고 새로 취득한 코인의 매수 기록이 없으면 양도가액의 절반이 소득금액으로 잡힐 수 있다는 뜻입니다.</p>
-<p><p class="lead-answer">지금 가진 코인은 2026년 12월 31일 시가와 실제 매수가 중 큰 쪽이 취득가액이 됩니다. 과거 상승분은 과세되지 않고, 손실 중인 코인은 매수가 증빙이 있어야 그 가격을 씁니다.</p></p>
+<p class="lead-answer">지금 가진 코인은 2026년 12월 31일 시가와 실제 매수가 중 큰 쪽이 취득가액이 됩니다. 과거 상승분은 과세되지 않고, 손실 중인 코인은 매수가 증빙이 있어야 그 가격을 씁니다.</p>
 <a name="국세청은-어떻게-아나--거래소-자료와-해외-거래"></a>
 <h2 id="국세청은-어떻게-아나--거래소-자료와-해외-거래">국세청은 어떻게 아나: 거래소 자료와 해외 거래</h2>
 <p>국내 거래소의 거래 자료는 투자자가 신고하기 전에 국세청에 제출됩니다. 소득세법 제164조의4와 시행령 제216조의4에 따라 가상자산사업자(가상자산 이용자 보호 등에 관한 법률에 따른 사업자)는 가상자산 거래명세서와 거래집계표를 제출해야 합니다. 국세청 안내에 적힌 일정은 거래명세서가 분기별로 5월 말, 8월 말, 11월 말, 다음 해 2월 말, 거래집계표가 연간 자료로 다음 해 2월 말입니다. 2027년 1분기 거래부터 적용되므로 첫 자료 제출은 2027년 5월 말입니다. 금융정보분석원의 올해 상반기 실태조사에 응한 국내 거래소는 17곳입니다. 자료를 내지 않는 사업자에게 국세청장이 시정명령을 할 수 있게 한 조항은 2028년 1월 1일부터 시행되고, 그날 이후 거래분의 미제출부터 적용됩니다.</p>
@@ -1975,7 +2124,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>신고를 하지 않으면 국세기본법 제47조의2에 따라 내야 할 세액의 20%가 무신고가산세로 붙습니다. 부정행위로 신고하지 않았으면 40%, 역외거래에서 생긴 부정행위면 60%입니다. 여기에 납부가 지연된 일수에 따라 납부지연가산세가 추가됩니다. 국세기본법 제47조의4의 이자율은 시행령 제27조의4가 1일 10만분의 22로 정하고 있는데, 환산하면 하루 0.022%, 1년이면 약 8%입니다. 1,000만 원 이익을 신고하지 않고 법정납부기한인 2028년 5월 31일이 지난 뒤 2년(730일) 동안 내지 않았다면, 소득세 150만 원에 무신고가산세 30만 원과 납부지연가산세 약 24만 원(150만 원 × 0.022% × 730일)이 더해집니다. 지방소득세 15만 원에도 지방세기본법 제53조 제1항이 같은 비율(20%)의 무신고가산세를 정해 두었습니다.</p>
 <p>세금이 나오지 않는 사람도 기록은 남겨 두는 편이 좋습니다. 한 해 이익이 250만 원 이하면 세금은 없지만, 그 사실을 보여 주는 것은 거래내역입니다. 국세청은 국내 거래소 자료로 양도 금액을 알지만 해외 거래소나 지갑 간 이동이 섞인 사람의 취득가액까지는 모릅니다. 2027년 이후 거래소 밖에서 취득한 코인의 취득가액을 증명하지 못하면 앞서 본 50% 방식이 적용될 수 있어, 벌지 않은 돈에 세금이 붙는 상황이 생깁니다.</p>
 <p>거래소가 여러 곳이거나 해외 거래소, 개인 지갑, 코인 간 교환이 섞여 있다면 첫 신고 전에 세무사와 한 번 정리하는 편이 안전합니다. 개별 거래가 과세 대상인지, 어느 취득가액을 쓸 수 있는지는 거래 경위와 증빙에 따라 달라질 수 있습니다.</p>
-<p><p class="lead-answer">2027년 소득은 2028년 5월 1일부터 31일까지 본인이 홈택스에서 신고·납부합니다. 무신고가산세 20%에 하루 0.022%의 납부지연가산세가 붙고, 역외 무신고는 10년 안에 추징할 수 있습니다.</p></p>
+<p class="lead-answer">2027년 소득은 2028년 5월 1일부터 31일까지 본인이 홈택스에서 신고·납부합니다. 무신고가산세 20%에 하루 0.022%의 납부지연가산세가 붙고, 역외 무신고는 10년 안에 추징할 수 있습니다.</p>
 <a name="2026년-연말-전에-해-둘-다섯-가지"></a>
 <h2 id="2026년-연말-전에-해-둘-다섯-가지">2026년 연말 전에 해 둘 다섯 가지</h2>
 <p>첫째, 거래소마다 거래내역과 보유 수량을 내려받아 둡니다. 2026년 12월 31일 밤의 잔고가 제37조 제5항 취득가액 계산의 기준이 되고, 실제 매수가와 연말 시가 중 어느 쪽이 큰지 비교하려면 매수 기록이 있어야 합니다. 거래소 앱의 투자 내역 화면을 캡처하는 것보다 거래내역 파일을 내려받는 쪽이 나중에 쓰기 좋습니다.</p>
@@ -1984,7 +2133,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>넷째, 코인 간 교환이 양도라는 점을 거래 습관에 반영합니다. 2027년부터는 비트코인 마켓에서 비트코인을 알트코인으로 교환할 때마다 비트코인의 손익이 확정됩니다. 거래 횟수가 많을수록 계산할 건수도 늘어나므로, 거래소가 제공하는 손익 정리 기능이 있는지 미리 확인해 두면 2028년 5월 신고를 수월하게 준비할 수 있습니다.</p>
 <p>다섯째, 손실의 상계 범위를 이해해 둡니다. 2027년 이후의 손실은 같은 해의 다른 코인 이익과만 상계되고 다음 해로 넘어가지 않습니다. 이 규칙을 알고 있어야 연말마다 보유 코인의 투자 판단 기준을 세울 수 있습니다. 어떤 코인을 언제 팔지는 세법이 정해 주지 않습니다.</p>
 <div style="margin:28px 0; text-align:center;"><img src="https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-19_crypto-tax-2027-guide/card_crypto_tax_checklist.png" alt="2026년 연말 전 코인 과세 준비 체크리스트 카드입니다. 지금 가진 코인은 2026년 12월 31일 시가와 실제 매수가 중 큰 쪽이 취득가액이 되므로 거래소별 거래내역을 내려받고, 해외 거래소와 개인 지갑 보유분은 매수 증빙을 모읍니다. 2027년부터 거래소 밖에서 취득한 코인은 증빙이 없으면 필요경비를 양도가액의 50%로 보는 방식이 적용될 수 있고, 코인 간 교환도 양도로 계산하며, 손실은 그 해 안에서만 상계됩니다. 첫 신고는 2028년 5월 1일부터 31일까지이며 근거는 소득세법 제37조 제5항·제6항, 제70조 제2항, 제164조의4, 시행령 제88조입니다." width="2160" height="3200" loading="lazy" decoding="async" style="width:600px; max-width:100%; height:auto; border:1px solid #eee; border-radius:6px;" /></div>
-<p><p class="lead-answer">연말 전 할 일은 기록입니다. 거래소별 거래내역, 해외·지갑 보유분의 매수 증빙, 2027년 이후의 교환·취득 기록이 2028년 5월 신고에 필요한 자료입니다.</p></p>
+<p class="lead-answer">연말 전 할 일은 기록입니다. 거래소별 거래내역, 해외·지갑 보유분의 매수 증빙, 2027년 이후의 교환·취득 기록이 2028년 5월 신고에 필요한 자료입니다.</p>
 <a name="가상자산-과세-유예-폐지안--국회는-어디까지-왔나"></a>
 <h2 id="가상자산-과세-유예-폐지안--국회는-어디까지-왔나">가상자산 과세 유예·폐지안, 국회는 어디까지 왔나</h2>
 <p>2026년 10월 12일 기준으로 국회에는 가상자산 과세와 관련된 소득세법 개정안 네 건이 재정경제기획위원회 소관위원회 심사 단계에 있습니다. 송언석 의원이 2024년 9월 26일 낸 유예안(의안번호 2204341)과 2026년 3월 19일 낸 폐지안(2217609), 정성국 의원이 2026년 8월 10일 낸 3년 유예안(2220515), 김상훈 의원이 2026년 8월 28일 낸 2년 유예안(2220914)입니다. 보도에 따르면 정성국 안은 시행일을 2030년 1월 1일로, 김상훈 안은 2029년 1월 1일로 미루는 내용이고, 폐지안은 가상자산 양도·대여 소득의 과세 규정을 삭제하는 내용입니다. 네 건 모두 상임위 심사를 통과하지 못한 상태입니다.</p>
@@ -1992,7 +2141,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>10월 6일 재정경제부 국정감사에서는 예정대로 시행하자는 입장과 유예하자는 입장이 제시됐습니다. 여당 간사인 오기형 의원은 세 차례 여야 합의로 미룬 일정을 바로 바꾸는 것은 적절하지 않다는 취지로 말했습니다. 국민의힘 김상훈 의원은 탈중앙화 거래 추적 인프라가 없다며 유예를 요구했습니다. 연말 조세소위원회 심사에서 다시 다뤄질 전망입니다.</p>
 <p>지금 확정된 것은 2027년 1월 1일 시행이 적힌 공포 법률뿐이고, 네 건의 법안은 통과되기 전까지 투자자의 세금에 아무 영향을 주지 않습니다. 세 차례 전례가 있으니 가능성은 열려 있지만, 그 가능성에 기대어 기록을 미루면 유예가 되지 않았을 때 손해를 봅니다. 반대로 기록을 해 두면 유예가 되더라도 잃는 것이 없습니다.</p>
 <p>국회가 유예나 폐지를 의결하기 전까지 "코인 과세는 또 미뤄진다"는 말은 예측이지 법이 아닙니다.</p>
-<p><p class="lead-answer">유예안 세 건과 폐지안 한 건이 상임위 심사 중이고 정부는 2027년 시행 입장입니다. 국회가 법을 바꾸지 않는 한 공포된 법률대로 2027년 1월 1일에 시행됩니다.</p></p>
+<p class="lead-answer">유예안 세 건과 폐지안 한 건이 상임위 심사 중이고 정부는 2027년 시행 입장입니다. 국회가 법을 바꾸지 않는 한 공포된 법률대로 2027년 1월 1일에 시행됩니다.</p>
 <div class="references">
 <h4>참고자료</h4>
 <ul>

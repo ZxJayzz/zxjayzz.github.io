@@ -1460,6 +1460,155 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid #E5D9CC!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:#1C1210!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:#1C1210!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:#D35400}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:#1C1210!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:#1C1210!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:#F3EDE6!important;color:#1C1210!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid #3A3330!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid #E5D9CC!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid #3A3330!important;border-radius:0!important;color:#3A3330!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid #E5D9CC!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:#1C1210!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid #E5D9CC!important;border-bottom:1px solid #E5D9CC!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:#1C1210!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:#3A3330!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:#1C1210!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:#1C1210!important;color:#FFFFFF!important}
+.article-body a{color:#1C1210!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:#B94700!important;text-decoration-color:#B94700!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:#1C1210!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:#6B5D4F!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:#1C1210!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:#1C1210!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:#6B5D4F!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid #E5D9CC!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:#B94700!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:#6B5D4F!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:#FAF6F1!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
@@ -1942,7 +2091,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>여기서 흔한 오해가 생깁니다. 받은 사람이 답하지 않으면 그 내용을 인정한 것이 된다는 생각인데, 법제처 생활법령정보도 반박하지 않더라도 법률상 불이익은 없다고 안내합니다. 내용증명은 "이런 요구를 이날 했다"는 기록이고, 그 기록의 법적 의미는 민법이 따로 정합니다.</p>
 <p>그렇다면 기록으로서의 힘은 어디서 오는가. 우체국이 원본과 등본을 대조해 발송일과 우체국명을 적고, 날짜도장을 걸쳐 찍거나 구멍을 뚫어 계인한 뒤 등본 한 통을 <strong class="num">3년</strong>간 보관하는 절차에서 옵니다(우편법 시행규칙 제48조 제3항, 제52조).</p>
 <p>발송인과 수취인 모두 발송 다음 날부터 3년 안에 재증명과 등본 열람을 청구할 수 있습니다(제54조, 제55조).</p>
-<p><p class="lead-answer">내용증명은 "무슨 내용을 언제 보냈는가"를 우체국이 3년간 보관하며 증명하는 제도이고, 내용의 진실이나 상대의 인정은 증명하지 않습니다.</p></p>
+<p class="lead-answer">내용증명은 "무슨 내용을 언제 보냈는가"를 우체국이 3년간 보관하며 증명하는 제도이고, 내용의 진실이나 상대의 인정은 증명하지 않습니다.</p>
 <a name="반송되지-않으면-도달한-것으로-본다"></a>
 <h2 id="반송되지-않으면-도달한-것으로-본다">반송되지 않으면 도달한 것으로 본다</h2>
 <p>민법 제111조 제1항은 상대방이 있는 의사표시(법률 효과를 생기게 하려는 뜻을 상대에게 알리는 것)는 상대방에게 도달한 때 효력이 생긴다고 정합니다. 상대가 "받은 적 없다"고 버티면 보낸 사람이 도달을 증명해야 합니다. 이때 봉투의 종류에 따라 증명 방식이 달라집니다.</p>
@@ -1951,7 +2100,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>여기에 배달증명을 붙이면 배달일과 받은 사람이 우체국 기록으로 남아 도달을 다투기 어려워집니다. 배달증명은 우편물의 배달일자와 수취인을 배달우체국이 증명해 발송인에게 통지하는 제도입니다(시행규칙 제25조 제1항 제4호 다목).</p>
 <p>상대가 주소지에 없거나 수취를 거절해 반송되면 이 추정은 깨집니다. 다만 대법원은 상대가 정당한 사유 없이 내용증명의 수령을 거절한 경우에는 상대가 그 내용을 알 수 있는 상태에 놓인 때에 의사표시의 효력이 생긴다고 보았고(대법원 2008. 6. 12. 선고 2008다19973 판결), 거절에 정당한 사유가 있었는지는 거절한 쪽이 증명해야 한다고 했습니다(대법원 2020. 8. 20. 선고 2019두34630 판결).</p>
 <p>반송된 봉투는 뜯지 말고 보관합니다. 집에 아무도 없어 배달되지 못했다면 등기번호로 배송조회를 해 최종 반송인지 확인하고, 반송됐으면 실제 주소를 다시 확인해 재발송합니다. 과실 없이 상대의 소재를 알 수 없을 때는 민법 제113조의 공시송달(법원 게시 등의 방법으로 송달하는 제도)을 검토하게 됩니다. 이 단계부터는 법률 전문가의 도움을 받는 편이 안전합니다.</p>
-<p><p class="lead-answer">내용증명과 등기우편은 반송되지 않으면 도달한 것으로 추정되고, 보통우편은 보낸 쪽이 도달을 따로 증명해야 합니다.</p></p>
+<p class="lead-answer">내용증명과 등기우편은 반송되지 않으면 도달한 것으로 추정되고, 보통우편은 보낸 쪽이 도달을 따로 증명해야 합니다.</p>
 <a name="내용증명을-보내면-시효가-멈출까"></a>
 <h2 id="내용증명을-보내면-시효가-멈출까">내용증명을 보내면 시효가 멈출까</h2>
 <p>돈을 받을 권리에는 시효가 있습니다. 채권은 10년간 행사하지 않으면 소멸시효가 완성되고(민법 제162조 제1항), 이자·급료·사용료처럼 1년 이내 기간으로 정한 돈이나 상인이 판 상품의 대가, 공사 대금 등은 3년(제163조), 숙박료·음식값·동산 사용료 등은 1년입니다(제164조). 사업상 거래(상행위)로 생긴 채권은 상법에 따라 원칙적으로 5년이고, 다른 법령에 더 짧은 시효가 있으면 그쪽을 따릅니다(상법 제64조). 시효는 권리를 행사할 수 있는 때부터 흐르므로(제166조 제1항), 갚기로 한 날이 있다면 그 날이 지나면서 시계가 돕니다.</p>
@@ -1962,7 +2111,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 <p>시효가 중단되면 그때까지 지난 기간은 지워지고 중단 사유가 끝난 때부터 새로 흐르며, 재판상 청구로 중단된 시효는 재판이 확정된 때부터 다시 시작합니다(제178조). 판결로 확정된 채권은 원래 1년이나 3년짜리였더라도 시효가 10년이 됩니다(제165조 제1항). 판결이 확정될 때 아직 갚을 날이 오지 않은 채권은 예외입니다(같은 조 제3항).</p>
 <div class="table-scroll"><table><thead><tr><th>상황</th><th>내용증명의 효과</th><th>6개월 안에 해야 할 일</th></tr></thead><tbody><tr><td>시효 완성이 수개월 남음</td><td>최고로 잠정 중단(제174조)</td><td>소 제기·지급명령·가압류 등 확정 조치</td></tr><tr><td>상대가 받고 6개월 안에 일부 변제·분할 약속</td><td>승인으로 확정 중단(2020다46663)</td><td>변제 기록과 약속 문서 보관</td></tr><tr><td>보통우편으로만 보냄</td><td>도달 추정 없음(2000다25002)</td><td>다른 도달 증거 확인, 시효가 임박했으면 바로 소 제기·지급명령</td></tr></tbody></table></div>
 <p>내 채권의 시효가 몇 년이고 언제부터 흘렀는지는 사안마다 다릅니다. 시효 완성이 임박했다면 변호사나 법률구조공단에 상담해 기간부터 확인해야 합니다.</p>
-<p><p class="lead-answer">내용증명은 시효를 6개월 미루는 최고일 뿐이고, 그 안에 소송·지급명령·가압류 같은 확정 조치나 상대의 채무 승인이 없으면 중단 효력은 사라집니다.</p></p>
+<p class="lead-answer">내용증명은 시효를 6개월 미루는 최고일 뿐이고, 그 안에 소송·지급명령·가압류 같은 확정 조치나 상대의 채무 승인이 없으면 중단 효력은 사라집니다.</p>
 <a name="돈-문제에서-내용증명이-필요한-순간"></a>
 <h2 id="돈-문제에서-내용증명이-필요한-순간">돈 문제에서 내용증명이 필요한 순간</h2>
 <p>첫째, 갚을 날짜를 정하지 않고 빌려준 돈입니다. 기한이 없는 채무는 원칙적으로 채무자가 이행청구를 받은 때부터 지체책임을 지는데(민법 제387조 제2항), 빌려준 돈(소비대차)은 한 단계가 더 있습니다. 빌려준 사람이 상당한 기간을 정해 갚으라고 최고해야 하고(제603조 제2항), 그 기간이 지난 뒤에야 지체를 따질 수 있습니다. "언제까지 갚으라"는 요구와 그 도달일이 기록돼야 하니, 내용증명이 출발점입니다.</p>
