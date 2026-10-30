@@ -1391,10 +1391,6 @@ font-size: 12pt;
 .subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B94700;outline-offset:2px}
 .post-card-thumb{height:auto!important;aspect-ratio:2.5/1}
-.pontis-strip{max-width:1080px;margin:14px auto 0;padding:0 16px}
-.pontis-strip a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;padding:10px 16px;border:1px solid #E5D9CC;border-radius:8px;background:#FAF6F1;font-size:13px;line-height:1.5;color:#6B5D4F;text-decoration:none}
-.pontis-strip a b{color:#1C1210;font-weight:700;margin-right:6px}
-.pontis-strip a .go{color:#B94700;font-weight:700;white-space:nowrap}
 .site-intro{max-width:1080px;margin:12px auto 0;padding:0 16px}
 .site-intro .box{background:#FFF;border:1px solid #E5D9CC;border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
 .site-intro strong{font-size:17px;color:#1C1210}
@@ -1407,7 +1403,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .article-body,.article-body .econlaw-post{font-size:16px;line-height:1.8}
 .site-intro .chips{margin-left:0;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px;scrollbar-width:none}
 .site-intro .box{padding:14px 16px}
-.pontis-strip a .text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
 @media (max-width:640px){
 .article-body p.lead-answer{padding:14px 16px;font-size:16px}
@@ -1442,14 +1437,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 :focus-visible{outline:2px solid #B94700;outline-offset:2px}
 .site-intro h1.site-h1{display:block;margin:0 0 6px;font-size:26px;line-height:1.4;font-weight:800;color:#1C1210}
 @media (max-width:768px){.site-intro h1.site-h1{font-size:22px}}
-.pontis-strip{max-width:1200px;padding:0 24px}   /* 2026-10-21 도구 공개 전까지: 옛 Pontis 띠를 A안 소개 상자 폭에 맞춘다(공개 때 지움) */
 @media (max-width:768px){
 .site-intro{padding:0 12px}
 .site-intro .box{padding:18px 16px}
 .site-intro strong{font-size:22px}
 .site-intro .desc{font-size:15px}
 .page-list .content-wrap{padding-top:20px}
-.pontis-strip{padding:0 12px}
 }
 /* 2026-10-21 서가(카테고리) 머리. 홈 소개 상자 대신 서가 이름·설명·이 분야 도구 */
 .cat-head{max-width:1200px;margin:24px auto 0;padding:0 24px}
@@ -1460,6 +1453,124 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B9
 .cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid #E5D9CC;border-radius:6px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:600;text-decoration:none}
 .cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:#B94700}
 @media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-18 머리글 '법령·판례 검색' 단추: PC는 메뉴 오른쪽 끝, 휴대폰은 ☰ 왼쪽 */
+.hdr-lawsearch{order:3;margin-left:10px;position:relative;isolation:isolate;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:0;background:transparent;color:#FFFFFF;font-size:14px;font-weight:700;letter-spacing:-.3px;white-space:nowrap;text-decoration:none;line-height:1}
+/* 누르는 상자는 44px(WCAG 2.5.8 24px 최소·Apple 44pt 권장), 보이는 알약은 가상 요소로 그린다(2026-10-24) */
+.hdr-lawsearch::before{content:"";position:absolute;left:0;right:0;top:4px;bottom:4px;border:1px solid rgba(255,255,255,.32);border-radius:999px;z-index:-1}
+.hdr-lawsearch:hover::before,.hdr-lawsearch:focus-visible::before{background:rgba(211,84,0,.25);border-color:#D35400}
+.hdr-lawsearch:hover,.hdr-lawsearch:focus-visible{color:#FFFFFF}
+.header-inner .nav-categories{margin-left:auto}
+.tools-strip{max-width:1200px;padding:0 24px}
+.tools-strip{margin:14px auto 0}
+.tools-strip .box{display:flex;align-items:center;gap:10px 24px;padding:12px 18px;border:1px solid #E5D9CC;border-radius:8px;background:#FAF6F1}
+.tools-strip p{margin:0;flex:1;min-width:0;font-size:14px;line-height:1.6;color:#6B5D4F}
+.tools-strip b{margin-right:10px;color:#1C1210;font-weight:800}
+.tools-strip nav{display:flex;flex-wrap:wrap;gap:8px;flex-shrink:0}
+.tools-strip nav a{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid #E5D9CC;border-radius:999px;background:#FFFFFF;color:#B94700;font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none}
+.tools-strip nav a:hover,.tools-strip nav a:focus-visible{border-color:#B94700}
+/* 2026-10-18 도구 화면: 블로그 옆 칸·발행 날짜 줄 없이, 위에 도구 탭 줄(범주 넷). 계산기 페이지는 그 아래 '다른 계산기' 줄 */
+.tools-page .content-wrap{grid-template-columns:minmax(0,1fr);max-width:1008px;padding-top:28px}
+.tools-page aside.sidebar,.tools-page .pagination,.tools-page .article-meta-bar{display:none!important}
+.tools-nav{display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none;margin:0 0 20px;padding:0 0 14px;border-bottom:1px solid #E5D9CC;white-space:nowrap}
+.tools-nav::-webkit-scrollbar{display:none}
+.tools-nav a{display:inline-flex;align-items:center;min-height:38px;padding:0 15px;border-radius:999px;border:1px solid #E5D9CC;background:#FFFFFF;color:#3A3330;font-size:14px;text-decoration:none;flex-shrink:0}
+.tools-nav a.on{background:#1C1210;border-color:#1C1210;color:#FFFFFF;font-weight:700}
+.tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
+.tools-sub span{color:#6B5D4F}
+.tools-sub a{color:#B94700;font-weight:700;text-decoration:none}
+.px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:#B94700}
+/* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
+.tools-anchor{scroll-margin-top:72px}
+@media (max-width:768px){
+.hdr-lawsearch{order:1;margin-left:auto;min-height:44px;padding:0 12px;font-size:13px}
+.hdr-lawsearch::before{top:2px;bottom:2px}
+.mobile-menu-btn{order:2}
+.tools-strip{padding:0 12px}
+.tools-strip .box{display:block;padding:12px 14px}
+.tools-strip b{display:block;margin:0 0 2px}
+.tools-strip nav{gap:6px;margin-top:10px}
+.tools-strip nav a{min-height:34px;padding:0 11px;font-size:13px}
+.tools-page .content-wrap{padding-top:16px}
+.tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
+.tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
+.tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-anchor{scroll-margin-top:52px}
+}
+/* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
+.mobile-menu-btn{font-family:inherit}
+/* 2026-10-24 유료 서비스 카드(홈: 휴대폰은 첫 글 다음, PC는 옆 칸 맨 위)와 허브의 짧은 안내 */
+.svc-card{margin:0 0 18px;padding:16px 18px;border:1px solid #E5D9CC;border-radius:12px;background:#FBF5EE}
+.svc-k{margin:0 0 4px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:#B94700}
+.svc-card .svc-t{margin:0 0 6px;font-size:18px;font-weight:800;line-height:1.35}.svc-card .svc-t a{color:#1C1210;text-decoration:none}
+.svc-d{margin:0 0 12px;font-size:14px;line-height:1.6;color:#4A3F38}
+.svc-card .svc-a{margin:0}.svc-card .svc-a a,.svc-widget a.svc-go{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #B94700;border-radius:6px;background:#B94700;color:#FFFFFF;font-size:14px;font-weight:700;text-decoration:none}
+.svc-widget .svc-k{margin-top:-4px}.svc-widget .svc-d{font-size:13.5px}
+@media (min-width:769px){.svc-card.home-m{display:none}}
+@media (max-width:768px){.sidebar .svc-widget{display:none}}
+.lx-svc{margin:28px 0 8px;padding:14px 16px;border:1px solid #E5D9CC;border-radius:10px;background:#FBF5EE}
+.lx-svc p{margin:0 0 6px;font-size:15px}.lx-svc .lx-svc-k{font-weight:800}.lx-svc .lx-svc-k span{margin-left:8px;font-size:12px;font-weight:700;letter-spacing:.1em;color:#B94700}
+.lx-svc a{color:#B94700;font-weight:700;text-decoration:none}
+.footer-links a{display:inline-block;padding:6px 8px}
+.tools-page .article-body p a,.tools-page .lw-src a,.tools-page .lw-note a,.tools-page .px-note a{text-decoration:underline;text-underline-offset:2px}
+.about-brand .accent{color:#B94700}
+.blog-title .brand-name .accent,.footer-brand .accent{color:#D85A00}
+@media (max-width:768px){.cat-head .cat-tools{flex-wrap:wrap;gap:8px;overflow:visible;padding-bottom:0}.cat-head .cat-tools span{flex:0 0 100%;margin:0}.cat-head .cat-tools a{flex-shrink:1;white-space:normal;text-align:center;min-height:36px;padding:5px 12px;line-height:1.3}}
+@media (max-width:374px){.tools-strip nav a{padding:0 9px;font-size:12.5px}.tools-nav a{font-size:12.5px}}
+/* 2026-10-21 다음 묶음 1: 도구 화면(/tools/·/pontis/)의 글자 단계와 장식 정리. 글자 12·13·14·15·16·17·22·26px, 굵기 400·600·700 */
+.tools-page .article-header{padding:32px 48px 0;border-bottom:0}
+.tools-page .article-header h1{font-size:26px;font-weight:700;letter-spacing:0;margin-bottom:8px}
+.tools-page .article-body{padding-top:16px}
+.tools-page .article-body h2{font-size:22px;line-height:1.4;margin:40px 0 12px;padding:0;border:0;letter-spacing:0}
+.tools-page .article-body h2::after{content:none}
+.tools-page .article-body h3{font-size:17px;line-height:1.5;color:#1C1210;margin:20px 0 4px;padding-left:0;border-left:0}
+.tools-page .px-kicker{font-size:13px;font-weight:700;letter-spacing:.12em}
+.tools-nav{gap:4px;padding:0;margin:0 0 20px;border-bottom:1px solid #E5D9CC}
+.tools-nav a{min-height:44px;padding:0 12px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#6B5D4F;font-size:15px;margin-bottom:-1px}
+.tools-nav a:hover{color:#1C1210}
+.tools-nav a.on{background:transparent;border-color:transparent;border-bottom-color:#1C1210;color:#1C1210;font-weight:700}
+.tools-page .lw .lw-top{align-items:flex-end;border-bottom:1px solid #E5D9CC}
+.tools-page .lw .lw-tabs{gap:4px}
+.tools-page .lw .lw-tabs button{min-height:44px;padding:0 12px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:#6B5D4F;font-size:15px;margin-bottom:-1px}
+.tools-page .lw .lw-tabs button[aria-checked=true]{background:transparent;border-bottom-color:#1C1210;color:#1C1210;font-weight:700}
+.tools-page .lw .lw-ex button,.tools-page .lw .lw-jump a{border-radius:6px;font-size:14px;color:#3A3330}
+.tools-page .lw .lw-jump.sm a{font-size:13px}
+.tools-page .lw .lw-tag{border-radius:4px}
+.tools-page .px a.px-btn,.tools-page .px a.px-btn2{border-radius:6px}
+/* 2026-10-28 블로그 10-27 개편 CSS가 본문 링크를 검은 글자·밑줄로 강제(!important)해, 단추는 더 구체적인 선택자로 제 모양을 지킨다 */
+.tools-page .px a.px-btn,.tools-page .px a.px-btn:hover,.tools-page .px a.px-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important}
+.tools-page .px a.px-btn2,.tools-page .px a.px-btn2:hover,.tools-page .px a.px-btn2:focus-visible{color:#B94700!important;text-decoration:none!important}
+.tools-page .lw .lw-card a.lw-go{color:#FFFFFF!important;text-decoration:none!important}
+.tools-page .lw .lw-acts a,.tools-page .lw .lw-zero a,.tools-page .lw a.lw-help{color:#B94700!important;text-decoration:none!important}
+.tools-page .lw .lw-jump a{color:#3A3330!important;text-decoration:none!important}
+.tools-page .lw .lw-item a.lw-title,.tools-page .lw .lw-toc a{color:#1C1210!important;text-decoration:none!important}
+.tools-page .lw .lw-item a.lw-title:hover,.tools-page .lw .lw-toc a:hover,.tools-page .lw a.lw-help:hover{text-decoration:underline!important}
+.tools-page .lx-calc:not([id]){background:transparent;border:0;border-top:1px solid #E5D9CC;border-radius:0;padding:4px 0 0;margin:12px 0 28px}
+.tools-page .lx-calc:not([id]) h3{margin:16px 0 2px;font-size:17px}
+.tools-page .lx-calc .lx-sub{color:#6B5D4F;font-size:14px;margin:0 0 12px}
+.tools-page .lx-calc .lx-result{border-left-width:1px;border-radius:10px}
+.tools-page .lx-calc table.lx-break{font-size:15px}
+.tools-page .lx-calc table.lx-break tr.sum td{font-weight:700}
+.tools-page .lw .lw-sec h3{padding-left:0;border-left:0;font-size:17px}
+.tools-page .lw .lw-rel{border:1px solid #E5D9CC;background:#FFFFFF;border-radius:10px}
+.tools-page .lw .lw-meta,.tools-page .lw .lw-acts button,.tools-page .lw .lw-acts a,.tools-page .lw .lw-retry{font-size:14px}
+.tools-page .lw .lw-item a.lw-title,.tools-page .lw .lw-art h3{font-size:17px}
+.tools-page .lw .lw-banner{font-size:15px}
+.tools-page .lw .lw-annex h3{font-size:16px}
+.tools-page .lw .lw-txt{font-size:17px;line-height:1.8}
+.tools-page .lw .lw-txt.sm{font-size:15px}
+.tools-page .px .px-sample .px-tag{font-size:13px}
+.tools-page .px .px-sample a{font-size:15px}
+.tools-page .px table.px-table{font-size:15px}
+.tools-page .px ol.px-steps li::before{font-weight:700}
+@media (max-width:768px){
+.tools-page .article-header{padding:22px 16px 0}
+.tools-page .article-header h1{font-size:26px}
+.tools-page .article-body h2{font-size:22px;margin-top:32px}
+.tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0 0 14px}
+.tools-nav a{justify-content:center;padding:0 2px;font-size:14px}
+.tools-page .lw .lw-jump{flex-wrap:wrap}
+}
+@media (max-width:374px){.tools-nav a{font-size:13px}}
 /* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
    기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
    (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
@@ -1629,9 +1740,10 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </span>
 </a>
 </div>
+<a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' onclick='document.querySelector(".nav-categories").classList.toggle("open")'>&#9776;</button>
 <ul class='nav-categories'>
-<li><a href='/tools/'>계산기</a></li>
+<li><a href='/tools/'>도구</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -2181,13 +2293,11 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/p/blog-page_09.html'>면책조항</a>
 <span class='footer-links-sep'>&#183;</span>
-<a href='https://www.lawnomics.com/tools/'>계산기</a>
+<a href='https://www.lawnomics.com/tools/'>도구</a>
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/p/blog-page_04.html'>개인정보처리방침</a>
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/p/blog-page.html'>문의</a>
-<span class='footer-links-sep'>&#183;</span>
-<a href='https://www.lawnomics.com/pontis/'>기업분석 리포트</a>
 <span class='footer-links-sep'>&#183;</span>
 <a href='https://www.lawnomics.com/feed.xml'>RSS</a>
 </div>
