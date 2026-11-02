@@ -1753,7 +1753,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
-<nav class='tools-nav' aria-label='도구'><a href='/tools/'>도구 전체</a><a href='/tools/law-search.html#from=tab' class='on' aria-current='page'>법령·판례</a><a href='/tools/#calc'>비용 계산기</a></nav>
+<nav class='tools-nav' aria-label='도구'><a href='/tools/'>도구 전체</a><a href='/tools/law-search.html#from=tab' class='on' aria-current='page'>법령·판례</a><a href='/tools/#calc'>비용 계산기</a><a href='/tools/company.html'>기업 정보</a></nav>
 <article class='article-wrap'>
 <div class='article-header'>
 
@@ -2193,7 +2193,8 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
     return idx && s ? idx[s.replace(/^「|」$/g, "").replace(/\s+/g, "")] || null : null;
   }
 
-  function hideSug() { sug.hidden = true; sug.textContent = ""; sugIndex = -1; input.setAttribute("aria-expanded", "false"); }
+  // 목록을 닫거나 다시 그리면 입력칸이 가리키던 선택 항목(aria-activedescendant)도 지운다. 남겨 두면 보조기술이 사라진 항목을 읽는다(2026-10-31 Codex 사이트 점검 3)
+  function hideSug() { sug.hidden = true; sug.textContent = ""; sugIndex = -1; input.setAttribute("aria-expanded", "false"); input.removeAttribute("aria-activedescendant"); }
   function showSug() {
     var q = input.value.trim();
     if (target !== "law" || !names || q.length < 1) return hideSug();
@@ -2203,7 +2204,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
       if (hit === 0 || sh === 0) starts.push(n); else if ((hit > 0 || sh > 0) && has.length < 8) has.push(n);
     }
     var list = starts.concat(has).slice(0, 8);
-    sug.textContent = "";
+    sug.textContent = ""; input.removeAttribute("aria-activedescendant");
     if (!list.length) return hideSug();
     list.forEach(function (n, i) {
       sug.appendChild(el("li", { role: "option", id: "lw-sug-" + i, "aria-selected": "false", on: { mousedown: function (e) { e.preventDefault(); openLaw(n.law_id); } } },
