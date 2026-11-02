@@ -1381,7 +1381,9 @@ font-size: 12pt;
 .article-meta-bar .meta-policy{color:#6B5D4F;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 .post-date,.recent-date,.about-widget p,.footer-tagline,.footer-copyright{color:#6B5D4F}
 .footer-tagline,.footer-copyright{color:#B9A89A}
-.article-body p[style*="#8B7D6B"]{color:#6B5D4F!important}
+.article-body p[style*="#8B7D6B" i]{color:#6B5D4F!important}
+.pagination a,.blog-pager-older-link,.blog-pager-newer-link,.home-link{color:#6B5D4F}
+@media print{.page-list .post-card-thumb{display:none!important}.page-list .main-content .post-card:not(.is-lead){grid-template-columns:1fr!important}}
 .subscribe-cta .sub-btn,.subscribe-btn,.search-btn,.back-to-top{background:#B94700!important}
 .subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B94700;outline-offset:2px}
@@ -1724,7 +1726,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <!-- Reading Progress Bar -->
 <div id='reading-progress'></div>
 <!-- ==================== HEADER ==================== -->
-<div class='header-wrap'>
+<div class='header-wrap' role='banner'>
 <div class='header-inner'>
 <div class='blog-title'>
 <a href='https://www.lawnomics.com/'>
@@ -1736,8 +1738,8 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </a>
 </div>
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
-<button class='mobile-menu-btn' onclick='document.querySelector(".nav-categories").classList.toggle("open")'>&#9776;</button>
-<ul class='nav-categories'>
+<button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
+<ul class='nav-categories' id='site-menu'>
 <li><a href='/tools/'>도구</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
@@ -1746,6 +1748,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </ul>
 </div>
 </div>
+<main id='main-content'>
 <div class='tools-strip'><div class='box'><p><b>도구</b>법령과 판례를 찾고 비용을 계산합니다.</p><nav aria-label='도구 바로 가기'><a href='/tools/law-search.html#from=strip'>법령·판례 검색</a><a href='/tools/#calc'>비용 계산기</a></nav></div></div>
 <div class='cat-head'><h1 class='cat-h1'>금전·분쟁</h1><p class='cat-desc'>받을 돈을 청구하거나 갚기 어려운 빚을 정리할 때 필요한 요건과 절차를 다룹니다. 환불·위약금·손해배상 문제에서 확인할 권리와 대응 방법도 조문과 숫자로 살펴봅니다.</p><nav class='cat-tools' aria-label='이 분야 도구'><span>이 분야 도구</span><a href='/tools/payment-order-cost.html'>지급명령 비용 계산기</a><a href='/tools/law-search.html#law=009930&from=cat'>채무자 회생 및 파산에 관한 법률 원문</a><a href='/tools/law-search.html#law=009290&from=cat'>민사집행법 원문</a><a href='/tools/law-search.html#law=001700&from=cat'>민사소송법 원문</a></nav></div>
 <!-- ==================== MAIN CONTENT ==================== -->
@@ -1753,7 +1756,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
 <div class='post-card is-lead'>
-<div class='post-body-hidden' style='display:none'><img src='https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-26_debt-relief/header_debt_relief.jpg' alt=''><p>빚을 제때 갚기 어려울 때 신용회복위원회 채무조정, 새출발기금, 개인회생, 개인파산 중 무엇을 검토할지는 연체 90일 전후와 소득, 재산으로 갈립니다. 요건과 효과, 압류가 멈추는 시점, 비용과 무료 지원, 재신청 제한을 조문과 판례로 정리했습니다.</p></div>
+<div class='post-body-hidden' style='display:none'><img data-src='https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-26_debt-relief/header_debt_relief.jpg' alt=''><p>빚을 제때 갚기 어려울 때 신용회복위원회 채무조정, 새출발기금, 개인회생, 개인파산 중 무엇을 검토할지는 연체 90일 전후와 소득, 재산으로 갈립니다. 요건과 효과, 압류가 멈추는 시점, 비용과 무료 지원, 재신청 제한을 조문과 판례로 정리했습니다.</p></div>
 <a class='post-card-thumb' aria-label='빚 정리 절차 고르기, 개인회생·워크아웃·파산의 기준' href='/2026/10/debt-relief-procedure-choice.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
@@ -1766,7 +1769,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </div>
 </div>
 <div class='post-card'>
-<div class='post-body-hidden' style='display:none'><img src='https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-19_certified-mail/header_certified_mail.jpg' alt=''><p>내용증명은 등기로 보내는 우편이지만 그 자체로 시효를 멈추지는 못합니다. 우체국이 증명하는 것과 못 하는 것, 반송 안 되면 도달로 보는 판례, 6개월 안에 할 일, 작성·발송 절차와 요금 구성을 조문과 요금표로 정리했습니다.</p></div>
+<div class='post-body-hidden' style='display:none'><img data-src='https://raw.githubusercontent.com/ZxJayzz/lawnomics-assets/main/cards/2026-10-19_certified-mail/header_certified_mail.jpg' alt=''><p>내용증명은 등기로 보내는 우편이지만 그 자체로 시효를 멈추지는 못합니다. 우체국이 증명하는 것과 못 하는 것, 반송 안 되면 도달로 보는 판례, 6개월 안에 할 일, 작성·발송 절차와 요금 구성을 조문과 요금표로 정리했습니다.</p></div>
 <a class='post-card-thumb' aria-label='내용증명 효력과 보내는 법, 비용과 6개월 기한' href='/2026/10/certified-mail-effect-cost-guide.html' style='display:none'></a>
 <div class='post-card-body'>
 <div class='post-meta'>
@@ -1837,7 +1840,8 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </aside>
 </div>
 <!-- ==================== FOOTER ==================== -->
-<div class='footer-wrap'>
+</main>
+<div class='footer-wrap' role='contentinfo'>
 <div class='footer-inner'>
 <div class='footer-content'>
 <h3 class='footer-brand'>Law<span class='accent'>nomics</span></h3>
@@ -2018,11 +2022,17 @@ window.addEventListener('scroll', function() {
       var img = hidden.querySelector('img');
       if (img) {
         var newImg = document.createElement('img');
-        newImg.src = img.src;
         newImg.alt = img.alt || '';
-        newImg.loading = (card === document.querySelector('.post-card')) ? 'eager' : 'lazy'; newImg.decoding = 'async';
+        newImg.decoding = 'async';
+        var thumbUrl = img.getAttribute('data-src') || '';
+        var thumbIO = window.__thumbIO;
+        if (thumbIO === undefined) thumbIO = window.__thumbIO = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es, io) { es.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); e.target.src = e.target.getAttribute('data-lazy'); } }); }, {rootMargin: '400px 0px'}) : null;
+        if (card === document.querySelector('.post-card')) { newImg.fetchPriority = 'high'; newImg.src = thumbUrl; }
+        else if (thumbIO) newImg.setAttribute('data-lazy', thumbUrl);
+        else { newImg.loading = 'lazy'; newImg.src = thumbUrl; }
         thumbLink.appendChild(newImg);
         thumbLink.style.display = 'block';
+        if (thumbIO && newImg.hasAttribute('data-lazy')) thumbIO.observe(newImg);
       }
     }
 

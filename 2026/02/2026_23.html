@@ -1386,7 +1386,9 @@ font-size: 12pt;
 .article-meta-bar .meta-policy{color:#6B5D4F;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 .post-date,.recent-date,.about-widget p,.footer-tagline,.footer-copyright{color:#6B5D4F}
 .footer-tagline,.footer-copyright{color:#B9A89A}
-.article-body p[style*="#8B7D6B"]{color:#6B5D4F!important}
+.article-body p[style*="#8B7D6B" i]{color:#6B5D4F!important}
+.pagination a,.blog-pager-older-link,.blog-pager-newer-link,.home-link{color:#6B5D4F}
+@media print{.page-list .post-card-thumb{display:none!important}.page-list .main-content .post-card:not(.is-lead){grid-template-columns:1fr!important}}
 .subscribe-cta .sub-btn,.subscribe-btn,.search-btn,.back-to-top{background:#B94700!important}
 .subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #B94700;outline-offset:2px}
@@ -1729,7 +1731,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <!-- Reading Progress Bar -->
 <div id='reading-progress'></div>
 <!-- ==================== HEADER ==================== -->
-<div class='header-wrap'>
+<div class='header-wrap' role='banner'>
 <div class='header-inner'>
 <div class='blog-title'>
 <a href='https://www.lawnomics.com/'>
@@ -1741,8 +1743,8 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </a>
 </div>
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
-<button class='mobile-menu-btn' onclick='document.querySelector(".nav-categories").classList.toggle("open")'>&#9776;</button>
-<ul class='nav-categories'>
+<button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
+<ul class='nav-categories' id='site-menu'>
 <li><a href='/tools/'>도구</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
@@ -1751,6 +1753,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </ul>
 </div>
 </div>
+<main id='main-content'>
 <!-- ==================== MAIN CONTENT ==================== -->
 <div class='content-wrap'>
 <div class='main-content'>
@@ -2290,7 +2293,8 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </aside>
 </div>
 <!-- ==================== FOOTER ==================== -->
-<div class='footer-wrap'>
+</main>
+<div class='footer-wrap' role='contentinfo'>
 <div class='footer-inner'>
 <div class='footer-content'>
 <h3 class='footer-brand'>Law<span class='accent'>nomics</span></h3>
