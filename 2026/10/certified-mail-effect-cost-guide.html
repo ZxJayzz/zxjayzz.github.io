@@ -1722,6 +1722,26 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 /* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
 .site-intro h1.site-h1{font-weight:700!important}
 
+
+.header-wrap{background:#FFFFFF!important;border-bottom:1px solid #E7E8EB!important}
+.blog-title a{color:#1C1210!important}
+.blog-title .brand-tagline{color:#6B7280!important}
+.nav-categories li a{color:#374151!important}
+.nav-categories li a:hover,.nav-categories li a.active{background:#F3F4F6!important;color:#111827!important}
+.hdr-lawsearch,.hdr-lawsearch:hover,.hdr-lawsearch:focus-visible{color:#B94700!important}
+.hdr-lawsearch::before{border-color:#E8B48E!important;background:#FFF4EC!important}
+.hdr-lawsearch:hover::before,.hdr-lawsearch:focus-visible::before{border-color:#B94700!important;background:#FFF4EC!important}
+.mobile-menu-btn{color:#1C1210!important}
+.header-wrap :focus-visible{outline-color:#B94700!important}
+@media (max-width:768px){.nav-categories{background:#FFFFFF!important;border-top:1px solid #E7E8EB!important;box-shadow:0 12px 24px rgba(17,24,39,.10)}}
+@media (min-width:769px) and (max-width:959px){
+.mobile-menu-btn{display:block!important;order:2}
+.hdr-lawsearch{order:1;margin-left:auto}
+.header-inner .nav-categories{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;margin:0;padding:12px 24px;background:#FFFFFF;border-top:1px solid #E7E8EB;box-shadow:0 12px 24px rgba(17,24,39,.10)}
+.header-inner .nav-categories.open{display:flex}
+.nav-categories li a{padding:10px 16px}
+}
+
 </style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
