@@ -1766,7 +1766,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -1868,7 +1868,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <div class="px-hero">
 <div>
 <p class="px-lead">인수·매각이나 해외 진출을 검토할 때 필요한 기업 정보를 모아 분석합니다. 공시, 공공 조달, 특허, 언론 자료를 확인해 모든 수치에 출처를 붙이고, 사람이 검토한 뒤 보고서로 드립니다.</p>
-<p class="px-terms"><span>샘플 3종 무료</span><span>맞춤 보고서 유료(범위 확인 뒤 비용 확정)</span><span>납기 보통 1~2영업일</span></p>
+<p class="px-terms"><span>샘플 3종 무료</span><span>맞춤 보고서 유료(범위 확인 뒤 비용 확정)</span><span>납기는 범위 확인 뒤 확정(보통 1~2영업일)</span></p>
 <div class="px-act"><a class="px-btn" href="#samples">샘플 PDF 보기</a><a class="px-btn2" href="#ask">맞춤 보고서 문의</a></div>
 </div>
 <a class="px-cover" href="/pontis/samples/pontis-sample1-acquisition-ko.pdf" target="_blank" rel="noopener"><img src="/pontis/samples/pontis-sample1-acquisition-ko.webp" width="720" height="932" loading="eager" decoding="async" alt="샘플 보고서 첫 쪽. 에스트래픽 인수 검토 리포트의 대상, 조회 기준일, 요약 판정이 보인다"><span>샘플 1 · 에스트래픽 인수 검토 · 10쪽 PDF 열기</span></a>
@@ -1892,11 +1892,11 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <h2>보고서 주요 내용</h2>
 <div class="px-groups">
 <section><h3>결론</h3><ul>
-<li><b>검토 결론과 주요 근거</b><span>진행, 조건부 진행, 중단 가운데 하나로 낸 결론과 그 근거가 된 위험 요인, 매력 요인</span></li>
+<li><b>검토 결론과 주요 근거</b><span>진행, 조건부 진행, 중단 가운데 하나로 낸 검토 결론과 그 근거가 된 위험 요인, 매력 요인</span></li>
 </ul></section>
 <section><h3>재무와 지배구조</h3><ul>
 <li><b>3개년 재무</b><span>공시 재무제표 추세, 유동성과 차입 구조. 수치마다 공시 접수번호 표시</span></li>
-<li><b>지분과 지배구조</b><span>최대주주, 담보 설정, 실질지배자</span></li>
+<li><b>지분과 지배구조</b><span>최대주주, 담보 설정, 공시와 등기로 확인되는 지배관계</span></li>
 </ul></section>
 <section><h3>사업과 조직</h3><ul>
 <li><b>경영진, 인력, 계열사</b><span>임원 구성, 인력 규모와 근속 연수, 평균 급여, 다른 법인 출자</span></li>
@@ -1905,7 +1905,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </ul></section>
 <section><h3>위험 점검과 거래 준비</h3><ul>
 <li><b>주의해서 확인할 사항</b><span>인수합병 이력, 정정공시 빈도, 임원 변동, 소송 공시, 언론의 위험 보도</span></li>
-<li><b>거래 검토 의견</b><span>인수, 매각, 합작 등 거래 방식별 쟁점. 국경을 넘는 거래는 규제 승인 절차까지</span></li>
+<li><b>거래 검토 의견</b><span>인수, 매각, 합작 등 거래 방식별 쟁점. 국경을 넘는 거래는 확인할 공식 절차와 추가 조사 항목까지</span></li>
 <li><b>추가 실사 확인 목록</b><span>공개 자료로는 확인할 수 없어 본실사에서 볼 항목, 조사 범위와 한계</span></li>
 </ul></section>
 </div>
@@ -1920,35 +1920,50 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 <h2>분석 대상과 자료 범위</h2>
 <p>공개 자료로 만드는 보고서라서, 대상 기업이 어디에 무엇을 공시하는지에 따라 분석 깊이가 달라집니다.</p>
 <div class="table-scroll"><table class="px-table">
-<thead><tr><th>나라</th><th>모든 항목을 분석할 수 있는 기업</th></tr></thead>
+<thead><tr><th>나라</th><th>분석 대상이 되는 기업(공개 자료 기준)</th></tr></thead>
 <tbody>
 <tr><td>한국</td><td>상장법인, 그리고 감사보고서나 사업보고서를 전자공시하는 기업</td></tr>
 <tr><td>미국</td><td>증권 당국에 공시하는 기업(상장사와 공시 의무가 있는 법인)</td></tr>
-<tr><td>영국</td><td>등기소에 등록된 모든 법인. 비상장 중소기업도 등기, 임원, 실질지배자, 담보까지 확인할 수 있습니다.</td></tr>
+<tr><td>영국</td><td>등기소에 등록된 법인. 비상장 중소기업도 등기, 임원, 등록된 지배관계, 담보 설정까지 확인할 수 있습니다.</td></tr>
 </tbody></table></div>
-<p class="px-note">여기에 해당하지 않는 기업(한국의 비공시 소기업, 미국 비상장사 등)은 특허, 조달 이력, 언론 보도를 중심으로 일부만 분석할 수 있습니다. 문의하시면 대상 기업을 확인해 가능한 범위를 먼저 알려 드리고, 진행 여부는 그다음에 정하시면 됩니다.</p>
+<p class="px-note">분석 가능한 항목과 깊이는 나라, 기업, 공개 자료에 따라 달라집니다. 공개 자료를 직접 확인하는 순서는 <a href="/guide/counterparty-check.html">거래상대 확인 안내</a>에 있습니다. 여기에 해당하지 않는 기업(한국의 비공시 소기업, 미국 비상장사 등)은 특허, 조달 이력, 언론 보도를 중심으로 일부만 분석할 수 있습니다. 문의하시면 대상 기업을 확인해 가능한 범위를 먼저 알려 드리고, 진행 여부는 그다음에 정하시면 됩니다.</p>
 
 <h2>진행 절차</h2>
 <ol class="px-steps">
 <li><b>문의</b><span>분석할 기업과 검토 배경을 폼으로 접수</span></li>
-<li><b>확인 연락</b><span>범위와 비용 확정. 납기는 보통 1~2영업일</span></li>
+<li><b>확인 연락</b><span>범위와 비용, 납기를 확정합니다. 보통 1~2영업일</span></li>
 <li><b>제작과 검토</b><span>자료 수집은 자동, 결론은 사람이 확정</span></li>
 <li><b>전달</b><span>웹 화면과 PDF. 새 공시가 나오면 갱신 가능</span></li>
 </ol>
 
 <h2>자료 확인과 검수 방식</h2>
-<p>출처 없는 수치는 쓰지 않습니다. 모든 숫자에 공시 접수번호나 원문 링크를 붙입니다. 한국, 미국, 영국의 공시, 등기, 조달, 특허, 언론 자료는 매일 새로 모읍니다. 결론과 의견은 자동으로 만들지 않고, 검토자가 확정한 뒤 보냅니다.</p>
+<p>출처 없는 수치는 쓰지 않습니다. 모든 숫자에 공시 접수번호나 원문 링크를 붙입니다. 자료는 보고서를 만들 때 최신 공개 자료로 다시 확인합니다. 결론과 의견은 자동으로 만들지 않고, 검토자가 확정한 뒤 보냅니다.</p>
 
 <div class="tools-anchor" id="ask"></div>
 <h2>맞춤 보고서 문의</h2>
 <div class="px-ask">
 <p>분석할 기업(나라 포함)과 검토 배경을 알려 주세요.</p>
+<p>대상 국가와 기업명, 알아보려는 내용, 원하는 시점을 적어 주시면 됩니다.</p>
 <div class="px-act"><a class="px-btn" href="https://forms.gle/aXb3xfZYwgL3YCz79" target="_blank" rel="noopener">문의 폼 열기</a></div>
 <p class="px-note">구글 설문지로 연결되며, 로그인하지 않아도 보낼 수 있습니다. 적어 주신 정보를 다루는 방법은 <a href="/p/blog-page_04.html">개인정보처리방침</a>에 있습니다.</p>
 </div>
 
 <p class="px-legal">PONTIS는 로노믹스를 운영하는 로리움 컨설팅(Lawrium Consulting)의 기업 분석 보고서 서비스입니다. 보고서는 공시 등 공개 자료를 바탕으로 한 분석 정보이며, 특정 증권의 가치평가나 매수·매도 권유, 투자자문, 법률자문이 아닙니다.</p>
 </div>
+<script>
+(function(){
+  function track(name, params){ try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) { /* 측정 실패는 화면에 영향 없음 */ } }
+  // 출처: 길잡이 쪽이 붙인 ?from=(허용 목록만), 없으면 pontis. 실제 PDF·구글 폼 클릭에서만 센다(Codex 4라운드 D)
+  var from = "pontis";
+  try { var q = new URLSearchParams(window.location.search).get("from"); if (q && /^(guide-hub|guide-counterparty|tools|company)$/.test(q)) from = q; } catch (e) {}
+  document.querySelectorAll(".px a[href$='.pdf']").forEach(function(a){
+    a.addEventListener("click", function(){ track("sample_open", {sample_id: (a.getAttribute("href") || "").split("/").pop().replace(".pdf", ""), source_content_id: from}); });
+  });
+  document.querySelectorAll(".px a[href^='https://forms.gle/']").forEach(function(a){
+    a.addEventListener("click", function(){ track("inquiry_form_open", {source_content_id: from, inquiry_type: "report"}); });
+  });
+})();
+</script>
 
 </div>
 </article>
