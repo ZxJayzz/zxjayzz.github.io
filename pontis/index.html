@@ -1742,13 +1742,367 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 }
 
 </style>
+<style id='svc-css'>/* [lawnomics-tools 도구 쪽 디자인] 2026-11-06 시안 A(docs/시안_1106): 홈 F2의 살구 띠·색 아이콘 + 화면별 본문 */
+.hx-ic{display:flex;flex:none;align-items:center;justify-content:center;width:64px;height:64px;border-radius:20px;color:#FFFFFF;box-shadow:inset 0 -3px 0 rgba(0,0,0,.10),0 4px 12px rgba(17,24,39,.10)}
+.hx-ic svg{width:30px;height:30px;stroke-width:2.1}
+.k-fam{background:linear-gradient(150deg,#FF8A4C,#E4570E)}.k-home{background:linear-gradient(150deg,#5B93FF,#2459E0)}.k-tax{background:linear-gradient(150deg,#3CC97E,#14954A)}
+.k-debt{background:linear-gradient(150deg,#A182FF,#6D3BEA)}.k-law{background:linear-gradient(150deg,#FFBE3D,#D98200)}.k-calc{background:linear-gradient(150deg,#2ECDBD,#0C8F84)}
+.k-corp{background:linear-gradient(150deg,#6F7F99,#36435A)}.k-news{background:linear-gradient(150deg,#FF6F8E,#DD1F4B)}
+.b-law{background:#FFF1CF}.b-home{background:#E3EDFF}.b-debt{background:#EEE7FF}.b-calc{background:#D9F5F1}.b-corp{background:#E6EAF0}
+.svc-body{font-size:16px;line-height:1.7;color:var(--c-cool-text);word-break:keep-all;overflow-wrap:anywhere}
+.svc-body a{color:inherit;text-decoration:none}
+.svc-body a:focus-visible,.svc-chips a:focus-visible,.svc-btn:focus-visible{outline:2px solid var(--c-focus);outline-offset:2px}
+.svc-body h2,.svc-body h3{word-break:keep-all}
+.svc-chips svg{width:18px;height:18px;flex:none}
+.svc-chips a,.svc-chips span{min-height:44px}
+body.svc{background:var(--c-cool-page)}
+body.svc .content-wrap{max-width:1120px;padding:0 24px 72px;grid-template-columns:minmax(0,1fr)}
+body.svc article.article-wrap{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important;padding:0!important;margin:0!important;max-width:none!important}
+body.svc main,body.svc .content-wrap,body.svc .main-content,body.svc #main,body.svc .widget,body.svc article.article-wrap,body.svc .svc-body{overflow:visible!important}
+body.svc .svc-lift{z-index:2}
+.k-biz{background:linear-gradient(150deg,#4CB889,#1E7A57)}.k-navy{background:linear-gradient(150deg,#3B4D73,#17223A)}
+.b-biz{background:#E3F3EA}.b-tax{background:#E4F6EC}.b-news{background:#FFE8EE}
+.svc-hero{background:#FFF1E6}
+.svc-hero .in{max-width:1120px;margin:0 auto;padding:46px 24px 92px;box-sizing:border-box}
+.svc-hero .row{display:flex;gap:22px;align-items:center}
+.svc-hero .rest{margin-left:86px}
+.svc-hero .hx-ic{width:64px;height:64px;border-radius:20px;flex:none}
+.svc-hero .hx-ic svg{width:30px;height:30px}
+.svc-hero .k{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--c-accent-text)}
+.svc-hero .k a{display:inline-block;padding:13px 0;margin:-13px 0;color:var(--c-accent-text);text-decoration:none}
+.svc-hero h1{margin:0;font-size:38px;line-height:1.25;font-weight:800;letter-spacing:-.03em;color:var(--c-cool-ink)}
+.svc-hero .d{margin:16px 0 0;max-width:720px;font-size:17px;line-height:1.7;color:var(--c-cool-text)}
+.svc-hero .meta{margin:10px 0 0;font-size:14px;color:var(--c-cool-text)}
+.svc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.svc-chips a,.svc-chips span{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:999px;background:#FFFFFF;color:var(--c-cool-ink);font-size:15px;font-weight:700;text-decoration:none;box-sizing:border-box}
+.svc-chips a.on{background:var(--c-cool-ink);color:#FFFFFF}
+.svc-chips a:hover{background:var(--c-cool-ink);color:#FFFFFF}
+.svc-chips .n{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#FFF1E6;color:var(--c-accent-text);font-size:13px}
+.svc-lift{position:relative;margin-top:-60px}
+.svc-sec{margin:44px 0 0}
+.svc-sec>h2{margin:0 0 6px;font-size:24px;line-height:1.35;font-weight:800;letter-spacing:-.025em;color:var(--c-cool-ink)}
+.svc-sec>.sd{margin:0 0 18px;max-width:760px;font-size:15.5px;line-height:1.7;color:var(--c-cool-text)}
+.svc-panel{background:#FFFFFF;border-radius:24px;padding:26px 28px;box-shadow:0 10px 30px rgba(17,24,39,.06)}
+.svc-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.svc-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:200px;margin:0;padding:22px 20px 20px;border-radius:22px;box-sizing:border-box;background:#FFFFFF}
+.svc-card .hx-ic{width:48px;height:48px;border-radius:15px;margin-bottom:2px}
+.svc-card .hx-ic svg{width:24px;height:24px}
+.svc-card h3{margin:0;font-size:18px;line-height:1.35;font-weight:800;letter-spacing:-.025em;color:var(--c-cool-ink)}
+.svc-card h3 a{color:var(--c-cool-ink)}
+.svc-card h3 a::after{content:'';position:absolute;inset:0;border-radius:22px}
+.svc-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--c-cool-text)}
+.svc-card .go{margin-top:auto;font-size:14px;font-weight:700;color:var(--c-cool-ink)}
+.svc-card:hover{transform:translateY(-2px)}
+.svc-wide{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px 22px;align-items:center;padding:26px 28px;border-radius:22px}
+.svc-wide .hx-ic{width:56px;height:56px;border-radius:18px}
+.svc-wide h3{margin:0 0 6px;font-size:20px;font-weight:800;letter-spacing:-.025em;color:var(--c-cool-ink)}
+.svc-wide p{margin:0;font-size:15px;line-height:1.65;color:var(--c-cool-text)}
+.svc-wide .acts{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.svc-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:0 20px;border-radius:12px;background:var(--c-cool-ink);color:#FFFFFF!important;font-size:15px;font-weight:700;text-decoration:none!important;white-space:nowrap}
+.svc-btn.ghost{background:#FFFFFF;color:var(--c-cool-ink)!important;box-shadow:inset 0 0 0 1px #D1D5DB}
+.svc-btn.org{background:#FF8A3D;color:var(--c-ink)!important}
+.svc-btn.line{background:transparent;color:#FFFFFF!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)}
+.svc-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.svc-search{display:flex;align-items:center;gap:12px}
+.svc-search .lab{flex:none;font-size:17px;font-weight:800;color:var(--c-cool-ink)}
+.svc-search form:focus-within{outline:2px solid var(--c-focus);outline-offset:2px}
+.svc-search form{flex:1;display:flex;align-items:center;gap:10px;min-height:56px;padding:0 8px 0 18px;border:1px solid var(--c-cool-line);border-radius:16px;background:#FFFFFF}
+.svc-search form svg{width:20px;height:20px;color:var(--c-cool-icon);flex:none}
+.svc-search input{flex:1;min-width:0;border:0;outline:0;font:inherit;font-size:16px;background:transparent}
+.svc-search button{min-height:44px;padding:0 20px;border:0;border-radius:12px;background:var(--c-accent-btn);color:#FFFFFF;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.svc-band{display:flex;align-items:center;justify-content:space-between;gap:28px;margin:52px 0 0;padding:34px 40px;border-radius:26px;background:#17223A;color:#FFFFFF}
+.svc-band .k{margin:0;font-size:13px;font-weight:800;letter-spacing:.08em;color:#FF9B5E}
+.svc-band h2{margin:8px 0;font-size:26px;line-height:1.3;font-weight:800;letter-spacing:-.02em;color:#FFFFFF}
+.svc-band p{margin:0;max-width:640px;font-size:15.5px;line-height:1.65;color:#D3DAE6}
+.svc-band .acts{display:flex;gap:10px;flex:none}
+.svc-note{margin:28px 0 0;font-size:14px;line-height:1.75;color:var(--c-cool-text)}
+.svc-note a{color:var(--c-cool-text);text-decoration:underline!important;text-underline-offset:3px}
+/* 길잡이 상황 카드 */
+.gd-sit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.gd-sit>div{background:#FFFFFF;border-radius:22px;padding:24px 24px 18px}
+.gd-sit .top{display:flex;align-items:center;gap:14px;margin:0 0 6px}
+.gd-sit .hx-ic{width:46px;height:46px;border-radius:14px}.gd-sit .hx-ic svg{width:23px;height:23px}
+.gd-sit h3{margin:0;font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--c-cool-ink)}
+.gd-sit .when{margin:0 0 12px 60px;font-size:14.5px;color:var(--c-cool-sub)}
+.gd-sit ul{list-style:none;margin:0;padding:0}
+.gd-sit li{border-top:1px solid #F3F4F6}
+.gd-sit li a{display:flex;align-items:center;gap:12px;min-height:44px;padding:12px 2px;color:var(--c-cool-ink)}
+.gd-sit li a b{display:block;font-size:15.5px;line-height:1.45}
+.gd-sit li a small{display:block;margin-top:2px;font-size:13.5px;line-height:1.5;color:var(--c-cool-sub)}
+.gd-sit li a svg{width:18px;height:18px;margin-left:auto;flex:none;color:#9CA3AF}
+.gd-sit li a:hover b{text-decoration:underline;text-underline-offset:3px}
+.gd-sit li.soon{display:flex;gap:10px;align-items:flex-start;padding:13px 2px;font-size:14px;line-height:1.55;color:var(--c-cool-sub)}
+.tag{flex:none;display:inline-flex;align-items:center;min-height:24px;padding:0 9px;border-radius:999px;background:var(--c-cool-bg);color:var(--c-cool-text);font-size:12.5px;font-weight:700}
+/* 거래상대 안내 */
+.cp-steps{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none;counter-reset:st}
+.cp-steps a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px 0 8px;border-radius:999px;background:#FFFFFF;color:var(--c-cool-ink);font-size:14.5px;font-weight:700;text-decoration:none}
+.cp-steps a i{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#1E7A57;color:#FFFFFF;font-style:normal;font-size:13px}
+.cp-body{max-width:820px}
+.cp-sec{background:#FFFFFF;border-radius:22px;padding:28px 30px;margin:0 0 14px}
+.cp-sec h2{display:flex;align-items:center;gap:12px;margin:0 0 14px;font-size:22px;font-weight:800;letter-spacing:-.025em;color:var(--c-cool-ink)}
+.cp-sec h2 i{display:inline-flex;align-items:center;justify-content:center;flex:none;width:32px;height:32px;border-radius:50%;background:#1E7A57;color:#FFFFFF;font-style:normal;font-size:15px}
+.cp-sec h3{display:flex;align-items:center;gap:10px;margin:22px 0 8px;font-size:17px;font-weight:800;color:var(--c-cool-ink)}
+.cp-sec h3 svg{width:20px;height:20px;color:#1E7A57}
+.cp-sec p,.cp-sec li{font-size:16px;line-height:1.75;color:var(--c-cool-text)}
+.cp-sec .law{margin:8px 0 0;padding:10px 14px;border-radius:12px;background:#F9FAFB;font-size:13.5px;line-height:1.65;color:var(--c-cool-sub)}
+.cp-sec .law a{color:var(--c-cool-text);text-decoration:underline!important}
+.cp-cty{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:6px 0 0}
+.cp-cty>div{padding:18px 18px 14px;border:1px solid var(--c-cool-line);border-radius:16px}
+.cp-cty b{display:block;margin:0 0 2px;font-size:16px;color:var(--c-cool-ink)}
+.cp-cty small{display:block;margin:0 0 8px;font-size:13.5px;color:var(--c-accent-text);font-weight:700}
+.cp-cty p{margin:0;font-size:14.5px;line-height:1.65}
+.cp-scope{background:#FFFFFF;border-radius:22px;padding:22px 26px;margin:0 0 14px;font-size:14.5px;line-height:1.75;color:var(--c-cool-text)}
+/* 보고서(PONTIS) */
+.px-hero{background:#17223A;color:#FFFFFF}
+.px-hero .in{max-width:1120px;margin:0 auto;padding:52px 24px 56px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
+.px-hero .k{margin:0 0 10px;font-size:13px;font-weight:800;letter-spacing:.12em;color:#FF9B5E}
+.px-hero h1{margin:0;font-size:40px;line-height:1.2;font-weight:800;letter-spacing:-.03em;color:#FFFFFF}
+.px-hero .d{margin:14px 0 0;max-width:620px;font-size:17px;line-height:1.7;color:#D3DAE6}
+.px-hero .terms{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.px-hero .terms li{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.10);color:#E5EAF2;font-size:14px}
+.px-hero .acts{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+.px-hero .cover{position:relative;display:block;text-decoration:none}
+.px-hero .cover img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.px-hero .cover span{display:block;margin:16px 0 0;font-size:13px;color:#AEB8CA;text-align:center}
+.px-samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.px-samples>div{position:relative;display:flex;flex-direction:column;background:#FFFFFF;border-radius:22px;overflow:hidden}
+.px-samples .th{height:190px;overflow:hidden;background:var(--c-cool-fill)}
+.px-samples .th img{display:block;width:100%;height:auto}
+.px-samples .bd{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px;flex:1}
+.px-samples .tg{font-size:13px;color:var(--c-cool-sub)}
+.px-samples h3{margin:0;font-size:18px;font-weight:800;color:var(--c-cool-ink)}
+.px-samples p{margin:0;font-size:14.5px;line-height:1.6;color:var(--c-cool-text)}
+.px-samples a.go{margin-top:auto;padding-top:8px;font-size:14.5px;font-weight:700;color:var(--c-accent-text)}
+.px-samples a.go::after{content:'';position:absolute;inset:0}
+.px-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.px-groups>div{background:#FFFFFF;border-radius:22px;padding:22px 24px 14px}
+.px-groups .top{display:flex;align-items:center;gap:12px;margin:0 0 8px}
+.px-groups .hx-ic{width:42px;height:42px;border-radius:13px}.px-groups .hx-ic svg{width:21px;height:21px}
+.px-groups h3{margin:0;font-size:18px;font-weight:800;color:var(--c-cool-ink)}
+.px-groups ul{list-style:none;margin:0;padding:0}
+.px-groups li{padding:10px 0;border-top:1px solid #F3F4F6}
+.px-groups li b{display:block;font-size:15.5px;color:var(--c-cool-ink)}
+.px-groups li span{display:block;font-size:14px;line-height:1.6;color:var(--c-cool-sub)}
+.px-who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;background:#FFFFFF;border-radius:22px;overflow:hidden}
+.px-who>div{padding:24px 24px 22px;border-left:1px solid #F3F4F6}.px-who>div:first-child{border-left:0}
+.px-who h3{margin-top:14px}
+.px-who h3{margin:12px 0 6px;font-size:17px;font-weight:800;color:var(--c-cool-ink)}
+.px-who p{margin:0;font-size:14.5px;line-height:1.6;color:var(--c-cool-text)}
+.px-tbl{background:#FFFFFF;border-radius:22px;padding:8px 24px}
+.px-tbl table{width:100%;border-collapse:collapse;font-size:15px}
+.px-tbl th,.px-tbl td{padding:14px 8px;border-bottom:1px solid #F3F4F6;text-align:left;vertical-align:top;line-height:1.6}
+.px-tbl tr:last-child td{border-bottom:0}
+.px-tbl th{font-size:13.5px;color:var(--c-cool-sub);font-weight:700}
+.px-tbl td:first-child{width:70px;font-weight:800;color:var(--c-cool-ink);white-space:nowrap}
+.px-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;position:relative}
+.px-steps li{position:relative;padding:0 16px 0 0}
+.px-steps li::before{content:'';position:absolute;top:19px;left:40px;right:0;height:2px;background:var(--c-cool-fill)}
+.px-steps li:last-child::before{display:none}
+.px-steps i{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#17223A;color:#FFFFFF;font-style:normal;font-weight:800}
+.px-steps b{display:block;margin:12px 0 4px;font-size:16.5px;color:var(--c-cool-ink)}
+.px-steps span{display:block;font-size:14.5px;line-height:1.6;color:var(--c-cool-text)}
+.px-check{display:flex;gap:16px;align-items:flex-start;background:#FFFFFF;border-radius:22px;padding:24px 26px}
+.px-check>span{flex:none}
+.px-check p{margin:0;font-size:15.5px;line-height:1.75;color:var(--c-cool-text)}
+.px-legal{margin:24px 0 0;font-size:13.5px;line-height:1.75;color:var(--c-cool-text)}
+/* 뉴스 */
+.nw-item{background:#FFFFFF;border-radius:22px;padding:26px 28px 22px;margin:0 0 14px}
+.nw-top{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.nw-no{font-size:15px;font-weight:800;color:var(--c-accent-text);font-variant-numeric:tabular-nums}
+.nw-org{display:inline-flex;align-items:center;color:var(--c-cool-text);font-size:13.5px;font-weight:700;letter-spacing:.01em}
+.nw-item h2{margin:0 0 12px;font-size:21px;line-height:1.45;font-weight:800;letter-spacing:-.02em;color:var(--c-cool-ink)}
+.nw-item .sum{margin:0;font-size:16.5px;line-height:1.85;color:var(--c-cool-text)}
+mark.hl{background:linear-gradient(to top,#FFE066 0,#FFE066 45%,transparent 45%);color:inherit;padding:0 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.nw-meta{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;margin:16px 0 0;padding:16px 18px;border-radius:14px;background:#F9FAFB;font-size:14.5px;line-height:1.65;color:var(--c-cool-text)}
+.nw-meta dt{font-weight:800;color:var(--c-cool-ink);white-space:nowrap}
+.nw-meta dd{margin:0}
+.nw-meta a{color:var(--c-cool-text);text-decoration:underline!important;text-underline-offset:3px}
+.nw-more{background:#FFFFFF;border-radius:22px;padding:22px 28px 12px;margin:0 0 14px}
+.nw-more h2{margin:0 0 6px;font-size:19px;font-weight:800;color:var(--c-cool-ink)}
+.nw-more ul{list-style:none;margin:0;padding:0}
+.nw-more li{display:flex;gap:10px;align-items:baseline;padding:12px 0;border-top:1px solid #F3F4F6;font-size:15.5px;line-height:1.55}
+.nw-more li a{color:var(--c-cool-ink)}
+.nw-foot{margin:18px 0 0;font-size:14px;line-height:1.7;color:var(--c-cool-text)}
+.nw-days{display:grid;gap:14px}
+.nw-day{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;background:#FFFFFF;border-radius:22px;padding:24px 28px}
+.nw-day .dt{display:flex;flex-direction:column;align-items:flex-start}
+.nw-day .dt b{font-size:34px;line-height:1;font-weight:800;color:var(--c-cool-ink);letter-spacing:-.03em}
+.nw-day .dt span{margin-top:6px;font-size:14px;color:var(--c-cool-sub)}
+.nw-day .dt a{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;font-size:14px;font-weight:700;color:var(--c-accent-text)}
+.nw-day ul{list-style:none;margin:0;padding:0}
+.nw-day li{border-top:1px solid #F3F4F6}.nw-day li:first-child{border-top:0}
+.nw-day li a{display:flex;align-items:center;gap:12px;padding:11px 0;font-size:16px;line-height:1.5;color:var(--c-cool-ink)}
+.nw-day li a svg{width:18px;height:18px;margin-left:auto;flex:none;color:#9CA3AF}
+.nw-day .more{margin:8px 0 0;font-size:14px;color:var(--c-cool-sub)}
+
+/* ── 2라운드(Codex 1라운드 반영): 화면마다 본문 모양을 다르게 ── */
+.svc-hero.slim .in{padding:34px 24px 84px}
+.svc-hero.slim h1{font-size:34px}
+.svc-hero.nw .in{max-width:848px}
+.nw-tocm{display:none}
+.calc2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.calc2 li{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:'ic t ar' 'ic d ar';gap:4px 16px;align-items:center;padding:22px 22px;border-radius:20px;background:#FFFFFF}
+.calc2 .hx-ic{grid-area:ic}.calc2 h3{grid-area:t;align-self:end}.calc2 p{grid-area:d;align-self:start}.calc2 .arr{grid-area:ar}
+.calc2 .hx-ic{width:50px;height:50px;border-radius:16px}.calc2 .hx-ic svg{width:25px;height:25px}
+.calc2 h3{margin:0;font-size:18px;font-weight:800;letter-spacing:-.02em}
+.calc2 h3 a{color:var(--c-cool-ink)}.calc2 h3 a::after{content:'';position:absolute;inset:0;border-radius:20px}
+.calc2 p{margin:0;font-size:14.5px;line-height:1.6;color:var(--c-cool-text)}
+.calc2 .arr{width:22px;height:22px;color:#9CA3AF}
+.calc2 li:hover{box-shadow:inset 0 0 0 2px var(--c-cool-ink)}
+.wideb{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;padding:26px 26px 22px;border-radius:22px;background:#FFFFFF;margin:0 0 14px}
+.wideb .hx-ic{grid-row:1 / span 3;width:52px;height:52px;border-radius:16px}.wideb .hx-ic svg{width:26px;height:26px}
+.wideb h3{margin:4px 0 2px;font-size:20px;font-weight:800;letter-spacing:-.025em;color:var(--c-cool-ink)}
+.wideb p{margin:0;font-size:15px;line-height:1.65;color:var(--c-cool-text)}
+.wideb .acts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 0}
+.wideb .acts .hint{font-size:14px;line-height:1.6;color:var(--c-cool-text)}
+.wideb .svc-search{margin:14px 0 0}
+.wideb .small{margin:12px 0 0;font-size:13.5px;line-height:1.7;color:var(--c-cool-sub)}
+.wideb .small a{color:var(--c-cool-text);text-decoration:underline!important;text-underline-offset:3px}
+.svc-band.mini{margin:44px 0 0;padding:24px 28px;border-radius:22px}
+.svc-band.mini h2{font-size:21px;margin:6px 0 4px}
+.gd-sit .soon{margin:12px 0 0;padding:12px 2px 2px;border-top:1px dashed var(--c-cool-line);font-size:14px;line-height:1.6;color:var(--c-cool-text)}
+.gd-sit .soon b{display:block;margin:0 0 2px;font-size:12.5px;letter-spacing:.04em;color:var(--c-cool-sub)}
+.gd-jump{display:none}
+.gd-read{background:#FFFFFF;border-radius:22px;padding:22px 26px;margin:14px 0 0}
+.gd-read h2{margin:0 0 8px;font-size:16px;font-weight:800;color:var(--c-cool-ink)}.gd-read p{margin:0 0 10px;font-size:14.5px;line-height:1.75;color:var(--c-cool-text)}.gd-read p:last-child{margin:0}
+.svc-sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.gd-read a{color:var(--c-cool-text);text-decoration:underline!important;text-underline-offset:3px}
+/* 거래상대 안내: 왼쪽 목차 + 오른쪽 읽기 면 */
+.cp-wrap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start}
+.cp-toc{position:sticky;top:88px;background:#FFFFFF;border-radius:18px;padding:18px 16px}
+.cp-toc b{display:block;margin:0 0 8px;font-size:13px;letter-spacing:.04em;color:var(--c-cool-sub)}
+.cp-toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.cp-toc li{counter-increment:t}
+.cp-toc a{display:flex;gap:10px;align-items:center;min-height:44px;box-sizing:border-box;padding:6px 6px;border-radius:10px;font-size:14.5px;line-height:1.45;color:var(--c-cool-ink)}
+.cp-toc a::before{content:counter(t);flex:none;width:20px;font-weight:800;color:#1E7A57}
+.cp-toc a:hover{background:var(--c-cool-bg)}
+.cp-read{background:#FFFFFF;border-radius:22px;padding:34px 40px 30px;max-width:760px;box-sizing:border-box}
+.cp-read h2{display:flex;align-items:center;gap:12px;margin:40px 0 12px;font-size:22px;font-weight:800;letter-spacing:-.025em;color:var(--c-cool-ink)}
+.cp-read h2:first-child{margin-top:0}
+.cp-read h2 i{display:inline-flex;align-items:center;justify-content:center;flex:none;width:30px;height:30px;border-radius:50%;background:#1E7A57;color:#FFFFFF;font-style:normal;font-size:14px}
+.cp-read p,.cp-read li{font-size:16px;line-height:1.8;color:var(--c-cool-text)}
+.cp-read .law{margin:6px 0 0;font-size:13.5px;line-height:1.65;color:var(--c-cool-sub)}
+.cp-read .law a,.cp-read .refs a{color:var(--c-cool-text);text-decoration:underline!important;text-underline-offset:3px}
+.cp-rail{position:relative;margin:8px 0 0;padding:0 0 0 52px}
+.cp-rail::before{content:'';position:absolute;left:17px;top:8px;bottom:8px;width:2px;background:#E3F3EA}
+.cp-rail section{position:relative;margin:0 0 26px}
+.cp-rail section:last-child{margin-bottom:0}
+.cp-rail .no{position:absolute;left:-52px;top:0;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#E3F3EA;color:#1E7A57;font-weight:800;font-size:16px}
+.cp-rail h3{margin:4px 0 6px;font-size:18px;font-weight:800;color:var(--c-cool-ink)}
+.cp-tbl{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:14.5px}
+.cp-tbl th,.cp-tbl td{padding:12px 10px;border-bottom:1px solid #F3F4F6;text-align:left;vertical-align:top;line-height:1.6;color:var(--c-cool-text)}
+.cp-tbl th{font-size:13px;color:var(--c-cool-sub);font-weight:700;border-bottom:1px solid var(--c-cool-line)}
+.cp-tbl td:first-child{font-weight:800;color:var(--c-cool-ink);white-space:nowrap}
+.cp-sheet{margin:12px 0 0;padding:18px 20px 8px;border:1px solid #D1D5DB;border-radius:16px;background:#FFFFFF}
+.cp-sheet .hd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 4px}
+.cp-sheet .hd b{font-size:15px;color:var(--c-cool-ink)}
+.cp-check{list-style:none;margin:0;padding:0}
+.cp-check li{border-top:1px solid #F3F4F6}
+.cp-check label{display:grid;grid-template-columns:auto 28px minmax(0,1fr);gap:10px;align-items:start;min-height:44px;padding:12px 0;cursor:pointer}
+.cp-check li i{font-style:normal;font-weight:800;color:#1E7A57;font-variant-numeric:tabular-nums;padding-top:1px}
+.cp-check input{width:22px;height:22px;margin:1px 0 0;accent-color:#1E7A57}
+.cp-check b{display:block;font-size:16px;color:var(--c-cool-ink);line-height:1.5}
+.cp-check .t>span{display:block;font-size:14.5px;line-height:1.6;color:var(--c-cool-sub)}
+.cp-box{margin:14px 0 0;padding:16px 18px;border-radius:14px;background:#F9FAFB;font-size:15px;line-height:1.75;color:var(--c-cool-text)}
+.cp-read .refs{margin:6px 0 0;padding-left:18px;font-size:14px;line-height:1.8;color:var(--c-cool-sub)}
+.cp-read .refs li{font-size:14px;line-height:1.8;color:var(--c-cool-sub)}
+.cp-tocm{display:none}
+/* 보고서: 주요 내용 2열 편집형, 문의는 살구 */
+.px-ed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;background:#FFFFFF;border-radius:22px;padding:10px 30px 18px}
+.px-ed section{padding:18px 0 4px;border-top:1px solid #F3F4F6}
+.px-ed section:nth-child(-n+2){border-top:0}
+.px-ed h3{display:flex;align-items:center;gap:12px;margin:0 0 6px;font-size:16px;font-weight:800;letter-spacing:-.01em;color:#17223A}
+.px-t{width:40px;height:40px;border-radius:12px}.px-t svg{width:20px;height:20px}.px-t.big{width:48px;height:48px;border-radius:14px}.px-t.big svg{width:24px;height:24px}
+.px-soft{display:inline-flex;flex:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#EAEFF7;color:#17223A}.px-soft svg{width:21px;height:21px;stroke-width:2}
+.px-soft.big{width:48px;height:48px;border-radius:14px}.px-soft.big svg{width:24px;height:24px}
+.px-num{display:inline-flex;align-items:center;justify-content:center;flex:none;min-width:40px;height:40px;border-radius:12px;background:#17223A;color:#FFFFFF;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+.px-ed dl{margin:0}
+.px-ed dt{margin:10px 0 2px;font-size:16px;font-weight:800;color:var(--c-cool-ink)}
+.px-ed dd{margin:0;font-size:14.5px;line-height:1.65;color:var(--c-cool-text)}
+.px-ask{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:44px 0 0;padding:30px 34px;border-radius:24px;background:#FFF1E6}
+.px-ask h2{margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--c-cool-ink)}
+.px-ask p{margin:0;max-width:640px;font-size:15px;line-height:1.7;color:var(--c-cool-text)}
+.px-ask p a{color:var(--c-cool-text);text-decoration:underline!important}
+.px-ask .svc-btn{background:var(--c-accent-btn);color:#FFFFFF!important}
+/* 뉴스: 읽기 면 + 그날 목차 + 정보 상자 */
+.nw-read{max-width:800px;margin-left:auto;margin-right:auto}
+.nw-toc{background:#FFFFFF;border-radius:22px;padding:18px 22px 10px;margin:0 0 14px}
+.nw-toc b.h{display:block;margin:0 0 4px;font-size:13px;letter-spacing:.04em;color:var(--c-cool-sub)}
+.nw-toc ol{list-style:none;margin:0;padding:0}
+.nw-toc li a{display:grid;grid-template-columns:28px auto minmax(0,1fr);gap:10px;align-items:baseline;min-height:44px;box-sizing:border-box;padding:10px 0;border-top:1px solid #F3F4F6;font-size:15.5px;line-height:1.5;color:var(--c-cool-ink)}
+.nw-toc li:first-child a{border-top:0}
+.nw-toc li a i{font-style:normal;font-weight:800;color:var(--c-accent-text);font-variant-numeric:tabular-nums}
+.nw-toc li a:hover span:last-child{text-decoration:underline;text-underline-offset:3px}
+.nw-sheet{background:#FFFFFF;border-radius:22px;padding:6px 34px 10px}
+.nw-art{padding:28px 0 26px;border-top:1px solid var(--c-cool-line);scroll-margin-top:80px}
+.nw-art:first-child{border-top:0}
+.nw-art h2{margin:0 0 12px;font-size:22px;line-height:1.45;font-weight:800;letter-spacing:-.02em;color:var(--c-cool-ink)}
+.nw-art .sum{margin:0;font-size:17px;line-height:1.8;color:#2B2F36}
+mark.hl{background:#FFF0AD;color:var(--c-ink);font-weight:600;padding:1px 2px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.nw-box{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;margin:16px 0 0;padding:14px 16px;border-radius:12px;background:#F6F7F9;font-size:15px;line-height:1.65;color:var(--c-cool-text)}
+.nw-box dt{font-weight:800;color:var(--c-cool-ink);white-space:nowrap}.nw-box dd{margin:0}
+.nw-src{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;margin:12px 2px 0;font-size:14px;line-height:1.65;color:var(--c-cool-sub)}
+.nw-src dt{font-weight:700;color:var(--c-cool-text);white-space:nowrap}.nw-src dd{margin:0}
+.nw-src a{color:var(--c-cool-text);text-decoration:underline!important;text-underline-offset:3px}
+.nw-art .nw-top{margin:0 0 8px}
+.nw-day.latest{background:#FFF8F1;box-shadow:inset 0 0 0 1px #FFE2C7}
+.nw-day li a .o{flex:none;min-width:5.6em;color:var(--c-cool-text);font-size:13.5px;font-weight:700}
+
+@media print{.cp-toc,.cp-tocm,.gd-noprint,.header-wrap,footer,.footer-wrap,.svc-hero .hx-ic,.svc-chips,.cp-steps,.svc-band{display:none!important}.svc-hero{background:none}.svc-hero .in{padding:0 0 12px}.svc-hero .rest{margin-left:0}.cp-read{padding:0}.cp-check li{break-inside:avoid}mark.hl{background:none;font-weight:700;text-decoration:underline}}
+@media (max-width:768px){
+.calc2{grid-template-columns:minmax(0,1fr);gap:12px}.calc2 li{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:'ic t ar' 'd d d';gap:10px 12px;padding:18px}.calc2 .hx-ic{width:42px;height:42px;border-radius:13px}.calc2 .hx-ic svg{width:21px;height:21px}.calc2 .arr{width:18px;height:18px}
+.wideb{grid-template-columns:minmax(0,1fr);padding:22px 18px}.wideb .hx-ic{grid-row:auto;width:46px;height:46px}
+.gd-jump{display:flex}
+.cp-wrap{grid-template-columns:minmax(0,1fr);gap:12px}.cp-toc{display:none}.cp-tocm{display:block;background:#FFFFFF;border-radius:16px;padding:14px 16px}
+.cp-tocm summary{display:flex;align-items:center;min-height:48px;font-weight:800;color:var(--c-cool-ink);cursor:pointer}
+.cp-tocm ol{margin:4px 0 0;padding-left:20px}.cp-tocm a{display:flex;align-items:center;min-height:44px;color:var(--c-cool-ink)}
+.cp-read{padding:24px 18px 22px}.cp-read h2{font-size:20px;margin-top:32px}
+.cp-rail{padding-left:38px}.cp-rail .no{left:-38px;width:28px;height:28px;font-size:14px}.cp-rail::before{left:13px}
+.cp-tbl thead{display:none}.cp-tbl,.cp-tbl tbody,.cp-tbl tr,.cp-tbl td{display:block;width:auto}
+.cp-tbl tr{padding:12px 0;border-bottom:1px solid #F3F4F6}.cp-tbl td{padding:2px 0;border:0}
+.cp-tbl td:nth-child(2)::before{content:'공개 조회 창구 · ';color:var(--c-cool-sub);font-weight:700}
+.px-ed{grid-template-columns:minmax(0,1fr);padding:6px 18px 14px}.px-ed section:nth-child(2){border-top:1px solid #F3F4F6}
+.px-ask{flex-direction:column;align-items:flex-start;padding:24px 20px}
+.nw-sheet{padding:4px 18px 8px;border-radius:18px}.nw-toc,.nw-more,.gd-sit>div,.calc2 li,.wideb,.cp-read,.px-ed,.px-who,.px-tbl,.svc-panel{border-radius:18px}.nw-art h2{font-size:20px}.nw-art .sum{font-size:16.5px}
+.nw-box,.nw-src{grid-template-columns:minmax(0,1fr);gap:0}.nw-box dd,.nw-src dd{margin:0 0 8px}
+.nw-toc{padding:4px 16px 4px}nav.nw-toc{display:none}.nw-tocm{display:block}.nw-tocm summary{display:flex;align-items:center;min-height:48px;font-size:15px;font-weight:800;color:var(--c-cool-ink);cursor:pointer}.nw-toc li a{grid-template-columns:24px minmax(0,1fr);min-height:44px}.nw-toc li a .nw-org{display:none}
+}
+
+@media (max-width:1100px) and (min-width:769px){.svc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:768px){
+body.svc .content-wrap{padding:0 16px 56px}
+.svc-hero .in{padding:26px 16px 76px}.svc-hero .row{gap:14px}.svc-hero .rest{margin-left:0}.svc-hero .hx-ic{width:48px;height:48px;border-radius:15px}.svc-hero .hx-ic svg{width:24px;height:24px}
+.svc-hero h1{font-size:28px}.svc-hero .d{font-size:16px}
+.svc-chips a,.svc-chips span{min-height:44px;padding:0 13px;font-size:14px}
+.svc-cards,.svc-two,.gd-sit,.px-samples,.px-groups,.cp-cty{grid-template-columns:minmax(0,1fr)}
+.svc-card{min-height:0}
+.svc-wide{grid-template-columns:auto minmax(0,1fr);padding:22px 20px}.svc-wide .acts{grid-column:1 / -1;flex-direction:row}
+.svc-search{flex-direction:column;align-items:stretch}.svc-search form{min-height:52px}
+.svc-band{flex-direction:column;align-items:flex-start;padding:26px 22px}.svc-band .acts{flex-wrap:wrap}
+.svc-panel{padding:20px 18px}
+.gd-sit .when{margin-left:0}
+.cp-sec{padding:22px 18px}.cp-sec h2{font-size:20px}
+.px-hero .in{grid-template-columns:minmax(0,1fr);padding:34px 16px 40px;gap:26px}.px-hero h1{font-size:30px}.px-hero .cover{width:190px;margin:0 auto}
+.px-who{grid-template-columns:minmax(0,1fr)}.px-who>div{border-left:0;border-top:1px solid #F3F4F6}.px-who>div:first-child{border-top:0}
+.px-steps{grid-template-columns:minmax(0,1fr);gap:18px}.px-steps li::before{display:none}
+.nw-item{padding:22px 18px 18px}.nw-item h2{font-size:19px}.nw-item .sum{font-size:16px}
+.nw-meta{grid-template-columns:minmax(0,1fr);gap:2px 0;padding:14px}.nw-meta dd{margin:0 0 8px}
+.nw-day{grid-template-columns:minmax(0,1fr);gap:8px;padding:20px 18px}
+.nw-more{padding:20px 18px 8px}
+}
+
+.svc-hero h1 .hk{display:block;margin:0 0 6px;font-size:15px;font-weight:700;letter-spacing:0;color:var(--c-accent-text)}
+.svc-hero h1 time{display:block}
+/* 뉴스 날짜별 쪽: 게시기 대조 표식이 붙은 칸(news-day)에는 클래스를 더할 수 없어 쪽 표시(svc-news)로 폭·걸침을 준다 */
+.svc-news .news-day{max-width:800px;margin:-60px auto 0;position:relative;z-index:2}
+</style>
 <link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
 <link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css' rel='stylesheet'/>
 <style id='c-roles'>:root{--c-ink:#1C1210;--c-ink-bg:#1C1210;--c-ink-line:#1C1210;--c-text:#3A3330;--c-text-line:#3A3330;--c-sub:#6B5D4F;--c-sub-line:#6B5D4F;--c-hint:#6B5D4F;--c-field:#8F7F6E;--c-line-box:#D9CDBF;--c-line:#E5D9CC;--c-line-in:#F0E8DE;--c-cream:#FAF6F1;--c-head:#F3EDE6;--c-on-dark:#B8A99A;--c-on-dark-note:#9B8B7A;--c-on-dark-sep:#5A4D42;--c-focus-dark:#FAF6F1;--c-accent-text:#B94700;--c-accent-line:#B94700;--c-accent-btn:#B94700;--c-focus:#B94700;--c-accent:#D85A00;--c-focus-input:#D85A00;--c-accent-on-dark:#D85A00;--c-brand:#D85A00;--c-cool-ink:#111827;--c-cool-text:#374151;--c-cool-sub:#6B7280;--c-cool-hint:#6B7280;--c-cool-icon:#6B7280;--c-cool-line:#E5E7EB;--c-cool-card-line:#F3F4F6;--c-cool-btn-line:#9CA3AF;--c-cool-fill:#E5E7EB;--c-cool-bg:#F3F4F6;--c-cool-page:#F3F4F6}
 #cx-q::placeholder,#lw-q::placeholder{color:var(--c-hint)}</style>
 </head>
-<body class='tools-page svc-page'>
+<body class='tools-page svc-page svc svc-pontis'>
 <!-- Reading Progress Bar -->
 <div id='reading-progress'></div>
 <!-- ==================== HEADER ==================== -->
@@ -1776,190 +2130,27 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </div>
 <main id='main-content'>
 <!-- ==================== MAIN CONTENT ==================== -->
+<section class='px-hero'><div class='in'><div><p class='k'>PONTIS · 기업 분석 보고서</p><h1>기업 분석 보고서</h1><p class='d'>인수·매각이나 해외 진출을 검토할 때 필요한 기업 정보를 모아 분석합니다. 공시, 공공 조달, 특허, 언론 자료를 확인해 모든 수치에 출처를 붙이고, 사람이 검토한 뒤 보고서로 드립니다.</p><ul class='terms'><li>샘플 3종 무료</li><li>맞춤 보고서 유료(범위 확인 뒤 비용 확정)</li><li>납기는 범위 확인 뒤 확정(보통 1~2영업일)</li></ul><div class='acts'><a class='svc-btn org' href='#samples'>샘플 PDF 보기</a><a class='svc-btn line' href='#ask'>맞춤 보고서 문의</a></div></div><a class='cover' href='/pontis/samples/pontis-sample1-acquisition-ko.pdf'><img src='/pontis/samples/pontis-sample1-acquisition-ko.webp' width='720' height='932' alt='샘플 보고서 첫 쪽. 에스트래픽 인수 검토 리포트의 대상, 조회 기준일, 요약 판정이 보인다'><span>샘플 1 · 에스트래픽 인수 검토 · 10쪽 PDF 열기</span></a></div></section>
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
 <article class='article-wrap'>
-<div class='article-header'>
+<div class='svc-body'>
+<!-- /pontis/ 기업 분석 보고서 (시안 A, 2026-11-06 svc_build.py가 만듦 — 고칠 때는 docs/시안_1106/build_mock.py를 고치고 다시 만든다).
+     법령 인용과 해외 기관 확인은 게시본(guide_counterparty_v1.html 머리 주석)과 같다. 글은 그대로, 자리만 옮겼다.
+     주의: sitegen이 본문의 '중괄호로 감싼 대문자 낱말' 자리표시자를 치환하므로 그런 문자열을 쓰지 않는다. -->
 
-<p class='px-kicker'>PONTIS</p>
-<h1>기업 분석 보고서</h1>
-<div class='article-meta-bar'>
-<span class='meta-item'>
-<svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'></rect><line x1='16' x2='16' y1='2' y2='6'></line><line x1='8' x2='8' y1='2' y2='6'></line><line x1='3' x2='21' y1='10' y2='10'></line></svg>
-<time datetime='2026-09-08'>발행 2026. 9. 8.</time>
-</span>
-
-<span class='meta-item'>
-<svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>
-<span>Lawnomics</span>
-</span>
-<span class='meta-item'><a class='meta-policy' href='https://www.lawnomics.com/p/editorial-policy.html'>편집 원칙</a></span>
-</div>
-</div>
-<div class='article-body'>
-<!-- /pontis/ 기업 분석 보고서 안내 — 다음 묶음판(2026-10-21, 보고서 '다음 단계' 7번·결정 7번 가운데 가격·문의 방식을 뺀 부분).
-     공개 묶음판은 pontis.html. 이 파일은 patch_next.py가 리허설 원장의 /pontis/ 본문을 바꿔 끼울 때만 쓴다.
-     바뀐 곳: 첫 화면에 샘플 1 첫 쪽 그림과 조건 한 줄(샘플 무료·맞춤 유료·납기), 아홉 항목을 순서 그대로 네 묶음으로, 샘플 제목 장식 없음.
-     새 문구(조건 한 줄, 묶음 이름, 그림 설명)는 2026-10-21 사용자 확정('권한 대로'). 나머지 문장은 pontis.html과 같다.
-     주의: sitegen이 본문의 "중괄호로 감싼 대문자 낱말" 자리표시자를 치환하므로 그런 문자열을 쓰지 않는다. -->
-<style>
-.px{font-size:16px;color:var(--c-text)}
-.px p{margin:0 0 14px}
-.px .px-lead{font-size:17px;line-height:1.75;color:var(--c-ink);margin:0 0 20px}
-.px .px-act{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
-.px a.px-btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:8px;background:var(--c-accent-btn);color:#FFFFFF;font-weight:700;font-size:15px;text-decoration:none}
-.px a.px-btn2{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:8px;border:1px solid var(--c-line-box);background:#FFFFFF;color:var(--c-accent-text);font-weight:700;font-size:15px;text-decoration:none}
-.px .px-note{font-size:14px;line-height:1.7;color:var(--c-sub)}
-.px .px-samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 10px}
-.px .px-sample{display:flex;flex-direction:column;background:var(--c-cream);border:1px solid var(--c-line);border-radius:10px;padding:18px 18px 16px}
-.px .px-sample .px-tag{font-size:12.5px;color:var(--c-sub);margin:0 0 6px}
-.px .px-sample h3{font-size:17px;line-height:1.45;color:var(--c-ink);margin:0 0 8px}
-.px .px-sample p{font-size:14px;line-height:1.7}
-.px .px-sample a{margin-top:auto;font-weight:700;font-size:14.5px;color:var(--c-accent-text);text-decoration:none}
-.px ol.px-items,.px ol.px-steps{list-style:none;padding:0;margin:16px 0 10px}
-.px ol.px-items{counter-reset:pxi;background:#FFFFFF;border:1px solid var(--c-line);border-radius:10px}
-.px ol.px-items li{counter-increment:pxi;display:grid;grid-template-columns:26px minmax(0,1fr);column-gap:8px;padding:12px 18px;margin:0;border-bottom:1px solid var(--c-line-in);font-size:15px;line-height:1.65}
-.px ol.px-items li:last-child{border-bottom:0}
-.px ol.px-items li::before{content:counter(pxi);font-weight:700;color:var(--c-accent-text);font-variant-numeric:tabular-nums}
-.px ol.px-items b,.px ol.px-steps b{color:var(--c-ink)}
-.px ol.px-items span{grid-column:2;font-size:14px;color:var(--c-sub)}
-.px .px-who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 10px}
-.px .px-who div{background:#FFFFFF;border:1px solid var(--c-line);border-radius:10px;padding:16px}
-.px .px-who h3{font-size:16px;color:var(--c-ink);margin:0 0 6px}
-.px .px-who p{font-size:14px;line-height:1.65;color:var(--c-sub);margin:0}
-.px table.px-table{width:100%;border-collapse:collapse;font-size:14.5px;background:#FFFFFF}
-.px table.px-table th,.px table.px-table td{padding:11px 14px;border-bottom:1px solid var(--c-line-in);text-align:left;vertical-align:top;line-height:1.65}
-.px table.px-table td:first-child{width:72px;font-weight:700;color:var(--c-ink);white-space:nowrap}
-.px ol.px-steps{counter-reset:pxs;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.px ol.px-steps li{counter-increment:pxs;background:#FFFFFF;border:1px solid var(--c-line);border-radius:10px;padding:14px;margin:0;font-size:14px;line-height:1.6}
-.px ol.px-steps li::before{content:counter(pxs);display:block;font-weight:800;color:var(--c-accent-text);margin:0 0 4px}
-.px ol.px-steps b{display:block;margin:0 0 2px}
-.px ol.px-steps span{color:var(--c-sub)}
-.px .px-ask{background:var(--c-cream);border:1px solid var(--c-line);border-radius:10px;padding:22px 24px;margin:16px 0 10px}
-.px .px-ask .px-act{margin:4px 0 10px}
-.px .px-legal{font-size:13px;line-height:1.75;color:var(--c-sub);border-top:1px solid var(--c-line);padding-top:14px;margin-top:28px}
-.px .px-hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start;margin:0 0 8px}
-.px .px-terms{display:flex;flex-wrap:wrap;gap:6px 0;margin:0 0 18px;font-size:14px;line-height:1.6;color:var(--c-text)}
-.px .px-terms span+span::before{content:"·";margin:0 8px;color:var(--c-sub)}
-.px a.px-cover{display:block;text-decoration:none;color:var(--c-text)}
-.px a.px-cover img{display:block;width:100%;height:auto;aspect-ratio:720/932;object-fit:cover;object-position:top;border:1px solid var(--c-line);border-radius:6px;box-shadow:0 6px 18px rgba(28,18,16,.08);background:#FFFFFF}
-.px a.px-cover span{display:block;margin-top:8px;font-size:13px;line-height:1.5;color:var(--c-sub)}
-.px a.px-cover:hover span,.px a.px-cover:focus-visible span{color:var(--c-accent-text)}
-.px .px-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 32px;margin:12px 0 10px}
-.px .px-groups section{border-top:1px solid var(--c-line);padding:12px 0 6px}
-.px .px-groups h3{margin:0 0 6px;font-size:15px;color:var(--c-accent-text)}
-.px .px-groups ul{list-style:none;margin:0;padding:0}
-.px .px-groups li{margin:0 0 10px;font-size:15px;line-height:1.6}
-.px .px-groups li b{display:block;color:var(--c-ink)}
-.px .px-groups li span{display:block;font-size:14px;color:var(--c-sub)}
-@media (max-width:768px){
-.px .px-samples,.px .px-who,.px .px-groups,.px .px-hero{grid-template-columns:minmax(0,1fr)}
-.px .px-hero{gap:18px}
-.px a.px-cover img{aspect-ratio:4/3}
-.px .px-terms{flex-direction:column;gap:2px}
-.px .px-terms span::before,.px .px-terms span+span::before{content:"·";margin:0 6px 0 0}
-.px ol.px-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-.px ol.px-items li{padding:12px 14px}
-.px .px-ask{padding:18px 16px}
-}
-</style>
-<div class="px">
-<div class="px-hero">
-<div>
-<p class="px-lead">인수·매각이나 해외 진출을 검토할 때 필요한 기업 정보를 모아 분석합니다. 공시, 공공 조달, 특허, 언론 자료를 확인해 모든 수치에 출처를 붙이고, 사람이 검토한 뒤 보고서로 드립니다.</p>
-<p class="px-terms"><span>샘플 3종 무료</span><span>맞춤 보고서 유료(범위 확인 뒤 비용 확정)</span><span>납기는 범위 확인 뒤 확정(보통 1~2영업일)</span></p>
-<div class="px-act"><a class="px-btn" href="#samples">샘플 PDF 보기</a><a class="px-btn2" href="#ask">맞춤 보고서 문의</a></div>
-</div>
-<a class="px-cover" href="/pontis/samples/pontis-sample1-acquisition-ko.pdf" target="_blank" rel="noopener"><img src="/pontis/samples/pontis-sample1-acquisition-ko.webp" width="720" height="932" loading="eager" decoding="async" alt="샘플 보고서 첫 쪽. 에스트래픽 인수 검토 리포트의 대상, 조회 기준일, 요약 판정이 보인다"><span>샘플 1 · 에스트래픽 인수 검토 · 10쪽 PDF 열기</span></a>
-</div>
-
-<div class="tools-anchor" id="samples"></div>
-<h2>샘플 보고서</h2>
-<p>실제 상장사를 대상으로 만든 샘플입니다. 각 샘플의 조회 기준일까지 나온 공개 자료로 작성했고, 그 뒤의 공시는 반영하지 않았습니다.</p>
-<div class="px-samples">
-<div class="px-sample"><p class="px-tag">국문 · 코스닥 상장사 · 10쪽</p><h3>에스트래픽 인수 검토</h3>
-<p>공시, 조달, 특허, 언론 자료 24종을 인용했습니다. 745억 원 규모 영업양수와 지배구조에서 주의할 점을 공시로 짚었습니다. 조회 기준일 2026. 9. 5.</p>
-<a href="/pontis/samples/pontis-sample1-acquisition-ko.pdf" target="_blank" rel="noopener">PDF 열기</a></div>
-<div class="px-sample"><p class="px-tag">영문 · 미국 나스닥 상장사 · 7쪽</p><h3>L.B. Foster 인수 검토</h3>
-<p>미국 공시, 조달, 특허, 뉴스 자료로 만든 영문 보고서입니다. 영업이익률 회복이 일회성 손익에 기댄 것인지 따져 봤습니다. 조회 기준일 2026. 9. 6.</p>
-<a href="/pontis/samples/pontis-sample2-acquisition-en.pdf" target="_blank" rel="noopener">PDF 열기 (영문)</a></div>
-<div class="px-sample"><p class="px-tag">국문 · 거래 모니터링 · 6쪽</p><h3>에코마케팅 거래 모니터링</h3>
-<p>상장폐지를 위한 주식교환이 진행되는 동안 금융당국의 정정명령까지 추적했습니다. 이미 시작된 거래를 지켜볼 때도 씁니다. 조회 기준일 2026. 9. 8.</p>
-<a href="/pontis/samples/pontis-sample3-monitoring-ko.pdf" target="_blank" rel="noopener">PDF 열기</a></div>
-</div>
-
-<h2>보고서 주요 내용</h2>
-<div class="px-groups">
-<section><h3>결론</h3><ul>
-<li><b>검토 결론과 주요 근거</b><span>진행, 조건부 진행, 중단 가운데 하나로 낸 검토 결론과 그 근거가 된 위험 요인, 매력 요인</span></li>
-</ul></section>
-<section><h3>재무와 지배구조</h3><ul>
-<li><b>3개년 재무</b><span>공시 재무제표 추세, 유동성과 차입 구조. 수치마다 공시 접수번호 표시</span></li>
-<li><b>지분과 지배구조</b><span>최대주주, 담보 설정, 공시와 등기로 확인되는 지배관계</span></li>
-</ul></section>
-<section><h3>사업과 조직</h3><ul>
-<li><b>경영진, 인력, 계열사</b><span>임원 구성, 인력 규모와 근속 연수, 평균 급여, 다른 법인 출자</span></li>
-<li><b>주요 고객과 수주 현황</b><span>공급계약 공시로 본 고객 집중도, 공공 조달 낙찰 이력, 12개월 안에 끝나는 계약</span></li>
-<li><b>특허와 기술</b><span>특허 규모와 최근 출원 흐름</span></li>
-</ul></section>
-<section><h3>위험 점검과 거래 준비</h3><ul>
-<li><b>주의해서 확인할 사항</b><span>인수합병 이력, 정정공시 빈도, 임원 변동, 소송 공시, 언론의 위험 보도</span></li>
-<li><b>거래 검토 의견</b><span>인수, 매각, 합작 등 거래 방식별 쟁점. 국경을 넘는 거래는 확인할 공식 절차와 추가 조사 항목까지</span></li>
-<li><b>추가 실사 확인 목록</b><span>공개 자료로는 확인할 수 없어 본실사에서 볼 항목, 조사 범위와 한계</span></li>
-</ul></section>
-</div>
-
-<h2>이런 분께 필요합니다</h2>
-<div class="px-who">
-<div><h3>회사 매각을 고민하는 대표</h3><p>인수자가 무엇을 지적할지 매각 준비 단계에서 미리 점검합니다.</p></div>
-<div><h3>인수나 투자를 검토하는 기업</h3><p>본실사에 들어가기 전에 대상 기업의 위험 요인과 사업 현황을 공시로 확인합니다.</p></div>
-<div><h3>해외 진출을 준비하는 기업</h3><p>미국과 영국 기업을 현지 공시, 등기, 조달 자료로 분석합니다.</p></div>
-</div>
-
-<h2>분석 대상과 자료 범위</h2>
-<p>공개 자료로 만드는 보고서라서, 대상 기업이 어디에 무엇을 공시하는지에 따라 분석 깊이가 달라집니다.</p>
-<div class="table-scroll"><table class="px-table">
-<thead><tr><th>나라</th><th>분석 대상이 되는 기업(공개 자료 기준)</th></tr></thead>
-<tbody>
-<tr><td>한국</td><td>상장법인, 그리고 감사보고서나 사업보고서를 전자공시하는 기업</td></tr>
-<tr><td>미국</td><td>증권 당국에 공시하는 기업(상장사와 공시 의무가 있는 법인)</td></tr>
-<tr><td>영국</td><td>등기소에 등록된 법인. 비상장 중소기업도 등기, 임원, 등록된 지배관계, 담보 설정까지 확인할 수 있습니다.</td></tr>
-</tbody></table></div>
-<p class="px-note">분석 가능한 항목과 깊이는 나라, 기업, 공개 자료에 따라 달라집니다. 공개 자료를 직접 확인하는 순서는 <a href="/guide/counterparty-check.html">거래상대 확인 안내</a>에 있습니다. 여기에 해당하지 않는 기업(한국의 비공시 소기업, 미국 비상장사 등)은 특허, 조달 이력, 언론 보도를 중심으로 일부만 분석할 수 있습니다. 문의하시면 대상 기업을 확인해 가능한 범위를 먼저 알려 드리고, 진행 여부는 그다음에 정하시면 됩니다.</p>
-
-<h2>진행 절차</h2>
-<ol class="px-steps">
-<li><b>문의</b><span>분석할 기업과 검토 배경을 폼으로 접수</span></li>
-<li><b>확인 연락</b><span>범위와 비용, 납기를 확정합니다. 보통 1~2영업일</span></li>
-<li><b>제작과 검토</b><span>자료 수집은 자동, 결론은 사람이 확정</span></li>
-<li><b>전달</b><span>웹 화면과 PDF. 새 공시가 나오면 갱신 가능</span></li>
-</ol>
-
-<h2>자료 확인과 검수 방식</h2>
-<p>출처 없는 수치는 쓰지 않습니다. 모든 숫자에 공시 접수번호나 원문 링크를 붙입니다. 자료는 보고서를 만들 때 최신 공개 자료로 다시 확인합니다. 결론과 의견은 자동으로 만들지 않고, 검토자가 확정한 뒤 보냅니다.</p>
-
-<div class="tools-anchor" id="ask"></div>
-<h2>맞춤 보고서 문의</h2>
-<div class="px-ask">
-<p>분석할 기업(나라 포함)과 검토 배경을 알려 주세요.</p>
-<p>대상 국가와 기업명, 알아보려는 내용, 원하는 시점을 적어 주시면 됩니다.</p>
-<div class="px-act"><a class="px-btn" href="https://forms.gle/aXb3xfZYwgL3YCz79" target="_blank" rel="noopener">문의 폼 열기</a></div>
-<p class="px-note">구글 설문지로 연결되며, 로그인하지 않아도 보낼 수 있습니다. 적어 주신 정보를 다루는 방법은 <a href="/p/blog-page_04.html">개인정보처리방침</a>에 있습니다.</p>
-</div>
-
-<p class="px-legal">PONTIS는 로노믹스를 운영하는 로리움 컨설팅(Lawrium Consulting)의 기업 분석 보고서 서비스입니다. 보고서는 공시 등 공개 자료를 바탕으로 한 분석 정보이며, 특정 증권의 가치평가나 매수·매도 권유, 투자자문, 법률자문이 아닙니다.</p>
-</div>
+<div class='tools-anchor' id='samples'></div><section class='svc-sec'><h2>샘플 보고서</h2><p class='sd'>실제 상장사를 대상으로 만든 샘플입니다. 각 샘플의 조회 기준일까지 나온 공개 자료로 작성했고, 그 뒤의 공시는 반영하지 않았습니다.</p><div class='px-samples'><div><div class='th'><img src='/pontis/samples/pontis-sample1-acquisition-ko.webp' width='720' height='932' loading='lazy' alt='샘플 1 에스트래픽 인수 검토 보고서 첫 쪽'></div><div class='bd'><span class='tg'>국문 · 코스닥 상장사 · 10쪽</span><h3>에스트래픽 인수 검토</h3><p>공시, 조달, 특허, 언론 자료 24종을 인용했습니다. 745억 원 규모 영업양수와 지배구조에서 주의할 점을 공시로 짚었습니다. 조회 기준일 2026. 9. 5.</p><a class='go' href='/pontis/samples/pontis-sample1-acquisition-ko.pdf'>PDF 열기 &#8250;</a></div></div><div><div class='th'><img src='/pontis/samples/pontis-sample2-acquisition-en.jpg' width='720' height='932' loading='lazy' alt='샘플 2 L.B. Foster 인수 검토 보고서 첫 쪽'></div><div class='bd'><span class='tg'>영문 · 미국 나스닥 상장사 · 7쪽</span><h3>L.B. Foster 인수 검토</h3><p>미국 공시, 조달, 특허, 뉴스 자료로 만든 영문 보고서입니다. 영업이익률 회복이 일회성 손익에 기댄 것인지 따져 봤습니다. 조회 기준일 2026. 9. 6.</p><a class='go' href='/pontis/samples/pontis-sample2-acquisition-en.pdf'>PDF 열기 (영문) &#8250;</a></div></div><div><div class='th'><img src='/pontis/samples/pontis-sample3-monitoring-ko.jpg' width='720' height='932' loading='lazy' alt='샘플 3 에코마케팅 거래 모니터링 보고서 첫 쪽'></div><div class='bd'><span class='tg'>국문 · 거래 모니터링 · 6쪽</span><h3>에코마케팅 거래 모니터링</h3><p>상장폐지를 위한 주식교환이 진행되는 동안 금융당국의 정정명령까지 추적했습니다. 이미 시작된 거래를 지켜볼 때도 씁니다. 조회 기준일 2026. 9. 8.</p><a class='go' href='/pontis/samples/pontis-sample3-monitoring-ko.pdf'>PDF 열기 &#8250;</a></div></div></div></section><section class='svc-sec'><h2>보고서 주요 내용</h2><div class='px-ed'><section><h3><span class='hx-ic k-navy px-t'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M12 3v18'/><path d='m19 8 3 8a5 5 0 0 1-6 0zV7'/><path d='M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1'/><path d='m5 8 3 8a5 5 0 0 1-6 0zV7'/><path d='M7 21h10'/></svg></span>결론</h3><dl><dt>검토 결론과 주요 근거</dt><dd>진행, 조건부 진행, 중단 가운데 하나로 낸 검토 결론과 그 근거가 된 위험 요인, 매력 요인</dd></dl></section><section><h3><span class='hx-ic k-navy px-t'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M3 3v16a2 2 0 0 0 2 2h16' /><path d='m19 9-5 5-4-4-3 3' /></svg></span>재무와 지배구조</h3><dl><dt>3개년 재무</dt><dd>공시 재무제표 추세, 유동성과 차입 구조. 수치마다 공시 접수번호 표시</dd><dt>지분과 지배구조</dt><dd>최대주주, 담보 설정, 공시와 등기로 확인되는 지배관계</dd></dl></section><section><h3><span class='hx-ic k-navy px-t'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M18 21a8 8 0 0 0-16 0' /><circle cx='10' cy='8' r='5' /><path d='M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3' /></svg></span>사업과 조직</h3><dl><dt>경영진, 인력, 계열사</dt><dd>임원 구성, 인력 규모와 근속 연수, 평균 급여, 다른 법인 출자</dd><dt>주요 고객과 수주 현황</dt><dd>공급계약 공시로 본 고객 집중도, 공공 조달 낙찰 이력, 12개월 안에 끝나는 계약</dd><dt>특허와 기술</dt><dd>특허 규모와 최근 출원 흐름</dd></dl></section><section><h3><span class='hx-ic k-navy px-t'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M13 5h8' /><path d='M13 12h8' /><path d='M13 19h8' /><path d='m3 17 2 2 4-4' /><path d='m3 7 2 2 4-4' /></svg></span>위험 점검과 거래 준비</h3><dl><dt>주의해서 확인할 사항</dt><dd>인수합병 이력, 정정공시 빈도, 임원 변동, 소송 공시, 언론의 위험 보도</dd><dt>거래 검토 의견</dt><dd>인수, 매각, 합작 등 거래 방식별 쟁점. 국경을 넘는 거래는 확인할 공식 절차와 추가 조사 항목까지</dd><dt>추가 실사 확인 목록</dt><dd>공개 자료로는 확인할 수 없어 본실사에서 볼 항목, 조사 범위와 한계</dd></dl></section></div></section><section class='svc-sec'><h2>이런 분께 필요합니다</h2><div class='px-who'><div><span class='hx-ic k-navy px-t big'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M12 12h.01' /><path d='M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2' /><path d='M22 13a18.15 18.15 0 0 1-20 0' /><rect width='20' height='14' x='2' y='6' rx='2' /></svg></span><h3>회사 매각을 고민하는 대표</h3><p>인수자가 무엇을 지적할지 매각 준비 단계에서 미리 점검합니다.</p></div><div><span class='hx-ic k-navy px-t big'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='m8 11 2 2 4-4' /><circle cx='11' cy='11' r='8' /><path d='m21 21-4.3-4.3' /></svg></span><h3>인수나 투자를 검토하는 기업</h3><p>본실사에 들어가기 전에 대상 기업의 위험 요인과 사업 현황을 공시로 확인합니다.</p></div><div><span class='hx-ic k-navy px-t big'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><circle cx='12' cy='12' r='10' /><path d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20' /><path d='M2 12h20' /></svg></span><h3>해외 진출을 준비하는 기업</h3><p>미국과 영국 기업을 현지 공시, 등기, 조달 자료로 분석합니다.</p></div></div></section><section class='svc-sec'><h2>분석 대상과 자료 범위</h2><p class='sd'>공개 자료로 만드는 보고서라서, 대상 기업이 어디에 무엇을 공시하는지에 따라 분석 깊이가 달라집니다.</p><div class='px-tbl'><table><thead><tr><th>나라</th><th>분석 대상이 되는 기업(공개 자료 기준)</th></tr></thead><tbody><tr><td>한국</td><td>상장법인, 그리고 감사보고서나 사업보고서를 전자공시하는 기업</td></tr><tr><td>미국</td><td>증권 당국에 공시하는 기업(상장사와 공시 의무가 있는 법인)</td></tr><tr><td>영국</td><td>등기소에 등록된 법인. 비상장 중소기업도 등기, 임원, 등록된 지배관계, 담보 설정까지 확인할 수 있습니다.</td></tr></tbody></table></div><p class='svc-note'>분석 가능한 항목과 깊이는 나라, 기업, 공개 자료에 따라 달라집니다. 공개 자료를 직접 확인하는 순서는 <a href='/guide/counterparty-check.html'>거래상대 확인 안내</a>에 있습니다. 여기에 해당하지 않는 기업(한국의 비공시 소기업, 미국 비상장사 등)은 특허, 조달 이력, 언론 보도를 중심으로 일부만 분석할 수 있습니다. 문의하시면 대상 기업을 확인해 가능한 범위를 먼저 알려 드리고, 진행 여부는 그다음에 정하시면 됩니다.</p></section><section class='svc-sec'><h2>진행 절차</h2><div class='svc-panel'><ol class='px-steps'><li><i>1</i><b>문의</b><span>분석할 기업과 검토 배경을 폼으로 접수</span></li><li><i>2</i><b>확인 연락</b><span>범위와 비용, 납기를 확정합니다. 보통 1~2영업일</span></li><li><i>3</i><b>제작과 검토</b><span>자료 수집은 자동, 결론은 사람이 확정</span></li><li><i>4</i><b>전달</b><span>웹 화면과 PDF. 새 공시가 나오면 갱신 가능</span></li></ol></div></section><section class='svc-sec'><h2>자료 확인과 검수 방식</h2><div class='px-check'><span class='hx-ic k-navy px-t'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><path d='M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z' /><path d='m16 9-5.5 5.5L8 12' /></svg></span><p>출처 없는 수치는 쓰지 않습니다. 모든 숫자에 공시 접수번호나 원문 링크를 붙입니다. 자료는 보고서를 만들 때 최신 공개 자료로 다시 확인합니다. 결론과 의견은 자동으로 만들지 않고, 검토자가 확정한 뒤 보냅니다.</p></div></section><div class='tools-anchor' id='ask'></div><section class='px-ask'><div><h2>맞춤 보고서 문의</h2><p>분석할 기업(나라 포함)과 검토 배경을 알려 주세요. 대상 국가와 기업명, 알아보려는 내용, 원하는 시점을 적어 주시면 됩니다.</p><p style='margin-top:8px;font-size:14px;color:#374151'>구글 설문지로 연결되며, 로그인하지 않아도 보낼 수 있습니다. 적어 주신 정보를 다루는 방법은 <a href='/p/blog-page_04.html'>개인정보처리방침</a>에 있습니다.</p></div><a class='svc-btn' href='https://forms.gle/aXb3xfZYwgL3YCz79'>문의 폼 열기</a></section><p class='px-legal'>PONTIS는 로노믹스를 운영하는 로리움 컨설팅(Lawrium Consulting)의 기업 분석 보고서 서비스입니다. 보고서는 공시 등 공개 자료를 바탕으로 한 분석 정보이며, 특정 증권의 가치평가나 매수·매도 권유, 투자자문, 법률자문이 아닙니다.</p>
 <script>
 (function(){
   function track(name, params){ try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) { /* 측정 실패는 화면에 영향 없음 */ } }
-  // 출처: 길잡이 쪽이 붙인 ?from=(허용 목록만), 없으면 pontis. 실제 PDF·구글 폼 클릭에서만 센다(Codex 4라운드 D)
+  // 출처: 길잡이 쪽이 붙인 ?from=(허용 목록만), 없으면 pontis. 실제 PDF·구글 폼 클릭에서만 센다(2026-11-06 Codex 4라운드 D)
   var from = "pontis";
   try { var q = new URLSearchParams(window.location.search).get("from"); if (q && /^(guide-hub|guide-counterparty|tools|company)$/.test(q)) from = q; } catch (e) {}
-  document.querySelectorAll(".px a[href$='.pdf']").forEach(function(a){
+  document.querySelectorAll("main a[href$='.pdf']").forEach(function(a){
     a.addEventListener("click", function(){ track("sample_open", {sample_id: (a.getAttribute("href") || "").split("/").pop().replace(".pdf", ""), source_content_id: from}); });
   });
-  document.querySelectorAll(".px a[href^='https://forms.gle/']").forEach(function(a){
+  document.querySelectorAll("main a[href^='https://forms.gle/']").forEach(function(a){
     a.addEventListener("click", function(){ track("inquiry_form_open", {source_content_id: from, inquiry_type: "report"}); });
   });
 })();
