@@ -26,10 +26,10 @@ gtag('config', 'G-YVS035JLZD');
 
 <meta content='https://www.lawnomics.com/tools/company.html' property='og:url'/>
 <meta content='기업 공시 조회' property='og:title'/>
-<meta content='국내 상장사의 회사 개황, 연간 주요 재무와 최근 공시를 금융감독원 전자공시시스템(DART) 자료로 조회합니다.' property='og:description'/>
+<meta content='국내 상장사의 회사 개황, 연간 주요 재무, 감사의견, 직원 현황과 최근 공시를 금융감독원 전자공시시스템(DART) 자료로 조회합니다.' property='og:description'/>
 <meta content='https://www.lawnomics.com/icon-512.png' property='og:image'/>
 <!-- SEO: Basic Meta (canonical, feed는 all-head-content가 자동 생성) -->
-<meta content='국내 상장사의 회사 개황, 연간 주요 재무와 최근 공시를 금융감독원 전자공시시스템(DART) 자료로 조회합니다.' name='description'/>
+<meta content='국내 상장사의 회사 개황, 연간 주요 재무, 감사의견, 직원 현황과 최근 공시를 금융감독원 전자공시시스템(DART) 자료로 조회합니다.' name='description'/>
 <meta content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' name='robots'/>
 <meta content='#1C1210' name='theme-color'/>
 <!-- SEO: Sitemap (canonical, feed는 all-head-content가 처리) -->
@@ -43,7 +43,7 @@ gtag('config', 'G-YVS035JLZD');
 <!-- SEO: Twitter Card -->
 <meta content='summary_large_image' name='twitter:card'/>
 <meta content='로노믹스 — 법과 숫자로 지키는 내 돈: 기업 공시 조회' name='twitter:title'/>
-<meta content='국내 상장사의 회사 개황, 연간 주요 재무와 최근 공시를 금융감독원 전자공시시스템(DART) 자료로 조회합니다.' name='twitter:description'/>
+<meta content='국내 상장사의 회사 개황, 연간 주요 재무, 감사의견, 직원 현황과 최근 공시를 금융감독원 전자공시시스템(DART) 자료로 조회합니다.' name='twitter:description'/>
 <meta content='https://www.lawnomics.com/icon-512.png' name='twitter:image'/>
 <!-- SEO: Organization Schema (site-level) -->
 <script type='application/ld+json'>
@@ -1799,6 +1799,7 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 </div>
 <div class='article-body'>
 <!-- lawnomics 기업 공시 조회 도구(2026-10-31, web/company/tool.html. API /v0/company/search·/v0/company/{고유번호}, 규칙은 api/app/company.py) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&amp;display=swap">
 <style>
 .cx{font-size:16px;color:var(--c-text);margin:4px 0 32px}
 .cx *{box-sizing:border-box}
@@ -1846,6 +1847,14 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 .cx .cx-fin thead,.cx .cx-fin tbody tr,.cx .cx-fin tbody tr:hover{background:transparent;color:inherit}
 .cx .cx-fin tr.gap th,.cx .cx-fin tr.gap td{padding-top:20px}
 .cx .cx-fnote{font-size:13px;line-height:1.7;color:var(--c-sub);margin:10px 0 0}
+.cx .cx-txt th,.cx .cx-txt td{text-align:left;white-space:normal}
+.cx .cx-emp thead th,.cx .cx-emp td{white-space:normal}
+.cx .cx-emph{white-space:pre-line}
+.cx .cx-emp tr.sum th,.cx .cx-emp tr.sum td{font-weight:700}
+.cx .cx-auto{display:inline-block;margin:8px 0 0;padding:1px 8px;border:1px solid var(--c-line-box);border-radius:4px;background:#FFFFFF;font-size:13px;line-height:1.7;color:var(--c-text)}
+.cx details.cx-more{margin:10px 0 0;font-size:14px;line-height:1.7;color:var(--c-text)}
+.cx details.cx-more summary{cursor:pointer;color:var(--c-accent-text);font-weight:600}
+.cx details.cx-more p{margin:6px 0 0;white-space:pre-line}
 .cx .cx-na{font-size:14px;color:var(--c-sub)}
 .cx .cx-nofin{font-size:16px;line-height:1.7;color:var(--c-ink)}
 .cx .cx-list{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--c-line)}
@@ -1874,16 +1883,98 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 .cx .cx-status.err{color:var(--c-ink)}
 .cx .cx-more-note{font-size:14px;color:var(--c-sub);margin:8px 0 0}
 .cx .cx-stale{font-size:13px;line-height:1.7;color:var(--c-ink);margin:6px 0 0}
+/* 2026-11-12 회사 카드는 Lawrium 문서 스킨(PONTIS 샘플 PDF와 같은 문법: 남색 레터헤드, 항목표, 번호 붙은 절). 검색칸과 결과 목록은 사이트 색 그대로 */
+.cx .cx-card{--nv:#16324f;--ink:#1a1a1a;--mu:#5a5f66;--ln:#c9ccd1;--ls:#e3e5e8;--pn:#f2f1ec;margin:32px 0 0;padding:46px 54px 26px;background:#FFFFFF;border:1px solid var(--ln);color:var(--ink);counter-reset:cxs;word-break:keep-all;overflow-wrap:anywhere;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cx .cx-card a{color:var(--nv);text-decoration:underline;text-decoration-color:var(--ln);text-decoration-thickness:1px;text-underline-offset:3px}
+.cx .cx-card a:hover{text-decoration-color:var(--nv)}
+.cx .cx-head{border-bottom:2.5px solid var(--nv);padding:0 0 14px}
+.cx .cx-lh{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:0 0 18px}
+.cx .cx-brand{display:flex;align-items:center;gap:11px}
+.cx .cx-mark{display:block;width:32px;height:29px;flex:none}
+.cx .cx-brand b{display:block;font-family:Charter,Georgia,"Times New Roman",serif;font-size:17px;font-weight:700;letter-spacing:3px;line-height:1.2;color:var(--nv)}
+.cx .cx-brand small{display:block;margin:3px 0 0;font-size:10px;font-weight:700;letter-spacing:2px;line-height:1.4;color:var(--mu)}
+.cx .cx-kind{text-align:right;font-size:10px;font-weight:700;letter-spacing:2px;line-height:1.9;color:var(--mu)}
+.cx .cx-card .cx-auto{display:inline-block;margin:5px 0 0;padding:1px 8px 0 10px;border:1px solid var(--nv);border-radius:0;background:transparent;font-size:11px;font-weight:700;letter-spacing:1.5px;line-height:1.8;color:var(--nv)}
+.cx .cx-head h2{font-family:"Noto Serif KR","Nanum Myeongjo",AppleMyungjo,serif;font-size:28px;font-weight:700;line-height:1.35;letter-spacing:-.01em;color:var(--nv);margin:0}
+.cx .cx-card .cx-meta{display:grid;grid-template-columns:72px minmax(0,1fr) 72px minmax(0,1fr);gap:4px 14px;margin:0;padding:12px 0;border-bottom:1px solid var(--ln);font-size:14px;line-height:1.7;color:var(--ink)}
+.cx .cx-card .cx-meta dt{color:var(--mu)}
+.cx .cx-card .cx-meta dd{margin:0;overflow-wrap:anywhere}
+.cx .cx-card .cx-blk{margin:36px 0 0}
+.cx .cx-card .cx-blk h3{display:flex;align-items:baseline;gap:10px;margin:0 0 10px;font-size:14px;font-weight:700;letter-spacing:.16em;line-height:1.5;color:var(--nv)}
+.cx .cx-card .cx-blk h3::before{counter-increment:cxs;content:counter(cxs);font-family:Charter,Georgia,serif;font-size:14px;font-weight:700;letter-spacing:0;color:var(--mu)}
+.cx .cx-card .cx-basis{color:var(--mu)}
+.cx .cx-card .cx-dl{border-top:1px solid var(--ink)}
+.cx .cx-card .cx-dl div{border-bottom:1px solid var(--ls)}
+.cx .cx-card .cx-dl dt{font-size:13.5px;color:var(--mu)}
+.cx .cx-card .cx-dl dd{font-size:15.5px;color:var(--ink)}
+.cx .cx-card table.cx-fin{font-size:15px}
+.cx .cx-card .cx-fin th,.cx .cx-card .cx-fin td{border-bottom:1px solid var(--ls);color:var(--ink)}
+.cx .cx-card .cx-fin thead th{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--mu);border-bottom:1px solid var(--ln)}
+.cx .cx-card .cx-fin tbody tr:last-child th,.cx .cx-card .cx-fin tbody tr:last-child td{border-bottom:1px solid var(--ln)}
+.cx .cx-card .cx-emp tr.sum th,.cx .cx-card .cx-emp tr.sum td{background:var(--pn)}
+.cx .cx-card .cx-when,.cx .cx-card .cx-fnote,.cx .cx-card .cx-no,.cx .cx-card .cx-d,.cx .cx-card .cx-na{color:var(--mu)}
+.cx .cx-card .cx-when{font-size:12.5px}
+.cx .cx-card .cx-list{border-top:1px solid var(--ink)}
+.cx .cx-card .cx-list li{border-bottom:1px solid var(--ls)}
+.cx .cx-card .cx-tag{border:1px solid var(--nv);border-radius:0;background:transparent;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--nv)}
+.cx .cx-card a.cx-t{color:var(--ink)}
+.cx .cx-card a.cx-t:hover{text-decoration-color:var(--ink)}
+.cx .cx-card .cx-rm,.cx .cx-card .cx-nofin,.cx .cx-card .cx-stale{color:var(--ink)}
+.cx .cx-card details.cx-more summary{color:var(--nv)}
+.cx .cx-card .cx-morebtn,.cx .cx-card .cx-fail button{border:1px solid var(--nv);border-radius:0;background:#FFFFFF;color:var(--nv)}
+.cx .cx-card .cx-fail{border:1px solid var(--ln);border-radius:0;background:var(--pn)}
+.cx .cx-note{margin:36px 0 0;padding:12px 0 0;border-top:1px solid var(--ln);font-size:12.5px;line-height:1.75;color:var(--mu)}
+.cx .cx-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2px 14px;margin:8px 0 0;font-size:11px;font-weight:700;letter-spacing:.12em;line-height:1.8;color:var(--mu)}
+.cx .cx-foot .cx-printhead{margin:0;font-size:11px;font-weight:400;letter-spacing:.02em;color:var(--mu)}
+.cx .cx-save button{border-color:#16324f;border-radius:0;color:#16324f}
+.cx .cx-paid{border:1px solid #c9ccd1;border-radius:0;background:#FFFFFF;color:#1a1a1a}
+.cx .cx-paid small{color:#16324f;letter-spacing:.2em}
+.cx .cx-paid a{color:#16324f}
+/* 2026-11-12 상장사가 아닐 때의 갈래(사용자 승인 문구, docs/사이트발전_1106/방문자수요_합의_1112.md) */
+.cx .cx-routeline{margin:6px 0 0}
+.cx .cx-routeline a,.cx .cx-route a{color:var(--c-ink);font-weight:600}
+.cx .cx-route{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--c-line)}
+.cx .cx-route li{margin:0;padding:10px 0;border-bottom:1px solid var(--c-line-in);font-size:15px;line-height:1.6}
+.cx .cx-route li span{display:block;font-size:14px;color:var(--c-sub)}
+.cx .cx-q{font-size:14px;color:var(--c-sub);margin:0 0 4px}
+.cx .cx-card,.cx .cx-card .cx-head h2{scroll-margin-top:84px}
+.cx .cx-card .cx-head h2{scroll-margin-top:170px}
+/* 사이트 본문 규칙(.article-body의 h2·h3·table·th·td·a에 붙은 !important, 2026-11-12 리허설 실측)을 카드 안에서만 다시 덮는다 */
+.cx .cx-card .cx-head h2{margin:0!important;font-size:28px!important;line-height:1.35!important;letter-spacing:-.01em!important;color:var(--nv)!important}
+.cx .cx-card .cx-blk h3{margin:0 0 10px!important;font-size:14px!important;line-height:1.5!important;color:var(--nv)!important}
+.cx .cx-card table.cx-fin{border-top:1px solid var(--ink)!important}
+.cx .cx-card .cx-fin thead,.cx .cx-card .cx-fin thead th{background:transparent!important;color:var(--mu)!important;font-weight:700!important;border-bottom:1px solid var(--ln)!important}
+.cx .cx-card .cx-fin tbody th{background:transparent!important;color:var(--ink)!important;font-weight:400!important;border-bottom:1px solid var(--ls)!important}
+.cx .cx-card .cx-fin td{border-bottom:1px solid var(--ls)!important}
+.cx .cx-card .cx-fin tbody tr:last-child th,.cx .cx-card .cx-fin tbody tr:last-child td{border-bottom:1px solid var(--ln)!important}
+.cx .cx-card .cx-emp tr.sum th,.cx .cx-card .cx-emp tr.sum td{background:var(--pn)!important;font-weight:700!important}
+.cx .cx-card a{text-decoration-color:var(--ln)!important}
 @media (max-width:640px){
 .cx .cx-box{padding:16px 14px 12px}
 .cx .cx-dl{grid-template-columns:minmax(0,1fr)}
 .cx .cx-dl div{grid-template-columns:96px minmax(0,1fr)}
 .cx table.cx-fin{font-size:15px}
 .cx .cx-fin th,.cx .cx-fin td{padding:10px 4px}
+.cx .cx-card{padding:26px 14px 18px}
+.cx .cx-lh{flex-direction:column;gap:12px;margin:0 0 14px}
+.cx .cx-kind{text-align:left}
+.cx .cx-head h2{font-size:24px}
+.cx .cx-card .cx-head h2{font-size:24px!important}
+.cx .cx-card .cx-meta{grid-template-columns:52px minmax(0,1fr);gap:2px 10px}
+.cx .cx-card table.cx-fin{font-size:14px}
+.cx .cx-brand small,.cx .cx-kind{font-size:11px;letter-spacing:1.6px}
+.cx .cx-card .cx-auto{font-size:12px}
+.cx .cx-foot,.cx .cx-foot .cx-printhead{font-size:12px}
+.cx .cx-note{font-size:13px}
 }
+@page{size:A4;margin:18mm 20mm 16mm}
 @media print{
-.header-wrap,.tools-nav,.tools-sub,.footer-wrap,#reading-progress,.cx .cx-box,.cx .cx-results,.cx .cx-morebtn,.cx .cx-save,.cx .cx-paid,.cx .cx-lead,.cx .cx-retry,.cx .cx-status{display:none!important}
-.tools-page .article-header{padding-top:0}
+.header-wrap,.tools-nav,.tools-sub,.footer-wrap,#reading-progress,.cx .cx-box,.cx .cx-results,.cx .cx-morebtn,.cx .cx-save,.cx .cx-paid,.cx .cx-lead,.cx .cx-retry,.cx .cx-status,.cx .cx-guide,.cx .cx-about,.cx .cx-foot .cx-site{display:none!important}
+.tools-page .article-header{display:none!important}
+.tools-page .content-wrap,.tools-page .article-body{max-width:none!important;margin:0!important;padding:0!important}
+.cx{margin:0!important}
+.cx .cx-card{border:0;padding:0}
+.cx .cx-lh,.cx .cx-card .cx-meta,.cx .cx-note,.cx .cx-foot{break-inside:avoid}
 .cx .cx-blk{margin-top:22px}
 .cx .cx-list li{padding:8px 0}
 .cx .cx-dl div{padding:6px 0}
@@ -1899,17 +1990,16 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
 }
 </style>
 <div class="cx" id="cx">
-<p class="cx-printhead"></p>
-<p class="cx-lead">국내 상장사의 회사 개황, 연간 주요 재무와 최근 공시를 조회합니다. 각 자료에 출처와 받은 시점을 표시합니다.</p>
+<p class="cx-lead">국내 상장사의 회사 개황, 연간 주요 재무, 감사의견, 직원 현황과 최근 공시를 조회합니다. 각 자료에 출처와 받은 시점을 표시합니다.</p>
 <form class="cx-box" id="cx-form" role="search" autocomplete="off"><label for="cx-q">회사명 또는 종목코드</label>
 <div class="cx-row"><input id="cx-q" type="search" maxlength="40" placeholder="예: 삼성전자 또는 005930" enterkeyhint="search"><button type="submit" class="cx-btn">검색</button></div>
-<p class="cx-hint">회사명이나 종목코드 6자리로 국내 상장사를 검색합니다.</p></form>
+<p class="cx-hint">회사명이나 종목코드 6자리로 국내 상장사를 검색합니다.</p><p class="cx-hint cx-routeline">상장사가 아니라면: <a href="/guide/counterparty-check.html#s2">비상장 회사·개인사업자</a> · <a href="/guide/counterparty-check.html#s3">해외 회사</a> · <a href="/2026/09/jeonse-deposit-recovery-guide.html">개인(집주인 등)</a></p></form>
 <noscript><p class="cx-status err">이 도구는 자바스크립트가 켜져 있어야 작동합니다. DART(dart.fss.or.kr)에서 직접 검색할 수 있습니다.</p></noscript>
 <div class="cx-results" id="cx-results" aria-live="polite"></div>
 <div id="cx-card" aria-live="polite"></div>
-<p class="cx-paid" id="cx-paid" hidden><small>PONTIS</small>맞춤 분석은 유료 <a href="/pontis/">기업 분석 보고서</a>로 의뢰할 수 있습니다. 제공 범위와 <a href="/pontis/#samples">샘플 PDF</a>를 먼저 볼 수 있습니다.</p>
-<p class="cx-src" style="margin:14px 0 0">처음 확인한다면 회사 개황, 주요 재무의 기준 연도, 최근 공시 순서로 살펴보세요. 상대에게 추가로 요청할 자료는 <a href="/guide/counterparty-check.html">거래상대 확인 안내</a>에 있습니다.</p>
-<div class="cx-about"><h3>자료 안내</h3><p>회사 개황, 공시 목록과 주요 재무는 금융감독원의 OpenDART(전자공시 공개 자료)에서 받습니다. 자료를 받은 시점은 자료별로 표시합니다.</p><p>주요 재무는 연간 사업보고서 기준이며, 그 뒤에 제출된 분기·반기 실적은 이 표에 넣지 않습니다. 공시가 정정되면 표시된 수치가 바뀔 수 있습니다.</p><p>제출인이 해당 회사인 경우에는 제출인명을 생략합니다. 시각은 한국 시간 기준입니다.</p><p>공개된 공시 정보와 재무 수치를 모아 보여 드립니다. 각 공시는 해당 제출인이 작성해 제출한 문서입니다. 특정 증권의 가치평가나 매수·매도 권유, 개별 거래에 관한 자문은 제공하지 않습니다. 자료가 누락되거나 반영이 늦어질 수 있으므로, 이용 전 자료를 받은 시점과 공시 원문을 확인해 주세요.</p></div>
+<p class="cx-paid" id="cx-paid" hidden><small>PONTIS</small>공시·조달·특허·언론 자료를 엮은 심층 분석 예시는 <a href="/pontis/#samples">기업 분석 보고서 샘플</a>에서 볼 수 있습니다.</p>
+<p class="cx-src cx-guide" style="margin:14px 0 0">처음 확인한다면 회사 개황, 주요 재무의 기준 연도, 최근 공시 순서로 살펴보세요. 상대에게 추가로 요청할 자료는 <a href="/guide/counterparty-check.html">거래상대 확인 안내</a>에 있습니다.</p>
+<div class="cx-about"><h3>자료 안내</h3><p>회사 개황, 공시 목록, 주요 재무, 감사의견과 직원 현황은 금융감독원의 OpenDART(전자공시 공개 자료)에서 받습니다. 자료를 받은 시점은 자료별로 표시합니다.</p><p>감사의견은 외부감사인이 재무제표에 낸 의견이며, 회사의 지급능력이나 거래의 안전을 보증하지 않습니다. 직원 현황은 사업보고서의 부문·성별 값을 옮기고, 총인원은 중복 없이 합산할 수 있는 경우에만 적습니다.</p><p>주요 재무는 연간 사업보고서 기준이며, 그 뒤에 제출된 분기·반기 실적은 이 표에 넣지 않습니다. 공시가 정정되면 표시된 수치가 바뀔 수 있습니다.</p><p>제출인이 해당 회사인 경우에는 제출인명을 생략합니다. 시각은 한국 시간 기준입니다.</p><p>공개된 공시 정보와 재무 수치를 모아 보여 드립니다. 각 공시는 해당 제출인이 작성해 제출한 문서입니다. 특정 증권의 가치평가나 매수·매도 권유, 개별 거래에 관한 자문은 제공하지 않습니다. 자료가 누락되거나 반영이 늦어질 수 있으므로, 이용 전 자료를 받은 시점과 공시 원문을 확인해 주세요.</p></div>
 </div>
 <script>
 (function () {
@@ -1927,6 +2017,10 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
   }
   var SAVE = '<div class="cx-save"><button type="button" class="cx-print">인쇄·PDF 저장</button>' +
     '<p>인쇄 창에서 PDF로 저장할 수 있습니다. 최근 공시는 접힌 항목을 포함해 최대 10건을 저장합니다. 공시 원문 전체는 포함되지 않습니다.</p></div>';
+  var ROUTE = '<ul class="cx-route">' +   // 2026-11-12 상장사가 아닐 때의 갈래(사용자 승인)
+    '<li><a href="/guide/counterparty-check.html#s2">비상장 회사·개인사업자</a><span>등기, 휴업·폐업 여부, 공시를 확인하는 순서</span></li>' +
+    '<li><a href="/guide/counterparty-check.html#s3">해외 회사</a><span>나라별 등기소·공시 조회 창구</span></li>' +
+    '<li><a href="/2026/09/jeonse-deposit-recovery-guide.html">사업자가 아닌 개인(집주인 등)</a><span>전세보증금을 못 받을 때의 절차</span></li></ul>';
   var seq = 0, last = null, current = null;
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return "&#" + c.charCodeAt(0) + ";"; }); }
@@ -1955,7 +2049,8 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
   // ── 검색 결과
   function results(term, d, sel) {
     if (!d.items || !d.items.length) {
-      res.innerHTML = '<p class="cx-empty">‘' + esc(term) + '’ 검색 결과가 없습니다. 회사명이나 종목코드 6자리를 확인해 주세요.</p>';
+      res.innerHTML = '<p class="cx-q">검색어 ‘' + esc(term) + '’</p><p class="cx-empty">국내 상장사 목록에서 찾지 못했습니다. 회사명이나 종목코드를 다시 확인해 주세요. ' +
+        '상장사가 아니라면 아래에서 확인할 곳을 고를 수 있습니다.</p>' + ROUTE;
       return;
     }
     var h = '<p class="cx-rhead">‘' + esc(term) + '’ 검색 결과 ' + esc(d.total) + '곳</p><ul class="cx-rlist">';
@@ -1987,12 +2082,27 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
     return '<div class="cx-blk"><h3>' + title + '</h3><div class="cx-fail" role="status"><p>' + esc(msg) + "</p>" +
       '<button type="button" class="cx-retry" data-retry="1">다시 시도</button></div></div>';
   }
-  function head(c, p) {
+  // 2026-11-12 레터헤드: PONTIS 샘플 PDF와 같은 저울 표시·남색 글자(로고 원본 ~/사업기획/pontis_샘플)
+  var MARK = '<svg class="cx-mark" viewBox="0 0 120 110" aria-hidden="true" focusable="false"><g fill="none" stroke="#16324f" stroke-width="7">' +
+    '<circle cx="60" cy="14" r="6" fill="#16324f" stroke="none"/><line x1="60" y1="20" x2="60" y2="90"/><line x1="22" y1="32" x2="98" y2="32"/>' +
+    '<line x1="22" y1="32" x2="9" y2="57"/><line x1="22" y1="32" x2="35" y2="57"/><line x1="98" y1="32" x2="85" y2="57"/><line x1="98" y1="32" x2="111" y2="57"/>' +
+    '<path d="M 7 57 A 15 10.5 0 0 0 37 57"/><path d="M 83 57 A 15 10.5 0 0 0 113 57"/><line x1="40" y1="93" x2="80" y2="93"/></g></svg>';
+  var NOTE = '<p class="cx-note">공개 공시자료를 자동으로 정리한 자료입니다. 각 공시는 해당 제출인이 작성한 문서이고, 감사의견은 회사의 지급능력이나 거래의 안전을 보증하지 않습니다. ' +
+    "주요 재무는 연간 사업보고서 기준이며, 공시가 정정되면 수치가 바뀔 수 있습니다. 특정 증권의 가치평가나 매수·매도 권유, 투자자문 및 법률자문이 아닙니다. " +
+    "원문은 접수번호로 DART(dart.fss.or.kr)에서 조회할 수 있습니다.</p>" +
+    '<div class="cx-foot"><span>PONTIS BY LAWRIUM CONSULTING · 기업 공시 조회</span><span class="cx-site">lawnomics.com</span><span class="cx-printhead"></span></div>';
+  function today() {   // 조회일(한국 날짜)
+    var k = new Date(Date.now() + 9 * 3600 * 1000);
+    return k.getUTCFullYear() + ". " + (k.getUTCMonth() + 1) + ". " + k.getUTCDate() + ".";
+  }
+  function head(c, p, parts) {
     var ok = p && p.ok;
-    return '<header class="cx-head"><h2 tabindex="-1">' + esc(ok && p.name || c.name) + "</h2>" +
-      '<p class="cx-meta">' + esc(ok && p.corp_name || c.corp_name) + " · " + esc(ok && p.market || c.market) + " · 종목코드 " + esc(ok && p.stock_code || c.stock_code) + "</p>" +
-      '<p class="cx-src">출처: 금융감독원 전자공시시스템(DART)</p>' +
-      '<p class="cx-src">특정 증권의 매수·매도를 권유하지 않습니다.</p></header>';
+    var who = esc(ok && p.corp_name || c.corp_name) + " (" + esc(ok && p.market || c.market) + " " + esc(ok && p.stock_code || c.stock_code) + ")";
+    return '<header class="cx-head"><div class="cx-lh"><div class="cx-brand">' + MARK + "<span><b>PONTIS</b><small>BY LAWRIUM · 기업 공시 조회</small></span></div>" +
+      '<div class="cx-kind">COMPANY DISCLOSURE SUMMARY<br><span class="cx-auto">공개 공시자료 자동 정리</span></div></div>' +
+      '<h2 tabindex="-1">' + esc(ok && p.name || c.name) + "</h2></header>" +
+      '<dl class="cx-meta"><dt>대상</dt><dd>' + who + "</dd><dt>조회일</dt><dd>" + today() + "</dd>" +
+      "<dt>자료</dt><dd>금융감독원 전자공시시스템(DART)</dd><dt>구성</dt><dd>" + parts.join(" · ") + "</dd></dl>";
   }
   function profile(p) {
     if (!p.ok) return fail("회사 개황", p);
@@ -2025,6 +2135,60 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
     (f.notes || []).forEach(function (n) { h += '<p class="cx-fnote">' + esc(n) + "</p>"; });
     return h + '<p class="cx-when">출처: <a href="' + VIEW + esc(f.rcept_no) + '" target="_blank" rel="noopener">' + esc(f.source_title || "사업보고서") +
       "</a> · 접수번호 " + esc(f.rcept_no) + "<br>" + when(f.fetched_at) + "</p>" + stale(f) + "</div>";
+  }
+  function n3(v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+  function man(v) {   // 원 → 만 원(1인 평균 급여). 만 원으로 떨어지지 않으면 소수 첫째 자리까지
+    var x = v / 10000, s = Math.round(x) === x ? String(x) : x.toFixed(1), i = s.split(".");
+    return n3(i[0]) + (i[1] ? "." + i[1] : "");
+  }
+  function dash() { return '<span class="cx-na"><span aria-hidden="true">-</span><span class="cx-sr">자료 없음</span></span>'; }
+  function basis(p) { return esc(p.year) + "년 사업보고서" + (p.settled ? "(결산기준일 " + esc(p.settled) + ")" : ""); }
+  function report(p) {
+    return '<p class="cx-when">출처: <a href="' + VIEW + esc(p.rcept_no) + '" target="_blank" rel="noopener">' + esc(p.source_title || "사업보고서") +
+      "</a> · 접수번호 " + esc(p.rcept_no) + "<br>" + when(p.fetched_at) + "</p>" + stale(p);
+  }
+  function none(title, p) {
+    return '<div class="cx-blk"><h3>' + title + '</h3><p class="cx-nofin">' + esc((p.years_tried || []).join("·")) + "년 사업보고서에서 " + title +
+      ' 자료가 조회되지 않았습니다. 사업보고서 원문은 <a href="https://dart.fss.or.kr/dsab007/main.do" target="_blank" rel="noopener">DART</a>에서 볼 수 있습니다.</p>' +
+      '<p class="cx-when">' + when(p.fetched_at) + "</p>" + stale(p) + "</div>";
+  }
+  function audit(a) {   // 2026-11-11 무료 공개 샘플(API audit_view): 기수마다 서로 다른 감사인·의견 짝
+    if (!a.ok) return fail("감사의견", a);
+    if (a.none) return none("감사의견", a);
+    var two = false, h = '<div class="cx-blk"><h3>감사의견</h3><p class="cx-basis">' + basis(a) + "에 적힌 외부감사인의 의견</p>" +
+      '<table class="cx-fin cx-txt"><caption class="cx-sr">감사의견, ' + basis(a) + '</caption><thead><tr><th scope="col">사업연도</th><th scope="col">감사인</th><th scope="col">감사의견</th></tr></thead><tbody>';
+    a.periods.forEach(function (p) {
+      if (p.opinions.length > 1) two = true;
+      p.opinions.forEach(function (o) {   // 의견이 둘이면 줄마다 기수를 다시 적는다(합친 칸은 화면 읽기 프로그램이 잘못 읽을 수 있다)
+        h += '<tr><th scope="row">' + esc(p.label || p.kind || "") + "</th><td>" + (o.auditor ? esc(o.auditor) : dash()) + "</td><td>" + (o.opinion ? esc(o.opinion) : dash()) + "</td></tr>";
+      });
+    });
+    h += "</tbody></table>";
+    if (two) h += '<p class="cx-fnote">한 사업연도에 의견이 둘이면 재무제표와 연결재무제표의 의견이 다른 것일 수 있습니다. 어느 쪽인지는 원문에서 확인해 주세요.</p>';
+    a.periods.forEach(function (p) {
+      p.emphasis.forEach(function (t) { h += '<p class="cx-rm cx-emph"><b>' + esc(p.kind || p.label) + " 강조사항 등</b>\n" + esc(t) + "</p>"; });
+    });
+    var cur = a.periods.filter(function (p) { return p.kind === "당기"; })[0];
+    if (cur && cur.core.length) {
+      h += '<details class="cx-more"><summary>' + esc(cur.kind || cur.label) + " 핵심감사사항 보기</summary>" + cur.core.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</details>";
+    }
+    return h + report(a) + "</div>";
+  }
+  function emp(e) {   // 2026-11-11 무료 공개 샘플(API emp_view): 공시 표 그대로, 합계는 확인될 때만
+    if (!e.ok) return fail("직원 현황", e);
+    if (e.none) return none("직원 현황", e);
+    var why = { overall: "공시 표의 합계", by_sex: "공시 표의 성별 합계를 더한 값", by_part: "공시 표의 부문 합계를 더한 값", rows: "표의 인원을 더한 값" };
+    var tot = e.total != null && why[e.total_basis] ? "직원 수 " + n3(e.total) + "명(" + why[e.total_basis] + ")" :
+      "총인원을 확인하기 어려워 합계를 표시하지 않았습니다.";
+    var h = '<div class="cx-blk"><h3>직원 현황</h3><p class="cx-basis">' + basis(e) + "의 부문·성별 값 · " + esc(tot) + "</p>" +
+      '<table class="cx-fin cx-emp"><caption class="cx-sr">직원 현황, ' + basis(e) + '</caption><thead><tr><th scope="col">구분</th><th scope="col">인원(명)</th><th scope="col">평균 근속</th><th scope="col">1인 평균 연간 급여(만 원)</th></tr></thead><tbody>';
+    e.rows.forEach(function (r) {
+      var label = [r.part, r.sex].filter(Boolean).join(" · ");
+      h += "<tr" + (r.sum ? ' class="sum"' : "") + '><th scope="row">' + (label ? esc(label) : dash()) + "</th><td>" + (r.count != null ? n3(r.count) : dash()) +
+        "</td><td>" + (r.tenure ? esc(r.tenure) : dash()) + "</td><td>" + (r.pay != null ? man(r.pay) : (r.pay_unclear ? '<span class="cx-na">원문 확인</span>' : dash())) + "</td></tr>";
+    });
+    h += "</tbody></table>";
+    return h + '<p class="cx-fnote">평균 근속과 1인 평균 급여는 회사가 사업보고서에 적은 값이며 새로 산출하지 않았습니다. 급여는 원 단위를 만 원으로 바꿔 적었고, 신입 연봉이나 지금의 연봉이 아닙니다.</p>' + report(e) + "</div>";
   }
   function filings(fl) {
     if (!fl.ok) return fail("최근 공시", fl);
@@ -2059,8 +2223,9 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
     get("/v0/company/" + code).then(function (d) {
       if (my !== seq) return;
       var name = d.profile && d.profile.ok && d.profile.name || d.company.name;
-      box.innerHTML = '<section class="cx-card" aria-label="' + esc(name) + ' 회사 정보">' + head(d.company, d.profile) +
-        profile(d.profile) + fin(d.financials, name) + filings(d.filings) + SAVE + "</section>";
+      var parts = ["회사 개황", "주요 재무"].concat(d.audit ? ["감사의견"] : [], d.employees ? ["직원 현황"] : [], ["최근 공시"]);
+      box.innerHTML = '<section class="cx-card" aria-label="' + esc(name) + ' 회사 정보">' + head(d.company, d.profile, parts) +
+        profile(d.profile) + fin(d.financials, name) + (d.audit ? audit(d.audit) : "") + (d.employees ? emp(d.employees) : "") + filings(d.filings) + NOTE + "</section>" + SAVE;
       paid.hidden = false;
       if (!q.value) q.value = name;
       var h2 = focus ? box.querySelector("h2") : null;
@@ -2091,6 +2256,9 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
       return;
     }
     if (t.classList.contains("cx-print")) window.print();
+  });
+  window.addEventListener("beforeprint", function () {   // 접힌 핵심감사사항도 인쇄·PDF에 넣는다
+    Array.prototype.forEach.call(cx.querySelectorAll("details.cx-more"), function (d) { d.open = true; });
   });
   window.addEventListener("popstate", fromHash);
   window.addEventListener("hashchange", fromHash);
