@@ -1741,6 +1741,27 @@ body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important
 .nav-categories li a{padding:10px 16px}
 }
 
+/* [lawnomics-tools 휴대폰 표·글씨 적용] 넓은 표는 휴대폰에서 줄마다 카드로(스크립트가 .stack을 붙임), 바닥글 12px, 작은 누름 대상 키움 */
+@media (max-width:640px){
+.article-body .table-scroll.stack{overflow:visible;background:none!important}
+.article-body .table-scroll.stack::after{content:none!important}
+.article-body .table-scroll.stack table{min-width:0!important;width:100%!important;border:0!important;background:none!important}
+.article-body .table-scroll.stack thead{display:none!important}
+.article-body .table-scroll.stack tbody tr{display:block;margin:0 0 12px;border:1px solid var(--c-line);border-radius:10px;padding:12px 14px;background:#FFFFFF!important}
+.article-body .table-scroll.stack tbody td,.article-body .table-scroll.stack tbody th{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;min-width:0!important;padding:7px 0!important;border:0!important;border-bottom:1px solid var(--c-line-in)!important;font-size:15px!important;font-weight:400;line-height:1.6;text-align:left!important;background:none!important}
+.article-body .table-scroll.stack tbody td:last-child,.article-body .table-scroll.stack tbody th:last-child{border-bottom:0!important}
+.article-body .table-scroll.stack tbody td::before,.article-body .table-scroll.stack tbody th::before{content:attr(data-label);color:var(--c-sub);font-size:13px;font-weight:600;line-height:1.7}
+.article-body .table-scroll.stack tbody td:first-child,.article-body .table-scroll.stack tbody th:first-child{display:block;font-weight:700;font-size:16px!important;padding:0 0 8px!important}
+.article-body .table-scroll.stack tbody td:first-child::before,.article-body .table-scroll.stack tbody th:first-child::before{content:none}
+body .references li{font-size:13.5px}
+body .references li a{font-size:14px}
+.article-meta-bar .meta-policy{font-size:13px}
+}
+body .footer-tagline,body .footer-copyright{font-size:12px}
+body .references li a{padding:3px 0}
+.article-meta-bar .meta-policy{padding:2px 0}
+body .tools-sub a{padding:2px 0}
+
 </style>
 <style id='svc-css'>/* [lawnomics-tools 도구 쪽 디자인] 2026-11-06 시안 A(docs/시안_1106): 홈 F2의 살구 띠·색 아이콘 + 화면별 본문 */
 .hx-ic{display:flex;flex:none;align-items:center;justify-content:center;width:64px;height:64px;border-radius:20px;color:#FFFFFF;box-shadow:inset 0 -3px 0 rgba(0,0,0,.10),0 4px 12px rgba(17,24,39,.10)}
@@ -2423,6 +2444,6 @@ window.addEventListener('scroll', function() {
 </script>
 
 
-<script>if(window.innerWidth>768){document.querySelectorAll('details.toc').forEach(function(d){d.open=true})}</script>
+<script>if(window.innerWidth>768){document.querySelectorAll('details.toc').forEach(function(d){d.open=true})}</script><script>/* [lawnomics-tools 휴대폰 표·글씨 적용] 넓은 표는 휴대폰(640px 이하)에서 줄마다 카드로 */(function(){var mq=window.matchMedia&&window.matchMedia('(max-width:640px)');if(!mq)return;function fit(){[].forEach.call(document.querySelectorAll('.article-body .table-scroll'),function(box){var t=box.querySelector('table');if(!t||!t.tHead||!t.tHead.rows.length||t.querySelector('[rowspan],[colspan]'))return;var hs=[].map.call(t.tHead.rows[0].cells,function(c){return c.textContent.trim()});if(hs.length<3)return;if(!box.hasAttribute('data-lab')){[].forEach.call(t.tBodies,function(tb){[].forEach.call(tb.rows,function(tr){[].forEach.call(tr.cells,function(c,i){c.setAttribute('data-label',hs[i]||'')})})});box.setAttribute('data-lab','1')}box.classList.remove('stack');if(mq.matches&&(box.classList.contains('wide')||t.scrollWidth>box.clientWidth+1))box.classList.add('stack')})}fit();var tm;window.addEventListener('resize',function(){clearTimeout(tm);tm=setTimeout(fit,150)})})();</script>
 </body>
 </html>
