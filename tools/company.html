@@ -1801,6 +1801,7 @@ body .tools-sub a{padding:2px 0}
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
 <nav class='tools-nav' aria-label='계산기와 검색'><a href='/tools/'>전체</a><a href='/tools/#calc'>계산기</a><a href='/tools/law-search.html#from=tab'>법령·판례</a><a href='/tools/company.html' class='on' aria-current='page'>기업 공시</a></nav>
+<nav class='tools-sub' aria-label='기업 정보'><span>기업 정보</span><b aria-current='page'>기업 공시 조회</b><a href='/tools/business-status.html'>사업자 휴폐업 조회</a></nav>
 <article class='article-wrap'>
 <div class='article-header'>
 
@@ -2014,7 +2015,7 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
 <p class="cx-lead">국내 상장사의 회사 개황, 연간 주요 재무, 감사의견, 직원 현황과 최근 공시를 조회합니다. 각 자료에 출처와 받은 시점을 표시합니다.</p>
 <form class="cx-box" id="cx-form" role="search" autocomplete="off"><label for="cx-q">회사명 또는 종목코드</label>
 <div class="cx-row"><input id="cx-q" type="search" maxlength="40" placeholder="예: 삼성전자 또는 005930" enterkeyhint="search"><button type="submit" class="cx-btn">검색</button></div>
-<p class="cx-hint">회사명이나 종목코드 6자리로 국내 상장사를 검색합니다.</p><p class="cx-hint cx-routeline">상장사가 아니라면: <a href="/guide/counterparty-check.html#s2">비상장 회사·개인사업자</a> · <a href="/guide/counterparty-check.html#s3">해외 회사</a> · <a href="/2026/09/jeonse-deposit-recovery-guide.html">개인(집주인 등)</a></p></form>
+<p class="cx-hint">회사명이나 종목코드 6자리로 국내 상장사를 검색합니다.</p><p class="cx-hint cx-routeline">상장사가 아니라면: <a href="/tools/business-status.html">사업자 휴폐업 조회</a> · <a href="/guide/counterparty-check.html#s2">비상장 회사·개인사업자</a> · <a href="/guide/counterparty-check.html#s3">해외 회사</a> · <a href="/2026/09/jeonse-deposit-recovery-guide.html">개인(집주인 등)</a></p></form>
 <noscript><p class="cx-status err">이 도구는 자바스크립트가 켜져 있어야 작동합니다. DART(dart.fss.or.kr)에서 직접 검색할 수 있습니다.</p></noscript>
 <div class="cx-results" id="cx-results" aria-live="polite"></div>
 <div id="cx-card" aria-live="polite"></div>
@@ -2038,7 +2039,8 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
   }
   var SAVE = '<div class="cx-save"><button type="button" class="cx-print">인쇄·PDF 저장</button>' +
     '<p>인쇄 창에서 PDF로 저장할 수 있습니다. 최근 공시는 접힌 항목을 포함해 최대 10건을 저장합니다. 공시 원문 전체는 포함되지 않습니다.</p></div>';
-  var ROUTE = '<ul class="cx-route">' +   // 2026-11-12 상장사가 아닐 때의 갈래(사용자 승인)
+  var ROUTE = '<ul class="cx-route">' +   // 2026-11-12 상장사가 아닐 때의 갈래(사용자 승인). 같은 날 사업자 휴폐업 조회를 맨 앞에
+    '<li><a href="/tools/business-status.html">사업자 휴폐업 조회</a><span>사업자등록번호로 보는 휴업·폐업 여부와 과세유형</span></li>' +
     '<li><a href="/guide/counterparty-check.html#s2">비상장 회사·개인사업자</a><span>등기, 휴업·폐업 여부, 공시를 확인하는 순서</span></li>' +
     '<li><a href="/guide/counterparty-check.html#s3">해외 회사</a><span>나라별 등기소·공시 조회 창구</span></li>' +
     '<li><a href="/2026/09/jeonse-deposit-recovery-guide.html">사업자가 아닌 개인(집주인 등)</a><span>전세보증금을 못 받을 때의 절차</span></li></ul>';
