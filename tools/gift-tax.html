@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<!-- Google Analytics 4 -->
+<script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-YVS035JLZD'></script>
+<script>/*<![CDATA[*/
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YVS035JLZD');
+/*]]>*/</script>
+<title>증여세 계산기 (현금 증여 모의계산) - 로노믹스</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<!-- 네이버 서치어드바이저 소유권 확인 -->
+<meta content='f957b9803abc2dfff9b288ce8ebae99d5e881db6' name='naver-site-verification'/>
+<!-- Bing 웹마스터 소유권 확인 (2026-10-13 — www 속성 미등록으로 URL 제출 NotAuthorized였음) -->
+<meta content='2F1DFCB0792F48B76260E4D80BB5CF12' name='msvalidate.01'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<!-- Chrome, Firefox OS and Opera -->
+<!-- Windows Phone -->
+<link href='https://www.lawnomics.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='https://www.lawnomics.com/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'/>
+<link href='https://www.lawnomics.com/icon-192.png' rel='icon' type='image/png' sizes='192x192'/>
+<link href='https://www.lawnomics.com/tools/gift-tax.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="로노믹스 &#8212; 법과 숫자로 지키는 내 돈 - Atom" href="https://www.lawnomics.com/feed.xml" />
+
+<meta content='https://www.lawnomics.com/tools/gift-tax.html' property='og:url'/>
+<meta content='증여세 계산기 (현금 증여 모의계산)' property='og:title'/>
+<meta content='현금을 증여받을 때 관계별 증여재산공제, 혼인·출산 공제, 10년 합산, 세대생략 할증을 넣어 신고기한 안에 신고하는 경우의 증여세와 신고기한을 계산합니다.' property='og:description'/>
+<meta content='https://www.lawnomics.com/icon-512.png' property='og:image'/>
+<!-- SEO: Basic Meta (canonical, feed는 all-head-content가 자동 생성) -->
+<meta content='현금을 증여받을 때 관계별 증여재산공제, 혼인·출산 공제, 10년 합산, 세대생략 할증을 넣어 신고기한 안에 신고하는 경우의 증여세와 신고기한을 계산합니다.' name='description'/>
+<meta content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' name='robots'/>
+<meta content='#1C1210' name='theme-color'/>
+<!-- SEO: Sitemap (canonical, feed는 all-head-content가 처리) -->
+<link href='https://www.lawnomics.com/sitemap.xml' rel='sitemap' type='application/xml'/>
+<!-- Performance: Preconnect -->
+<link href='https://cdn.jsdelivr.net' rel='preconnect'/>
+<!-- SEO: Open Graph (og:title, og:description, og:url, og:image는 all-head-content가 자동 생성) -->
+<meta content='website' property='og:type'/>
+<meta content='로노믹스' property='og:site_name'/>
+<meta content='ko_KR' property='og:locale'/>
+<!-- SEO: Twitter Card -->
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='로노믹스 — 법과 숫자로 지키는 내 돈: 증여세 계산기 (현금 증여 모의계산)' name='twitter:title'/>
+<meta content='현금을 증여받을 때 관계별 증여재산공제, 혼인·출산 공제, 10년 합산, 세대생략 할증을 넣어 신고기한 안에 신고하는 경우의 증여세와 신고기한을 계산합니다.' name='twitter:description'/>
+<meta content='https://www.lawnomics.com/icon-512.png' name='twitter:image'/>
+<!-- SEO: Organization Schema (site-level) -->
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.lawnomics.com/#brand",
+  "name": "로노믹스",
+  "alternateName": "Lawnomics",
+  "url": "https://www.lawnomics.com",
+  "logo": {"@type": "ImageObject", "url": "https://www.lawnomics.com/icon-512.png", "width": 512, "height": 512},
+  "description": "가족·상속, 부동산·임대차, 세금·재테크, 금전·분쟁. 내 돈을 지키는 법적 기준과 절차를 조문과 숫자로 풀어 씁니다.",
+  "inLanguage": "ko-KR",
+  "parentOrganization": {"@type": "Organization", "name": "로리움 컨설팅 (Lawrium Consulting)"},
+  "publishingPrinciples": "https://www.lawnomics.com/p/editorial-policy.html",
+  "correctionsPolicy": "https://www.lawnomics.com/p/editorial-policy.html",
+  "sameAs": [
+    "https://blog.naver.com/lcbridz",
+    "https://www.threads.com/@lawnomics_kr",
+    "https://www.instagram.com/lawnomics_kr/",
+    "https://www.facebook.com/1311438692043961"
+  ]
+}
+</script>
+<!-- SEO: WebSite Schema (사이트 검색 지원) -->
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "로노믹스",
+  "alternateName": "Lawnomics",
+  "url": "https://www.lawnomics.com/",
+  "inLanguage": "ko-KR"
+}
+</script>
+<style id='page-skin-1' type='text/css'><!--
+/* ============================================
+Lawnomics - Professional Blog Theme
+Color Palette:
+Primary:    #1C1210 (Dark Navy - Trust)
+Accent:     #D35400 (Muted Gold - Premium)
+Text:       #3A3330
+Light Text: #8B7D6B
+Background: #FAF6F1
+Card:       #FFFFFF
+Border:     #E5D9CC
+============================================ */
+/* ---------- CSS Reset & Base ---------- */
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+color: var(--c-text);
+background-color: var(--c-cream);
+line-height: 1.8;
+font-size: 16px;
+-webkit-font-smoothing: antialiased;
+word-break: keep-all;
+}
+a {
+color: var(--c-ink);
+text-decoration: none;
+transition: color 0.2s ease;
+}
+a:hover {
+color: var(--c-accent-text);
+}
+img {
+max-width: 100%;
+height: auto;
+}
+/* ---------- Reading Progress Bar ---------- */
+#reading-progress {
+position: fixed;
+top: 0;
+left: 0;
+width: 0%;
+height: 3px;
+background: linear-gradient(90deg, var(--c-accent), #E8D5A8);
+z-index: 10000;
+transition: width 0.1s ease;
+}
+/* ---------- Header ---------- */
+.header-wrap {
+background: var(--c-ink-bg);
+border-bottom: 3px solid var(--c-accent);
+position: sticky;
+top: 0;
+z-index: 9999;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 72px;
+}
+.blog-title a {
+color: #FFFFFF;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+.blog-title .brand-logo {
+display: flex;
+flex-direction: column;
+line-height: 1.15;
+}
+.blog-title .brand-name {
+font-size: 24px;
+font-weight: 900;
+letter-spacing: -0.5px;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
+}
+.blog-title .brand-name .accent {
+color: var(--c-brand);
+}
+.blog-title .brand-tagline {
+font-size: 11px;
+color: var(--c-on-dark-note);
+font-weight: 400;
+letter-spacing: 0.5px;
+}
+.blog-title .brand-bar {
+width: 3px;
+height: 32px;
+background: var(--c-accent);
+border-radius: 2px;
+flex-shrink: 0;
+}
+/* ---------- Navigation ---------- */
+.nav-categories {
+display: flex;
+gap: 4px;
+list-style: none;
+}
+.nav-categories li a {
+display: block;
+padding: 8px 18px;
+color: var(--c-on-dark);
+font-size: 14px;
+font-weight: 600;
+border-radius: 6px;
+transition: all 0.2s ease;
+letter-spacing: -0.3px;
+}
+.nav-categories li a:hover,
+.nav-categories li a.active {
+color: #FFFFFF;
+background: rgba(200, 169, 110, 0.15);
+}
+/* Mobile menu button */
+.mobile-menu-btn {
+display: none;
+background: none;
+border: none;
+color: #FFFFFF;
+font-size: 24px;
+cursor: pointer;
+padding: 8px;
+}
+/* ---------- Hero / Intro Banner ---------- */
+.hero-section {
+background: linear-gradient(135deg, var(--c-ink-bg) 0%, #2C3E6B 100%);
+padding: 48px 24px;
+text-align: center;
+border-bottom: 1px solid var(--c-accent);
+}
+.hero-section h2 {
+color: #FFFFFF;
+font-size: 28px;
+font-weight: 700;
+margin-bottom: 12px;
+letter-spacing: -0.5px;
+}
+.hero-section p {
+color: var(--c-on-dark);
+font-size: 16px;
+max-width: 600px;
+margin: 0 auto;
+line-height: 1.6;
+}
+/* ---------- Main Layout ---------- */
+.content-wrap {
+max-width: 1200px;
+margin: 0 auto;
+padding: 40px 24px;
+display: grid;
+grid-template-columns: 1fr 260px;
+gap: 36px;
+}
+.main-content {
+min-width: 0;
+}
+/* ---------- Post Card (Homepage) ---------- */
+.post-card {
+background: #FFFFFF;
+border-radius: 12px;
+margin-bottom: 24px;
+border: 1px solid var(--c-line);
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+}
+.post-card:hover {
+box-shadow: 0 8px 30px rgba(27, 42, 74, 0.08);
+transform: translateY(-2px);
+}
+.post-card-thumb {
+width: 100%;
+height: 220px;
+overflow: hidden;
+}
+.post-card-thumb img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.4s ease;
+}
+.post-card:hover .post-card-thumb img {
+transform: scale(1.05);
+}
+.post-card-body {
+padding: 28px 32px 32px;
+}
+.post-meta {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 14px;
+flex-wrap: wrap;
+}
+.category-badge {
+display: inline-block;
+padding: 4px 12px;
+font-size: 12px;
+font-weight: 700;
+border-radius: 4px;
+letter-spacing: -0.3px;
+}
+.badge-economy {
+background: #FFF5EE;
+color: #8B4513;
+}
+.badge-realestate {
+background: #EAFAF1;
+color: #1E8449;
+}
+.badge-investment {
+background: #EBF5FB;
+color: #1A5276;
+}
+.badge-law {
+background: #FDF2E9;
+color: #A04000;
+}
+.post-date {
+font-size: 13px;
+color: #8B7D6B;
+}
+.post-card h2 {
+font-size: 22px;
+font-weight: 700;
+line-height: 1.4;
+margin-bottom: 12px;
+letter-spacing: -0.5px;
+color: var(--c-ink);
+}
+.post-card h2 a {
+color: var(--c-ink);
+}
+.post-card h2 a:hover {
+color: var(--c-accent-text);
+}
+.post-summary {
+color: #8B7D6B;
+font-size: 15px;
+line-height: 1.7;
+display: -webkit-box;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.read-more {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+margin-top: 16px;
+font-size: 14px;
+font-weight: 600;
+color: var(--c-accent-text);
+}
+.read-more:hover {
+gap: 10px;
+}
+/* ---------- Article Page (Single Post) ---------- */
+.article-wrap {
+background: #FFFFFF;
+border-radius: 12px;
+border: 1px solid var(--c-line);
+overflow: hidden;
+}
+.article-header {
+padding: 48px 48px 20px;
+border-bottom: 1px solid var(--c-line);
+}
+.article-header .category-badge {
+margin-bottom: 16px;
+}
+.article-header h1 {
+font-size: 32px;
+font-weight: 800;
+line-height: 1.35;
+color: var(--c-ink);
+letter-spacing: -1px;
+margin-bottom: 20px;
+text-align: left;
+}
+.article-meta-bar {
+display: flex;
+align-items: center;
+gap: 20px;
+padding-top: 16px;
+border-top: 1px solid var(--c-line);
+font-size: 13px;
+color: #8B7D6B;
+}
+.article-meta-bar .meta-item {
+display: flex;
+align-items: center;
+gap: 6px;
+}
+/* Article body */
+.article-body {
+padding: 40px 48px 48px;
+font-size: 17px;
+line-height: 1.8;
+color: var(--c-text);
+text-align: left;
+word-break: keep-all;
+}
+.article-body h2 {
+font-size: 24px;
+font-weight: 700;
+color: var(--c-ink);
+margin: 40px 0 16px;
+padding-bottom: 12px;
+border-bottom: 2px solid var(--c-line);
+letter-spacing: -0.5px;
+position: relative;
+}
+.article-body h2::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 60px;
+height: 2px;
+background: var(--c-accent);
+}
+.article-body h3 {
+font-size: 20px;
+font-weight: 700;
+color: var(--c-text);
+margin: 32px 0 14px;
+padding-left: 14px;
+border-left: 3px solid var(--c-accent);
+}
+.article-body p {
+margin-bottom: 16px;
+}
+.article-body strong {
+color: var(--c-ink);
+font-weight: 700;
+}
+.article-body em {
+color: #8B7D6B;
+font-style: italic;
+}
+.article-body ul, .article-body ol {
+margin: 16px 0;
+padding-left: 24px;
+}
+.article-body li {
+margin-bottom: 8px;
+line-height: 1.8;
+}
+.article-body blockquote {
+margin: 28px 0;
+padding: 24px 28px;
+background: linear-gradient(135deg, var(--c-cream) 0%, #F5EDE4 100%);
+border-left: 4px solid var(--c-accent);
+border-radius: 0 8px 8px 0;
+font-size: 16px;
+color: var(--c-sub);
+line-height: 1.8;
+}
+.article-body blockquote p {
+margin-bottom: 0;
+}
+/* Tables in articles */
+.article-body table {
+width: 100%;
+border-collapse: collapse;
+margin: 24px 0;
+font-size: 15px;
+border-radius: 8px;
+overflow: hidden;
+border: 1px solid var(--c-line);
+}
+.article-body thead {
+background: var(--c-ink-bg);
+color: #FFFFFF;
+}
+.article-body th {
+padding: 14px 18px;
+text-align: left;
+font-weight: 600;
+font-size: 14px;
+}
+.article-body td {
+padding: 12px 18px;
+border-bottom: 1px solid var(--c-line);
+}
+.article-body tbody tr:nth-child(even) {
+background: var(--c-cream);
+}
+.article-body tbody tr:hover {
+background: #FFF5EE;
+}
+/* Code / data highlight */
+.article-body code {
+background: #F1F3F5;
+padding: 2px 8px;
+border-radius: 4px;
+font-size: 15px;
+color: var(--c-accent-text);
+font-family: 'Fira Code', 'Noto Sans Mono', monospace;
+}
+.article-body pre {
+background: var(--c-ink-bg);
+color: #E5D9CC;
+padding: 24px;
+border-radius: 8px;
+overflow-x: auto;
+margin: 24px 0;
+font-size: 14px;
+line-height: 1.6;
+}
+.article-body pre code {
+background: none;
+color: inherit;
+padding: 0;
+}
+/* Horizontal rule */
+.article-body hr {
+border: none;
+height: 1px;
+background: var(--c-line);
+margin: 40px 0;
+}
+/* Disclaimer */
+.disclaimer {
+margin-top: 16px;
+padding: 14px 18px;
+background: none;
+border: none;
+border-radius: 0;
+font-size: 12px;
+color: #9CA3AF;
+line-height: 1.6;
+text-align: center;
+}
+.disclaimer .disclaimer-icon {
+font-size: 14px;
+margin-right: 4px;
+}
+/* References */
+.references {
+margin-top: 32px;
+padding: 18px 20px;
+background: var(--c-cream);
+border-radius: 8px;
+border: 1px solid var(--c-line);
+}
+.references h3,
+.references h4 {
+font-size: 14px;
+font-weight: 700;
+color: var(--c-ink);
+margin-bottom: 10px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(--c-line);
+}
+.references ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.references li {
+font-size: 12.5px;
+color: #8B7D6B;
+padding: 5px 0;
+line-height: 1.5;
+border-bottom: 1px solid rgba(229,217,204,0.4);
+}
+.references li:last-child {
+border-bottom: none;
+padding-bottom: 0;
+}
+.references .ref-dot {
+color: var(--c-accent-text);
+font-weight: 900;
+margin-right: 6px;
+}
+.references li a {
+color: #5A4D42;
+font-size: 13px;
+text-decoration: none;
+}
+.references li a:hover {
+color: var(--c-accent-text);
+}
+/* ---------- Sidebar ---------- */
+.sidebar {
+align-self: start;
+margin-left: 16px;
+}
+.sidebar-widget {
+background: #FFFFFF;
+border-radius: 10px;
+border: 1px solid var(--c-line);
+padding: 20px;
+margin-bottom: 16px;
+}
+.sidebar-widget h3 {
+font-size: 14px;
+font-weight: 700;
+color: var(--c-ink);
+margin-bottom: 14px;
+padding-bottom: 10px;
+border-bottom: 2px solid var(--c-line);
+position: relative;
+}
+.sidebar-widget h3::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 40px;
+height: 2px;
+background: var(--c-accent);
+}
+/* About widget */
+.about-widget {
+text-align: center;
+padding: 18px;
+}
+.about-brand {
+font-size: 17px;
+font-weight: 900;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
+letter-spacing: -0.5px;
+margin-bottom: 2px;
+}
+.about-brand .accent {
+color: var(--c-accent-text);
+}
+.about-tagline-kr {
+font-size: 12px;
+color: var(--c-on-dark-note);
+margin-bottom: 12px;
+letter-spacing: 0.3px;
+}
+.about-widget p {
+font-size: 13px;
+color: #8B7D6B;
+line-height: 1.6;
+margin-bottom: 4px;
+}
+.subscribe-btn {
+display: inline-block;
+margin-top: 12px;
+padding: 8px 24px;
+background: var(--c-accent);
+color: #FFFFFF;
+font-size: 13px;
+font-weight: 700;
+border-radius: 6px;
+transition: all 0.2s ease;
+letter-spacing: -0.3px;
+}
+.subscribe-btn:hover {
+background: var(--c-accent-btn);
+color: #FFFFFF;
+}
+/* Category list widget */
+.category-list {
+list-style: none;
+}
+.category-list li {
+margin-bottom: 4px;
+}
+.category-list li a {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 14px;
+border-radius: 8px;
+font-size: 14px;
+font-weight: 500;
+color: var(--c-sub);
+transition: all 0.2s ease;
+}
+.category-list li a:hover {
+background: var(--c-cream);
+color: var(--c-ink);
+}
+.category-list li a .cat-dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+display: inline-block;
+margin-right: 10px;
+}
+.cat-dot-economy { background: #8B4513; }
+.cat-dot-realestate { background: #1E8449; }
+.cat-dot-investment { background: #1A5276; }
+.cat-dot-law { background: #A04000; }
+/* Search widget */
+.search-widget {
+padding: 14px;
+}
+.search-form {
+display: flex;
+gap: 0;
+max-width: 100%;
+}
+.search-input {
+flex: 1;
+min-width: 0;
+padding: 8px 12px;
+border: 1px solid var(--c-line);
+border-right: none;
+border-radius: 6px 0 0 6px;
+font-size: 13px;
+color: var(--c-text);
+background: #FFFFFF;
+outline: none;
+transition: border-color 0.2s ease;
+}
+.search-input:focus {
+border-color: var(--c-focus-input);
+}
+.search-input::placeholder {
+color: #B8A99A;
+}
+.search-btn {
+padding: 8px 14px;
+flex-shrink: 0;
+background: var(--c-accent);
+color: #FFFFFF;
+border: 1px solid var(--c-accent);
+border-radius: 0 6px 6px 0;
+font-size: 13px;
+font-weight: 600;
+cursor: pointer;
+transition: background 0.2s ease;
+}
+.search-btn:hover {
+background: var(--c-accent-btn);
+}
+.view-all-link {
+display: block;
+text-align: center;
+margin-top: 12px;
+padding: 10px;
+font-size: 13px;
+font-weight: 600;
+color: var(--c-accent-text);
+border: 1px solid var(--c-line);
+border-radius: 6px;
+transition: all 0.2s ease;
+}
+.view-all-link:hover {
+background: var(--c-accent);
+color: #FFFFFF;
+border-color: var(--c-accent);
+}
+.category-list li a .count {
+font-size: 12px;
+color: var(--c-on-dark);
+background: #F0F0F0;
+padding: 2px 8px;
+border-radius: 10px;
+}
+/* Popular posts widget */
+.popular-post-item {
+padding: 14px 0;
+border-bottom: 1px solid var(--c-line);
+}
+.popular-post-item:last-child {
+border-bottom: none;
+padding-bottom: 0;
+}
+.popular-post-item:first-child {
+padding-top: 0;
+}
+.popular-post-item a {
+font-size: 14px;
+font-weight: 600;
+color: var(--c-text);
+line-height: 1.5;
+display: block;
+margin-bottom: 4px;
+}
+.popular-post-item a:hover {
+color: var(--c-accent-text);
+}
+.popular-post-item .pop-date {
+font-size: 12px;
+color: var(--c-on-dark);
+}
+/* ---------- Table of Contents (auto-generated) ---------- */
+.toc-widget {
+display: none; /* shown via JS on article pages */
+}
+.toc-widget.active {
+display: block;
+}
+.toc-list {
+list-style: none;
+padding: 0;
+}
+.toc-list li {
+margin-bottom: 4px;
+}
+.toc-list li a {
+display: block;
+padding: 8px 12px;
+font-size: 13px;
+color: #8B7D6B;
+border-radius: 6px;
+border-left: 2px solid transparent;
+transition: all 0.2s ease;
+line-height: 1.4;
+}
+.toc-list li a:hover,
+.toc-list li a.active {
+color: var(--c-ink);
+background: var(--c-cream);
+border-left-color: var(--c-accent);
+}
+/* ---------- Recent Posts Widget ---------- */
+.recent-posts-list {
+list-style: none;
+padding: 0;
+}
+.recent-posts-list li {
+padding: 10px 0;
+border-bottom: 1px solid var(--c-line);
+}
+.recent-posts-list li:last-child {
+border-bottom: none;
+padding-bottom: 0;
+}
+.recent-posts-list li:first-child {
+padding-top: 0;
+}
+.recent-posts-list li a {
+font-size: 13px;
+font-weight: 600;
+color: var(--c-text);
+line-height: 1.5;
+display: block;
+word-break: keep-all;
+overflow-wrap: break-word;
+}
+.recent-posts-list li a:hover {
+color: var(--c-accent-text);
+}
+.recent-posts-list .recent-date {
+font-size: 12px;
+color: var(--c-on-dark);
+margin-top: 2px;
+}
+/* ---------- Footer ---------- */
+.footer-wrap {
+background: var(--c-ink-bg);
+color: var(--c-on-dark);
+margin-top: 60px;
+}
+.footer-inner {
+max-width: 1200px;
+margin: 0 auto;
+padding: 48px 24px;
+}
+.footer-content {
+text-align: center;
+}
+.footer-brand {
+color: #FFFFFF;
+font-size: 22px;
+font-weight: 900;
+font-family: 'Pretendard Variable', 'Pretendard JP Variable', -apple-system, sans-serif;
+letter-spacing: -0.5px;
+margin-bottom: 4px;
+}
+.footer-brand .accent {
+color: var(--c-brand);
+}
+.footer-tagline {
+font-size: 12px;
+color: var(--c-on-dark-note);
+margin-bottom: 16px;
+letter-spacing: 0.3px;
+}
+.footer-disclaimer {
+font-size: 13px;
+line-height: 1.7;
+color: var(--c-on-dark-note);
+max-width: 480px;
+margin: 0 auto 20px;
+}
+.footer-links {
+margin-bottom: 16px;
+}
+.footer-links a {
+color: var(--c-on-dark);
+font-size: 13px;
+padding: 0 8px;
+}
+.footer-links a:hover {
+color: var(--c-accent-on-dark);
+}
+.footer-links-sep {
+color: var(--c-on-dark-sep);
+}
+.footer-copyright {
+font-size: 12px;
+color: #5A6C7D;
+padding-top: 20px;
+border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+/* ---------- Labels (Tags) ---------- */
+.label-cloud {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+.label-cloud a {
+display: inline-block;
+padding: 4px 14px;
+font-size: 13px;
+color: #8B7D6B;
+background: #F0F0F0;
+border-radius: 20px;
+transition: all 0.2s ease;
+}
+.label-cloud a:hover {
+background: var(--c-accent);
+color: #FFFFFF;
+}
+/* ---------- Pagination ---------- */
+.pagination {
+display: flex;
+justify-content: center;
+gap: 8px;
+margin-top: 40px;
+}
+.pagination a {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px 20px;
+background: #FFFFFF;
+border: 1px solid var(--c-line);
+border-radius: 8px;
+font-size: 14px;
+font-weight: 600;
+color: #8B7D6B;
+transition: all 0.2s ease;
+}
+.pagination a:hover {
+background: var(--c-ink-bg);
+color: #FFFFFF;
+border-color: var(--c-ink-line);
+}
+/* ---------- Blogger Default Pager ---------- */
+#blog-pager {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 12px;
+padding: 24px 16px;
+margin-top: 24px;
+}
+.blog-pager-older-link,
+.blog-pager-newer-link,
+.home-link {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 10px 20px;
+background: #FFFFFF;
+border: 1px solid var(--c-line);
+border-radius: 8px;
+font-size: 14px;
+font-weight: 600;
+color: #8B7D6B;
+text-decoration: none;
+transition: all 0.2s ease;
+min-height: 44px;
+}
+.blog-pager-older-link:hover,
+.blog-pager-newer-link:hover,
+.home-link:hover {
+background: var(--c-ink-bg);
+color: #FFFFFF;
+border-color: var(--c-ink-line);
+}
+/* ---------- Post Disclaimer ---------- */
+.post-disclaimer {
+margin-top: 16px;
+padding: 16px 24px;
+font-size: 12.5px;
+color: #9CA3AF;
+line-height: 1.7;
+text-align: center;
+}
+.post-disclaimer .disclaimer-icon {
+font-size: 14px;
+margin-right: 4px;
+}
+/* ---------- Comments ---------- */
+.comments-section {
+background: #FFFFFF;
+border-radius: 12px;
+border: 1px solid var(--c-line);
+padding: 32px 48px;
+margin-top: 24px;
+}
+.comments-section h3 {
+font-size: 18px;
+font-weight: 700;
+color: var(--c-ink);
+margin-bottom: 24px;
+}
+.comment-block {
+padding: 16px 0;
+border-bottom: 1px solid #F0EBE4;
+}
+.comment-block:last-of-type {
+border-bottom: none;
+}
+.comment-form-btn-wrap {
+margin-top: 24px;
+text-align: center;
+}
+.comment-form-btn {
+display: inline-block;
+padding: 12px 28px;
+background: var(--c-accent);
+color: #fff;
+border-radius: 8px;
+font-size: 14px;
+font-weight: 600;
+text-decoration: none;
+transition: background 0.2s;
+}
+.comment-form-btn:hover {
+background: var(--c-accent-btn);
+color: #fff;
+text-decoration: none;
+}
+/* ---------- Share buttons ---------- */
+.share-bar {
+display: flex;
+gap: 8px;
+margin-top: 32px;
+padding-top: 24px;
+border-top: 1px solid var(--c-line);
+}
+.share-btn {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 8px 16px;
+border-radius: 6px;
+font-size: 13px;
+font-weight: 600;
+color: #FFFFFF;
+transition: opacity 0.2s ease;
+}
+.share-btn:hover {
+opacity: 0.85;
+color: #FFFFFF;
+}
+.share-btn.twitter { background: #1DA1F2; }
+.share-btn.facebook { background: #1877F2; }
+.share-btn.kakao { background: #FEE500; color: #3C1E1E; }
+.share-btn.link-copy { background: #8B7D6B; }
+/* ---------- Back to Top ---------- */
+.back-to-top {
+position: fixed;
+bottom: 32px;
+right: 32px;
+width: 44px;
+height: 44px;
+background: var(--c-ink-bg);
+color: var(--c-accent-on-dark);
+border: none;
+border-radius: 50%;
+font-size: 20px;
+cursor: pointer;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+z-index: 9000;
+}
+.back-to-top.visible {
+opacity: 1;
+visibility: visible;
+}
+.back-to-top:hover {
+background: var(--c-accent);
+color: var(--c-ink);
+}
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+.content-wrap {
+grid-template-columns: 1fr;
+gap: 32px;
+}
+.sidebar {
+position: static;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+}
+.footer-top {
+grid-template-columns: 1fr;
+gap: 32px;
+}
+}
+@media (max-width: 768px) {
+/* --- Header: compact branding --- */
+.header-inner {
+height: 52px;
+padding: 0 16px;
+}
+.blog-title .brand-name {
+font-size: 17px;
+}
+.blog-title .brand-tagline {
+display: none;
+}
+.blog-title .brand-bar {
+height: 24px;
+width: 3px;
+}
+.blog-title a {
+gap: 8px;
+}
+.nav-categories {
+display: none;
+position: absolute;
+top: 52px;
+left: 0;
+right: 0;
+background: var(--c-ink-bg);
+flex-direction: column;
+padding: 12px 16px;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+.nav-categories.open {
+display: flex;
+}
+.nav-categories li a {
+padding: 10px 16px;
+font-size: 14px;
+}
+.mobile-menu-btn {
+display: block;
+}
+/* --- Hero --- */
+.hero-section {
+padding: 24px 16px;
+}
+.hero-section h2 {
+font-size: 20px;
+}
+/* --- Content area --- */
+.content-wrap {
+padding: 16px 12px;
+gap: 24px;
+}
+/* --- Post cards: smaller thumb, tighter text --- */
+.post-card-thumb {
+height: 160px;
+}
+.post-card-body {
+padding: 16px 18px 20px;
+}
+.post-card h2 {
+font-size: 17px;
+margin-bottom: 6px;
+}
+.post-summary {
+font-size: 13px;
+-webkit-line-clamp: 2;
+}
+.read-more {
+font-size: 13px;
+margin-top: 10px;
+}
+.category-badge {
+font-size: 11px;
+padding: 3px 8px;
+}
+/* --- Article (single post) --- */
+.article-header {
+padding: 24px 16px 20px;
+}
+.article-header h1 {
+font-size: 22px;
+}
+.article-meta-bar {
+font-size: 12px;
+gap: 12px;
+}
+.article-body {
+padding: 20px 16px 28px;
+font-size: 15px;
+line-height: 1.75;
+}
+.article-body h2 {
+font-size: 19px;
+}
+.article-body h3 {
+font-size: 17px;
+}
+/* --- Sidebar: hide category widget, compact layout --- */
+.sidebar {
+grid-template-columns: 1fr;
+gap: 12px;
+}
+.sidebar-widget {
+padding: 16px;
+}
+.sidebar-widget h3 {
+font-size: 15px;
+}
+/* Hide category widget on mobile (already in hamburger menu) */
+.category-widget {
+display: none;
+}
+.about-widget {
+padding: 20px 16px;
+}
+.about-brand {
+font-size: 18px;
+}
+.search-widget {
+padding: 12px;
+}
+.search-input {
+padding: 8px 12px;
+font-size: 13px;
+}
+.search-btn {
+padding: 8px 14px;
+font-size: 12px;
+}
+.subscribe-btn {
+padding: 8px 22px;
+font-size: 13px;
+}
+/* --- Comments --- */
+.comments-section {
+padding: 20px 16px;
+}
+/* --- Share bar --- */
+.share-bar {
+flex-wrap: wrap;
+gap: 6px;
+}
+.share-btn {
+font-size: 12px;
+padding: 6px 12px;
+}
+/* --- Footer: compact --- */
+.footer-wrap {
+margin-top: 40px;
+}
+.footer-inner {
+padding: 32px 16px;
+}
+.footer-brand {
+font-size: 18px;
+}
+.footer-tagline {
+font-size: 11px;
+margin-bottom: 12px;
+}
+.footer-disclaimer {
+font-size: 12px;
+line-height: 1.6;
+margin-bottom: 14px;
+}
+.footer-copyright {
+font-size: 11px;
+}
+/* --- Pagination --- */
+.pagination {
+flex-direction: column;
+align-items: stretch;
+gap: 8px;
+margin-top: 20px;
+}
+.pagination a {
+text-align: center;
+padding: 10px 16px;
+width: 100%;
+}
+#blog-pager {
+flex-wrap: wrap;
+gap: 8px;
+padding: 12px;
+}
+.blog-pager-older-link,
+.blog-pager-newer-link,
+.home-link {
+padding: 10px 16px;
+font-size: 13px;
+flex: 1;
+min-width: 0;
+text-align: center;
+}
+.blog-pager-older-link-mobile,
+.blog-pager-newer-link-mobile,
+.flaticon-next,
+.flaticon-prev,
+#blog-pager-older-link,
+#blog-pager-newer-link {
+font-size: 16px !important;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* --- Back to top --- */
+.back-to-top {
+bottom: 72px;
+right: 14px;
+width: 38px;
+height: 38px;
+font-size: 16px;
+}
+}
+/* ---------- Utility ---------- */
+.visually-hidden {
+position: absolute;
+width: 1px;
+height: 1px;
+overflow: hidden;
+clip: rect(0 0 0 0);
+}
+/* Print styles */
+@media print {
+.header-wrap, .sidebar, .footer-wrap,
+.share-bar, .back-to-top, #reading-progress,
+.comments-section, .pagination {
+display: none !important;
+}
+.content-wrap {
+grid-template-columns: 1fr;
+}
+.article-body {
+font-size: 12pt;
+}
+}
+
+--></style>
+<!-- Google Fonts -->
+<!-- Additional inline styles for elements outside b:skin -->
+<style type='text/css'>
+  /* Pretendard CDN fallback */
+  
+
+</style>
+<!-- lawnomics-jsonld -->
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "로리움 컨설팅 (Lawrium Consulting)",
+  "url": "https://www.lawnomics.com/",
+  "email": "lawriumconsulting@gmail.com",
+  "description": "생활법률 블로그 로노믹스의 운영사입니다.",
+  "sameAs": [
+    "https://www.threads.com/@lawnomics_kr",
+    "https://www.instagram.com/lawnomics_kr/"
+  ]
+}
+</script>
+<noscript></noscript>
+
+
+<!-- data-ad-client=ca-pub-3770863964557178 -->
+
+<style>
+.article-body p.lead-answer{background:var(--c-cream);border-left:4px solid var(--c-accent);border-radius:0 8px 8px 0;padding:16px 20px;margin:0 0 28px;color:var(--c-ink)}
+.article-body strong.num{color:var(--c-accent-text);font-weight:700}
+.article-body h2,.article-body h3{text-wrap:balance}
+.article-body .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* 2026-10-06 디자인 1차 — output/analysis/2026-10-06_design_review.md (작은 글자·버튼은 AA 대비용 #B94700/#6B5D4F, 띠·막대는 #D35400 유지) */
+.article-body a{color:var(--c-accent-text)}
+.article-body details.toc{padding:14px 18px}
+.article-body details.toc summary{cursor:pointer;font-weight:700;font-size:15px;color:var(--c-ink);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.article-body details.toc summary::-webkit-details-marker{display:none}
+.article-body details.toc summary::after{content:'펼치기';font-weight:400;font-size:13px;color:var(--c-sub)}
+.article-body details.toc[open] summary::after{content:'접기'}
+.article-body details.toc ol{margin:12px 0 2px 18px;padding:0}
+.article-body details.toc li{font-size:14px;line-height:1.75}
+.article-meta-bar{color:var(--c-sub);flex-wrap:wrap}
+.article-meta-bar time,.article-meta-bar .meta-item{white-space:nowrap}
+.article-meta-bar .meta-policy{color:var(--c-sub);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.post-date,.recent-date,.about-widget p,.footer-tagline,.footer-copyright{color:var(--c-sub)}
+.footer-tagline,.footer-copyright{color:var(--c-on-dark)}
+.article-body p[style*="#8B7D6B" i]{color:var(--c-sub)!important}
+.pagination a,.blog-pager-older-link,.blog-pager-newer-link,.home-link{color:var(--c-sub)}
+@media print{.page-list .post-card-thumb{display:none!important}.page-list .main-content .post-card:not(.is-lead){grid-template-columns:1fr!important}}
+.subscribe-cta .sub-btn,.subscribe-btn,.search-btn,.back-to-top{background:var(--c-accent-btn)!important}
+.subscribe-cta .sub-btn,.subscribe-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--c-focus);outline-offset:2px}
+.post-card-thumb{height:auto!important;aspect-ratio:2.5/1}
+.site-intro{max-width:1080px;margin:12px auto 0;padding:0 16px}
+.site-intro .box{background:#FFF;border:1px solid var(--c-line);border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.site-intro strong{font-size:17px;color:var(--c-ink)}
+.site-intro .desc{font-size:14px;color:var(--c-sub)}
+.site-intro .chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.site-intro .chips a{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--c-line);color:var(--c-text);text-decoration:none;background:var(--c-cream);white-space:nowrap;flex-shrink:0}
+@media (max-width:768px){
+#toc-container{display:none}
+.about-widget .subscribe-btn{display:none}
+.article-body,.article-body .econlaw-post{font-size:16px;line-height:1.8}
+.site-intro .chips{margin-left:0;overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px;scrollbar-width:none}
+.site-intro .box{padding:14px 16px}
+}
+@media (max-width:640px){
+.article-body p.lead-answer{padding:14px 16px;font-size:16px}
+.article-body .table-scroll{margin:20px 0}
+.article-body .table-scroll:not(.wide) table{min-width:0;width:100%;font-size:14px}
+.article-body .table-scroll:not(.wide) td,.article-body .table-scroll:not(.wide) th,.article-body .table-scroll:not(.wide) thead{min-width:0;padding:10px 8px;font-size:14px}
+.article-body .table-scroll.wide table{min-width:520px;font-size:13px}
+.article-body .table-scroll.wide td,.article-body .table-scroll.wide th{min-width:0;padding:8px 6px;font-size:13px}
+.article-body .table-scroll.wide{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)),linear-gradient(90deg,rgba(255,255,255,0),#fff 70%) 100% 0,radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.14),rgba(0,0,0,0)),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.14),rgba(0,0,0,0)) 100% 0;background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+.article-body .table-scroll.wide::after{content:'좌우로 밀어 비교';display:block;position:sticky;left:0;width:100%;font-size:12px;color:var(--c-sub);text-align:right;padding:4px 2px 0}
+}
+/* 2026-10-18 목록 화면(A안): 맨 위 도구 안내 띠와 소개 상자의 폭을 머리글·본문과 맞추고, 소개 상자는 제목·소개·주제 칩 세 줄 */
+.site-intro{max-width:1200px;padding:0 24px}
+.site-intro .box{display:block;padding:24px 28px}
+.site-intro strong{display:block;font-size:26px;line-height:1.4;margin:0 0 6px}
+.site-intro .desc{display:block;font-size:16px;line-height:1.65;color:var(--c-sub)}
+.site-intro .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;width:auto;overflow:visible}
+.page-list .content-wrap{padding-top:28px}
+.home-section-title{font-size:16px;font-weight:800;color:var(--c-ink);margin:0 0 14px;padding-bottom:9px;position:relative;border-bottom:1px solid var(--c-line)}
+.home-section-title::after{content:'';position:absolute;left:0;bottom:-1px;width:40px;height:2px;background:var(--c-accent)}
+.page-list .about-widget,.page-list #recent-posts-widget{display:none}
+.sub-widget .sub-btn{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:8px;background:var(--c-accent-btn);color:#FFFFFF;font-weight:700;font-size:14px;text-decoration:none}
+@media (min-width:769px){.page-list .main-content .post-card:first-of-type .post-card-thumb{aspect-ratio:3.5/1!important}}
+/* 2026-10-21 디자인 공개 묶음: 대비 미달 다섯 곳(WCAG 2.2 작은 글자 4.5 대 1), 초점선은 사이트 주황 하나로, 홈 대표 제목(H1) */
+.disclaimer,.post-disclaimer{color:var(--c-sub)}
+.post-summary{color:var(--c-sub)}
+.read-more{color:var(--c-accent-text)}
+.back-to-top{color:#FFFFFF!important}
+.badge-realestate{color:#1D7F46}
+.badge-dispute{background:#F1EEFA;color:#4A3C8C}
+.cat-dot-dispute{background:#4A3C8C}
+:focus-visible{outline:2px solid var(--c-focus);outline-offset:2px}
+.site-intro h1.site-h1{display:block;margin:0 0 6px;font-size:26px;line-height:1.4;font-weight:800;color:var(--c-ink)}
+@media (max-width:768px){.site-intro h1.site-h1{font-size:22px}}
+@media (max-width:768px){
+.site-intro{padding:0 12px}
+.site-intro .box{padding:18px 16px}
+.site-intro strong{font-size:22px}
+.site-intro .desc{font-size:15px}
+.page-list .content-wrap{padding-top:20px}
+}
+/* 2026-10-21 서가(카테고리) 머리. 홈 소개 상자 대신 서가 이름·설명·이 분야 도구 */
+.cat-head{max-width:1200px;margin:24px auto 0;padding:0 24px}
+.cat-head h1.cat-h1{margin:0 0 6px;font-size:26px;line-height:1.35;font-weight:700;color:var(--c-ink)}
+.cat-head .cat-desc{margin:0;max-width:720px;font-size:16px;line-height:1.7;color:var(--c-sub)}
+.cat-head .cat-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 0}
+.cat-head .cat-tools span{margin-right:2px;font-size:14px;font-weight:700;color:var(--c-text)}
+.cat-head .cat-tools a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1px solid var(--c-line);border-radius:6px;background:#FFFFFF;color:var(--c-accent-text);font-size:14px;font-weight:600;text-decoration:none}
+.cat-head .cat-tools a:hover,.cat-head .cat-tools a:focus-visible{border-color:var(--c-accent-line)}
+@media (max-width:768px){.cat-head{margin-top:18px;padding:0 12px}.cat-head h1.cat-h1{font-size:24px}.cat-head .cat-desc{font-size:15px}.cat-head .cat-tools{flex-wrap:nowrap;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.cat-head .cat-tools::-webkit-scrollbar{display:none}.cat-head .cat-tools a,.cat-head .cat-tools span{flex-shrink:0}}
+/* 2026-10-18 머리글 '법령·판례 검색' 단추: PC는 메뉴 오른쪽 끝, 휴대폰은 ☰ 왼쪽 */
+.hdr-lawsearch{order:3;margin-left:10px;position:relative;isolation:isolate;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:0;background:transparent;color:#FFFFFF;font-size:14px;font-weight:700;letter-spacing:-.3px;white-space:nowrap;text-decoration:none;line-height:1}
+/* 누르는 상자는 44px(WCAG 2.5.8 24px 최소·Apple 44pt 권장), 보이는 알약은 가상 요소로 그린다(2026-10-24) */
+.hdr-lawsearch::before{content:"";position:absolute;left:0;right:0;top:4px;bottom:4px;border:1px solid rgba(255,255,255,.32);border-radius:999px;z-index:-1}
+.hdr-lawsearch:hover::before,.hdr-lawsearch:focus-visible::before{background:rgba(216,90,0,.25);border-color:var(--c-accent)}
+.hdr-lawsearch:hover,.hdr-lawsearch:focus-visible{color:#FFFFFF}
+.header-inner .nav-categories{margin-left:auto}
+.tools-strip{max-width:1200px;padding:0 24px}
+.tools-strip{margin:14px auto 0}
+.tools-strip .box{display:flex;align-items:center;gap:10px 24px;padding:12px 18px;border:1px solid var(--c-line);border-radius:8px;background:var(--c-cream)}
+.tools-strip p{margin:0;flex:1;min-width:0;font-size:14px;line-height:1.6;color:var(--c-sub)}
+.tools-strip b{margin-right:10px;color:var(--c-ink);font-weight:800}
+.tools-strip nav{display:flex;flex-wrap:wrap;gap:8px;flex-shrink:0}
+.tools-strip nav a{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid var(--c-line);border-radius:999px;background:#FFFFFF;color:var(--c-accent-text);font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none}
+.tools-strip nav a:hover,.tools-strip nav a:focus-visible{border-color:var(--c-accent-line)}
+/* 2026-10-18 도구 화면: 블로그 옆 칸·발행 날짜 줄 없이, 위에 도구 탭 줄(범주 넷). 계산기 페이지는 그 아래 '다른 계산기' 줄 */
+.tools-page .content-wrap{grid-template-columns:minmax(0,1fr);max-width:1008px;padding-top:28px}
+.tools-page aside.sidebar,.tools-page .pagination,.tools-page .article-meta-bar{display:none!important}
+.tools-nav{display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none;margin:0 0 20px;padding:0 0 14px;border-bottom:1px solid var(--c-line);white-space:nowrap}
+.tools-nav::-webkit-scrollbar{display:none}
+.tools-nav a{display:inline-flex;align-items:center;min-height:38px;padding:0 15px;border-radius:999px;border:1px solid var(--c-line);background:#FFFFFF;color:var(--c-text);font-size:14px;text-decoration:none;flex-shrink:0}
+.tools-nav a.on{background:var(--c-ink-bg);border-color:var(--c-ink-line);color:#FFFFFF;font-weight:700}
+.tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
+.tools-sub span{color:var(--c-sub)}
+.tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+.px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
+/* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
+.tools-anchor{scroll-margin-top:72px}
+@media (max-width:768px){
+.hdr-lawsearch{order:1;margin-left:auto;min-height:44px;padding:0 12px;font-size:13px}
+.hdr-lawsearch::before{top:2px;bottom:2px}
+.mobile-menu-btn{order:2}
+.tools-strip{padding:0 12px}
+.tools-strip .box{display:block;padding:12px 14px}
+.tools-strip b{display:block;margin:0 0 2px}
+.tools-strip nav{gap:6px;margin-top:10px}
+.tools-strip nav a{min-height:34px;padding:0 11px;font-size:13px}
+.tools-page .content-wrap{padding-top:16px}
+.tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
+.tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
+.tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-anchor{scroll-margin-top:52px}
+}
+/* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
+.mobile-menu-btn{font-family:inherit}
+/* 2026-10-24 유료 서비스 카드(홈: 휴대폰은 첫 글 다음, PC는 옆 칸 맨 위)와 허브의 짧은 안내 */
+.svc-card{margin:0 0 18px;padding:16px 18px;border:1px solid var(--c-line);border-radius:12px;background:var(--c-cream)}
+.svc-k{margin:0 0 4px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--c-accent-text)}
+.svc-card .svc-t{margin:0 0 6px;font-size:18px;font-weight:800;line-height:1.35}.svc-card .svc-t a{color:var(--c-ink);text-decoration:none}
+.svc-d{margin:0 0 12px;font-size:14px;line-height:1.6;color:var(--c-text)}
+.svc-card .svc-a{margin:0}.svc-card .svc-a a,.svc-widget a.svc-go{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--c-accent-line);border-radius:6px;background:var(--c-accent-btn);color:#FFFFFF;font-size:14px;font-weight:700;text-decoration:none}
+.svc-widget .svc-k{margin-top:-4px}.svc-widget .svc-d{font-size:13.5px}
+@media (min-width:769px){.svc-card.home-m{display:none}}
+@media (max-width:768px){.sidebar .svc-widget{display:none}}
+.lx-svc{margin:28px 0 8px;padding:14px 16px;border:1px solid var(--c-line);border-radius:10px;background:var(--c-cream)}
+.lx-svc p{margin:0 0 6px;font-size:15px}.lx-svc .lx-svc-k{font-weight:800}.lx-svc .lx-svc-k span{margin-left:8px;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--c-accent-text)}
+.lx-svc a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+.footer-links a{display:inline-block;padding:6px 8px}
+.tools-page .article-body p a,.tools-page .lw-src a,.tools-page .lw-note a,.tools-page .px-note a{text-decoration:underline;text-underline-offset:2px}
+.about-brand .accent{color:var(--c-accent-text)}
+.blog-title .brand-name .accent,.footer-brand .accent{color:var(--c-brand)}
+@media (max-width:768px){.cat-head .cat-tools{flex-wrap:wrap;gap:8px;overflow:visible;padding-bottom:0}.cat-head .cat-tools span{flex:0 0 100%;margin:0}.cat-head .cat-tools a{flex-shrink:1;white-space:normal;text-align:center;min-height:36px;padding:5px 12px;line-height:1.3}}
+@media (max-width:374px){.tools-strip nav a{padding:0 9px;font-size:12.5px}.tools-nav a{font-size:12.5px}}
+/* 2026-10-21 다음 묶음 1: 도구 화면(/tools/·/pontis/)의 글자 단계와 장식 정리. 글자 12·13·14·15·16·17·22·26px, 굵기 400·600·700 */
+.tools-page .article-header{padding:32px 48px 0;border-bottom:0}
+.tools-page .article-header h1{font-size:26px;font-weight:700;letter-spacing:0;margin-bottom:8px}
+.tools-page .article-body{padding-top:16px}
+.tools-page .article-body h2{font-size:22px;line-height:1.4;margin:40px 0 12px;padding:0;border:0;letter-spacing:0}
+.tools-page .article-body h2::after{content:none}
+.tools-page .article-body h3{font-size:17px;line-height:1.5;color:var(--c-ink);margin:20px 0 4px;padding-left:0;border-left:0}
+.tools-page .px-kicker{font-size:13px;font-weight:700;letter-spacing:.12em}
+.tools-nav{gap:4px;padding:0;margin:0 0 20px;border-bottom:1px solid var(--c-line)}
+.tools-nav a{min-height:44px;padding:0 12px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:var(--c-sub);font-size:15px;margin-bottom:-1px}
+.tools-nav a:hover{color:var(--c-ink)}
+.tools-nav a.on{background:transparent;border-color:transparent;border-bottom-color:var(--c-ink-line);color:var(--c-ink);font-weight:700}
+.tools-page .lw .lw-top{align-items:flex-end;border-bottom:1px solid var(--c-line)}
+.tools-page .lw .lw-tabs{gap:4px}
+.tools-page .lw .lw-tabs button{min-height:44px;padding:0 12px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:var(--c-sub);font-size:15px;margin-bottom:-1px}
+.tools-page .lw .lw-tabs button[aria-checked=true]{background:transparent;border-bottom-color:var(--c-ink-line);color:var(--c-ink);font-weight:700}
+.tools-page .lw .lw-ex button,.tools-page .lw .lw-jump a{border-radius:6px;font-size:14px;color:var(--c-text)}
+.tools-page .lw .lw-jump.sm a{font-size:13px}
+.tools-page .lw .lw-tag{border-radius:4px}
+.tools-page .px a.px-btn,.tools-page .px a.px-btn2{border-radius:6px}
+/* 2026-10-28 블로그 10-27 개편 CSS가 본문 링크를 검은 글자·밑줄로 강제(!important)해, 단추는 더 구체적인 선택자로 제 모양을 지킨다 */
+.tools-page .px a.px-btn,.tools-page .px a.px-btn:hover,.tools-page .px a.px-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important}
+.tools-page .px a.px-btn2,.tools-page .px a.px-btn2:hover,.tools-page .px a.px-btn2:focus-visible{color:var(--c-accent-text)!important;text-decoration:none!important}
+.tools-page .lw .lw-card a.lw-go{color:#FFFFFF!important;text-decoration:none!important}
+.tools-page .lw .lw-acts a,.tools-page .lw .lw-zero a,.tools-page .lw a.lw-help{color:var(--c-accent-text)!important;text-decoration:none!important}
+.tools-page .lw .lw-jump a{color:var(--c-text)!important;text-decoration:none!important}
+.tools-page .lw .lw-item a.lw-title,.tools-page .lw .lw-toc a{color:var(--c-ink)!important;text-decoration:none!important}
+.tools-page .lw .lw-item a.lw-title:hover,.tools-page .lw .lw-toc a:hover,.tools-page .lw a.lw-help:hover{text-decoration:underline!important}
+.tools-page .lx-calc:not([id]){background:transparent;border:0;border-top:1px solid var(--c-line);border-radius:0;padding:4px 0 0;margin:12px 0 28px}
+.tools-page .lx-calc:not([id]) h3{margin:16px 0 2px;font-size:17px}
+.tools-page .lx-calc .lx-sub{color:var(--c-sub);font-size:14px;margin:0 0 12px}
+.tools-page .lx-calc .lx-result{border-left-width:1px;border-radius:10px}
+.tools-page .lx-calc table.lx-break{font-size:15px}
+.tools-page .lx-calc table.lx-break tr.sum td{font-weight:700}
+.tools-page .lw .lw-sec h3{padding-left:0;border-left:0;font-size:17px}
+.tools-page .lw .lw-rel{border:1px solid var(--c-line);background:#FFFFFF;border-radius:10px}
+.tools-page .lw .lw-meta,.tools-page .lw .lw-acts button,.tools-page .lw .lw-acts a,.tools-page .lw .lw-retry{font-size:14px}
+.tools-page .lw .lw-item a.lw-title,.tools-page .lw .lw-art h3{font-size:17px}
+.tools-page .lw .lw-banner{font-size:15px}
+.tools-page .lw .lw-annex h3{font-size:16px}
+.tools-page .lw .lw-txt{font-size:17px;line-height:1.8}
+.tools-page .lw .lw-txt.sm{font-size:15px}
+.tools-page .px .px-sample .px-tag{font-size:13px}
+.tools-page .px .px-sample a{font-size:15px}
+.tools-page .px table.px-table{font-size:15px}
+.tools-page .px ol.px-steps li::before{font-weight:700}
+@media (max-width:768px){
+.tools-page .article-header{padding:22px 16px 0}
+.tools-page .article-header h1{font-size:26px}
+.tools-page .article-body h2{font-size:22px;margin-top:32px}
+.tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0 0 14px}
+.tools-nav a{justify-content:center;padding:0 2px;font-size:14px}
+.tools-page .lw .lw-jump{flex-wrap:wrap}
+}
+@media (max-width:374px){.tools-nav a{font-size:13px}}
+/* 2026-10-27 디자인 업그레이드 — getdesign.md(NerdWallet·WIRED·IBM·Al Jazeera) 참고, Claude·Codex 4라운드, 사용자 "시안이 더 맘에 든다"
+   기록: output/analysis/2026-10-27_design_upgrade/ (decision.md, 시안 mock_A3.css). sitegen.py가 EXTRA_CSS 끝에 붙여 <head>에 넣는다
+   (본문 안 테마 <style>보다 앞이지만 !important로 이긴다 — Codex 3라운드 확인). 되돌리기 = sitegen.DESIGN_CSS를 빈 문자열로 */
+/* ── 1. 지면: 둥근 상자·그림자 제거 ── */
+.article-wrap{border:0!important;border-radius:0!important;background:#FFFFFF!important}
+.post-card{border:0!important;border-radius:0!important;background:transparent!important;margin:0!important;border-bottom:1px solid var(--c-line)!important;overflow:visible!important}
+.post-card:hover{box-shadow:none!important;transform:none!important}
+.post-card:hover .post-card-thumb img{transform:none!important}
+.post-card-thumb{border-radius:0!important}
+.post-card-body{padding:18px 0 26px!important}
+.post-card-body h2{font-size:24px!important;line-height:1.4!important;font-weight:700!important;letter-spacing:-0.5px!important;margin:6px 0 8px!important}
+.post-card-body h2 a{color:var(--c-ink)!important}
+.post-summary{font-size:15px!important;line-height:1.7!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-more{display:none!important}
+
+/* 목록: 첫 글만 크게, 나머지는 사진 왼쪽·글 오른쪽의 짧은 행 */
+@media (min-width:769px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:232px 1fr;gap:24px;align-items:start;padding:22px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{aspect-ratio:3/2!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:19px!important;margin:4px 0 6px!important}
+}
+@media (max-width:768px){
+.page-list .main-content .post-card:not(.is-lead){display:grid!important;grid-template-columns:1fr 104px;gap:14px;align-items:start;padding:16px 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-thumb{order:2;aspect-ratio:1/1!important;height:auto!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body{order:1;padding:0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-card-body h2{font-size:17px!important;margin:4px 0 0!important}
+.page-list .main-content .post-card:not(.is-lead) .post-summary{display:none!important}
+.post-card-body h2{font-size:21px!important}
+}
+
+/* ── 2. 분류: 알약·다색 → 오렌지 작은 글자 킥커 하나 ── */
+.category-badge,.badge-economy,.badge-realestate,.badge-investment,.badge-law,.badge-dispute{background:none!important;padding:0!important;border-radius:0!important;color:var(--c-accent-text)!important;font-size:13px!important;font-weight:700!important;letter-spacing:0!important}
+.category-list li a .cat-dot{display:none!important}
+
+/* ── 3. 구획 라벨(가구): 밑줄 대신 라벨 앞 짧은 오렌지 막대 (Al Jazeera eyebrow) ── */
+.sidebar-widget{background:transparent!important;border:0!important;border-radius:0!important;padding:0 0 22px!important;margin:0 0 22px!important;border-bottom:1px solid var(--c-line)!important}
+.sidebar-widget h3,.home-section-title{border-bottom:0!important;padding-bottom:0!important;margin-bottom:14px!important;display:flex;align-items:center;gap:8px;font-size:14px!important;font-weight:700!important;color:var(--c-ink)!important}
+.sidebar-widget h3::after,.home-section-title::after{display:none!important}
+.sidebar-widget h3:not(.about-brand)::before,.home-section-title::before{content:'';flex:0 0 3px;height:14px;background:var(--c-accent)}
+.about-widget{text-align:left!important}
+.view-all-link{border:0!important;padding:0!important;background:none!important;display:inline-block!important;text-align:left!important;margin-top:4px}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn{border-radius:2px!important}
+
+/* ── 4. 글 머리·본문 폭·글자 단계 ── */
+.article-header{padding:44px 56px 0!important;border-bottom:0!important}
+.article-header h1{font-size:32px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:-0.8px!important;max-width:700px}
+.article-meta-bar{max-width:700px}
+.article-body{padding:28px 56px 56px!important}
+.article-body .econlaw-post{max-width:700px!important}
+.econlaw-post > p:not(.lead-answer),.article-body > p:not(.lead-answer){margin-bottom:18px!important}
+.article-body > p,.article-body > ul,.article-body > ol,.article-body > h2,.article-body > h3,.article-body > blockquote,.article-body > details{max-width:700px}
+
+/* 제목: 밑줄·짧은 선·왼쪽 막대 제거, 굵기·간격으로만 */
+.article-body h2,.econlaw-post h2{border-bottom:0!important;padding-bottom:0!important;margin:48px 0 16px!important;font-size:24px!important;line-height:1.45!important;font-weight:700!important;color:var(--c-ink)!important;letter-spacing:-0.4px!important}
+.article-body h2::after,.econlaw-post h2::after{display:none!important}
+.article-body h3,.econlaw-post h3{border-left:0!important;padding-left:0!important;margin:32px 0 12px!important;font-size:20px!important;line-height:1.5!important;font-weight:700!important;color:var(--c-ink)!important}
+
+/* 머리 사진: 직각에 가깝게, 그림자 없음 */
+.econlaw-post .post-header-image{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 5. 표: 가로선만 ── */
+.article-body table,.econlaw-post table{border:0!important;border-radius:0!important;font-variant-numeric:tabular-nums}
+.article-body .table-scroll,.econlaw-post .table-scroll{border:0!important;border-radius:0!important}
+.article-body thead,.econlaw-post thead,.article-body th,.econlaw-post th{background:var(--c-head)!important;color:var(--c-ink)!important;font-weight:700!important}
+.article-body th,.econlaw-post th{border-bottom:1px solid var(--c-text-line)!important}
+.article-body td,.econlaw-post td{border-bottom:1px solid var(--c-line)!important}
+.article-body tbody tr:nth-child(even),.econlaw-post tbody tr:nth-child(even),.article-body tbody tr:hover,.econlaw-post tbody tr:hover{background:transparent!important}
+
+/* ── 6. 즉답 상자는 유지(직각), 조문 인용은 중립 단색+차콜 선 ── */
+.article-body p.lead-answer{border-radius:0!important}
+.article-body blockquote,.econlaw-post blockquote{background:#F6F2ED!important;border-left:3px solid var(--c-text-line)!important;border-radius:0!important;color:var(--c-text)!important;padding:20px 24px!important}
+.econlaw-post .references{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid var(--c-line)!important;padding:16px 0 0!important}
+.article-body details.toc{border-radius:0!important}
+
+/* ── 7. 홈 소개·서가 머리: 상자에서 꺼내기, 칩 → 평문 링크 ── */
+.site-intro .box{background:transparent!important;border:0!important;border-radius:0!important;padding:26px 0 22px!important;border-bottom:1px solid var(--c-line)!important}
+.site-intro .chips{gap:6px 20px!important}
+.site-intro .chips a{border:0!important;background:none!important;border-radius:0!important;padding:0!important;color:var(--c-ink)!important;font-weight:600!important;font-size:14px!important}
+.pontis-strip a{border-radius:0!important;background:transparent!important;border:0!important;border-top:1px solid var(--c-line)!important;border-bottom:1px solid var(--c-line)!important;padding:10px 0!important}
+.cat-head .cat-tools a{border-radius:0!important}
+
+@media (max-width:768px){
+.article-header{padding:28px 20px 0!important}
+.article-header h1{font-size:24px!important;line-height:1.4!important}
+.article-body{padding:20px 20px 40px!important}
+.article-body h2,.econlaw-post h2{font-size:21px!important;margin:40px 0 14px!important}
+.article-body h3,.econlaw-post h3{font-size:18px!important}
+.site-intro .box{padding:20px 0 18px!important}
+}
+
+/* ── 8. 2라운드 합의(Codex): 오렌지는 표지에만 — 옆 칸·버튼·링크 ── */
+.about-widget{display:none!important}
+#toc-container{display:none!important}
+body:not(.page-list) .recent-posts-list li:nth-child(n+4){display:none!important}
+.recent-posts-list .recent-date{display:none!important}
+.recent-posts-list li a{font-size:14px!important;line-height:1.55!important;color:var(--c-ink)!important}
+.category-list li a{padding:10px 0!important;min-height:44px;box-sizing:border-box;border-radius:0!important;color:var(--c-text)!important;font-size:14px!important}
+.category-list li a:hover{background:none!important;color:var(--c-ink)!important;text-decoration:underline}
+.subscribe-btn,.sub-btn,.sub-widget .sub-btn,.subscribe-cta .sub-btn,.search-btn,.back-to-top{background:var(--c-ink-bg)!important;color:#FFFFFF!important}
+.article-body a{color:var(--c-ink)!important;text-decoration:underline!important;text-decoration-color:#C9B8A6!important;text-underline-offset:3px}
+.article-body a:hover,.article-body a:focus-visible{color:var(--c-accent-text)!important;text-decoration-color:var(--c-accent-line)!important}
+.view-all-link,.pontis-strip a .go,.cat-head .cat-tools a{color:var(--c-ink)!important}
+.view-all-link:hover,.cat-head .cat-tools a:hover{text-decoration:underline}
+.article-meta-bar{border-top:0!important;padding-top:0!important}
+.article-header h1{margin-bottom:14px!important}
+@media (max-width:768px){.sidebar{display:none!important}}
+
+/* ── 9. 계산기(/tools/): 상자·입력·결과 모서리를 직각 쪽으로 (IBM 기능 요소). 결과의 오렌지 왼쪽 막대는 '답' 표시라 유지 ── */
+.lx-calc{border-radius:0!important}
+.lx-calc input,.lx-calc select{border-radius:2px!important}
+.lx-calc .lx-result{border-radius:0!important}
+
+/* ── 10. 3라운드 점검(Codex) 반영 ── */
+/* 링크: 옛 오렌지 아래 테두리를 지워 밑줄 하나로, 밑줄 색은 글자 쪽(#6B5D4F) */
+.article-body a,.econlaw-post a{border-bottom:0!important}
+.article-body a{text-decoration-color:var(--c-sub-line)!important}
+/* 버튼은 링크 규칙에서 분리 */
+.article-body .sub-btn,.article-body .subscribe-btn,.article-body .sub-btn:hover,.article-body .sub-btn:focus-visible{color:#FFFFFF!important;text-decoration:none!important;border-bottom:0!important;background:var(--c-ink-bg)!important;border-radius:2px!important}
+/* 관련 글·목차 링크는 목록이라 평소 밑줄 없음 */
+.econlaw-post .related-posts a,.article-body details.toc a{text-decoration:none!important}
+.econlaw-post .related-posts a:hover,.article-body details.toc a:hover{text-decoration:underline!important}
+/* 계산기는 산문 규칙에서 제외 */
+.article-body .lx-calc h2,.article-body .lx-calc h3{margin:0 0 6px!important;font-size:18px!important;line-height:1.4!important}
+.lx-calc .lx-warn{color:var(--c-ink)!important}
+/* 표 셀 세로선·위선 제거(기존 글의 셀 테두리 포함) */
+.article-body th,.article-body td,.econlaw-post th,.econlaw-post td{border-top:0!important;border-left:0!important;border-right:0!important}
+/* 남은 장식 정리 */
+.references h4,.econlaw-post .references h4{border-bottom:0!important;padding-bottom:0!important}
+.references .ref-dot,.econlaw-post .references .ref-dot{color:var(--c-sub)!important}
+.disclaimer,.post-disclaimer,.econlaw-post .disclaimer{border-radius:0!important}
+.econlaw-post .subscribe-cta{border-radius:0!important;border-left:0!important;background:transparent!important;border-top:1px solid var(--c-line)!important;padding:20px 0!important}
+.econlaw-post .related-posts li{padding-left:0!important}
+.econlaw-post .related-posts li::before{display:none!important}
+.econlaw-post .post-category-badge{background:none!important;padding:0!important;border-radius:0!important;color:var(--c-accent-text)!important;font-size:13px!important;font-weight:700!important}
+/* 접근성: 작은 보조 글자 대비, 어두운 머리글·푸터의 초점선, 누르는 영역 */
+.econlaw-post .subscribe-cta .sub-desc,.econlaw-post .references li{color:var(--c-sub)!important}
+.header-wrap :focus-visible,.footer-inner :focus-visible{outline-color:var(--c-focus-dark)!important}
+.site-intro .chips a{padding:10px 0!important;min-height:44px;display:inline-flex!important;align-items:center}
+.view-all-link{padding:10px 0!important;min-height:44px}
+.blog-pager-older-link,.blog-pager-newer-link,.home-link{border-radius:2px!important;box-shadow:none!important}
+
+/* ── 11. 금액·수량 열 오른쪽 정렬 (빌드가 열 머리·셀 내용을 보고 th/td에 class="num"을 붙인다 — sitegen.mark_num_cols) ── */
+.article-body th.num,.article-body td.num,.econlaw-post th.num,.econlaw-post td.num{text-align:right!important}
+@media (min-width:769px){.page-list .main-content .post-card.is-lead .post-card-thumb{aspect-ratio:3.5/1!important}}
+
+/* ── 12. 4라운드(글꼴 점검, Codex): 굵기 800은 작은 글자·선언 제목에 무겁다 → 700 ── */
+.site-intro h1.site-h1{font-weight:700!important}
+
+
+.header-wrap{background:#FFFFFF!important;border-bottom:1px solid var(--c-cool-line)!important}
+.blog-title a{color:var(--c-ink)!important}
+.blog-title .brand-tagline{color:var(--c-cool-sub)!important}
+.nav-categories li a{color:var(--c-cool-text)!important}
+.nav-categories li a:hover,.nav-categories li a.active{background:var(--c-cool-bg)!important;color:var(--c-cool-ink)!important}
+.hdr-lawsearch,.hdr-lawsearch:hover,.hdr-lawsearch:focus-visible{color:var(--c-accent-text)!important}
+.hdr-lawsearch::before{border-color:#E8B48E!important;background:#FFF4EC!important}
+.hdr-lawsearch:hover::before,.hdr-lawsearch:focus-visible::before{border-color:var(--c-accent-line)!important;background:#FFF4EC!important}
+.mobile-menu-btn{color:var(--c-ink)!important}
+.header-wrap :focus-visible{outline-color:var(--c-focus)!important}
+@media (max-width:768px){.nav-categories{background:#FFFFFF!important;border-top:1px solid var(--c-cool-line)!important;box-shadow:0 12px 24px rgba(17,24,39,.10)}}
+@media (min-width:769px) and (max-width:1023px){
+.mobile-menu-btn{display:block!important;order:2}
+.hdr-lawsearch{order:1;margin-left:auto}
+.header-inner .nav-categories{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;margin:0;padding:12px 24px;background:#FFFFFF;border-top:1px solid var(--c-cool-line);box-shadow:0 12px 24px rgba(17,24,39,.10)}
+.header-inner .nav-categories.open{display:flex}
+.nav-categories li a{padding:10px 16px}
+}
+
+/* [lawnomics-tools 휴대폰 표·글씨 적용] 넓은 표는 휴대폰에서 줄마다 카드로(스크립트가 .stack을 붙임), 바닥글 12px, 작은 누름 대상 키움 */
+@media (max-width:640px){
+.article-body .table-scroll.stack{overflow:visible;background:none!important}
+.article-body .table-scroll.stack::after{content:none!important}
+.article-body .table-scroll.stack table{min-width:0!important;width:100%!important;border:0!important;background:none!important}
+.article-body .table-scroll.stack thead{display:none!important}
+.article-body .table-scroll.stack tbody tr{display:block;margin:0 0 12px;border:1px solid var(--c-line);border-radius:10px;padding:12px 14px;background:#FFFFFF!important}
+.article-body .table-scroll.stack tbody td,.article-body .table-scroll.stack tbody th{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;min-width:0!important;padding:7px 0!important;border:0!important;border-bottom:1px solid var(--c-line-in)!important;font-size:15px!important;font-weight:400;line-height:1.6;text-align:left!important;background:none!important}
+.article-body .table-scroll.stack tbody td:last-child,.article-body .table-scroll.stack tbody th:last-child{border-bottom:0!important}
+.article-body .table-scroll.stack tbody td::before,.article-body .table-scroll.stack tbody th::before{content:attr(data-label);color:var(--c-sub);font-size:13px;font-weight:600;line-height:1.7}
+.article-body .table-scroll.stack tbody td:first-child,.article-body .table-scroll.stack tbody th:first-child{display:block;font-weight:700;font-size:16px!important;padding:0 0 8px!important}
+.article-body .table-scroll.stack tbody td:first-child::before,.article-body .table-scroll.stack tbody th:first-child::before{content:none}
+body .references li{font-size:13.5px}
+body .references li a{font-size:14px}
+.article-meta-bar .meta-policy{font-size:13px}
+}
+body .footer-tagline,body .footer-copyright{font-size:12px}
+body .references li a{padding:3px 0}
+.article-meta-bar .meta-policy{padding:2px 0}
+body .tools-sub a{padding:2px 0}
+
+</style>
+<link crossorigin='anonymous' href='https://cdn.jsdelivr.net' rel='preconnect'/>
+<link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
+<link href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css' rel='stylesheet'/>
+<style id='c-roles'>:root{--c-ink:#1C1210;--c-ink-bg:#1C1210;--c-ink-line:#1C1210;--c-text:#3A3330;--c-text-line:#3A3330;--c-sub:#6B5D4F;--c-sub-line:#6B5D4F;--c-hint:#6B5D4F;--c-field:#8F7F6E;--c-line-box:#D9CDBF;--c-line:#E5D9CC;--c-line-in:#F0E8DE;--c-cream:#FAF6F1;--c-head:#F3EDE6;--c-on-dark:#B8A99A;--c-on-dark-note:#9B8B7A;--c-on-dark-sep:#5A4D42;--c-focus-dark:#FAF6F1;--c-accent-text:#B94700;--c-accent-line:#B94700;--c-accent-btn:#B94700;--c-focus:#B94700;--c-accent:#D85A00;--c-focus-input:#D85A00;--c-accent-on-dark:#D85A00;--c-brand:#D85A00;--c-cool-ink:#111827;--c-cool-text:#374151;--c-cool-sub:#6B7280;--c-cool-hint:#6B7280;--c-cool-icon:#6B7280;--c-cool-line:#E5E7EB;--c-cool-card-line:#F3F4F6;--c-cool-btn-line:#9CA3AF;--c-cool-fill:#E5E7EB;--c-cool-bg:#F3F4F6;--c-cool-page:#F3F4F6}
+#cx-q::placeholder,#lw-q::placeholder{color:var(--c-hint)}</style>
+</head>
+<body class='tools-page'>
+<!-- Reading Progress Bar -->
+<div id='reading-progress'></div>
+<!-- ==================== HEADER ==================== -->
+<div class='header-wrap' role='banner'>
+<div class='header-inner'>
+<div class='blog-title'>
+<a href='https://www.lawnomics.com/'>
+<span class='brand-bar'></span>
+<span class='brand-logo'>
+<span class='brand-name'>Law<span class='accent'>nomics</span></span>
+<span class='brand-tagline'>법과 숫자로 지키는 내 돈</span>
+</span>
+</a>
+</div>
+<a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
+<button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
+<ul class='nav-categories' id='site-menu'>
+<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
+<li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
+<li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
+<li><a href='https://www.lawnomics.com/search/label/금전·분쟁/'>금전&#183;분쟁</a></li>
+</ul>
+</div>
+</div>
+<main id='main-content'>
+<!-- ==================== MAIN CONTENT ==================== -->
+<div class='content-wrap'>
+<div class='main-content'>
+<div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
+<nav class='tools-nav' aria-label='계산기와 검색'><a href='/tools/'>전체</a><a href='/tools/#calc' class='on' aria-current='true'>계산기</a><a href='/tools/law-search.html#from=tab'>법령·판례</a><a href='/tools/company.html'>기업 공시</a></nav>
+<nav class='tools-sub' aria-label='다른 계산기'><span>다른 계산기</span><a href='/tools/jeonse-wolse-conversion.html'>전월세 전환</a><a href='/tools/hug-guarantee-fee.html'>전세보증보험 보증료</a><a href='/tools/payment-order-cost.html'>지급명령 비용</a><a href='/tools/attorney-fee-litigation-cost.html'>소송비용 변호사보수</a><a href='/tools/lease-registration-cost.html'>임차권등기명령 비용</a><a href='/tools/family-loan-interest.html'>가족 간 차용 이자</a></nav>
+<article class='article-wrap'>
+<div class='article-header'>
+
+<h1>증여세 계산기 (현금 증여 모의계산)</h1>
+<div class='article-meta-bar'>
+<span class='meta-item'>
+<svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='2' ry='2' width='18' x='3' y='4'></rect><line x1='16' x2='16' y1='2' y2='6'></line><line x1='8' x2='8' y1='2' y2='6'></line><line x1='3' x2='21' y1='10' y2='10'></line></svg>
+<time datetime='2026-11-12'>발행 2026. 11. 12.</time>
+</span>
+
+<span class='meta-item'>
+<svg fill='none' height='14' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' style='vertical-align:-2px;opacity:0.6;' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>
+<span>Lawnomics</span>
+</span>
+<span class='meta-item'><a class='meta-policy' href='https://www.lawnomics.com/p/editorial-policy.html'>편집 원칙</a></span>
+</div>
+</div>
+<div class='article-body'>
+
+<style>
+.lx-calc{background:var(--c-cream);border:1px solid var(--c-line);border-radius:10px;padding:28px 28px 24px;margin:24px 0 32px;font-size:16px}
+.lx-calc h2,.lx-calc h3{margin:0 0 6px;font-size:18px;color:var(--c-ink)}
+.lx-calc .lx-sub{margin:0 0 20px;color:var(--c-sub);font-size:14px}
+.lx-calc .lx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 18px}
+.lx-calc label{display:block;font-size:13px;font-weight:700;color:var(--c-text);margin-bottom:6px;letter-spacing:.2px}
+.lx-calc input,.lx-calc select{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--c-field);border-radius:6px;background:#fff;color:var(--c-ink);font-variant-numeric:tabular-nums}
+.lx-calc input:focus,.lx-calc select:focus{outline:2px solid var(--c-focus-input);outline-offset:1px;border-color:var(--c-focus-input)}
+.lx-calc .lx-hint{font-size:12px;color:var(--c-sub);margin-top:4px}
+.lx-calc input.lx-bad{border-color:#B94700;background:#FFF6F0}
+.lx-calc .lx-lab{display:block;font-size:13px;font-weight:700;color:var(--c-text);margin-bottom:6px;letter-spacing:.2px}
+.lx-calc .lx-chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--c-ink);letter-spacing:0;margin:0;min-height:44px;line-height:1.5}
+.lx-calc .lx-chk input{width:20px;height:20px;min-height:0;margin:2px 0 0;padding:0;flex:0 0 auto;accent-color:var(--c-accent)}
+.lx-calc .lx-result{margin-top:22px;background:#fff;border:1px solid var(--c-line);border-left:4px solid var(--c-accent);border-radius:8px;padding:18px 20px}
+.lx-calc .lx-total{font-size:30px;font-weight:800;color:var(--c-ink);letter-spacing:-.5px;font-variant-numeric:tabular-nums;margin:2px 0 6px}
+.lx-calc .lx-total small{font-size:14px;font-weight:600;color:var(--c-sub);margin-left:6px}
+.lx-calc .lx-warn{color:var(--c-accent-text);font-weight:700;font-size:14px;margin:6px 0 0}
+.lx-calc table.lx-break{width:100%;border-collapse:collapse;margin:12px 0 0;font-size:14.5px}
+.lx-calc table.lx-break th,.lx-calc table.lx-break td{padding:8px 6px;border-bottom:1px solid var(--c-line-in);text-align:left;vertical-align:top}
+.lx-calc table.lx-break td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lx-calc table.lx-break tr.sum td{font-weight:800;border-top:2px solid var(--c-line);border-bottom:0}
+.lx-calc .lx-src{font-size:13px;color:var(--c-sub);margin:14px 0 0;line-height:1.7}
+.lx-calc .lx-src li{margin:2px 0}
+.lx-note{font-size:14px;color:var(--c-sub);border-top:1px solid var(--c-line);padding-top:14px;margin-top:8px;line-height:1.7}
+.lx-note a,.lx-calc .lx-src a,.article-body p a{text-decoration:underline;text-underline-offset:2px}
+@media print{.lx-break tr{break-inside:avoid}}
+@media (max-width:640px){.lx-calc{padding:18px 16px 16px}.lx-calc .lx-total{font-size:26px}.lx-calc .lx-total small{display:block;margin:4px 0 0}}
+</style>
+
+<style>
+#gcalc .lx-scope{margin:0 0 20px;padding:0;list-style:none;font-size:14px;color:var(--c-text);line-height:1.65}
+#gcalc .lx-scope li{margin:0 0 4px}
+#gcalc .lx-why{display:block;font-size:13px;font-weight:400;color:var(--c-sub);margin-top:2px}
+#gcalc table.lx-break th{background:transparent!important;font-weight:400!important;font-size:inherit;border-bottom:1px solid var(--c-line)!important}
+#gcalc table.lx-break tr.sum th{font-weight:800!important}
+#gcalc .lx-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#gcalc .g-box{margin:16px 0 0;padding:14px 16px 6px;border:1px solid var(--c-line);border-radius:8px;background:#fff}
+#gcalc .g-box .lx-grid{margin:4px 0 8px}
+#gcalc .g-sec{margin-top:16px}
+#gcalc [hidden]{display:none!important}
+@media (max-width:640px){#gcalc .g-box{padding:12px 12px 4px}#gcalc table.lx-break tr{display:block;padding:10px 0;border-bottom:1px solid var(--c-line)}#gcalc table.lx-break th,#gcalc table.lx-break td{display:block;padding:0;border:0!important}#gcalc table.lx-break td.n{text-align:left;margin-top:4px;white-space:normal}}
+</style>
+<p>현금을 증여받았을 때 주는 사람과의 관계에 따른 증여재산공제, 혼인·출산 공제, 10년 합산, 세대생략 할증을 넣어 증여세를 모의로 계산합니다. 신고기한도 함께 보여 줍니다.</p>
+<div class="lx-calc" id="gcalc">
+<h2>현금 증여세 모의계산</h2>
+<ul class="lx-scope">
+<li><b>대상</b> 받는 사람이 거주자인 개인이고, 개인에게 원화 현금을 단순 증여받아 일반세율로 기한 안에 신고·납부하는 경우를 계산합니다. 증여일 전 10년 안에 같은 사람(주는 사람이 직계존속이면 그 배우자 포함)에게서 받은 증여가 1천만원 이상이면 합산합니다(상속세 및 증여세법 제47조 제2항). 증여일이 2026년 1월 2일부터 12월 31일까지인 경우만 계산합니다.</li>
+<li><b>계산하지 않는 것</b> 비거주자가 받은 경우, 외화나 국외에 있는 현금을 받은 경우, 외국 납부세액 공제(제59조)가 걸린 경우, 부동산·주식처럼 현금이 아닌 재산, 재난으로 멸실·훼손된 경우(제54조), 창업자금 등 특례세율 증여(조세특례제한법 제30조의5), 장애인 신탁(제52조의2), 같은 날 같은 관계의 다른 사람에게도 받은 경우(상속세 및 증여세법 시행령 제46조 제1항 제2호), 생활비·교육비 비과세에 해당하는지 여부, 기한 뒤 신고와 가산세, 그리고 결과 칸에서 따로 안내하는 경우. 10년 안 같은 사람의 지난 증여도 같은 기준으로 봅니다</li>
+</ul>
+<div class="lx-grid">
+<div><label for="g_res">받는 사람</label><select id="g_res" aria-describedby="g_res_h"><option value="res" selected>거주자</option><option value="non">비거주자</option></select><div class="lx-hint" id="g_res_h">거주자는 국내에 주소를 두거나 183일 이상 거소를 둔 사람입니다(제2조 제8호)</div></div>
+<div><label for="g_rel">주는 사람</label><select id="g_rel" aria-describedby="g_rel_h"><option value="spouse">배우자</option><option value="asc" selected>부모·조부모 등 직계존속</option><option value="step">받는 사람의 부모와 혼인 중인 계부·계모(입양하지 않은 경우)</option><option value="desc">자녀·손주 등 직계비속</option><option value="kin">그 밖의 친족</option><option value="other">친족이 아닌 사람</option></select><div class="lx-hint" id="g_rel_h">증여재산공제에서는 법률혼 배우자의 자녀도 직계비속에 듭니다. 입양한 계부·계모는 부모로 고릅니다. 그 밖의 친족은 4촌 이내 혈족과 3촌 이내 인척입니다(제53조)</div></div>
+<div><label for="g_date">증여일</label><input id="g_date" type="date" aria-describedby="g_date_h"><div class="lx-hint" id="g_date_h">돈을 받은 날입니다. 2026년 1월 2일부터 12월 31일까지만 계산합니다</div></div>
+<div><label for="g_amt">이번에 받은 금액 (원)</label><input id="g_amt" inputmode="numeric" value="100,000,000" aria-describedby="g_amt_h"><div class="lx-hint" id="g_amt_h">원화 현금으로 받은 금액입니다. 생활비·교육비 비과세는 판단하지 않고 이 금액 전부로 계산합니다</div></div>
+</div>
+<div class="g-box" id="g_ascbox">
+<p class="lx-lab">부모·조부모 등이나 계부·계모에게 받을 때</p>
+<label class="lx-chk"><input type="checkbox" id="g_minor"> 받는 사람이 증여일에 미성년자(만 19세 미만)입니다</label>
+<div class="lx-grid" id="g_gcbox"><div><label for="g_gc">받는 사람은 주는 사람의</label><select id="g_gc"><option value="child" selected>자녀</option><option value="gc">손주(자녀의 자녀)</option><option value="ggc">증손 이하</option></select></div></div>
+<div id="g_gcdbox" hidden><label class="lx-chk"><input type="checkbox" id="g_gcdead" aria-describedby="g_gcdead_h"> 받는 사람의 부모 가운데 주는 사람의 자녀인 분이 증여일 전에 사망했습니다</label><div class="lx-hint" id="g_gcdead_h">이때는 세대생략 할증을 하지 않습니다(제57조 제1항 단서)</div></div>
+<label class="lx-chk"><input type="checkbox" id="g_mar"> 이번 증여가 혼인신고일 전후 2년 안이거나, 자녀 출생일·입양신고일부터 2년 안입니다</label>
+<div class="lx-grid" id="g_marbox" hidden><div><label for="g_marused">이미 받은 혼인·출산 공제 (원)</label><input id="g_marused" inputmode="numeric" aria-describedby="g_marused_h"><div class="lx-hint" id="g_marused_h">혼인 공제와 출산 공제는 합쳐서 1억원까지입니다. 처음이면 비워 둡니다</div></div></div>
+</div>
+<div class="lx-grid g-sec">
+<div><label for="g_prior">10년 안에 같은 사람에게서 받은 증여 (원)</label><input id="g_prior" inputmode="numeric" aria-describedby="g_prior_h"><div class="lx-hint" id="g_prior_h">이번 증여일 전 10년 안에 받은 증여의 합계입니다. 현금이 아닌 재산을 받았다면 그 가액도 넣습니다. 주는 사람이 직계존속이면 그 배우자에게 받은 증여도 함께 셉니다(부모의 혼인관계가 바뀐 경우 등은 따로 확인이 필요합니다). 없으면 비워 둡니다</div></div>
+<div id="g_usedbox"><label for="g_used">같은 관계에서 이미 공제받은 금액 (원)</label><input id="g_used" inputmode="numeric" aria-describedby="g_used_h"><div class="lx-hint" id="g_used_h">다른 사람에게 받은 증여(현금이 아닌 재산 포함)로 10년 안에 공제받은 증여재산공제입니다. 예를 들어 이번에는 부모에게 받는데 조부모에게 받으며 공제받은 금액입니다. 혼인·출산 공제는 넣지 않습니다. 없으면 비워 둡니다</div></div>
+</div>
+<div class="g-sec" id="g_samebox"><label class="lx-chk"><input type="checkbox" id="g_same"> 이번 증여일에 같은 관계의 다른 사람에게서도 받았습니다(예: 같은 날 할머니에게도 받음)</label></div>
+<div class="g-box" id="g_pbox" hidden>
+<p class="lx-lab">10년 안에 같은 사람에게서 받은 증여</p>
+<div class="lx-grid">
+<div><label for="g_pcash">그 증여는 모두 원화 현금이었나요</label><select id="g_pcash"><option value="yes" selected>예</option><option value="no">아니오</option><option value="unk">모르겠습니다</option></select></div>
+<div><label for="g_ptax">지난 증여의 과세표준·신고 내역</label><select id="g_ptax"><option value="zero" selected>공제 안이라 과세표준이 0원이었습니다</option><option value="low">과세표준이 50만원 미만이라 세금이 없었습니다</option><option value="filed">신고했고 산출세액이 있었습니다</option><option value="other">혼인·출산 공제, 재해손실공제, 장애인 신탁, 특례세율처럼 일반 증여재산공제 말고 다른 공제·특례를 받았습니다</option><option value="unk">세금이 있었는데 신고하지 않았거나, 모르겠습니다</option></select></div>
+</div>
+<div class="lx-grid">
+<div id="g_ptbbox" hidden><label for="g_ptb">그때 과세표준 (원)</label><input id="g_ptb" inputmode="numeric" aria-describedby="g_ptb_h"><div class="lx-hint" id="g_ptb_h">그때 받은 증여에서 증여재산공제를 뺀 금액입니다. 신고서가 있으면 신고서의 과세표준을 적고, 모르면 위에서 ‘모르겠습니다’를 고릅니다</div></div>
+<div id="g_ptsbox" hidden><label for="g_pts">그때 신고서의 산출세액 (원)</label><input id="g_pts" inputmode="numeric" aria-describedby="g_pts_h"><div class="lx-hint" id="g_pts_h">납부한 금액이 아니라 신고서의 산출세액입니다</div></div>
+</div>
+<div class="lx-grid" id="g_ponebox" hidden><div><label for="g_pone">위 과세표준은 입력한 증여 전부를 한 번에 계산한 것이고, 그때 다른 증여를 합산하거나 납부세액공제를 받지 않았습니다</label><select id="g_pone" aria-describedby="g_pone_h"><option value="yes" selected>맞습니다</option><option value="no">아닙니다</option><option value="unk">모르겠습니다</option></select><div class="lx-hint" id="g_pone_h">신고서가 있으면 그 신고서의 과세가액이 입력한 금액과 같아야 합니다. 수정신고나 경정이 있었다면 최종 확정된 금액으로 봅니다</div></div></div>
+</div>
+<div class="lx-result">
+<div class="lx-total" id="g_total">—</div>
+<table class="lx-break" id="g_table"></table>
+<p class="lx-hint" id="g_foot"></p>
+<p class="lx-sr" id="g_status" role="status" aria-live="polite"></p>
+</div>
+<ul class="lx-src">
+<li>상속세 및 증여세법 제53조: 거주자가 받은 증여에서 배우자 6억원, 직계존속 5천만원(미성년자는 2천만원), 직계비속 5천만원, 그 밖의 4촌 이내 혈족·3촌 이내 인척 1천만원을 빼되, 증여 전 10년 안에 공제받은 금액과 합쳐 이 금액까지만 뺍니다. 직계존속에는 받는 사람의 직계존속과 혼인 중인 배우자가 들어갑니다</li>
+<li>제53조의2: 직계존속(받는 사람의 직계존속과 혼인 중인 배우자 포함, 제53조 제2호 괄호)에게서 혼인신고일 전후 2년 안이나 자녀 출생일·입양신고일부터 2년 안에 받으면 1억원을 따로 빼고, 두 공제를 합쳐 1억원까지입니다</li>
+<li>제47조 제2항: 증여일 전 10년 안에 같은 사람(직계존속이면 그 배우자 포함)에게서 받은 증여재산가액의 합계가 1천만원 이상이면 과세가액에 더합니다</li>
+<li>제55조·제56조·제26조: 과세표준에 10~50%의 다섯 구간 세율을 적용하고, 과세표준이 50만원 미만이면 증여세를 매기지 않습니다</li>
+<li>제57조: 자녀가 아닌 직계비속이 받으면 산출세액의 30%(미성년자가 20억원을 넘게 받으면 40%)를 더합니다. 증여자의 자녀가 사망해 그 자녀의 자녀가 받으면 더하지 않습니다</li>
+<li>제58조: 합산한 지난 증여의 산출세액을 빼되, 이번 산출세액에 지난 증여의 과세표준이 차지하는 비율을 곱한 금액까지만 뺍니다</li>
+<li>제68조·제69조 제2항: 증여받은 날이 속하는 달의 말일부터 3개월 안에 신고하면, 산출세액(할증 포함)에서 공제·감면액을 뺀 금액의 3%를 뺍니다</li>
+<li>원문: <a href="/tools/law-search.html#law=001561&amp;from=calc">로노믹스 법령 검색(상속세 및 증여세법)</a> · <a href="https://www.law.go.kr/법령/상속세및증여세법시행령" rel="noopener">국가법령정보센터(상속세 및 증여세법 시행령)</a></li>
+</ul>
+</div>
+<script>
+
+function lxWon(n){return Math.round(n).toLocaleString('ko-KR')+'원'}
+/* 입력 검사(2026-10-24 검수): 숫자와 쉼표·공백만 받는다. 비었으면 null, 그 밖의 글자(음수 기호·소수점·e 표기 등)가 섞이면 NaN을 돌려주고 칸을 붉게 표시한다.
+   전에는 숫자 아닌 글자를 지워 버려 '-1000'이 1,000으로, '1e6'이 16으로 계산됐다. 자릿수 상한은 금액 12자리(9,999억원)·사람과 부동산 수 4자리(d=4):
+   그보다 크면 자바스크립트 정수 정밀도(2^53)를 넘어 곱셈이 틀릴 수 있다(Codex 2차 지적, 당사자 수 15자리에서 송달료가 3,024원 적게 나옴). */
+function lxNum(el,d){var s=String(el.value||'').replace(/[, ]/g,'');if(!s){el.classList.remove('lx-bad');el.removeAttribute('aria-invalid');return null}if(!new RegExp('^[0-9]{1,'+(d||12)+'}$').test(s)){el.classList.add('lx-bad');el.setAttribute('aria-invalid','true');return NaN}el.classList.remove('lx-bad');el.removeAttribute('aria-invalid');return Number(s)}
+function lxBad(vals){return vals.some(function(v){return typeof v==='number'&&isNaN(v)})}
+function lxFmtInput(el){el.addEventListener('blur',function(){var v=lxNum(el);if(v)el.value=v.toLocaleString('ko-KR')});}
+
+(function(){
+var $=function(id){return document.getElementById(id)};
+function line(t){return '<tr><td colspan="2">'+t+'</td></tr>'}
+function row(a,w,v,c){return '<tr'+(c?' class="'+c+'"':'')+'><th scope="row">'+a+(w?'<span class="lx-why">'+w+'</span>':'')+'</th><td class="n">'+v+'</td></tr>'}
+/* 화면 읽기 프로그램에는 결과 요약 한 줄(오류·계산하지 않는 경우면 그 이유)을 알린다. 정상 결과는 입력하는 동안 글자마다 읽지 않도록 0.5초 기다린다 */
+var ST;function say(t){clearTimeout(ST);ST=setTimeout(function(){$('g_status').textContent=t},500)}
+function fail(msg){$('g_total').textContent='—';$('g_table').innerHTML=msg?line(msg):'';$('g_foot').textContent='';clearTimeout(ST);$('g_status').textContent=msg||''}
+if(typeof BigInt!=='function'){fail('이 브라우저에서는 계산할 수 없습니다. 최신 브라우저로 열어 주세요.');return}
+/* 금액 계산은 BigInt 분수로 정확히 한다(납부세액공제 한도 = 산출세액 × 지난 과세표준 ÷ 합친 과세표준이 나누어떨어지지 않는다).
+   화면에는 원 미만을 버려 쓰고, 납부할 세액만 10원 미만을 버린다(국고금 관리법 제47조 제1항) */
+var N=BigInt,Z=N(0),ONE=N(1),TEN=N(10),HUN=N(100);
+var LOW=N(500000),E7=N(10000000),E72=N(20000000),MAR=N(100000000),G20=N(2000000000),P10=10000000;
+var GF='2026-01-02',GT='2026-12-31',RANGE='2026년 1월 2일부터 12월 31일까지';
+var CAP={spouse:600000000,asc:50000000,ascm:20000000,desc:50000000,kin:10000000,other:0};
+var CAPKO={spouse:'6억원',asc:'5천만원',ascm:'2천만원',desc:'5천만원',kin:'1천만원',other:'0원'};
+/* 제26조 세율: [구간 상한, 그 구간 하한까지의 세액 × 10, 구간 하한, 초과분 세율 ÷ 10]. 맨 끝 구간은 상한 없음 */
+var BR=[[100000000,0,0,1],[500000000,100000000,100000000,2],[1000000000,900000000,500000000,3],[3000000000,2400000000,1000000000,4],[0,10400000000,3000000000,5]];
+var BRKO=['1억원 이하: 과세표준의 10%','1억원 초과 5억원 이하: 1천만원 + 1억원 초과분의 20%','5억원 초과 10억원 이하: 9천만원 + 5억원 초과분의 30%','10억원 초과 30억원 이하: 2억4천만원 + 10억원 초과분의 40%','30억원 초과: 10억4천만원 + 30억원 초과분의 50%'];
+function gcd(a,b){while(b>Z){var t=a%b;a=b;b=t}return a>Z?a:ONE}
+function Q(n,d){if(d===undefined)d=ONE;if(d<Z){n=-n;d=-d}var g=gcd(n<Z?-n:n,d);return [n/g,d/g]}
+function qadd(x,y){return Q(x[0]*y[1]+y[0]*x[1],x[1]*y[1])}
+function qsub(x,y){return Q(x[0]*y[1]-y[0]*x[1],x[1]*y[1])}
+function qmul(x,y){return Q(x[0]*y[0],x[1]*y[1])}
+function qlt(x,y){return x[0]*y[1]<y[0]*x[1]}
+function qfl(x){var q=x[0]/x[1];if(x[0]<Z&&q*x[1]!==x[0])q-=ONE;return q}
+function grp(b){var s=String(b),o='';while(s.length>3){o=','+s.slice(-3)+o;s=s.slice(0,-3)}return s+o}
+function won(b){return grp(b)+'원'}
+function tax(T){for(var i=0;i<BR.length;i++){var b=BR[i];if(i===BR.length-1||T<=N(b[0]))return {s:Q(N(b[1])+(T-N(b[2]))*N(b[3]),TEN),i:i}}}
+/* 휴일 조정 전 신고기한: 증여받은 날이 속하는 달의 말일부터 3개월(민법 제157조·제160조, 국세기본법 제4조)이라 셋째 달의 말일.
+   토요일·일요일·공휴일이면 다음 날로 넘어가지만(국세기본법 제5조 제1항) 공휴일 목록을 따로 두지 않고 문장으로 알린다(설계 r1) */
+var WK='일월화수목금토';
+function fd(d){return d.getUTCFullYear()+'. '+(d.getUTCMonth()+1)+'. '+d.getUTCDate()+'.('+WK.charAt(d.getUTCDay())+')'}
+function due(s){var m=/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(s||'');if(!m)return null;var y=+m[1],mo=+m[2],d=+m[3],t=new Date(Date.UTC(y,mo-1,d));
+ if(t.getUTCFullYear()!==y||t.getUTCMonth()!==mo-1||t.getUTCDate()!==d)return null;return new Date(Date.UTC(y,mo+3,0))}
+function today(){var n=new Date();return Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())}
+function vis(id,on){var e=$(id);if(on)e.removeAttribute('hidden');else e.setAttribute('hidden','')}
+function mark(el,on){if(on){el.classList.add('lx-bad');el.setAttribute('aria-invalid','true')}else{el.classList.remove('lx-bad');el.removeAttribute('aria-invalid')}}
+/* 보이는 칸만 읽고 검사한다. 숨긴 칸은 값이 남아 있어도 계산에 쓰지 않고 붉은 표시도 지운다 */
+function num(id,on){var el=$(id);if(!on){mark(el,false);return null}return lxNum(el,12)}
+var MARMSG='이 계산기는 과거 혼인·출산 공제와 이번 증여를 함께 계산하는 데 필요한 증여별 내역을 입력받지 않습니다.';
+var S_NON='받는 사람이 비거주자인 경우는 계산하지 않습니다. 제53조의 공제는 거주자가 받은 증여에 적용하고, 비거주자는 과세 대상 재산의 범위도 다릅니다(제4조의2 제1항).';
+var S_RANGE='이 계산기는 증여일이 '+RANGE+'인 경우만 계산합니다(법령을 확인한 범위).';
+var S_GGC='증손 이하가 받는 경우는 계산하지 않습니다.';
+var S_SAME='같은 날 같은 관계의 다른 사람에게도 받은 경우는 계산하지 않습니다. 같은 날 받은 증여끼리 공제를 나누는 계산(상속세 및 증여세법 시행령 제46조 제1항 제2호)은 이 계산기에서 하지 않습니다.';
+var S_STEPP='계부·계모에게 받으면서 10년 안에 같은 사람에게서 받은 증여도 있는 경우는 계산하지 않습니다.';
+var S2='손주가 세대생략 할증 대상이고 10년 안에 같은 사람에게서 받은 증여도 있으면 계산하지 않습니다. 지난 증여가 있는 할증 사례는 이 계산기의 범위에서 뺐습니다.';
+var S3='혼인·출산 공제를 받는 증여에 10년 안 같은 사람의 증여가 있는 경우는 계산하지 않습니다. '+MARMSG;
+var S_CASH='10년 안 같은 사람의 증여가 모두 원화 현금이 아니거나 알 수 없는 경우는 계산하지 않습니다.';
+var S4='10년 안 같은 사람의 증여에서 혼인·출산 공제, 재해손실공제, 장애인 신탁, 특례세율처럼 일반 증여재산공제 말고 다른 공제·특례를 받았던 경우는 계산하지 않습니다. 그 내역을 이번 증여와 함께 계산하는 데 필요한 증여별 내역을 이 계산기는 입력받지 않습니다.';
+var S5='10년 안 같은 사람의 증여에 세금이 있었는데 신고하지 않았거나 알 수 없는 경우는 계산하지 않습니다. 과거 증여의 신고 내역을 먼저 확인해야 합니다.';
+var S_ONE='그때 과세표준이 입력한 증여 전부를 한 번에 계산한 것이 아니거나(여러 번 나눠 신고했거나 다른 증여를 합산함), 그때 납부세액공제를 받았거나, 알 수 없는 경우는 계산하지 않습니다. 공제 사용액과 납부세액공제를 증여별로 다시 나눠 계산해야 합니다(제53조·제58조).';
+var S_BAD='10년 안 같은 사람의 증여에 쓴 공제(그때 받은 증여 − 그때 과세표준)가 지금 남은 공제 한도보다 커서 계산하지 않습니다. 공제 내역이 맞는지 확인해 주세요.';
+var S_DIFF='10년 안 같은 사람의 증여에서 그때 받은 공제(그때 받은 증여 − 그때 과세표준)가 지금 기준으로 그 증여에 돌아가는 공제와 다릅니다. 이 계산기는 그때 신고서의 과세표준과 산출세액을 그대로 쓸 수 있는 경우만 계산합니다.';
+var S_NEG='납부세액공제가 산출세액보다 커져 계산하지 않습니다(제58조 제2항).';
+var FOOT='이 입력으로 계산한 모의 결과입니다. 기한 안에 신고하고 납부하는 경우의 세액이며, 납부지연가산세는 계산하지 않습니다. 2026년 11월 12일 현재 시행 중인 상속세 및 증여세법(2026. 1. 2. 시행)과 같은 법 시행령(2026. 10. 1. 시행)을 적용했고, 지원 기간(2026년 1월 2일부터 12월 31일까지)의 증여에는 이 계산에 쓰는 조문이 같습니다. 생활비·교육비 비과세(제46조 제5호)에 해당하는지는 판단하지 않고 입력한 금액 전부로 계산했습니다.';
+/* 끝수 안내는 결과 아래 한 줄에 한 번만 쓴다(결과 머리·표 줄에는 쓰지 않는다). 사이트 공통 문구가 정해지면 이 상수만 바꾼다 */
+var ROUND='중간 금액은 원 미만을 버리고 표시해, 표의 금액을 더한 값과 최종 세액이 다를 수 있습니다. 납부할 세액은 10원 미만을 버렸습니다(국고금 관리법 제47조 제1항).';
+function calc(){
+ var rel=$('g_rel').value,asc=rel==='asc',step=rel==='step',par=asc||step,minor=par&&$('g_minor').checked;
+ vis('g_ascbox',par);vis('g_gcbox',asc);
+ var gv=asc?$('g_gc').value:'child';vis('g_gcdbox',gv==='gc');
+ var mar=par&&$('g_mar').checked;vis('g_marbox',mar);
+ var same=par||rel==='desc'||rel==='kin';vis('g_usedbox',rel!=='other');vis('g_samebox',same);
+ var A=num('g_amt',true),P=num('g_prior',true);
+ if(A===null||A===0)mark($('g_amt'),true);
+ var hasP=typeof P==='number'&&P>0,G10=hasP&&P>=P10;
+ vis('g_pbox',hasP);
+ var pt=hasP?$('g_ptax').value:'',wantTp=pt==='low'||pt==='filed';
+ vis('g_ptbbox',wantTp);vis('g_ptsbox',pt==='filed');vis('g_ponebox',wantTp);
+ var U=num('g_used',rel!=='other'),M=num('g_marused',mar),Tp=num('g_ptb',wantTp),Sp=num('g_pts',pt==='filed');
+ var ds=$('g_date').value,db=due(ds);mark($('g_date'),!db);
+ /* 형식 오류: 붉게 표시한 칸 이름을 모두 적는다. 이번에 받은 금액이 비었거나 0원이면 그 칸 이름도 앞에 넣는다 */
+ var nm=[];[['이번에 받은 금액',A],['10년 안에 같은 사람에게서 받은 증여',P],['같은 관계에서 이미 공제받은 금액',U],['이미 받은 혼인·출산 공제',M],['그때 과세표준',Tp],['그때 신고서의 산출세액',Sp]]
+  .forEach(function(f){if(typeof f[1]==='number'&&isNaN(f[1]))nm.push(f[0])});
+ if(nm.length){if((A===null||A===0)&&nm[0]!=='이번에 받은 금액')nm.unshift('이번에 받은 금액');fail(nm.join(', ')+' 칸을 확인해 주세요. 금액은 원 단위 숫자 12자리까지 받습니다(쉼표는 괜찮습니다).');return}
+ if($('g_res').value==='non'){fail(S_NON);return}
+ if(A===null){fail('이번에 받은 금액을 적어 주세요.');return}
+ if(A===0){fail('이번에 받은 금액은 1원 이상이어야 계산합니다.');return}
+ if(!db){fail('증여일을 넣어 주세요.');return}
+ if(ds<GF||ds>GT){fail(S_RANGE);return}
+ if(gv==='ggc'){fail(S_GGC);return}
+ if(same&&$('g_same').checked){fail(S_SAME);return}
+ var hz=gv==='gc'&&!$('g_gcdead').checked;
+ if(hasP){if(step){fail(S_STEPP);return}if(hz){fail(S2);return}if(mar){fail(S3);return}if($('g_pcash').value!=='yes'){fail(S_CASH);return}
+  if(pt==='other'){fail(S4);return}if(pt==='unk'){fail(S5);return}if(wantTp&&$('g_pone').value!=='yes'){fail(S_ONE);return}}
+ var ck=minor?'ascm':(step?'asc':rel),C=N(CAP[ck]);   /* 계부·계모는 제53조 제2호의 직계존속 공제 */
+ if(wantTp){
+  if(Tp===null||(pt==='filed'&&Sp===null)){if(Tp===null)mark($('g_ptb'),true);if(pt==='filed'&&Sp===null)mark($('g_pts'),true);fail(pt==='filed'?'그때 과세표준과 산출세액을 모두 적어 주세요.':'그때 과세표준을 적어 주세요.');return}
+  if(Tp>P){mark($('g_ptb'),true);fail('그때 과세표준은 10년 안에 같은 사람에게서 받은 증여보다 클 수 없습니다.');return}
+  if(pt==='low'&&(Tp<1||Tp>=500000)){mark($('g_ptb'),true);fail('과세표준이 50만원 미만이라 세금이 없었다면 그때 과세표준은 1원 이상 50만원 미만입니다.');return}
+  if(pt==='filed'&&Tp<500000){mark($('g_ptb'),true);fail('그때 과세표준이 50만원 미만이었다면 ‘과세표준이 50만원 미만이라 세금이 없었습니다’를 고릅니다.');return}
+  if(pt==='filed'&&Sp===0){mark($('g_pts'),true);fail('산출세액이 있었다면 그 금액을 적어 주세요.');return}
+ }
+ if(U!==null&&N(U)>C){mark($('g_used'),true);fail('같은 관계에서 이미 공제받은 금액은 이 관계의 10년 공제 한도('+CAPKO[ck]+')를 넘을 수 없습니다.');return}
+ if(M!==null&&N(M)>MAR){mark($('g_marused'),true);fail('이미 받은 혼인·출산 공제는 1억원을 넘을 수 없습니다.');return}
+ /* 10년 합산(설계 r1·r2): 1천만원은 이번 증여를 빼고 센다. 그때 쓴 일반공제 dt(그때 받은 증여 − 그때 과세표준)는 지금 남은 한도를 넘을 수 없다.
+    합산하지 않으면 dt를 이번 한도에서 빼고(b), 합산하면서 그때 산출세액이 있으면 dt가 지금 기준으로 그 증여에 돌아가는 공제와 같을 때만 계산한다.
+    그때 산출세액이 없으면(과세표준 0원·50만원 미만) 납부세액공제가 0이라 이 검사를 하지 않는다(Codex 2라운드 권고) */
+ var a=N(A),p=hasP?N(P):Z,u=U===null?Z:N(U),m=M===null?Z:N(M),tp=wantTp?N(Tp):Z,sp=pt==='filed'?N(Sp):Z,g=G10?p:Z,b=Z,room=C-u;
+ if(hasP){var dt=p-tp;if(dt>room){fail(S_BAD);return}
+  if(!G10)b=dt;else if(pt==='filed'){var dn=p<room?p:room;if(dt!==dn){fail(S_DIFF);return}}}
+ var V=a+g,cap=room-b,D1=V<cap?V:cap,D2=Z;
+ if(mar){var rm=MAR-m,rest=V-D1;D2=rest<rm?rest:rm}
+ var T=V-D1-D2,L=[],tot,sm,pay=Z,h=row('이번에 받은 금액','',won(a));
+ if(G10)h+=row('10년 안 같은 사람의 증여','1천만원 이상이라 과세가액에 더함(제47조 제2항)',won(p));
+ h+=row('증여세 과세가액',G10?'이번 금액 + 합산한 금액':'',won(V));
+ var parts=[];if(u>Z)parts.push('다른 사람의 증여로 공제받은 '+won(u));if(b>Z)parts.push('합산하지 않은 같은 사람의 증여에 쓴 '+won(b));
+ h+=row('증여재산공제','10년 한도 '+CAPKO[ck]+(parts.length?'에서 '+parts.join('과 ')+'을 뺀 금액까지':'까지')+'(제53조)','−'+won(D1));
+ if(mar)h+=row('혼인·출산 공제','1억원'+(m>Z?'에서 이미 받은 '+won(m)+'을 뺀 금액까지':'까지')+'(제53조의2)','−'+won(D2));
+ h+=row('과세표준','과세가액 − 공제',won(T));
+ if(T<LOW){
+  h+=row('납부할 세액',T===Z?'과세표준이 0원':'과세표준이 50만원 미만이라 매기지 않음(제55조 제2항)',won(Z),'sum');
+  tot=won(Z)+'<small>'+(T===Z?'이 입력으로 계산하면 과세표준이 0원이라 낼 증여세가 없습니다':'이 입력으로 계산하면 과세표준이 50만원 미만이라 증여세를 매기지 않습니다(제55조 제2항)')+'</small>';
+  sm=T===Z?'이 입력으로 계산하면 과세표준이 0원이라 낼 증여세가 없습니다.':'이 입력으로 계산하면 과세표준이 50만원 미만이라 증여세를 매기지 않습니다.';
+ }else{
+  var t=tax(T),S=t.s,H=Q(Z),K=Q(Z),hp=minor&&a>G20?40:30,kk=G10&&pt==='filed';
+  h+=row('산출세액',BRKO[t.i]+'(제56조·제26조)',won(qfl(S)));
+  if(hz){H=qmul(S,Q(N(hp),HUN));h+=row('세대생략 할증','산출세액의 '+hp+'%(제57조)','+'+won(qfl(H)))}
+  if(kk){var lim=qmul(S,Q(tp,T)),spq=Q(sp);K=qlt(spq,lim)?spq:lim;h+=row('납부세액공제','그때 산출세액 '+won(sp)+'과 한도 '+won(qfl(lim))+' 중 적은 금액(제58조)','−'+won(qfl(K)))}
+  if(qlt(qadd(S,H),K)){fail(S_NEG);return}
+  var base=qsub(qadd(S,H),K),R=qmul(base,Q(N(3),HUN));
+  pay=qfl(qsub(base,R));pay=pay-pay%TEN;
+  h+=row('신고세액공제',(hz?'(산출세액 + 할증)':kk?'(산출세액 − 납부세액공제)':'산출세액')+'의 3%(제69조 제2항)','−'+won(qfl(R)));
+  h+=row('납부할 세액','신고기한 안에 신고할 때',won(pay),'sum');
+  tot=won(pay)+'<small>이 입력으로 계산한 납부할 세액입니다. 신고기한 안에 신고하는 경우를 가정합니다</small>';
+  sm='이 입력으로 계산하면 납부할 세액은 '+won(pay)+'입니다.';
+ }
+ /* 안내 줄 순서: 휴일 조정 전 신고기한, 휴일 안내, 기한 지남, 분납, 합산하지 않은 증여, 그때 산출세액 확인 */
+ var wk=db.getUTCDay();
+ L.push('휴일 조정 전 신고기한: '+fd(db)+'. 증여받은 날이 속하는 달의 말일부터 3개월이 되는 날입니다(제68조 제1항).');
+ L.push('이날이 토요일·일요일이나 공휴일·대체공휴일, 노동절이면 휴일이 아닌 다음 날로 기한이 넘어갑니다(국세기본법 제5조 제1항). 천재지변 등으로 연장된 기한(같은 법 제6조)은 반영하지 않습니다.'+(wk===0||wk===6?' 이날은 '+WK.charAt(wk)+'요일이라 기한이 다음 날 이후로 넘어갑니다.':''));
+ if(db.getTime()<today())L.push('휴일 조정 전 신고기한이 이미 지났습니다. 이 결과는 증여 당시의 신고기한 안에 신고·납부한다고 가정한 계산이며, 지금 신고할 때의 가산세는 계산하지 않습니다. 실제 신고기한이 지난 뒤 처음 신고하는 경우에는 신고세액공제를 적용받을 수 없습니다(제69조 제2항, 같은 법 시행령 제65조의2).');
+ sm+=' 휴일 조정 전 신고기한은 '+fd(db)+'입니다.';
+ if(pay>E7)L.push(pay<=E72?'납부할 세액이 1천만원을 넘어, 그중 '+won(pay-E7)+'은 납부기한이 지난 뒤 2개월 안에 나눠 낼 수 있습니다(연부연납 허가를 받으면 제외, 제70조 제2항, 같은 법 시행령 제66조 제2항 제1호).'
+  :'납부할 세액이 2천만원을 넘어, 세액의 50%인 '+won(pay/N(2))+' 이하는 납부기한이 지난 뒤 2개월 안에 나눠 낼 수 있습니다(연부연납 허가를 받으면 제외, 제70조 제2항, 같은 법 시행령 제66조 제2항 제2호).');
+ if(hasP&&!G10)L.push('10년 안 같은 사람의 증여는 1천만원 미만이라 과세가액에 더하지 않았습니다(제47조 제2항).'+(b>Z?' 그 증여에 쓴 공제 '+won(b)+'은 이번 공제 한도에서 뺐습니다(제53조).':''));
+ if(G10&&pt==='filed'){var e0=qfl(tax(tp).s);if(e0!==sp)L.push('그때 산출세액으로 적은 금액이 그때 과세표준에 지금 세율을 적용한 금액('+won(e0)+')과 다릅니다. 납부한 금액이 아니라 신고서의 산출세액을 적었는지 확인해 주세요.')}
+ L.forEach(function(x){h+=line(x)});
+ $('g_total').innerHTML=tot;$('g_table').innerHTML=h;$('g_foot').textContent=FOOT+' '+ROUND;say(sm);
+}
+['g_amt','g_prior','g_used','g_marused','g_ptb','g_pts','g_date'].forEach(function(id){$(id).addEventListener('input',calc)});
+['g_res','g_rel','g_gc','g_ptax','g_pcash','g_pone','g_minor','g_gcdead','g_mar','g_same','g_date'].forEach(function(id){$(id).addEventListener('change',calc)});
+/* 칸을 벗어나면 쉼표를 붙이고 다시 계산한다(붉은 표시는 calc가 다시 정한다) */
+['g_amt','g_prior','g_used','g_marused','g_ptb','g_pts'].forEach(function(id){$(id).addEventListener('blur',function(){var s=String(this.value||'').replace(/[, ]/g,'');if(/^[0-9]{1,12}$/.test(s)&&Number(s)>0)this.value=grp(N(s));calc()})});
+var d0=$('g_date');if(!d0.value){var n0=new Date();d0.value=n0.getFullYear()+'-'+String(n0.getMonth()+1).padStart(2,'0')+'-'+String(n0.getDate()).padStart(2,'0')}
+calc();
+})();
+</script>
+<h2>부모에게 처음 받을 때의 세액</h2>
+<p>성년 자녀가 부모에게 처음 받고, 10년 안에 같은 관계에서 공제받은 적이 없으며 혼인·출산 공제를 받지 않는 경우입니다. 신고기한 안에 신고해 산출세액의 3%를 뺀 금액입니다.</p>
+<div class="table-scroll"><table><thead><tr><th>받은 금액</th><th>과세표준</th><th>납부할 세액(기한 안 신고)</th></tr></thead><tbody><tr><td>5천만원</td><td>0원</td><td>0원</td></tr><tr><td>1억원</td><td>50,000,000원</td><td>4,850,000원</td></tr><tr><td>2억원</td><td>150,000,000원</td><td>19,400,000원</td></tr><tr><td>3억원</td><td>250,000,000원</td><td>38,800,000원</td></tr><tr><td>5억원</td><td>450,000,000원</td><td>77,600,000원</td></tr><tr><td>10억원</td><td>950,000,000원</td><td>218,250,000원</td></tr></tbody></table></div>
+<h2>함께 알아 둘 것</h2>
+<ul>
+<li>상속세 및 증여세법 제46조 제5호는 사회통념상 인정되는 피부양자의 생활비, 교육비 등으로서 대통령령으로 정하는 것을 비과세로 정하고, 같은 법 시행령 제35조 제4항은 그 가운데 해당 용도에 직접 지출한 것으로 정합니다. 이 계산기는 해당 여부를 판단하지 않고 입력한 금액 전부로 계산합니다.</li>
+<li>10년 합산은 같은 사람(직계존속이면 그 배우자 포함)에게서 그 전 10년 안에 받은 증여의 합계가 1천만원 이상일 때 하고(제47조 제2항), 공제 한도는 관계별로 묶어 10년 동안 적용합니다(제53조). 그래서 이번 증여 전 10년 안에 조부모에게 받으며 공제받은 금액이 이번 직계존속 공제 한도에 이르면, 부모에게 받는 돈은 조부모의 증여와 합산하지 않더라도 남은 직계존속 공제가 없습니다. 미성년 때 2천만원을 공제받고 성년이 되어 받는다면 5천만원 한도에서 그 2천만원을 뺀 3천만원까지 공제합니다.</li>
+<li>혼인 공제는 혼인관계증명서상 신고일 전후 2년, 출산 공제는 출생신고서상 출생일이나 입양신고일부터 2년 안에 직계존속에게 받은 증여가 대상이고, 두 공제를 합쳐 1억원까지입니다(제53조의2). 받는 사람의 직계존속과 법률혼 중인 계부·계모에게 받은 증여도 직계존속 공제와 혼인·출산 공제의 대상 관계에 듭니다(제53조 제2호 괄호). 이 계산기는 입양하지 않은 계부·계모를 따로 고르게 하고, 그 경우 세대생략 할증은 넣지 않습니다.</li>
+<li>신고기한은 증여받은 날이 속하는 달의 말일부터 3개월이 되는 날이고(제68조 제1항), 그날이 토요일·일요일이나 공휴일·대체공휴일, 노동절이면 휴일이 아닌 다음 날로 넘어갑니다(국세기본법 제5조 제1항). 계산기는 휴일을 따지기 전 날짜를 보여 줍니다. 납부할 세액이 1천만원을 넘으면 일부를 납부기한이 지난 뒤 2개월 안에 나눠 낼 수 있고, 연부연납 허가를 받으면 이 분납은 쓰지 않습니다(제70조 제2항).</li>
+<li>증여받은 돈을 돌려주거나 증여세를 대신 내 주는 경우, 기한을 넘긴 신고는 아래 글에 따로 정리했습니다.</li>
+</ul>
+<p class="lx-note">이 계산기는 정보 제공 목적이며 개별 사안의 법률·세무 자문을 대신하지 않습니다. 근거: 상속세 및 증여세법(법률 제21065호, 2026년 1월 2일 시행) 제2조 제8호, 제4조의2, 제26조, 제46조, 제47조, 제52조의2, 제53조, 제53조의2, 제54조부터 제59조까지, 제68조부터 제70조까지, 같은 법 시행령(대통령령 제36741호, 2026년 10월 1일 시행) 제35조, 제46조, 제46조의3, 제65조의2, 제66조, 국세기본법(법률 제21987호, 2026년 10월 2일 시행) 제4조부터 제6조까지, 조세특례제한법(법률 제21467호, 2026년 9월 18일 시행) 제30조의5, 민법(법률 제21454호, 2026년 3월 17일 시행) 제4조·제157조·제159조·제160조, 국고금 관리법(법률 제21065호, 2026년 1월 2일 시행) 제47조(국가법령정보센터, 2026년 11월 12일 확인). 마지막 갱신 2026년 11월 12일.</p>
+<h2>이어서 볼 글</h2>
+<p>공제 한도와 10년 합산의 예시는 <a href="/2026/11/gift-tax-exemption-calculation.html">증여세 면제한도와 계산법, 10년 합산까지</a>에, 계좌이체가 언제 증여가 되는지는 <a href="/2026/08/family-money-transfer-gift-tax.html">가족 간 계좌이체, 어디까지 증여세가 나오나</a>에, 기한을 넘겼을 때는 <a href="/2026/08/gift-tax-no-filing-penalty.html">증여세 신고 안 하면 생기는 일, 가산세와 제척기간</a>에, 유학 중인 자녀에게 보내는 돈은 <a href="/2026/09/overseas-student-support-gift-tax.html">해외 유학 자녀 생활비·학비 송금, 증여세는 어디까지</a>에 정리했습니다. 돈을 빌리는 쪽으로 정리한다면 <a href="/tools/family-loan-interest.html">가족 간 차용 이자 계산기</a>로 1년 이자 차이를 계산해 볼 수 있습니다.</p>
+
+</div>
+</article>
+
+<div class='pagination'>
+</div>
+</div></div>
+</div>
+<!-- ==================== SIDEBAR ==================== -->
+<aside class='sidebar'>
+<!-- About Widget -->
+<div class='sidebar-widget about-widget'>
+<h3 class='about-brand'>Law<span class='accent'>nomics</span></h3>
+<p class='about-tagline-kr'>법과 숫자로 지키는 내 돈</p>
+<p>가족&#183;상속, 부동산&#183;임대차, 세금&#183;재테크, 금전&#183;분쟁을 조문과 숫자로 풀어 씁니다.</p>
+<a class='subscribe-btn' href='https://www.threads.com/@lawnomics_kr' target='_blank'>Threads 팔로우</a>
+</div>
+<!-- Categories -->
+<div class='sidebar-widget category-widget'>
+<h3>카테고리</h3>
+<ul class='category-list'>
+<li>
+<a href='https://www.lawnomics.com/search/label/가족·상속/'>
+<span><span class='cat-dot cat-dot-economy'></span>가족&#183;상속</span>
+</a>
+</li>
+<li>
+<a href='https://www.lawnomics.com/search/label/부동산·임대차/'>
+<span><span class='cat-dot cat-dot-realestate'></span>부동산&#183;임대차</span>
+</a>
+</li>
+<li>
+<a href='https://www.lawnomics.com/search/label/세금·재테크/'>
+<span><span class='cat-dot cat-dot-investment'></span>세금&#183;재테크</span>
+</a>
+</li>
+<li>
+<a href='https://www.lawnomics.com/search/label/금전·분쟁/'>
+<span><span class='cat-dot cat-dot-dispute'></span>금전&#183;분쟁</span>
+</a>
+</li>
+</ul>
+<a class='view-all-link' href='https://www.lawnomics.com/search'>전체 글 보기 &#8250;</a>
+</div>
+<!-- Recent Posts -->
+<div class='sidebar-widget' id='recent-posts-widget'>
+<h3>최근 글</h3>
+<ul class='recent-posts-list' id='recent-posts-list'><li><a href='/2026/11/civil-lawsuit-self-representation-costs.html'>민사소송 혼자 할 수 있나, 대리 범위와 비용 구성</a><div class='recent-date'>2026. 11. 11.</div></li><li><a href='/2026/11/divorce-property-division-scope.html'>이혼 재산분할, 명의·퇴직금·빚은 어떻게 나누나</a><div class='recent-date'>2026. 11. 9.</div></li><li><a href='/2026/11/gift-tax-exemption-calculation.html'>증여세 면제한도와 계산법, 10년 합산까지</a><div class='recent-date'>2026. 11. 6.</div></li><li><a href='/2026/11/unpaid-money-court-procedures.html'>못 받은 돈, 지급명령·소액소송·가압류 중 무엇부터</a><div class='recent-date'>2026. 11. 3.</div></li><li><a href='/2026/10/debt-relief-procedure-choice.html'>빚 정리 절차 고르기, 개인회생·워크아웃·파산의 기준</a><div class='recent-date'>2026. 10. 26.</div></li></ul>
+</div>
+<!-- Table of Contents (shown on article pages via JS, sticky on scroll) -->
+<div class='sidebar-widget toc-widget' id='toc-container'>
+<h3>목차</h3>
+<ul class='toc-list' id='toc-list'></ul>
+</div>
+<!-- Labels / Popular Posts -->
+<div class='sidebar-section no-items section' id='sidebar'></div>
+</aside>
+</div>
+<!-- ==================== FOOTER ==================== -->
+</main>
+<div class='footer-wrap' role='contentinfo'>
+<div class='footer-inner'>
+<div class='footer-content'>
+<h3 class='footer-brand'>Law<span class='accent'>nomics</span></h3>
+<p class='footer-tagline'>법과 숫자로 지키는 내 돈</p>
+<p class='footer-disclaimer'>본 블로그의 콘텐츠는 정보 제공 목적이며, 특정 투자를 권유하거나 법률 자문을 제공하지 않습니다. 투자 및 법률 관련 결정은 반드시 전문가와 상담하시기 바랍니다.</p>
+<div class='footer-links'>
+<a href='https://www.lawnomics.com/p/blog-page_545.html'>소개</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/p/editorial-policy.html'>편집 원칙</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/p/blog-page_09.html'>면책조항</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/tools/'>계산기</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/p/blog-page_04.html'>개인정보처리방침</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/p/blog-page.html'>문의</a>
+<span class='footer-links-sep'>&#183;</span>
+<a href='https://www.lawnomics.com/feed.xml'>RSS</a>
+</div>
+<p class='footer-copyright'>&#169; 로리움 컨설팅 (Lawrium Consulting)</p>
+</div>
+</div>
+</div>
+<!-- Back to Top Button -->
+<button aria-label='맨 위로' class='back-to-top' id='backToTop' onclick='window.scrollTo({top:0,behavior:"smooth"})'>&#8593;</button>
+<!-- ==================== JAVASCRIPT ==================== -->
+<script type='text/javascript'>
+//<![CDATA[
+
+// --- Reading Progress Bar (throttled with rAF) ---
+var _rafProgress = false;
+window.addEventListener('scroll', function() {
+  if (_rafProgress) return;
+  _rafProgress = true;
+  requestAnimationFrame(function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    var bar = document.getElementById('reading-progress');
+    if (bar) bar.style.width = scrolled + '%';
+
+    // Back to top button
+    var btn = document.getElementById('backToTop');
+    if (btn) {
+      if (winScroll > 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+    _rafProgress = false;
+  });
+});
+
+// --- Auto Table of Contents ---
+(function() {
+  var articleBody = document.querySelector('.article-body');
+  if (!articleBody) return;
+
+  var headings = articleBody.querySelectorAll('h2, h3');
+  if (headings.length < 2) return;
+
+  var tocContainer = document.getElementById('toc-container');
+  var tocList = document.getElementById('toc-list');
+  if (!tocContainer || !tocList) return;
+
+  tocContainer.classList.add('active');
+
+  var tocHeadings = [];
+  headings.forEach(function(heading, i) {
+    var text = heading.textContent.trim();
+    // 자주 묻는 질문 / FAQ 관련 항목은 TOC에서 제외
+    if (/자주\s*묻는\s*질문|FAQ|Q\.\s/i.test(text)) return;
+    if (/^참고자료$/i.test(text)) return;
+
+    var id = 'section-' + i;
+    heading.id = id;
+
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + id;
+    a.textContent = text;
+    a.onclick = function(e) {
+      e.preventDefault();
+      heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    if (heading.tagName === 'H3') {
+      a.style.paddingLeft = '24px';
+      a.style.fontSize = '12px';
+    }
+
+    li.appendChild(a);
+    tocList.appendChild(li);
+    tocHeadings.push(heading);
+  });
+
+  // Active heading highlight on scroll (throttled with rAF)
+  var _rafToc = false;
+  window.addEventListener('scroll', function() {
+    if (_rafToc) return;
+    _rafToc = true;
+    requestAnimationFrame(function() {
+      var scrollPos = window.scrollY + 100;
+      var links = tocList.querySelectorAll('a');
+
+      if (tocHeadings.length > 0 && scrollPos < tocHeadings[0].offsetTop) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        _rafToc = false;
+        return;
+      }
+
+      tocHeadings.forEach(function(heading, i) {
+        var nextTop = (i + 1 < tocHeadings.length) ? tocHeadings[i + 1].offsetTop : document.body.scrollHeight;
+        if (scrollPos >= heading.offsetTop && scrollPos < nextTop) {
+          links.forEach(function(l) { l.classList.remove('active'); });
+          if (links[i]) links[i].classList.add('active');
+        }
+      });
+      _rafToc = false;
+    });
+  });
+})();
+
+// --- Style references section ---
+(function() {
+  var body = document.querySelector('.article-body');
+  if (!body) return;
+
+  // Find and style the references section
+  var allElements = body.querySelectorAll('h2, h3, h4, p, strong');
+  allElements.forEach(function(el) {
+    if (el.textContent.indexOf('참고자료') !== -1 || el.textContent.indexOf('[참고자료]') !== -1) {
+      var container = document.createElement('div');
+      container.className = 'references';
+
+      var sibling = el;
+      var toWrap = [el];
+      while (sibling.nextElementSibling) {
+        sibling = sibling.nextElementSibling;
+        if (sibling.tagName === 'HR') break;
+        toWrap.push(sibling);
+      }
+
+      if (toWrap.length > 1) {
+        el.parentNode.insertBefore(container, el);
+        toWrap.forEach(function(node) { container.appendChild(node); });
+      }
+    }
+  });
+
+  // Find and style disclaimer
+  var paras = body.querySelectorAll('p, strong');
+  paras.forEach(function(el) {
+    if (el.textContent.indexOf('면책 고지') !== -1 || el.textContent.indexOf('면책고지') !== -1) {
+      var wrap = el.closest('p') || el;
+      var disclaimer = document.createElement('div');
+      disclaimer.className = 'disclaimer';
+      disclaimer.innerHTML = wrap.innerHTML;
+      wrap.parentNode.replaceChild(disclaimer, wrap);
+    }
+  });
+})();
+
+
+// --- Extract post thumbnails and preview text from hidden body ---
+(function() {
+  var cards = document.querySelectorAll('.post-card');
+  cards.forEach(function(card) {
+    var hidden = card.querySelector('.post-body-hidden');
+    var thumbLink = card.querySelector('.post-card-thumb');
+    var summary = card.querySelector('.post-summary');
+    if (!hidden) return;
+
+    // Extract first image as thumbnail
+    if (thumbLink) {
+      var img = hidden.querySelector('img');
+      if (img) {
+        var newImg = document.createElement('img');
+        newImg.src = img.src;
+        newImg.alt = img.alt || '';
+        newImg.loading = 'lazy';
+        thumbLink.appendChild(newImg);
+        thumbLink.style.display = 'block';
+      }
+    }
+
+    // Extract preview text from first 2-3 paragraphs
+    if (summary) {
+      var paragraphs = hidden.querySelectorAll('p');
+      var text = '';
+      for (var i = 0; i < paragraphs.length && i < 3; i++) {
+        var pText = paragraphs[i].textContent.trim();
+        if (pText.length > 10) {
+          text += pText + ' ';
+          if (text.length > 150) break;
+        }
+      }
+      if (text) {
+        summary.textContent = text.trim();
+      }
+    }
+
+    hidden.remove();
+
+    // Make entire card clickable
+    var postLink = card.querySelector('h2 a');
+    if (postLink) {
+      card.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') return;
+        window.location.href = postLink.href;
+      });
+    }
+  });
+})();
+
+//]]>
+</script>
+
+
+<script>if(window.innerWidth>768){document.querySelectorAll('details.toc').forEach(function(d){d.open=true})}</script><script>/* [lawnomics-tools 휴대폰 표·글씨 적용] 넓은 표는 휴대폰(640px 이하)에서 줄마다 카드로 */(function(){var mq=window.matchMedia&&window.matchMedia('(max-width:640px)');if(!mq)return;function fit(){[].forEach.call(document.querySelectorAll('.article-body .table-scroll'),function(box){var t=box.querySelector('table');if(!t||!t.tHead||!t.tHead.rows.length||t.querySelector('[rowspan],[colspan]'))return;var hs=[].map.call(t.tHead.rows[0].cells,function(c){return c.textContent.trim()});if(hs.length<3)return;if(!box.hasAttribute('data-lab')){[].forEach.call(t.tBodies,function(tb){[].forEach.call(tb.rows,function(tr){[].forEach.call(tr.cells,function(c,i){c.setAttribute('data-label',hs[i]||'')})})});box.setAttribute('data-lab','1')}box.classList.remove('stack');if(mq.matches&&(box.classList.contains('wide')||t.scrollWidth>box.clientWidth+1))box.classList.add('stack')})}fit();var tm;window.addEventListener('resize',function(){clearTimeout(tm);tm=setTimeout(fit,150)})})();</script>
+</body>
+</html>
