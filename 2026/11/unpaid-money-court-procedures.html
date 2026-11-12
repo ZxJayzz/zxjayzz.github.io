@@ -1480,6 +1480,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
 .tools-sub span{color:var(--c-sub)}
 .tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 기업 공시 조회·사업자 휴폐업 조회 위의 같은 크기 두 칸(조회 범위 한 줄) */
+.tools-sub.tools-seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin:-4px 0 22px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--c-line-box);border-radius:10px;background:#FFFFFF;color:var(--c-ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+.tools-sub.tools-seg b{padding:11px 15px;border:2px solid var(--c-ink-line)}
+.tools-sub.tools-seg small{font-size:14px;font-weight:400;color:var(--c-sub)}
+.tools-sub.tools-seg a:hover{border-color:var(--c-sub-line)}
+.tools-sub.tools-seg a:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
 .px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
 /* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
 .tools-anchor{scroll-margin-top:72px}
@@ -1496,6 +1503,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
 .tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
 .tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-sub.tools-seg{margin:-2px 0 16px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{padding:10px 12px;font-size:15px}
+.tools-sub.tools-seg b{padding:9px 11px}
+.tools-sub.tools-seg small{font-size:13px}
 .tools-anchor{scroll-margin-top:52px}
 }
 /* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
@@ -1788,7 +1799,7 @@ body .tools-sub a{padding:2px 0}
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/tools/company.html'>회사·사업자 조회</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -2249,7 +2260,8 @@ body .tools-sub a{padding:2px 0}
 <p>넷째, 이긴 뒤 돈을 어떻게 받을지도 따져봅니다. 지급명령이 확정되거나 판결에서 이겨도 법원이 돈을 대신 받아 주지는 않습니다. 상대 재산을 모르면 재산명시와 재산조회부터 해야 하고, 압류도 채권자가 따로 신청합니다. 처음 돈을 빌려줄 때 강제집행을 승낙한다는 문구가 든 공정증서를 받아 두었다면 소송 없이 그 공정증서로 바로 강제집행할 수 있습니다(민사집행법 제56조 제4호).</p>
 <div class="table-scroll"><table><thead><tr><th>지금 상황</th><th>먼저 검토할 절차</th><th>근거</th></tr></thead><tbody><tr><td>상대가 빚을 인정하고 국내 주소를 안다</td><td>지급명령</td><td>민사소송법 제462조</td></tr><tr><td>다툼이 예상되고 3,000만 원 이하</td><td>소액사건 소송</td><td>소액사건심판규칙 제1조의2</td></tr><tr><td>다툼이 예상되고 3,000만 원 초과</td><td>일반 민사소송</td><td>민사소송법</td></tr><tr><td>재산 처분·은닉 염려가 있다</td><td>가압류 먼저</td><td>민사집행법 제276조·제277조</td></tr><tr><td>이겼는데 재산을 모른다</td><td>재산명시·재산조회</td><td>민사집행법 제61조·제74조</td></tr><tr><td>강제집행 승낙 공정증서가 있다</td><td>바로 강제집행</td><td>민사집행법 제56조 제4호</td></tr></tbody></table></div>
 <p>시간 제한도 같이 봐야 합니다. 친구·가족에게 빌려준 돈처럼 일반 민사 대여금은 10년(민법 제162조 제1항), 상행위로 생긴 채권은 5년(상법 제64조)이지만, 공사대금이나 상인이 판 물건 값은 3년이면 소멸시효가 완성됩니다(민법 제163조 제3호·제6호). 내용증명으로 갚으라고 요구했다면 그 내용증명이 상대에게 도달한 날부터 6개월 안에 소송이나 지급명령, 가압류 같은 조치를 해야 시효중단 효력이 유지됩니다(제174조). 내용증명의 효력과 6개월 기한은 <a href="https://www.lawnomics.com/2026/10/certified-mail-effect-cost-guide.html">내용증명 효력과 보내는 법, 비용과 6개월 기한</a>에서 따로 정리했습니다.</p>
-<p class="lead-answer">상대가 다투지 않을 것 같으면 지급명령, 다툴 것 같고 3,000만 원 이하면 소액소송, 재산을 빼돌릴 염려가 있으면 가압류를 먼저 보고, 어느 쪽이든 이긴 뒤의 회수 절차까지 계산에 넣습니다.</p>
+<p><p>상대가 사업자라면 <a href="https://www.lawnomics.com/tools/business-status.html">사업자 휴폐업 조회</a>로 휴업·폐업 여부를, 국내 상장사라면 <a href="https://www.lawnomics.com/tools/company.html">기업 공시 조회</a>로 공시와 주요 재무를 확인할 수 있습니다.</p>
+<p class="lead-answer">상대가 다투지 않을 것 같으면 지급명령, 다툴 것 같고 3,000만 원 이하면 소액소송, 재산을 빼돌릴 염려가 있으면 가압류를 먼저 보고, 어느 쪽이든 이긴 뒤의 회수 절차까지 계산에 넣습니다.</p></p>
 <a name="지급명령--상대가-다투지-않을-때-가장-싼-길"></a>
 <h2 id="지급명령--상대가-다투지-않을-때-가장-싼-길">지급명령, 상대가 다투지 않을 때 가장 싼 길</h2>
 <p>지급명령은 금전이나 대체물, 유가증권의 일정 수량을 달라는 청구에 쓰는 약식 절차입니다(민사소송법 제462조). 채무자의 주소지나 근무지, 의무이행지 등을 관할하는 지방법원에 신청하면(제463조) 법원은 채무자를 심문하지 않고 서류만으로 명령합니다. 상대를 법정에 부르지 않기 때문에 빠릅니다. 대신 상대에게 반박할 기회를 따로 줍니다. 채무자는 지급명령을 송달받은 날부터 <strong class="num">2주</strong> 안에 이의신청을 할 수 있고, 그 기간에 이의가 없으면 지급명령은 확정판결과 같은 효력을 가집니다(제467조·제470조·제474조).</p>

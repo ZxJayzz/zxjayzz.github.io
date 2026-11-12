@@ -1479,6 +1479,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
 .tools-sub span{color:var(--c-sub)}
 .tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 기업 공시 조회·사업자 휴폐업 조회 위의 같은 크기 두 칸(조회 범위 한 줄) */
+.tools-sub.tools-seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin:-4px 0 22px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--c-line-box);border-radius:10px;background:#FFFFFF;color:var(--c-ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+.tools-sub.tools-seg b{padding:11px 15px;border:2px solid var(--c-ink-line)}
+.tools-sub.tools-seg small{font-size:14px;font-weight:400;color:var(--c-sub)}
+.tools-sub.tools-seg a:hover{border-color:var(--c-sub-line)}
+.tools-sub.tools-seg a:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
 .px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
 /* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
 .tools-anchor{scroll-margin-top:72px}
@@ -1495,6 +1502,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
 .tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
 .tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-sub.tools-seg{margin:-2px 0 16px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{padding:10px 12px;font-size:15px}
+.tools-sub.tools-seg b{padding:9px 11px}
+.tools-sub.tools-seg small{font-size:13px}
 .tools-anchor{scroll-margin-top:52px}
 }
 /* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
@@ -1787,7 +1798,7 @@ body .tools-sub a{padding:2px 0}
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/tools/company.html'>회사·사업자 조회</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -1800,7 +1811,7 @@ body .tools-sub a{padding:2px 0}
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
-<nav class='tools-nav' aria-label='계산기와 검색'><a href='/tools/'>전체</a><a href='/tools/#calc' class='on' aria-current='true'>계산기</a><a href='/tools/law-search.html#from=tab'>법령·판례</a><a href='/tools/company.html'>기업 공시</a></nav>
+<nav class='tools-nav' aria-label='계산기와 검색'><a href='/tools/'>전체</a><a href='/tools/#calc' class='on' aria-current='true'>계산기</a><a href='/tools/law-search.html#from=tab'>법령·판례</a><a href='/tools/company.html'>회사·사업자</a></nav>
 <nav class='tools-sub' aria-label='다른 계산기'><span>다른 계산기</span><a href='/tools/jeonse-wolse-conversion.html'>전월세 전환</a><a href='/tools/hug-guarantee-fee.html'>전세보증보험 보증료</a><a href='/tools/payment-order-cost.html'>지급명령 비용</a><a href='/tools/attorney-fee-litigation-cost.html'>소송비용 변호사보수</a><a href='/tools/family-loan-interest.html'>가족 간 차용 이자</a><a href='/tools/gift-tax.html'>증여세</a></nav>
 <article class='article-wrap'>
 <div class='article-header'>

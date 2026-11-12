@@ -1476,6 +1476,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
 .tools-sub span{color:var(--c-sub)}
 .tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 기업 공시 조회·사업자 휴폐업 조회 위의 같은 크기 두 칸(조회 범위 한 줄) */
+.tools-sub.tools-seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin:-4px 0 22px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--c-line-box);border-radius:10px;background:#FFFFFF;color:var(--c-ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+.tools-sub.tools-seg b{padding:11px 15px;border:2px solid var(--c-ink-line)}
+.tools-sub.tools-seg small{font-size:14px;font-weight:400;color:var(--c-sub)}
+.tools-sub.tools-seg a:hover{border-color:var(--c-sub-line)}
+.tools-sub.tools-seg a:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
 .px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
 /* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
 .tools-anchor{scroll-margin-top:72px}
@@ -1492,6 +1499,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
 .tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
 .tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-sub.tools-seg{margin:-2px 0 16px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{padding:10px 12px;font-size:15px}
+.tools-sub.tools-seg b{padding:9px 11px}
+.tools-sub.tools-seg small{font-size:13px}
 .tools-anchor{scroll-margin-top:52px}
 }
 /* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
@@ -1776,6 +1787,14 @@ body.page-list{background:var(--c-cool-page)}
 .hx-search input:focus,.hx-search input:focus-visible{outline:none}
 .hx-search input::placeholder{color:var(--c-cool-hint);opacity:1}
 .hx-search button{flex:none;height:46px;padding:0 24px;border:0;border-radius:11px;background:var(--c-accent-btn);color:#FFFFFF;font:inherit;font-size:16px;font-weight:700;cursor:pointer}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 검색 대상 전환(법령·판례 / 회사·사업자) */
+.hx-tabs{display:flex;gap:6px;margin:0 0 12px}
+.hx-tabs button{min-height:42px;padding:0 18px;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--c-cool-text);font:inherit;font-size:16px;font-weight:600;cursor:pointer}
+.hx-tabs button[aria-pressed=true]{background:#FFFFFF;border-color:#EFD3BE;color:var(--c-cool-ink);font-weight:700;box-shadow:0 2px 8px rgba(120,50,0,.08)}
+.hx-tabs button:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
+.hx-shint{margin:12px 0 0;font-size:15px}
+.hx-shint a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+.hx-shint a:hover{text-decoration:underline}
 .hx-panel{position:relative;margin-top:-60px;padding:22px 20px;border-radius:24px;background:#FFFFFF;box-shadow:0 10px 30px rgba(17,24,39,.08)}
 .hx-quick{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;margin:0;padding:0;list-style:none}
 .hx-quick li{margin:0;padding:0}
@@ -1864,6 +1883,10 @@ body.page-list{background:var(--c-cool-page)}
 .hx-search svg{width:20px;height:20px}
 .hx-search input{font-size:16px}
 .hx-search button{height:42px;padding:0 16px;border-radius:10px;font-size:15px}
+.hx-tabs{margin-bottom:10px}
+.hx-tabs button{min-height:40px;padding:0 14px;font-size:15px}
+.hx-shint{margin-top:10px;font-size:14px}
+.hx-quick a[href='/tools/company.html'] span:last-child{max-width:72px;word-break:keep-all}
 .hx-panel{margin-top:-44px;padding:14px 6px;border-radius:20px}
 .hx-quick{grid-auto-flow:row;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px 0}
 .hx-quick a{gap:7px;padding:6px 0;font-size:12.5px}
@@ -1913,7 +1936,7 @@ body.page-list{background:var(--c-cool-page)}
 .hx-cat-tools span{flex-basis:100%;margin:0 0 2px;font-size:13px}
 .hx-cat-tools a{min-height:44px;padding:0 14px;font-size:13.5px}
 }
-@media print{.hx-desc,.hx-search,.hx-panel,.hx-only-m,.hx-only-pc,.hx-pontis,.hx-more,.hx-pager,.hx-cat-tools,.hx-lead .go{display:none!important}
+@media print{.hx-desc,.hx-search,.hx-tabs,.hx-shint,.hx-panel,.hx-only-m,.hx-only-pc,.hx-pontis,.hx-more,.hx-pager,.hx-cat-tools,.hx-lead .go{display:none!important}
 .hx-hero,.hx-band{background:none!important;border:0!important}.hx-hero .hx-in,.hx-band .hx-in{padding:0 0 12px!important}.hx-hero h1.site-h1{color:#000!important;font-size:24px!important}.hx-hero h1.site-h1 .h1-brand{margin-bottom:2px!important;font-size:16px!important}
 .hx-lead img,.hx-card img,.hx-ph,.hx-band .hx-ic{display:none!important}.hx-lead,.hx-grid{display:block!important}.hx-card,.hx-lead{transform:none!important}
 .hx-card h3,.hx-card h2,.hx-lead p{display:block!important;overflow:visible!important;-webkit-line-clamp:unset!important}}
@@ -1942,7 +1965,7 @@ body.page-list{background:var(--c-cool-page)}
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/tools/company.html'>회사·사업자 조회</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>

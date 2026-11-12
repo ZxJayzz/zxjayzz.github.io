@@ -1479,6 +1479,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
 .tools-sub span{color:var(--c-sub)}
 .tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 기업 공시 조회·사업자 휴폐업 조회 위의 같은 크기 두 칸(조회 범위 한 줄) */
+.tools-sub.tools-seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin:-4px 0 22px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--c-line-box);border-radius:10px;background:#FFFFFF;color:var(--c-ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+.tools-sub.tools-seg b{padding:11px 15px;border:2px solid var(--c-ink-line)}
+.tools-sub.tools-seg small{font-size:14px;font-weight:400;color:var(--c-sub)}
+.tools-sub.tools-seg a:hover{border-color:var(--c-sub-line)}
+.tools-sub.tools-seg a:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
 .px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
 /* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
 .tools-anchor{scroll-margin-top:72px}
@@ -1495,6 +1502,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
 .tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
 .tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-sub.tools-seg{margin:-2px 0 16px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{padding:10px 12px;font-size:15px}
+.tools-sub.tools-seg b{padding:9px 11px}
+.tools-sub.tools-seg small{font-size:13px}
 .tools-anchor{scroll-margin-top:52px}
 }
 /* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
@@ -1787,7 +1798,7 @@ body .tools-sub a{padding:2px 0}
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/tools/company.html'>회사·사업자 조회</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -1800,8 +1811,8 @@ body .tools-sub a{padding:2px 0}
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
-<nav class='tools-nav' aria-label='계산기와 검색'><a href='/tools/'>전체</a><a href='/tools/#calc'>계산기</a><a href='/tools/law-search.html#from=tab'>법령·판례</a><a href='/tools/company.html' class='on' aria-current='page'>기업 공시</a></nav>
-<nav class='tools-sub' aria-label='기업 정보'><span>기업 정보</span><b aria-current='page'>기업 공시 조회</b><a href='/tools/business-status.html'>사업자 휴폐업 조회</a></nav>
+<nav class='tools-nav' aria-label='계산기와 검색'><a href='/tools/'>전체</a><a href='/tools/#calc'>계산기</a><a href='/tools/law-search.html#from=tab'>법령·판례</a><a href='/tools/company.html' class='on' aria-current='page'>회사·사업자</a></nav>
+<nav class='tools-sub tools-seg' aria-label='회사·사업자 조회'><b aria-current='page'>기업 공시 조회<small>국내 상장사</small></b><a href='/tools/business-status.html'>사업자 휴폐업 조회<small>개인사업자·법인</small></a></nav>
 <article class='article-wrap'>
 <div class='article-header'>
 
@@ -1836,6 +1847,10 @@ body .tools-sub a{padding:2px 0}
 .cx .cx-row input:focus{outline:2px solid var(--c-focus-input);outline-offset:1px;border-color:var(--c-focus-input)}
 .cx .cx-btn{min-height:48px;padding:0 20px;border:0;border-radius:6px;background:var(--c-accent-btn);color:#FFFFFF;font-weight:700;font-size:15px}
 .cx .cx-hint{margin:10px 0 0;font-size:14px;color:var(--c-sub)}
+.cx .cx-ex{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:10px 0 0;font-size:14px;color:var(--c-sub)}
+.cx .cx-ex button{min-height:36px;padding:0 14px;border:1px solid var(--c-line-box);border-radius:999px;background:#FFFFFF;color:var(--c-ink);font-size:14px;font-weight:600}
+.cx .cx-ex button:hover{border-color:var(--c-sub-line)}
+.cx .cx-ex button:focus-visible{outline:2px solid var(--c-focus);outline-offset:2px}
 .cx .cx-results{margin:16px 0 0}
 .cx .cx-rhead{font-size:14px;color:var(--c-sub);margin:0 0 6px}
 .cx .cx-rlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--c-line)}
@@ -2015,6 +2030,7 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
 <p class="cx-lead">국내 상장사의 회사 개황, 연간 주요 재무, 감사의견, 직원 현황과 최근 공시를 조회합니다. 각 자료에 출처와 받은 시점을 표시합니다.</p>
 <form class="cx-box" id="cx-form" role="search" autocomplete="off"><label for="cx-q">회사명 또는 종목코드</label>
 <div class="cx-row"><input id="cx-q" type="search" maxlength="40" placeholder="예: 삼성전자 또는 005930" enterkeyhint="search"><button type="submit" class="cx-btn">검색</button></div>
+<p class="cx-ex">예시 <button type="button" data-q="삼성전자">삼성전자</button><button type="button" data-q="현대자동차">현대자동차</button></p>
 <p class="cx-hint">회사명이나 종목코드 6자리로 국내 상장사를 검색합니다.</p><p class="cx-hint cx-routeline">상장사가 아니라면: <a href="/tools/business-status.html">사업자 휴폐업 조회</a> · <a href="/guide/counterparty-check.html#s2">비상장 회사·개인사업자</a> · <a href="/guide/counterparty-check.html#s3">해외 회사</a> · <a href="/2026/09/jeonse-deposit-recovery-guide.html">개인(집주인 등)</a></p></form>
 <noscript><p class="cx-status err">이 도구는 자바스크립트가 켜져 있어야 작동합니다. DART(dart.fss.or.kr)에서 직접 검색할 수 있습니다.</p></noscript>
 <div class="cx-results" id="cx-results" aria-live="polite"></div>
@@ -2261,14 +2277,18 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
     else if (current) { current = null; ++seq; box.innerHTML = ""; paid.hidden = true; if (last) results(last.term, last.d, null); }
   }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  function go() {
     if (location.hash) { try { history.pushState(null, "", location.pathname + location.search); } catch (x) { location.hash = ""; } }
     search(q.value.replace(/\s+/g, " ").trim());
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    go();
   });
   cx.addEventListener("click", function (e) {
     var t = e.target.closest ? e.target.closest("button") : null;
     if (!t || !cx.contains(t)) return;
+    if (t.hasAttribute("data-q")) { q.value = t.getAttribute("data-q"); go(); return; }   // 2026-11-12 예시 회사 단추: 누르면 바로 검색
     if (t.hasAttribute("data-pick")) { pick(t.getAttribute("data-pick"), true, true); return; }
     if (t.hasAttribute("data-retry")) { if (current) { var c = current; current = null; pick(c, false, true); } return; }
     if (t.classList.contains("cx-morebtn")) {
@@ -2290,7 +2310,12 @@ body,.article-wrap{background:#FFFFFF!important;border:0!important}
     var s = k.getUTCFullYear() + ". " + (k.getUTCMonth() + 1) + ". " + k.getUTCDate() + ". " + p(k.getUTCHours()) + ":" + p(k.getUTCMinutes());
     Array.prototype.forEach.call(cx.querySelectorAll(".cx-printhead"), function (el) { el.textContent = "www.lawnomics.com/tools/company.html · " + s + " 기준 인쇄 화면"; });
   });
-  fromHash();
+  var hq = /^#q=([^&]*)$/.exec(location.hash);   // 2026-11-12 홈 검색칸 '회사·사업자'에서 넘어온 회사명: 주소에서 지우고 바로 검색
+  if (hq) {
+    try { q.value = decodeURIComponent(hq[1]).slice(0, 40); } catch (x) { q.value = ""; }
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (x) { /* 주소 정리를 못 해도 검색은 한다 */ }
+    search(q.value.replace(/\s+/g, " ").trim());
+  } else fromHash();
 })();
 </script>
 

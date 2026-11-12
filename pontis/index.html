@@ -1479,6 +1479,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
 .tools-sub span{color:var(--c-sub)}
 .tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 기업 공시 조회·사업자 휴폐업 조회 위의 같은 크기 두 칸(조회 범위 한 줄) */
+.tools-sub.tools-seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin:-4px 0 22px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--c-line-box);border-radius:10px;background:#FFFFFF;color:var(--c-ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+.tools-sub.tools-seg b{padding:11px 15px;border:2px solid var(--c-ink-line)}
+.tools-sub.tools-seg small{font-size:14px;font-weight:400;color:var(--c-sub)}
+.tools-sub.tools-seg a:hover{border-color:var(--c-sub-line)}
+.tools-sub.tools-seg a:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
 .px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
 /* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
 .tools-anchor{scroll-margin-top:72px}
@@ -1495,6 +1502,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
 .tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
 .tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-sub.tools-seg{margin:-2px 0 16px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{padding:10px 12px;font-size:15px}
+.tools-sub.tools-seg b{padding:9px 11px}
+.tools-sub.tools-seg small{font-size:13px}
 .tools-anchor{scroll-margin-top:52px}
 }
 /* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
@@ -2141,7 +2152,7 @@ body.svc .content-wrap{padding:0 16px 56px}
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/tools/company.html'>회사·사업자 조회</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -2151,7 +2162,7 @@ body.svc .content-wrap{padding:0 16px 56px}
 </div>
 <main id='main-content'>
 <!-- ==================== MAIN CONTENT ==================== -->
-<section class='px-hero'><div class='in'><div><p class='k'>PONTIS · 기업 분석 보고서</p><h1>기업 분석 보고서</h1><p class='d'>공시, 공공 조달, 특허, 언론 자료로 실제 상장사를 분석한 보고서 샘플 3종입니다. 모든 수치에 공시 접수번호나 원문 링크를 붙였습니다.</p><div class='acts'><a class='svc-btn org' href='#samples'>샘플 PDF 보기</a></div></div><a class='cover' href='/pontis/samples/pontis-sample1-acquisition-ko.pdf'><img src='/pontis/samples/pontis-sample1-acquisition-ko.webp' width='720' height='932' alt='샘플 보고서 첫 쪽. 에스트래픽 인수 검토 리포트의 대상, 조회 기준일, 요약 판정이 보인다'><span>샘플 1 · 에스트래픽 인수 검토 · 10쪽 PDF 열기</span></a></div></section>
+<style>.px-free{margin:0;padding:12px 24px;background:var(--c-cream);border-bottom:1px solid var(--c-line);text-align:center;font-size:15px;line-height:1.6;color:var(--c-text)}.px-free a{color:var(--c-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}@media (max-width:768px){.px-free{padding:10px 16px;font-size:14px;text-align:left}}</style><p class='px-free'>국내 상장사의 공시와 주요 재무는 <a href='/tools/company.html'>기업 공시 조회</a>에서 확인할 수 있습니다.</p><section class='px-hero'><div class='in'><div><p class='k'>PONTIS · 기업 분석 보고서</p><h1>기업 분석 보고서</h1><p class='d'>공시, 공공 조달, 특허, 언론 자료로 실제 상장사를 분석한 보고서 샘플 3종입니다. 모든 수치에 공시 접수번호나 원문 링크를 붙였습니다.</p><div class='acts'><a class='svc-btn org' href='#samples'>샘플 PDF 보기</a></div></div><a class='cover' href='/pontis/samples/pontis-sample1-acquisition-ko.pdf'><img src='/pontis/samples/pontis-sample1-acquisition-ko.webp' width='720' height='932' alt='샘플 보고서 첫 쪽. 에스트래픽 인수 검토 리포트의 대상, 조회 기준일, 요약 판정이 보인다'><span>샘플 1 · 에스트래픽 인수 검토 · 10쪽 PDF 열기</span></a></div></section>
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>

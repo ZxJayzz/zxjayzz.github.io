@@ -1480,6 +1480,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-sub{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px;margin:-6px 0 18px;font-size:14px;line-height:1.6}
 .tools-sub span{color:var(--c-sub)}
 .tools-sub a{color:var(--c-accent-text);font-weight:700;text-decoration:none}
+/* [lawnomics-tools 회사·사업자 조회 찾기 적용] 2026-11-12 기업 공시 조회·사업자 휴폐업 조회 위의 같은 크기 두 칸(조회 범위 한 줄) */
+.tools-sub.tools-seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:10px;margin:-4px 0 22px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--c-line-box);border-radius:10px;background:#FFFFFF;color:var(--c-ink);font-size:16px;font-weight:700;line-height:1.4;text-decoration:none}
+.tools-sub.tools-seg b{padding:11px 15px;border:2px solid var(--c-ink-line)}
+.tools-sub.tools-seg small{font-size:14px;font-weight:400;color:var(--c-sub)}
+.tools-sub.tools-seg a:hover{border-color:var(--c-sub-line)}
+.tools-sub.tools-seg a:focus-visible{outline:3px solid var(--c-focus);outline-offset:2px}
 .px-kicker{margin:0 0 6px;font-size:12.5px;font-weight:800;letter-spacing:.16em;color:var(--c-accent-text)}
 /* 바로 가기 표지: 템플릿 목차 스크립트가 제목 id를 바꾸므로 제목 앞 빈 칸에 달고, 붙어 다니는 머리글에 가리지 않게 띄운다 */
 .tools-anchor{scroll-margin-top:72px}
@@ -1496,6 +1503,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .tools-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;padding-bottom:12px;overflow:visible}
 .tools-nav a{justify-content:center;min-height:36px;padding:0 4px;font-size:13.5px}
 .tools-sub{margin:-2px 0 14px;font-size:14px}
+.tools-sub.tools-seg{margin:-2px 0 16px}
+.tools-sub.tools-seg a,.tools-sub.tools-seg b{padding:10px 12px;font-size:15px}
+.tools-sub.tools-seg b{padding:9px 11px}
+.tools-sub.tools-seg small{font-size:13px}
 .tools-anchor{scroll-margin-top:52px}
 }
 /* 2026-10-24 화면 점검(Codex 상의): ☰은 button이라 글꼴을 물려받지 않음, 바닥글 링크 누르는 상자 키움(글자 15px → 27px), 카테고리 도구 줄은 가로 스크롤 대신 접기(숨긴 스크롤바 때문에 잘려 보였음) */
@@ -1788,7 +1799,7 @@ body .tools-sub a{padding:2px 0}
 <a class='hdr-lawsearch' href='/tools/law-search.html#from=hdr'>법령·판례 검색</a>
 <button class='mobile-menu-btn' aria-label='메뉴' aria-controls='site-menu' aria-expanded='false' onclick='this.setAttribute("aria-expanded", document.getElementById("site-menu").classList.toggle("open"))'>&#9776;</button>
 <ul class='nav-categories' id='site-menu'>
-<li><a href='/tools/'>계산기</a></li><li><a href='/guide/'>기업·해외거래</a></li><li><a href='/pontis/'>기업 분석 보고서</a></li><li><a href='/news/'>뉴스</a></li>
+<li><a href='/tools/'>계산기</a></li><li><a href='/tools/company.html'>회사·사업자 조회</a></li><li><a href='/news/'>뉴스</a></li>
 <li><a href='https://www.lawnomics.com/search/label/가족·상속/'>가족&#183;상속</a></li>
 <li><a href='https://www.lawnomics.com/search/label/부동산·임대차/'>부동산&#183;임대차</a></li>
 <li><a href='https://www.lawnomics.com/search/label/세금·재테크/'>세금&#183;재테크</a></li>
@@ -2277,6 +2288,7 @@ body .tools-sub a{padding:2px 0}
 <a name="상담-전에-챙길-자료와-견적에서-물을-것"></a>
 <h2 id="상담-전에-챙길-자료와-견적에서-물을-것">상담 전에 챙길 자료와 견적에서 물을 것</h2>
 <p>혼자 하든 맡기든 준비할 자료는 같습니다. 차용증이나 계약서, 계좌이체 내역, 영수증처럼 돈이 오간 증거와 갚겠다는 문자나 메신저 대화, 각서, 일부를 갚은 기록처럼 상대가 빚을 인정한 흔적을 챙깁니다. 내용증명을 보냈다면 그것이 상대에게 도달한 날짜도 필요합니다. 상대의 이름, 서류를 받을 주소, 연락처, 알고 있는 재산(부동산·직장·거래 은행)을 적습니다. 빌려준 날·갚기로 한 날·받은 금액·마지막 연락을 날짜순으로 한 장에 정리해 가면 상담 중 사실 확인에 드는 시간을 줄일 수 있습니다.</p>
+<p>상대가 사업자라면 <a href="https://www.lawnomics.com/tools/business-status.html">사업자 휴폐업 조회</a>로 휴업·폐업 여부를, 국내 상장사라면 <a href="https://www.lawnomics.com/tools/company.html">기업 공시 조회</a>로 회사 개황과 연간 주요 재무를 확인할 수 있습니다.</p>
 <p>공적 창구도 먼저 확인할 만합니다. 대한법률구조공단은 소송지원 대상을 기준 중위소득으로 판단한다고 안내합니다. 공단 안내 화면에는 국민과 국내 거주 외국인의 소득 기준이 기준 중위소득 125% 이하로 나와 있으며, 대상 유형에 따라 150% 이하나 최종 3개월 평균 임금 400만 원 미만 같은 다른 구간도 제시되어 있습니다. 공단 설명에 따르면 지원을 받아도 낮은 수준의 변호사비용과 송달료·인지대 같은 소송실비는 기본적으로 본인 부담입니다. 따로 지원하는 기관이 있으면 전부나 일부가 면제됩니다. 기초생활 수급자, 장애인, 한부모가족 보호대상자, 기초연금 수급권자처럼 법률구조법 제7조 제2항이 정한 사람은 국가가 소송비용과 변호사보수를 부담할 수 있고, 대상인지는 공단 법률상담 전화 132로 확인할 수 있습니다.</p>
 <p>변호사 견적을 받으면 총액보다 구조를 먼저 봅니다.</p>
 <ol>
