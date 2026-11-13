@@ -2240,7 +2240,7 @@ body.svc-calc .article-body .lx-calc table.lx-break tr.sum{background:var(--cc-t
 </div>
 <main id='main-content'>
 <!-- ==================== MAIN CONTENT ==================== -->
-<section class='svc-hero calc-hero'><div class='in'><div class='row'><span class='hx-ic k-fam'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><rect x='3' y='8' width='18' height='4' rx='1' /><path d='M12 8v13' /><path d='M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7' /><path d='M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5' /></svg></span><div><p class='k'><a href='/tools/#calc'>계산기</a></p><h1>증여세 계산기 (현금 증여 모의계산)</h1></div></div><div class='rest'><p class='d'>현금을 증여받았을 때 주는 사람과의 관계에 따른 증여재산공제, 혼인·출산 공제, 10년 합산, 세대생략 할증을 넣어 증여세를 모의로 계산합니다. 신고기한도 함께 보여 줍니다.</p><ul class='svc-chips'><li><a href='/tools/'>전체</a></li><li><a href='/tools/#calc' class='on' aria-current='true'>계산기</a></li><li><a href='/tools/law-search.html#from=tab'>법령·판례</a></li><li><a href='/tools/company.html'>회사·사업자</a></li></ul></div></div></section>
+<section class='svc-hero calc-hero'><div class='in'><div class='row'><span class='hx-ic k-fam'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true' focusable='false'><rect x='3' y='8' width='18' height='4' rx='1' /><path d='M12 8v13' /><path d='M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7' /><path d='M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5' /></svg></span><div><p class='k'><a href='/tools/#calc'>계산기</a></p><h1>증여세 계산기 (현금 증여 모의계산)</h1></div></div><div class='rest'><p class='d'>거주자인 개인이 다른 개인에게서 원화 현금을 단순 증여받았을 때의 증여세와 신고기한을 계산합니다. 일반세율을 적용하고, 기한 안에 신고·납부하는 경우를 기준으로 합니다.</p><ul class='svc-chips'><li><a href='/tools/'>전체</a></li><li><a href='/tools/#calc' class='on' aria-current='true'>계산기</a></li><li><a href='/tools/law-search.html#from=tab'>법령·판례</a></li><li><a href='/tools/company.html'>회사·사업자</a></li></ul></div></div></section>
 <div class='content-wrap'>
 <div class='main-content'>
 <div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
@@ -2279,6 +2279,14 @@ body.svc-calc .article-body .lx-calc table.lx-break tr.sum{background:var(--cc-t
 <style>
 #gcalc .lx-scope{margin:0 0 20px;padding:0;list-style:none;font-size:14px;color:var(--c-text);line-height:1.65}
 #gcalc .lx-scope li{margin:0 0 4px}
+/* [lawnomics-tools 증여세 조건 접기] 2026-11-13 보이는 요약 아래 '적용 범위 자세히' 접기(원래 '대상'·'계산하지 않는 것' 두 항목 그대로) */
+#gcalc details.g-more{margin:-8px 0 18px}
+#gcalc details.g-more>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:700;color:var(--cc-ink,var(--c-accent-text))}
+#gcalc details.g-more>summary::-webkit-details-marker{display:none}
+#gcalc details.g-more>summary::after{content:'펼치기';font-size:14px;font-weight:400;color:var(--c-cool-sub)}
+#gcalc details.g-more[open]>summary::after{content:'접기'}
+#gcalc details.g-more>.lx-scope{margin:4px 0 8px!important}
+.svc-calc .article-body #gcalc details.g-more{margin:-14px 0 22px}
 #gcalc .lx-why{display:block;font-size:13px;font-weight:400;color:var(--c-sub);margin-top:2px}
 #gcalc table.lx-break th{background:transparent!important;font-weight:400!important;font-size:inherit;border-bottom:1px solid var(--c-line)!important}
 #gcalc table.lx-break tr.sum th{font-weight:800!important}
@@ -2292,9 +2300,14 @@ body.svc-calc .article-body .lx-calc table.lx-break tr.sum{background:var(--cc-t
 <div class="lx-calc" id="gcalc">
 <h2>현금 증여세 모의계산</h2>
 <ul class="lx-scope">
+<li><b>계산하지 않는 경우</b> 외화나 국외에 있는 현금, 부동산·주식처럼 현금이 아닌 재산, 특례세율 증여, 장애인 신탁, 재난에 따른 멸실·훼손, 외국 납부세액 공제가 걸린 경우는 계산하지 않습니다. 생활비·교육비 비과세 여부는 판단하지 않고 입력 금액 전부로 계산하며, 기한 뒤 신고와 가산세는 반영하지 않습니다. 10년 안 같은 사람의 지난 증여도 같은 기준으로 봅니다.</li>
+</ul>
+<details class="g-more"><summary>적용 범위 자세히</summary>
+<ul class="lx-scope">
 <li><b>대상</b> 받는 사람이 거주자인 개인이고, 개인에게 원화 현금을 단순 증여받아 일반세율로 기한 안에 신고·납부하는 경우를 계산합니다. 증여일 전 10년 안에 같은 사람(주는 사람이 직계존속이면 그 배우자 포함)에게서 받은 증여가 1천만원 이상이면 합산합니다(상속세 및 증여세법 제47조 제2항). 증여일이 2026년 1월 2일부터 12월 31일까지인 경우만 계산합니다.</li>
 <li><b>계산하지 않는 것</b> 비거주자가 받은 경우, 외화나 국외에 있는 현금을 받은 경우, 외국 납부세액 공제(제59조)가 걸린 경우, 부동산·주식처럼 현금이 아닌 재산, 재난으로 멸실·훼손된 경우(제54조), 창업자금 등 특례세율 증여(조세특례제한법 제30조의5), 장애인 신탁(제52조의2), 같은 날 같은 관계의 다른 사람에게도 받은 경우(상속세 및 증여세법 시행령 제46조 제1항 제2호), 생활비·교육비 비과세에 해당하는지 여부, 기한 뒤 신고와 가산세, 그리고 결과 칸에서 따로 안내하는 경우. 10년 안 같은 사람의 지난 증여도 같은 기준으로 봅니다</li>
 </ul>
+</details>
 <div class="lx-grid">
 <div><label for="g_res">받는 사람</label><select id="g_res" aria-describedby="g_res_h"><option value="res" selected>거주자</option><option value="non">비거주자</option></select><div class="lx-hint" id="g_res_h">거주자는 국내에 주소를 두거나 183일 이상 거소를 둔 사람입니다(제2조 제8호)</div></div>
 <div><label for="g_rel">주는 사람</label><select id="g_rel" aria-describedby="g_rel_h"><option value="spouse">배우자</option><option value="asc" selected>부모·조부모 등 직계존속</option><option value="step">받는 사람의 부모와 혼인 중인 계부·계모(입양하지 않은 경우)</option><option value="desc">자녀·손주 등 직계비속</option><option value="kin">그 밖의 친족</option><option value="other">친족이 아닌 사람</option></select><div class="lx-hint" id="g_rel_h">증여재산공제에서는 법률혼 배우자의 자녀도 직계비속에 듭니다. 입양한 계부·계모는 부모로 고릅니다. 그 밖의 친족은 4촌 이내 혈족과 3촌 이내 인척입니다(제53조)</div></div>
