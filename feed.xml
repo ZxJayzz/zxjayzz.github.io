@@ -4,7 +4,15 @@
 <link href="https://www.lawnomics.com/"/>
 <link rel="self" href="https://www.lawnomics.com/feed.xml"/>
 <id>https://www.lawnomics.com/</id>
-<updated>2026-11-18T06:49:55.055072+09:00</updated>
+<updated>2026-11-20T07:08:46.370614+09:00</updated>
+<entry>
+<title>내용증명 받았을 때, 답장 전 확인할 것</title>
+<link href="https://www.lawnomics.com/2026/11/certified-mail-received-reply.html"/>
+<id>https://www.lawnomics.com/2026/11/certified-mail-received-reply.html</id>
+<published>2026-11-20T07:08:46.370614+09:00</published>
+<updated>2026-11-20T07:08:46.370614+09:00</updated>
+<summary>내용증명을 받았다고 내용을 인정한 것은 아니지만, 갚으라는 요구나 해제 예고는 도달한 날부터 시효·지체·해제의 효과를 낼 수 있습니다. 안 받거나 무시하면 어떻게 되는지, 법원 서류의 2주·30일 기한, 답장에 넣을 것과 뺄 것을 조문으로 정리했습니다.</summary>
+</entry>
 <entry>
 <title>전세금 반환 소송 비용과 기간, 지급명령과 비교</title>
 <link href="https://www.lawnomics.com/2026/11/jeonse-deposit-return-lawsuit-cost.html"/>
@@ -76,13 +84,5 @@
 <published>2026-10-14T12:24:23.290792+09:00</published>
 <updated>2026-10-14T12:58:15.303496+09:00</updated>
 <summary>내용증명은 등기로 보내는 우편이지만 그 자체로 시효를 멈추지는 못합니다. 우체국이 증명하는 것과 못 하는 것, 반송 안 되면 도달로 보는 판례, 6개월 안에 할 일, 작성·발송 절차와 요금 구성을 조문과 요금표로 정리했습니다.</summary>
-</entry>
-<entry>
-<title>코인 과세 2027, 내 세금 계산과 연말 전 할 일</title>
-<link href="https://www.lawnomics.com/2026/10/crypto-tax-2027-guide.html"/>
-<id>https://www.lawnomics.com/2026/10/crypto-tax-2027-guide.html</id>
-<published>2026-10-12T21:35:26.344824+09:00</published>
-<updated>2026-10-12T21:35:26.344824+09:00</updated>
-<summary>2027년 1월 1일 이후 코인을 팔거나 빌려줘 번 돈은 연 250만 원을 넘는 부분에 22%가 과세됩니다. 계산 공식과 케이스, 2026년 12월 31일 시가 취득가액, 2028년 5월 신고와 가산세, 연말 전 준비, 국회 유예안 현황을 정리했습니다.</summary>
 </entry>
 </feed>
